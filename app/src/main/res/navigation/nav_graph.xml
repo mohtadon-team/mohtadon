@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recitersFragment">
+
+    <fragment
+        android:id="@+id/recitersFragment"
+        android:name="com.example.straterproject.ui.fragments.RecitersFragment"
+        android:label="fragment_reciters"
+        tools:layout="@layout/fragment_reciters" />
+    <fragment
+        android:id="@+id/fmRadioFragment"
+        android:name="com.example.straterproject.ui.fragments.FmRadioFragment"
+        android:label="fragment_fm_radio"
+        tools:layout="@layout/fragment_fm_radio" />
+</navigation>
