@@ -18,6 +18,10 @@ navController= Navigation.findNavController(
 )
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
+                R.id.home ->  {
+                    navController.navigate(R.id.homeFragment)
+                    true
+                }
                 R.id.reciters -> {
                     navController.navigate(R.id.recitersFragment)
                     true
