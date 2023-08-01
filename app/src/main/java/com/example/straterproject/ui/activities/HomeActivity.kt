@@ -12,13 +12,13 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-navController= Navigation.findNavController(
-    this,
-    R.id.nav_host_fragment
-)
+        navController = Navigation.findNavController(
+            this,
+            R.id.nav_host_fragment
+        )
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.home ->  {
+                R.id.home -> {
                     navController.navigate(R.id.homeFragment)
                     true
                 }
@@ -26,13 +26,19 @@ navController= Navigation.findNavController(
                     navController.navigate(R.id.recitersFragment)
                     true
                 }
-                R.id.quranFM -> {
-                   navController.navigate(R.id.fmRadioFragment)
+                R.id.quran -> {
+                    navController.navigate(R.id.quranFragment)
+                    true
+                }
+                R.id.radioFM -> {
+                    navController.navigate(R.id.fmRadioFragment)
                     true
                 }
 
-                else -> {false}
+                else -> {
+                    false
+                }
             }
         }
     }
-        }
+}

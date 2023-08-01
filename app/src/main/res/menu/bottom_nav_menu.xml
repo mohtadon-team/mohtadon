@@ -6,10 +6,14 @@
     android:icon="@drawable/home"/>
     <item
         android:title="الاذاعه"
-        android:id="@+id/quranFM"
+        android:id="@+id/radioFM"
         android:icon="@drawable/radio"/>
     <item
     android:title="القراء"
     android:id="@+id/reciters"
     android:icon="@drawable/listen"/>
+    <item
+        android:title="المصحف"
+        android:id="@+id/quran"
+        android:icon="@drawable/quran"/>
 </menu>

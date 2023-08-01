@@ -3,6 +3,7 @@ package com.example.straterproject.di
 import com.example.data.dataSource.remote.ApiService
 
 import com.example.straterproject.utilities.baseUrl
+import com.example.straterproject.utilities.baseUrl1
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,6 +12,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 
@@ -38,12 +40,25 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
+    @Provides
+    @Singleton
+    fun provideSecondRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl1)
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
 
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService {
         return  retrofit.create(ApiService::class.java)
+    }
+    @Provides
+    @Singleton
+    fun provideSecondApiService(@Named("secondRetrofit") retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
     }
 
 }
