@@ -79,6 +79,8 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
+    // smooth bottom bar
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
 }
 
