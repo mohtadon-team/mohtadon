@@ -20,4 +20,9 @@
         android:name="com.example.straterproject.ui.fragments.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/quranFragment"
+        android:name="com.example.straterproject.ui.fragments.QuranFragment"
+        android:label="QuranFragment"
+        tools:layout="@layout/fragment_quran"/>
 </navigation>
