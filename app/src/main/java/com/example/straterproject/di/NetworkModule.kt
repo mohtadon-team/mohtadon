@@ -1,6 +1,7 @@
 package com.example.straterproject.di
 
-import com.example.data.dataSource.remote.ApiService
+import com.example.data.dataSource.remote.endPoint.ApiService
+import com.example.data.dataSource.remote.endPoint.QuranApiService
 
 import com.example.straterproject.utilities.baseUrl
 import com.example.straterproject.utilities.baseUrl1
@@ -40,25 +41,26 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-//    @Provides
-//    @Singleton
-//    fun provideSecondRetrofit(okHttpClient: OkHttpClient): Retrofit {
-//        return Retrofit.Builder()
-//            .baseUrl(baseUrl1)
-//            .client(okHttpClient)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//    }
+    @Named("secondRetrofit")
+    @Provides
+    @Singleton
+    fun provideSecondRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl1)
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
 
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
-//    @Provides
-//    @Singleton
-//    fun provideSecondApiService(@Named("secondRetrofit") retrofit: Retrofit): ApiService {
-//        return retrofit.create(ApiService::class.java)
-//    }
+    @Provides
+    @Singleton
+    fun provideSecondApiService(@Named("secondRetrofit") retrofit: Retrofit): QuranApiService {
+        return retrofit.create(QuranApiService::class.java)
+    }
 
 }
