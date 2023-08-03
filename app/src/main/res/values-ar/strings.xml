@@ -2,5 +2,13 @@
 
 <resources>
     <string name="app_name">قرآن</string>
-
+    <string name="surah_name">اسم السوره</string>
+    <string name="ayat_num">عدد الايات</string>
+    <string name="arabic_language">اللغه العربيه</string>
+    <string name="english_language">اللغه الانجليزيه</string>
+    <string name="home">الرئيسيه</string>
+    <string name="quran">المصحف</string>
+    <string name="more">المزيد</string>
+    <string name="fmradio">الاذاعه</string>
+    <string name="reciters">القراء</string>
 </resources>

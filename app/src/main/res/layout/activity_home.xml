@@ -26,13 +26,15 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <me.ibrahimsn.lib.SmoothBottomBar
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            app:backgroundColor="@color/main_color"
             android:layout_alignParentBottom="true"
             app:menu="@menu/bottom_nav_menu"
-            android:scrollIndicators="left" />
+            />
+
 
     </RelativeLayout>
 </layout>

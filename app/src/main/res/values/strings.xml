@@ -3,4 +3,13 @@
     <string name="app_name">quran</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="surah_name">surah name</string>
+    <string name="ayat_num">ayat number</string>
+    <string name="arabic_language">arabic language</string>
+    <string name="english_language">english language</string>
+    <string name="home">Home</string>
+    <string name="quran">Quran</string>
+    <string name="more">More</string>
+    <string name="fmradio">Radio</string>
+    <string name="reciters">Reciters</string>
 </resources>
