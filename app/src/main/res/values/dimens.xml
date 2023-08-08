@@ -20,4 +20,10 @@
      <dimen name="radius_medium">16dp</dimen>
      <dimen name="radius_small">8dp</dimen>
      <dimen name="radius_too_small">4dp</dimen>
+
+
+<!--    shapes dimens-->
+    <dimen name="checkbox_dimen">@dimen/_30sdp</dimen>
+    <dimen name="home_circle_progress_bar_dimen">@dimen/_130sdp</dimen>
+    <dimen name="athan_sound_state_dimen">@dimen/_25sdp</dimen>
 </resources>
