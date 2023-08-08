@@ -1,16 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.HomeFragment">
+        android:background="@color/background_color">
+
+        <TextView
+            android:id="@+id/hijri_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_large"
+            android:textColor="@color/dark_black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="الجمعة, 4 رمضان 1440" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/location_text"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/spacing_large"-->
+<!--            android:layout_marginTop="@dimen/text_medium"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/text_large"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.0"-->
+<!--            tools:ignore="DuplicateIds"-->
+<!--            tools:text="portsaid" />-->
 
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/miladi_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:textColor="@color/dark_black"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/hijri_date_text"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/hijri_date_text"
+            app:layout_constraintTop_toBottomOf="@+id/hijri_date_text"
+            tools:text=" 4 اغسطس 2023" />
+
+        <TextView
+            android:id="@+id/today_events_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:textColor="@color/dark_black"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toBottomOf="@+id/miladi_date_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hijri_date_text"
+            tools:text="المولد النبوى الشريف " />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="@dimen/spacing_medium"
+            app:cardCornerRadius="@dimen/radius_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/miladi_date_text"
+            app:layout_constraintVertical_bias="0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/home_screen_photo" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.7"
+                    android:background="@color/black"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="0dp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="@dimen/checkbox_dimen"
+                    android:layout_height="@dimen/checkbox_dimen"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:background="@drawable/circle_checkbox"
+                    android:buttonTint="#0000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/salah_number_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_too_small"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_medium"
+                    app:layout_constraintEnd_toEndOf="@+id/checkBox"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBox"
+                    tools:text="1/5 " />
+
+                <TextView
+                    android:id="@+id/salah_question_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_medium"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_large"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkBox"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/checkBox"
+                    app:layout_constraintTop_toTopOf="@+id/checkBox"
+                    tools:text="هل صليت العصر اليوم ؟ " />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_medium"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:max="5"
+                    android:progress="2"
+                    android:progressTint="@color/white"
+                    android:rotation="180"
+                    app:layout_constraintEnd_toEndOf="@+id/salah_question_text"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/checkBox"
+                    app:layout_constraintTop_toBottomOf="@+id/salah_question_text" />
+
+
+                <TextView
+                    android:id="@+id/next_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_large"
+                    app:layout_constraintEnd_toEndOf="@+id/progressBar"
+                    app:layout_constraintTop_toBottomOf="@+id/progressBar"
+                    tools:text=" الصلاة التالية" />
+
+                <TextView
+                    android:id="@+id/next_salah_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_too_large"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/next_text"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/next_text"
+                    app:layout_constraintTop_toBottomOf="@+id/next_text"
+                    tools:text="المغرب " />
+
+                <TextView
+                    android:id="@+id/next_salah_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_large"
+                    app:layout_constraintEnd_toEndOf="@+id/next_salah_text"
+                    app:layout_constraintTop_toBottomOf="@+id/next_salah_text"
+                    tools:text="07:00pm " />
+
+
+                <TextView
+                    android:id="@+id/all_salah_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFC107"
+                    android:textSize="@dimen/text_large"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/next_salah_time_text"
+                    app:layout_constraintTop_toBottomOf="@+id/next_salah_time_text"
+                    app:layout_constraintVertical_bias="0.409"
+                    tools:text="جميع الصلوات" />
+
+
+                <TextView
+                    android:id="@+id/qibla_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_extra_large"
+                    android:textColor="#FFC107"
+                    android:textSize="@dimen/text_large"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/all_salah_text"
+                    app:layout_constraintEnd_toStartOf="@+id/all_salah_text"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/all_salah_text"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="القبلة" />
+
+                <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+                    android:id="@+id/circularProgressIndicator"
+                    android:layout_width="@dimen/home_circle_progress_bar_dimen"
+                    android:layout_height="@dimen/home_circle_progress_bar_dimen"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:clickable="false"
+                    app:drawDot="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.03"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.75"
+                    app:progressBackgroundColor="#54000000"
+                    app:progressBackgroundStrokeWidth="5dp"
+                    app:progressCap="round"
+                    app:progressColor="@color/white"
+                    app:progressStrokeWidth="5dp"
+                    app:startAngle="270"
+                    app:textColor="#0000" />
+
+                <ImageView
+                    android:id="@+id/athan_sound_state_image"
+                    android:layout_width="@dimen/athan_sound_state_dimen"
+                    android:layout_height="@dimen/athan_sound_state_dimen"
+                    android:src="@drawable/baseline_volume_up_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/circularProgressIndicator"
+                    app:layout_constraintEnd_toEndOf="@+id/circularProgressIndicator"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/circularProgressIndicator"
+                    app:layout_constraintTop_toTopOf="@+id/circularProgressIndicator"
+                    app:layout_constraintVertical_bias="0.3"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/next_salah_remining_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_large"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/athan_sound_state_image"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/athan_sound_state_image"
+                    app:layout_constraintTop_toBottomOf="@+id/athan_sound_state_image"
+                    tools:text="00:21:48 " />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

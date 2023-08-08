@@ -18,6 +18,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "PRAYER_TIMES_BASE_URL", "\"http://api.aladhan.com\""
+
     }
 
     buildTypes {
@@ -83,6 +86,15 @@ dependencies {
 
     // smooth bottom bar
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
+
+
+    //  card slider
+    implementation 'com.ramotion.cardslider:card-slider:0.3.1'
+
+
+    //  Circular Progress bar
+    implementation 'com.github.antonKozyriatskyi:CircularProgressIndicator:1.3.0'
+
 
 }
 
