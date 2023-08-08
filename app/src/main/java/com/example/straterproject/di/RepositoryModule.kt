@@ -1,6 +1,7 @@
 package com.example.straterproject.di
 
-import com.example.data.dataSource.remote.endPoint.ApiService
+
+import com.example.data.dataSource.remote.ApiService
 import com.example.data.dataSource.remote.QuranRepositoryImpl
 import com.example.domain.repo.QuranRepository
 import dagger.Module

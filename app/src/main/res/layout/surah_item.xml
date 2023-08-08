@@ -14,8 +14,8 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/spacing_large"
+            android:layout_height="@dimen/_70sdp"
+            android:padding="@dimen/spacing_too_small"
             android:backgroundTint="@color/background_color"
             app:cardCornerRadius="@dimen/_10sdp">
 
@@ -30,10 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/spacing_medium"
-                    android:layout_marginTop="@dimen/spacing_medium"
-                    android:layout_marginEnd="@dimen/spacing_medium"
-                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:layout_margin="@dimen/spacing_small"
                     android:fontFamily="@font/cairo_bold"
                     android:gravity="center"
                     android:text="114"
@@ -54,13 +51,14 @@
                     android:textStyle="bold" />
 
                 <TextView
+
                     android:id="@+id/tvSurahVerseNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/tv_surah_num"
-                    android:text="@string/ayat_num"
+                    android:text="فضل السوره"
                     android:layout_below="@id/tvSurahName"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="@dimen/text_large"
                     android:textStyle="bold" />
 

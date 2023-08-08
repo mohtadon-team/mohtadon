@@ -1,6 +1,7 @@
 package com.example.straterproject.di
 
-import com.example.data.dataSource.remote.endPoint.ApiService
+
+import com.example.data.dataSource.remote.ApiService
 import com.example.data.dataSource.remote.endPoint.QuranApiService
 
 import com.example.straterproject.utilities.baseUrl
