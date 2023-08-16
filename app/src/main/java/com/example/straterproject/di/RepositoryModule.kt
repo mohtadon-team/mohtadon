@@ -3,7 +3,10 @@ package com.example.straterproject.di
 
 import com.example.data.dataSource.remote.ApiService
 import com.example.data.dataSource.remote.QuranRepositoryImpl
+import com.example.data.dataSource.remote.SurahRepositoryImpl
+import com.example.data.dataSource.remote.endPoint.QuranApiService
 import com.example.domain.repo.QuranRepository
+import com.example.domain.repo.SurahRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,5 +20,9 @@ object RepositoryModule {
     @Provides
     fun provideQuranRepository( apiService: ApiService): QuranRepository  {
         return  QuranRepositoryImpl(apiService)
+    }
+    @Provides
+    fun provideSurahRepository(quranApiService: QuranApiService):SurahRepository{
+        return SurahRepositoryImpl(quranApiService)
     }
 }
