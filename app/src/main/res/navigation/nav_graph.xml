@@ -25,4 +25,9 @@
         android:name="com.example.straterproject.ui.fragments.QuranFragment"
         android:label="QuranFragment"
         tools:layout="@layout/fragment_quran"/>
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.example.straterproject.ui.fragments.MoreFragment"
+        android:label="MoreFragment"
+        tools:layout="@layout/fragment_more"/>
 </navigation>

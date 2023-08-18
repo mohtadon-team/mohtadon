@@ -1,6 +1,6 @@
 package com.example.data.dataSource.remote
 
-import com.example.domain.entity.QuranResponse
+
 import com.example.domain.repo.QuranRepository
 import javax.inject.Inject
 

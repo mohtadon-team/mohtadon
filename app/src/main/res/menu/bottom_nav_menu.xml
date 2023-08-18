@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item
-    android:title="الرئيسيه"
-    android:id="@+id/home"
-    android:icon="@drawable/home"/>
     <item
-        android:title="الاذاعه"
-        android:id="@+id/radioFM"
+        android:title="@string/home"
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home"/>
+    <item
+        android:title="@string/fmradio"
+        android:id="@+id/fmRadioFragment"
         android:icon="@drawable/radio"/>
     <item
-    android:title="القراء"
-    android:id="@+id/reciters"
-    android:icon="@drawable/listen"/>
+        android:title="@string/reciters"
+        android:id="@+id/recitersFragment"
+        android:icon="@drawable/listen"/>
     <item
-        android:title="المصحف"
-        android:id="@+id/quran"
+        android:title="@string/quran"
+        android:id="@+id/quranFragment"
         android:icon="@drawable/quran"/>
+    <item
+        android:title="@string/more"
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/more"/>
 </menu>

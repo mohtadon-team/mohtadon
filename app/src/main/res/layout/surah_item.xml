@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/spacing_small">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdp"
+            android:padding="@dimen/spacing_too_small"
+            android:backgroundTint="@color/background_color"
+            app:cardCornerRadius="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:background="@drawable/pattern"
+                    android:id="@+id/tv_surah_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:fontFamily="@font/cairo_bold"
+                    android:gravity="center"
+                    android:text="114"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:id="@+id/tvSurahName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_bold"
+                    android:text="@string/surah_name"
+                    android:layout_toEndOf="@id/tv_surah_num"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_large"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/tvSurahVerseNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tv_surah_num"
+                    android:text="فضل السوره"
+                    android:layout_below="@id/tvSurahName"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_large"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSurahType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/spacing_medium"
+                    android:fontFamily="@font/cairo_bold"
+                    android:text="مكيه"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_large"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
