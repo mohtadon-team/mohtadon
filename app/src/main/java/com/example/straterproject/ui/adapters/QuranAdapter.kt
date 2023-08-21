@@ -1,28 +1,52 @@
 package com.example.straterproject.ui.adapters
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.straterproject.R
+import androidx.transition.Visibility
 import com.example.straterproject.databinding.SurahItemBinding
+import com.example.domain.entity.Surah
+import com.example.straterproject.ui.interfaces.IonSurahClick
 
 class QuranAdapter : RecyclerView.Adapter<QuranAdapter.QuranHolder>() {
-
+    private val surahList: MutableList<Surah> = mutableListOf()
+    var ionSurahClick:IonSurahClick?=null
+    fun setSurahList(surahList: List<Surah>) {
+        this.surahList.clear()
+        this.surahList.addAll(surahList)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranHolder {
-        val binding: SurahItemBinding =
-            SurahItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = SurahItemBinding.inflate(LayoutInflater.from(parent.context), null, false)
         return QuranHolder(binding)
     }
 
     override fun onBindViewHolder(holder: QuranHolder, position: Int) {
-        TODO("Not yet implemented")
+        val surah = surahList[position]
+        holder.bind(surah)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return surahList.size
     }
-    class QuranHolder(binding: SurahItemBinding) : RecyclerView.ViewHolder(binding.root)
+
+   inner class QuranHolder(private val binding: SurahItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(surah: Surah) {
+            binding.tvSurahName.text = surah.name
+            when(surah.revelationType) {
+                "Meccan" -> binding.tvSurahType.text = "مكيه"
+                "Medinan" -> binding.tvSurahType.text = "مدنيه"
+            }
+            binding.tvSurahNum.text= surah.number.toString()
+            itemView.setOnClickListener {
+                ionSurahClick?.clickSurah(surah)
+            }
+
+        }
+    }
 }

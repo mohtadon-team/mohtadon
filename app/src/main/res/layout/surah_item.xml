@@ -14,69 +14,66 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
             android:padding="@dimen/spacing_too_small"
+            android:layout_margin="@dimen/spacing_small"
             android:backgroundTint="@color/background_color"
             app:cardCornerRadius="@dimen/_10sdp">
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:background="@drawable/pattern"
-                    android:id="@+id/tv_surah_num"
+                <LinearLayout
+                    android:id="@+id/surahInfoLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal"
                     android:layout_centerVertical="true"
-                    android:layout_margin="@dimen/spacing_small"
-                    android:fontFamily="@font/cairo_bold"
-                    android:gravity="center"
-                    android:text="114"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_medium"
-                    android:textStyle="bold" />
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/spacing_small"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:layout_marginEnd="@dimen/spacing_small"
+                    android:layout_marginBottom="@dimen/spacing_small"
+                   >
 
-                <TextView
-                    android:layout_marginTop="@dimen/spacing_medium"
-                    android:id="@+id/tvSurahName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/cairo_bold"
-                    android:text="@string/surah_name"
-                    android:layout_toEndOf="@id/tv_surah_num"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_large"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_surah_num"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:background="@drawable/pattern"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:text="114"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvSurahName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_bold"
+                        android:text="@string/surah_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold" />
 
-                <TextView
+                </LinearLayout>
 
-                    android:id="@+id/tvSurahVerseNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/tv_surah_num"
-                    android:text="فضل السوره"
-                    android:layout_below="@id/tvSurahName"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_large"
-                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvSurahType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/spacing_medium"
+                    android:layout_marginEnd="@dimen/spacing_medium"
                     android:fontFamily="@font/cairo_bold"
                     android:text="مكيه"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_large"
+                    android:textSize="@dimen/text_medium"
                     android:textStyle="bold" />
 
             </RelativeLayout>
-
 
         </androidx.cardview.widget.CardView>
 

@@ -10,12 +10,4 @@ data class SurahDto(@SerializedName("code")
                     @SerializedName("status")
                          val status: String = "")
 
-fun convertToSurah(surahDto: SurahDto): Surah {
-    val surahData = surahDto.data?.get(0)
-    return Surah(
-        number = surahData?.number ?: 0,
-        name = surahData?.name ?: "",
-        englishName = surahData?.englishName ?: "",
-        revelationType = surahData?.revelationType ?: ""
-    )
-}
+

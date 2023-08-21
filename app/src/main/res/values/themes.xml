@@ -3,7 +3,7 @@
     <style name="Theme.StraterProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/main_color</item>
         <item name="colorPrimaryVariant">@color/background_color</item>
-        <item name="android:statusBarColor">@color/main_color</item>
+        <item name="android:statusBarColor">#80D6B89E</item>
         <item name="android:windowLightStatusBar"  tools:targetApi="m">true</item>
     </style>
 </resources>
