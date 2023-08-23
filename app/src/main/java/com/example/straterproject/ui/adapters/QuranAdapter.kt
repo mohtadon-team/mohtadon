@@ -10,7 +10,6 @@ import com.example.straterproject.databinding.SurahItemBinding
 
 class QuranAdapter : RecyclerView.Adapter<QuranAdapter.QuranHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranHolder {
         val binding: SurahItemBinding =
             SurahItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)

@@ -1,12 +1,12 @@
 package com.example.straterproject.di
 
 
-import com.example.data.dataSource.remote.ApiService
 import com.example.data.dataSource.remote.endPoint.QuranApiService
 
 import com.example.data.dataSource.remote.service.PrayerTimesService
+import com.example.data.dataSource.remote.service.RecitersService
 import com.example.straterproject.BuildConfig
-import com.example.straterproject.utilities.baseUrl
+import com.example.straterproject.utilities.RECITERS_BASE_URL
 import com.example.straterproject.utilities.baseUrl1
 import com.google.gson.Gson
 import dagger.Module
@@ -33,12 +33,23 @@ object NetworkModule {
             .readTimeout(20, TimeUnit.SECONDS).build()
 
     }
+
+    @Named("provideRetrofitForReciters")
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder().baseUrl(baseUrl).client(okHttpClient)
+        return Retrofit.Builder().baseUrl(RECITERS_BASE_URL).client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
+    @Provides
+    @Singleton
+    fun provideRecitersService(@Named("provideRetrofitForReciters")retrofit: Retrofit): RecitersService {
+        return retrofit.create(RecitersService::class.java)
+    }
+
+
+
+
 
     @Named("secondRetrofit")
     @Provides
@@ -50,11 +61,7 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-    @Provides
-    @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
-    }
+
     @Provides
     @Singleton
     fun provideSeconApiService(@Named("secondRetrofit") retrofit: Retrofit): QuranApiService {

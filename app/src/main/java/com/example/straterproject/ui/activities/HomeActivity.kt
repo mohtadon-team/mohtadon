@@ -8,7 +8,9 @@ import androidx.navigation.Navigation
 import com.example.straterproject.R
 import com.example.straterproject.databinding.ActivityHomeBinding
 import com.example.straterproject.ui.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     override val layoutActivityId: Int = R.layout.activity_home
     lateinit var navController: NavController

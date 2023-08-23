@@ -24,13 +24,16 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:background="@drawable/pattern"
                     android:id="@+id/tv_surah_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_margin="@dimen/spacing_small"
+                    android:layout_marginStart="@dimen/spacing_small"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:layout_marginEnd="@dimen/spacing_small"
+                    android:layout_marginBottom="@dimen/spacing_small"
+                    android:background="@drawable/pattern"
                     android:fontFamily="@font/cairo_bold"
                     android:gravity="center"
                     android:text="114"
