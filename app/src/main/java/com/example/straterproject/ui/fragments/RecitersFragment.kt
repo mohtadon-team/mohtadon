@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
@@ -25,6 +26,7 @@ import com.example.straterproject.ui.base.BaseFragment
 import com.example.straterproject.ui.viewModels.AudioItemPlayerViewModel
 import com.example.straterproject.ui.viewModels.RecitersViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.common_header.view.*
 
 @AndroidEntryPoint
 class RecitersFragment : BaseFragment<FragmentRecitersBinding>() ,OnMoshafListener {
@@ -50,6 +52,7 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() ,OnMoshafListen
         viewModel.reciters.observe(viewLifecycleOwner){
             handleStae(it)
         }
+        onClickActions()
 
     }
 
@@ -74,7 +77,43 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() ,OnMoshafListen
         requireActivity().stopService(Intent(requireContext(), MediaService::class.java))
         isServiceRunning = false
     }
+    private fun onClickActions() {
+        binding.commonHeader.header_title.setText("القراء")
+        binding.commonHeader.search_view.setOnSearchClickListener {
+            binding.commonHeader.header_title.visibility = View.GONE
 
+        }
+        binding.commonHeader.search_view?.setOnCloseListener {
+            binding.commonHeader.header_title.visibility = View.VISIBLE
+            return@setOnCloseListener false
+        }
+        binding.commonHeader.search_view?.setOnQueryTextListener(object: SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                return  false
+            }
+
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                filterList(p0)
+                return true
+            }
+
+        }
+        )
+    }
+    private fun filterList(query: String?) {
+
+//        val filteredList = if (query.isNullOrEmpty()) {
+//            viewModel.reciters.value ?: emptyList()
+//        } else {
+//            viewModel.reciters.value?.filter { reciter ->
+//                surah.name.contains(query, ignoreCase = true)
+//            } ?: emptyList()
+//        }
+//
+//        quranAdapter.setSurahList(filteredList)
+    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun startServiceIfNotStarted() {

@@ -16,7 +16,7 @@ import com.example.straterproject.ui.interfaces.IonSurahClick
 import com.example.straterproject.ui.viewModels.SurahViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.common_header.view.*
-import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
@@ -37,6 +37,7 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
     }
 
     private fun onClickActions() {
+
         binding.commonHeader.search_view.setOnSearchClickListener{
             binding.commonHeader.header_title.visibility=View.GONE
 
@@ -50,11 +51,7 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 return  false
             }
-@AndroidEntryPoint
-class QuranFragment : BaseFragment<FragmentQuranBinding>() {
-    override val layoutFragmentId: Int=R.layout.fragment_quran
-    override val viewModel: ViewModel
-        get() = TODO("Not yet implemented")
+
 
             override fun onQueryTextChange(p0: String?): Boolean {
                 filterList(p0)

@@ -25,8 +25,6 @@
 
                 <LinearLayout
                     android:id="@+id/surahInfoLayout"
-                <TextView
-                    android:id="@+id/tv_surah_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -36,7 +34,7 @@
                     android:layout_marginTop="@dimen/spacing_small"
                     android:layout_marginEnd="@dimen/spacing_small"
                     android:layout_marginBottom="@dimen/spacing_small"
-                   >
+                    >
 
                     <TextView
                         android:id="@+id/tv_surah_num"
@@ -58,29 +56,6 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_medium"
                         android:textStyle="bold" />
-                    android:layout_marginStart="@dimen/spacing_small"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    android:layout_marginEnd="@dimen/spacing_small"
-                    android:layout_marginBottom="@dimen/spacing_small"
-                    android:background="@drawable/pattern"
-                    android:fontFamily="@font/cairo_bold"
-                    android:gravity="center"
-                    android:text="114"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_medium"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_marginTop="@dimen/spacing_medium"
-                    android:id="@+id/tvSurahName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/cairo_bold"
-                    android:text="@string/surah_name"
-                    android:layout_toEndOf="@id/tv_surah_num"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_large"
-                    android:textStyle="bold" />
 
                 </LinearLayout>
 
