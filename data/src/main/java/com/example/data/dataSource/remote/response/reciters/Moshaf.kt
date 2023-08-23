@@ -1,8 +1,7 @@
-package com.example.domain.entity.reciters
+package com.example.data.dataSource.remote.response.reciters
 
-data class MoshafEnitity(
-    val reciterName :String ,
-    val id :Int ,
+data class Moshaf(
+    val id: Int,
     val moshaf_type: Int,
     val name: String,
     val server: String,
