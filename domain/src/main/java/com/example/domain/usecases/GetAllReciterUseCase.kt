@@ -1,10 +1,10 @@
 package com.example.domain.usecases
 
-import com.example.domain.repo.QuranRepository
+import com.example.domain.repo.RecitersRepository
 import javax.inject.Inject
 
 class GetAllReciterUseCase @Inject constructor(
-   private val quranRepository: QuranRepository
+   private val recitersRepository: RecitersRepository
 ) {
-    suspend  fun invoke() = quranRepository.getAllReciter()
+    suspend operator fun invoke() = recitersRepository.getAllReciters()
 }

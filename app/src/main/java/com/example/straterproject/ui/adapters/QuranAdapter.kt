@@ -20,6 +20,7 @@ class QuranAdapter : RecyclerView.Adapter<QuranAdapter.QuranHolder>() {
         notifyDataSetChanged()
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranHolder {
         val binding = SurahItemBinding.inflate(LayoutInflater.from(parent.context), null, false)
         return QuranHolder(binding)

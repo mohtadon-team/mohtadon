@@ -1,7 +1,6 @@
 package com.example.straterproject.di
 
-import com.example.data.dataSource.remote.QuranRepositoryImpl
-import com.example.domain.repo.QuranRepository
+import com.example.domain.repo.RecitersRepository
 import com.example.domain.repo.SurahRepository
 import com.example.domain.usecases.GetAllReciterUseCase
 import com.example.domain.usecases.GetAllSurahUseCase
@@ -17,8 +16,8 @@ import dagger.hilt.components.SingletonComponent
 object UseCaseModule {
 
     @Provides
-    fun provideUseCas( quranRepository: QuranRepository ):GetAllReciterUseCase {
-        return GetAllReciterUseCase(quranRepository)
+    fun provideUseCas(recitersRepository: RecitersRepository ):GetAllReciterUseCase {
+        return GetAllReciterUseCase(recitersRepository)
     }
     @Provides
     fun provideSurahUseCase(surahRepository: SurahRepository):GetAllSurahUseCase{

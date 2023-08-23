@@ -229,26 +229,28 @@
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="القبلة" />
 
-                <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
-                    android:id="@+id/circularProgressIndicator"
-                    android:layout_width="@dimen/home_circle_progress_bar_dimen"
-                    android:layout_height="@dimen/home_circle_progress_bar_dimen"
-                    android:layout_margin="@dimen/spacing_medium"
-                    android:clickable="false"
-                    app:drawDot="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.03"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.75"
-                    app:progressBackgroundColor="#54000000"
-                    app:progressBackgroundStrokeWidth="5dp"
-                    app:progressCap="round"
-                    app:progressColor="@color/white"
-                    app:progressStrokeWidth="5dp"
-                    app:startAngle="270"
-                    app:textColor="#0000" />
+<!--                <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator-->
+<!--                    android:id="@+id/circularProgressIndicator"-->
+<!--                    android:layout_width="@dimen/home_circle_progress_bar_dimen"-->
+<!--                    android:layout_height="@dimen/home_circle_progress_bar_dimen"-->
+<!--                    android:layout_margin="@dimen/spacing_medium"-->
+<!--                    android:clickable="false"-->
+<!--                    app:drawDot="true"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.03"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintVertical_bias="0.75"-->
+<!--                    app:progressBackgroundColor="#54000000"-->
+<!--                    app:progressBackgroundStrokeWidth="5dp"-->
+<!--                    app:progressCap="round"-->
+<!--                    app:progressColor="@color/white"-->
+<!--                    app:progressStrokeWidth="5dp"-->
+<!--                    app:startAngle="270"-->
+<!--                    app:textColor="#0000" />-->
+<!--                -->
+
 
                 <ImageView
                     android:id="@+id/athan_sound_state_image"
