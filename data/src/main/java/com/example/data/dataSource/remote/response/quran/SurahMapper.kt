@@ -4,14 +4,17 @@ import com.example.domain.entity.Surah
 
 
 object SurahMapper {
-    fun mapSurahDto(surahDto: SurahDto): List<Surah> {
-        return surahDto.data?.map { dataItem ->
+
+    fun mapSurahDto(dto: SurahDto?): List<Surah> {
+        println("Mapping SurahDto: $dto")
+        return dto?.chapters?.mapNotNull { chapterDto ->
             Surah(
-                number = dataItem.number,
-                name = dataItem.name,
-                englishName = dataItem.englishName,
-                revelationType = dataItem.revelationType
+                id = chapterDto?.id ?: 0,
+                nameArabic = chapterDto?.name_arabic ,
+                revelationPlace = chapterDto?.revelation_place ,
+                pages = chapterDto?.pages.orEmpty()
             )
         } ?: emptyList()
     }
 }
+

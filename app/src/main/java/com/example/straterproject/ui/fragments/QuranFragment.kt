@@ -1,16 +1,19 @@
 package com.example.straterproject.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.entity.Surah
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentQuranBinding
 import com.example.straterproject.ui.adapters.QuranAdapter
+import com.example.straterproject.ui.adapters.QuranPagerAdapter
 import com.example.straterproject.ui.base.BaseFragment
 import com.example.straterproject.ui.interfaces.IonSurahClick
 import com.example.straterproject.ui.viewModels.SurahViewModel
@@ -67,7 +70,7 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
                 viewModel.items.value ?: emptyList()
             } else {
                 viewModel.items.value?.filter { surah ->
-                    surah.name.contains(query, ignoreCase = true)
+                    surah.nameArabic!!.contains(query, ignoreCase = true)
                 } ?: emptyList()
             }
 
@@ -88,8 +91,13 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
     }
 
     override fun clickSurah(surah: Surah) {
+        val pagesRange = surah.pages
+        val bundle = Bundle()
+        bundle.putInt("startPage", pagesRange[0])
+        Log.d("startPage", "clickSurah: "+pagesRange[0])
+        val destinationFragment = QuranViewPagerFragment()
+        destinationFragment.arguments = bundle
+        findNavController().navigate(R.id.quranViewPagerFragment)
        Toast.makeText(requireContext(),"surah  :$surah",Toast.LENGTH_SHORT).show()
     }
-
-
 }

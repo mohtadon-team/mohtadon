@@ -38,12 +38,12 @@ class QuranAdapter : RecyclerView.Adapter<QuranAdapter.QuranHolder>() {
    inner class QuranHolder(private val binding: SurahItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(surah: Surah) {
-            binding.tvSurahName.text = surah.name
-            when(surah.revelationType) {
-                "Meccan" -> binding.tvSurahType.text = "مكيه"
-                "Medinan" -> binding.tvSurahType.text = "مدنيه"
+            binding.tvSurahName.text = surah.nameArabic
+            when(surah.revelationPlace) {
+                "makkah" -> binding.tvSurahType.text = "مكيه"
+                "madinah" -> binding.tvSurahType.text = "مدنيه"
             }
-            binding.tvSurahNum.text= surah.number.toString()
+            binding.tvSurahNum.text= surah.id.toString()
             itemView.setOnClickListener {
                 ionSurahClick?.clickSurah(surah)
             }

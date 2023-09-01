@@ -1,9 +1,10 @@
 package com.example.domain.entity
 
  data class Surah(
-     val number: Int ,
-     val name: String,
-     val englishName: String,
-     val revelationType: String
- ){
+     val id: Int,
+     val nameArabic: String?,
+     val revelationPlace: String?,
+     val pages: List<Int>,
+
+     ){
 }

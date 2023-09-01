@@ -7,7 +7,6 @@ import com.example.data.dataSource.remote.response.quran.SurahMapper
 
 import com.example.domain.entity.AyahResponse
 import com.example.domain.entity.Surah
-import com.example.domain.entity.SurahResponse
 
 import com.example.domain.repo.SurahRepository
 import javax.inject.Inject
@@ -18,7 +17,6 @@ class SurahRepositoryImpl @Inject constructor(
     override suspend fun getAllSurah(): List<Surah> {
         val surahDto: SurahDto = apiService.getAllSurah()
         return SurahMapper.mapSurahDto(surahDto)
-
     }
 
 

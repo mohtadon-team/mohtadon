@@ -9,72 +9,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         tools:context=".ui.fragments.QuranPageFragment">
 
-    <TextView
-        android:id="@+id/page_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Page 114"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:textColor="#333333"/>
-    <RelativeLayout
-        android:id="@+id/quran_page"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/page_number"
-        android:layout_marginTop="16dp">
-
-
-        <!-- Ayah 1 -->
-        <TextView
-            android:id="@+id/ayah_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ"
-            android:textSize="18sp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:textColor="#333333"/>
-
-        <!-- Ayah 2 -->
-        <TextView
-android:layout_toEndOf="@id/ayah_1"
-            android:id="@+id/ayah_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاس"
-            android:textSize="18sp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
-            android:textColor="#333333"/>
-        <!-- Ayah Number -->
-        <TextView
-            android:id="@+id/ayah_number"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/ayah_2"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:background="@drawable/pattern"
-            android:fontFamily="@font/cairo_bold"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_medium"
-            android:textStyle="bold" />
-
-        <!-- Sajda Icon -->
-<!--        <ImageView-->
-<!--            android:id="@+id/sajda_icon"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--        android:layout_toEndOf="@id/ayah_text"-->
-<!--        android:layout_alignTop="@id/ayah_text"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:visibility="gone"-->
-<!--        />-->
+        <ImageView
+            android:id="@+id/quranImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
     </RelativeLayout>
-    </RelativeLayout>
+
+
 </layout>
