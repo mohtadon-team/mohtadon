@@ -4,8 +4,10 @@ package com.example.straterproject.di
 import com.example.data.dataSource.remote.endPoint.QuranApiService
 
 import com.example.data.dataSource.remote.service.PrayerTimesService
+import com.example.data.dataSource.remote.service.RadioService
 import com.example.data.dataSource.remote.service.RecitersService
 import com.example.straterproject.BuildConfig
+import com.example.straterproject.utilities.RADIO_BASE_URL
 import com.example.straterproject.utilities.RECITERS_BASE_URL
 import com.example.straterproject.utilities.baseUrl1
 import com.google.gson.Gson
@@ -47,6 +49,18 @@ object NetworkModule {
         return retrofit.create(RecitersService::class.java)
     }
 
+    @Named("provideRetrofitForRadio")
+    @Provides
+    @Singleton
+    fun provideRetrofitForRadio(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder().baseUrl(RADIO_BASE_URL).client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
+    @Provides
+    @Singleton
+    fun provideRadioService(@Named("provideRetrofitForRadio")retrofit: Retrofit): RadioService {
+        return retrofit.create(RadioService::class.java)
+    }
 
 
 

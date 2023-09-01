@@ -17,10 +17,15 @@
         android:id="@+id/header_title"
         android:textColor="@color/black"
         android:textSize="@dimen/text_large" />
+
     <androidx.appcompat.widget.SearchView
+
+        android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_medium"
-        android:id="@+id/search_view"/>
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_medium" />
 
 </RelativeLayout>

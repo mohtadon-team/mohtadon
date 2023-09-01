@@ -1,11 +1,52 @@
 package com.example.domain.entity.reciters
 
+import android.os.Parcel
+import android.os.Parcelable
+import java.io.Serializable
+
+
+
 data class MoshafEnitity(
-    val reciterName :String ,
-    val id :Int ,
-    val moshaf_type: Int,
-    val name: String,
+    val reciterName: String,
+    val id: Int,
+    val moshafType: Int,
+    val moshafName: String,
     val server: String,
     val surah_list: String,
     val surah_total: Int
-)
+) : Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readString().toString(),
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readInt()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(reciterName)
+        parcel.writeInt(id)
+        parcel.writeInt(moshafType)
+        parcel.writeString(moshafName)
+        parcel.writeString(server)
+        parcel.writeString(surah_list)
+        parcel.writeInt(surah_total)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<MoshafEnitity> {
+        override fun createFromParcel(parcel: Parcel): MoshafEnitity {
+            return MoshafEnitity(parcel)
+        }
+
+        override fun newArray(size: Int): Array<MoshafEnitity?> {
+            return arrayOfNulls(size)
+        }
+    }
+}

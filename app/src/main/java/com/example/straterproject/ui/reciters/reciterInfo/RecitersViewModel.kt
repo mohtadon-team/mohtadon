@@ -1,9 +1,8 @@
-package com.example.straterproject.ui.viewModels
+package com.example.straterproject.ui.reciters.reciterInfo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.data.dataSource.remote.response.reciters.Reciter
 import com.example.domain.entity.reciters.ReciterEntity
 import com.example.domain.usecases.GetAllReciterUseCase
 import com.example.straterproject.ui.UiState

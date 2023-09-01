@@ -9,4 +9,12 @@ sealed class UiState<out T> {
 
     object Loading : UiState<Nothing>()
 
+    fun toData(): T? {
+        return if (this is Success) {
+            data
+        } else {
+            null
+        }
+    }
+
 }
