@@ -15,7 +15,7 @@ import com.example.straterproject.ui.base.BaseFragment
 import com.example.straterproject.ui.interfaces.IonSurahClick
 import com.example.straterproject.ui.viewModels.SurahViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.common_header.view.*
+//import kotlinx.android.synthetic.main.common_header.view.*
 
 
 @AndroidEntryPoint
@@ -38,28 +38,28 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
 
     private fun onClickActions() {
 
-        binding.commonHeader.search_view.setOnSearchClickListener{
-            binding.commonHeader.header_title.visibility=View.GONE
-
-        }
-       binding.commonHeader.search_view?.setOnCloseListener {
-           binding.commonHeader.header_title.visibility=View.VISIBLE
-           return@setOnCloseListener false
-       }
-        binding.commonHeader.search_view?.setOnQueryTextListener(object:SearchView.OnQueryTextListener,
-            androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String?): Boolean {
-                return  false
-            }
-
-
-            override fun onQueryTextChange(p0: String?): Boolean {
-                filterList(p0)
-                return true
-            }
-
-        }
-        )
+//        binding.commonHeader.search_view.setOnSearchClickListener{
+//            binding.commonHeader.header_title.visibility=View.GONE
+//
+//        }
+//       binding.commonHeader.search_view?.setOnCloseListener {
+//           binding.commonHeader.header_title.visibility=View.VISIBLE
+//           return@setOnCloseListener false
+//       }
+//        binding.commonHeader.search_view?.setOnQueryTextListener(object:SearchView.OnQueryTextListener,
+//            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(p0: String?): Boolean {
+//                return  false
+//            }
+//
+//
+//            override fun onQueryTextChange(p0: String?): Boolean {
+//                filterList(p0)
+//                return true
+//            }
+//
+//        }
+//        )
     }
 
     private fun filterList(query: String?) {

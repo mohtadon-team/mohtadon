@@ -128,6 +128,8 @@ class PlayerController(
 
     fun addPlaylist(itemList: List<AudioItem>) {
 
+      val  mediaItems = ArrayList<MediaItem>()
+
         for (item in itemList) {
             val metadata = getMetaDataFromItem(item)
             val mediaItem = MediaItem.Builder().apply {
@@ -135,19 +137,21 @@ class PlayerController(
                 setMediaId(item.source)
                 setMediaMetadata(metadata)
             }.build()
-            player.addMediaItem(mediaItem)
-
+            mediaItems.add(mediaItem)
         }
+        player.addMediaItems(0,mediaItems)
         player.prepare()
+
     }
 
     fun nextItem() {
-        if (player.hasNextMediaItem())   player.seekToNextMediaItem()
+        if (player.hasNextMediaItem()) player.seekToNextMediaItem()
     }
 
     fun goToSpecificItem(index:Int) {
         player.seekTo(index,0L)
         currentAudio.value =  toAudioItem(player.currentMediaItem!!)
+        player.play()
     }
 
     fun previousItem() {
@@ -156,11 +160,11 @@ class PlayerController(
 
     private fun getMetaDataFromItem(item: AudioItem): MediaMetadata {
         return MediaMetadata.Builder()
-            .setTitle(item.reciter)
-            .setAlbumTitle(item.moshaf)
-            .setDisplayTitle(item.reciter)
-            .setArtist( item.reciter)
-            .setAlbumArtist(item.moshaf)
+            .setTitle(item.reciterAndHisMoshaf)
+            .setAlbumTitle(item.reciterAndHisMoshaf)
+            .setDisplayTitle(item.reciterAndHisMoshaf)
+            .setArtist( item.surah)
+            .setAlbumArtist(item.surah)
             .setArtworkUri(item.image.toUri())
             .build()
     }
@@ -230,19 +234,19 @@ class PlayerController(
 
 fun toAudioItem(mediaItem: MediaItem): AudioItem =
     AudioItem (
-        reciter = mediaItem.mediaMetadata.albumArtist.toString(),
-        moshaf =  mediaItem.mediaMetadata.artist.toString(),
+        reciterAndHisMoshaf = mediaItem.mediaMetadata.title.toString(),
+        surah =  mediaItem.mediaMetadata.artist.toString(),
         image = mediaItem.mediaMetadata.artworkUri.toString(),
         source = mediaItem.mediaId
 )
 
 fun getMetaDataFromAudioItem(audioItem: AudioItem): MediaMetadata {
     return MediaMetadata.Builder()
-        .setTitle(audioItem.reciter)
-        .setAlbumTitle(audioItem.reciter)
-        .setDisplayTitle(audioItem.reciter)
-        .setArtist(audioItem.moshaf)
-        .setAlbumArtist(audioItem.moshaf)
+        .setTitle(audioItem.reciterAndHisMoshaf)
+        .setAlbumTitle(audioItem.reciterAndHisMoshaf)
+        .setDisplayTitle(audioItem.reciterAndHisMoshaf)
+        .setArtist(audioItem.surah)
+        .setAlbumArtist(audioItem.surah)
         .setArtworkUri(audioItem.image.toUri())
         .build()
 }

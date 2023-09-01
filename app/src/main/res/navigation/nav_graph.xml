@@ -7,12 +7,17 @@
 
     <fragment
         android:id="@+id/recitersFragment"
-        android:name="com.example.straterproject.ui.fragments.RecitersFragment"
+        android:name="com.example.straterproject.ui.reciters.reciterInfo.RecitersFragment"
         android:label="fragment_reciters"
-        tools:layout="@layout/fragment_reciters" />
+        tools:layout="@layout/fragment_reciters" >
+        <action
+            android:id="@+id/action_recitersFragment_to_surahsFragment"
+            app:destination="@id/surahsFragment" />
+
+    </fragment>
     <fragment
         android:id="@+id/fmRadioFragment"
-        android:name="com.example.straterproject.ui.fragments.FmRadioFragment"
+        android:name="com.example.straterproject.ui.radio.FmRadioFragment"
         android:label="fragment_fm_radio"
         tools:layout="@layout/fragment_fm_radio" />
     <fragment
@@ -30,4 +35,20 @@
         android:name="com.example.straterproject.ui.fragments.MoreFragment"
         android:label="MoreFragment"
         tools:layout="@layout/fragment_more"/>
+    <fragment
+        android:id="@+id/surahsFragment"
+        android:name="com.example.straterproject.ui.reciters.surahs.SurahsFragment"
+        android:label="SurahsFragment" >
+
+        <argument
+            android:name="moshaf"
+            app:argType="com.example.domain.entity.reciters.MoshafEnitity" />
+        <action
+            android:id="@+id/action_surahsFragment_to_audioItemControllerFragment"
+            app:destination="@id/audioItemControllerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioItemControllerFragment"
+        android:name="com.example.straterproject.ui.reciters.player.AudioItemControllerFragment"
+        android:label="AudioItemControllerFragment" />
 </navigation>

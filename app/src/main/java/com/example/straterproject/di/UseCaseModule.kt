@@ -1,7 +1,9 @@
 package com.example.straterproject.di
 
+import com.example.domain.repo.RadioRepository
 import com.example.domain.repo.RecitersRepository
 import com.example.domain.repo.SurahRepository
+import com.example.domain.usecases.GetAllRadioStation
 import com.example.domain.usecases.GetAllReciterUseCase
 import com.example.domain.usecases.GetAllSurahUseCase
 import com.example.domain.usecases.GetSurahAyahsUseCase
@@ -26,6 +28,11 @@ object UseCaseModule {
     @Provides
     fun provideAyahUseCase(surahRepository: SurahRepository):GetSurahAyahsUseCase{
         return GetSurahAyahsUseCase(surahRepository)
+    }
+
+    @Provides
+    fun provideRadioUseCase(radioRepository: RadioRepository):GetAllRadioStation{
+        return GetAllRadioStation(radioRepository)
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.straterproject.ui.viewModels
+package com.example.straterproject.ui.reciters.player
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -21,7 +21,7 @@ class AudioItemPlayerViewModel @Inject constructor(
 ) : ViewModel() {
 
     private var _currentSong = MutableStateFlow(AudioItemWithInitialValue)
-    val currentSongFlow = _currentSong.asSharedFlow()
+    val currentSongFlow = _currentSong.asStateFlow()
 
     private var _currentMediaPosition = MutableStateFlow(0f)
     val currentMediaPosition = _currentMediaPosition.asStateFlow()
