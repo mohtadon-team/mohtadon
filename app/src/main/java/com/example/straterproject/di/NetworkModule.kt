@@ -2,15 +2,15 @@ package com.example.straterproject.di
 
 
 import com.example.data.dataSource.remote.endPoint.QuranApiService
-
 import com.example.data.dataSource.remote.service.PrayerTimesService
 import com.example.data.dataSource.remote.service.RadioService
 import com.example.data.dataSource.remote.service.RecitersService
 import com.example.straterproject.BuildConfig
 import com.example.straterproject.utilities.RADIO_BASE_URL
 import com.example.straterproject.utilities.RECITERS_BASE_URL
+import com.example.straterproject.BuildConfig.PRAYER_TIMES_BASE_URL
+import com.example.straterproject.utilities.baseUrl
 import com.example.straterproject.utilities.baseUrl1
-import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,6 +37,13 @@ object NetworkModule {
     }
 
     @Named("provideRetrofitForReciters")
+
+    @Provides
+    @Singleton
+    fun provideGsonConverterFactory():GsonConverterFactory{
+        return GsonConverterFactory.create()
+    }
+
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
@@ -66,7 +73,6 @@ object NetworkModule {
 
 
     @Named("secondRetrofit")
-    @Provides
     @Singleton
     fun provideSecondRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
@@ -77,54 +83,37 @@ object NetworkModule {
     }
 
     @Provides
+    fun provideSecondRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder().baseUrl(baseUrl1).client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
+
     @Singleton
-    fun provideSeconApiService(@Named("secondRetrofit") retrofit: Retrofit): QuranApiService {
+    @Provides
+    fun provideApiService(retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSecondApiService(@Named("secondRetrofit") retrofit: Retrofit): QuranApiService {
         return retrofit.create(QuranApiService::class.java)
     }
 
-        @Singleton
-        @Provides
-        @Named("prayer_times")
-        fun providePrayerTimesService(
-            @Named("prayer_times") retrofit: Retrofit
-        ): PrayerTimesService {
-            return retrofit.create(PrayerTimesService::class.java)
-        }
+    @Named("provideRetrofitForprayerTimes")
+    @Provides
+    @Singleton
+    fun providePrayerTimesRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder().baseUrl(PRAYER_TIMES_BASE_URL).client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
 
-        @Singleton
-        @Provides
-        @Named("prayer_times")
-        fun providePrayerTimesRetrofit(
-            @Named("prayer_times") client: OkHttpClient,
-            @Named("prayer_times") gsonConverterFactory: GsonConverterFactory
-        ): Retrofit {
-            return Retrofit.Builder().baseUrl(BuildConfig.PRAYER_TIMES_BASE_URL).client(client)
-                .addConverterFactory(gsonConverterFactory).build()
+    @Provides
+    @Singleton
+    fun providePrayerTimesService(@Named("provideRetrofitForprayerTimes")retrofit: Retrofit): PrayerTimesService {
+        return retrofit.create(PrayerTimesService::class.java)
+    }
 
-        }
 
-            @Provides
-            @Named("prayer_times")
-            fun providePrayerTimesOkHttpClient(): OkHttpClient {
-                return OkHttpClient.Builder().build()
-            }
-
-            @Singleton
-            @Provides
-            @Named("prayer_times")
-            fun providePrayerTimesGsonConverterFactory(): GsonConverterFactory {
-                return GsonConverterFactory.create()
-            }
-
-            @Singleton
-            fun provideSecondApiService(@Named("secondRetrofit") retrofit: Retrofit): QuranApiService {
-                return retrofit.create(QuranApiService::class.java)}
-
-                @Provides
-                @Named("prayer_times")
-                fun providePrayerTimesGson(): Gson {
-                    return Gson()
-                }
-
-            }
+}
 

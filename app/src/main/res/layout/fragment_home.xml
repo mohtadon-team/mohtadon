@@ -29,25 +29,6 @@
             app:layout_constraintVertical_bias="0.0"
             tools:text="الجمعة, 4 رمضان 1440" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/location_text"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="@dimen/spacing_large"-->
-<!--            android:layout_marginTop="@dimen/text_medium"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="@dimen/text_large"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.0"-->
-<!--            tools:ignore="DuplicateIds"-->
-<!--            tools:text="portsaid" />-->
-
-
         <TextView
             android:id="@+id/miladi_date_text"
             android:layout_width="wrap_content"
@@ -73,7 +54,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/miladi_date_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/hijri_date_text"
-            tools:text="المولد النبوى الشريف " />
+            android:text="المولد النبوى الشريف " />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -129,7 +110,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/checkBox"
                     app:layout_constraintStart_toStartOf="@+id/checkBox"
                     app:layout_constraintTop_toBottomOf="@+id/checkBox"
-                    tools:text="1/5 " />
+                    android:text="1/5 " />
 
                 <TextView
                     android:id="@+id/salah_question_text"
@@ -143,7 +124,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/checkBox"
                     app:layout_constraintTop_toTopOf="@+id/checkBox"
-                    tools:text="هل صليت العصر اليوم ؟ " />
+                    android:text="هل صليت العصر اليوم ؟ " />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
@@ -171,7 +152,7 @@
                     android:textSize="@dimen/text_large"
                     app:layout_constraintEnd_toEndOf="@+id/progressBar"
                     app:layout_constraintTop_toBottomOf="@+id/progressBar"
-                    tools:text=" الصلاة التالية" />
+                    android:text="@string/next_prayer" />
 
                 <TextView
                     android:id="@+id/next_salah_text"
@@ -185,7 +166,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/next_text"
                     app:layout_constraintTop_toBottomOf="@+id/next_text"
-                    tools:text="المغرب " />
+                    android:text="المغرب " />
 
                 <TextView
                     android:id="@+id/next_salah_time_text"
@@ -196,7 +177,7 @@
                     android:textSize="@dimen/text_large"
                     app:layout_constraintEnd_toEndOf="@+id/next_salah_text"
                     app:layout_constraintTop_toBottomOf="@+id/next_salah_text"
-                    tools:text="07:00pm " />
+                    android:text="07:00pm " />
 
 
                 <TextView
@@ -210,7 +191,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/next_salah_time_text"
                     app:layout_constraintTop_toBottomOf="@+id/next_salah_time_text"
                     app:layout_constraintVertical_bias="0.409"
-                    tools:text="جميع الصلوات" />
+                    android:text="@string/all_prayers" />
 
 
                 <TextView
@@ -227,7 +208,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/all_salah_text"
                     app:layout_constraintVertical_bias="0.0"
-                    tools:text="القبلة" />
+                    android:text="@string/Qibla" />
 
 <!--                <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator-->
 <!--                    android:id="@+id/circularProgressIndicator"-->
@@ -277,7 +258,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/athan_sound_state_image"
                     app:layout_constraintTop_toBottomOf="@+id/athan_sound_state_image"
-                    tools:text="00:21:48 " />
+                    android:text="00:21:48 " />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

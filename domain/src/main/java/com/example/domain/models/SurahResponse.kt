@@ -1,4 +1,4 @@
-package com.example.domain.entity
+package com.example.domain.models
 
  data class SurahResponse(
      val surah:List<Surah>

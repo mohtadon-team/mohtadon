@@ -6,7 +6,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface PrayerTimesService {
+
+interface PrayerTimesService  {
 
     @GET("v1/timings/{date}")
      suspend fun getTodayPrayerTimes(
