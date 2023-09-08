@@ -29,7 +29,11 @@
         android:id="@+id/quranFragment"
         android:name="com.example.straterproject.ui.fragments.QuranFragment"
         android:label="QuranFragment"
-        tools:layout="@layout/fragment_quran"/>
+        tools:layout="@layout/fragment_quran">
+        <action
+            android:id="@+id/action_quranFragment_to_quranViewPagerFragment"
+            app:destination="@id/quranViewPagerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/moreFragment"
         android:name="com.example.straterproject.ui.fragments.MoreFragment"
@@ -39,7 +43,12 @@
         android:id="@+id/quranViewPagerFragment"
         android:name="com.example.straterproject.ui.fragments.QuranViewPagerFragment"
         android:label="fragment_quran_view_pager"
-        tools:layout="@layout/fragment_quran_view_pager" />
+        tools:layout="@layout/fragment_quran_view_pager" >
+        <argument
+            android:name="startPageNum"
+            app:argType="integer" />
+
+    </fragment>
     <fragment
         android:id="@+id/quranPageFragment"
         android:name="com.example.straterproject.ui.fragments.QuranPageFragment"

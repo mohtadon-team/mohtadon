@@ -18,7 +18,6 @@ import com.example.straterproject.ui.base.BaseFragment
 import com.example.straterproject.ui.interfaces.IonSurahClick
 import com.example.straterproject.ui.viewModels.SurahViewModel
 import dagger.hilt.android.AndroidEntryPoint
-//import kotlinx.android.synthetic.main.common_header.view.*
 
 
 @AndroidEntryPoint
@@ -40,7 +39,7 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
     }
 
     private fun onClickActions() {
-
+//
 //        binding.commonHeader.search_view.setOnSearchClickListener{
 //            binding.commonHeader.header_title.visibility=View.GONE
 //
@@ -92,12 +91,10 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
 
     override fun clickSurah(surah: Surah) {
         val pagesRange = surah.pages
-        val bundle = Bundle()
-        bundle.putInt("startPage", pagesRange[0])
+       val startPage=pagesRange[0]
         Log.d("startPage", "clickSurah: "+pagesRange[0])
-        val destinationFragment = QuranViewPagerFragment()
-        destinationFragment.arguments = bundle
-        findNavController().navigate(R.id.quranViewPagerFragment)
+        val action = QuranFragmentDirections.actionQuranFragmentToQuranViewPagerFragment(startPage)
+        findNavController().navigate(action)
        Toast.makeText(requireContext(),"surah  :$surah",Toast.LENGTH_SHORT).show()
     }
 }

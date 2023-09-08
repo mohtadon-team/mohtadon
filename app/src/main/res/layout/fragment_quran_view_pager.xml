@@ -10,5 +10,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
     />
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="@dimen/_50sdp"
+     android:background="#80D6B89E"
+     android:orientation="horizontal">
 
+     <TextView
+         android:id="@+id/saveBtn"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="حفظ\nعلامه"
+         android:gravity="center"
+         android:background="@drawable/outline_save"
+         android:textSize="@dimen/text_medium"
+         android:textStyle="bold"/>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="انتقال\nلعلامه"
+         android:gravity="center"
+         android:id="@+id/goTosavedBtn"
+         android:background="@drawable/outline_save"
+         android:textSize="@dimen/text_medium"
+         android:textStyle="bold"/>
+
+ </LinearLayout>
 </FrameLayout>

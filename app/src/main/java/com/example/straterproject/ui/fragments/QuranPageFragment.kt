@@ -1,12 +1,14 @@
 package com.example.straterproject.ui.fragments
 
-import android.graphics.drawable.Drawable
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.viewModels
+import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentQuranPageBinding
 import com.example.straterproject.ui.base.BaseFragment
 import com.example.straterproject.ui.viewModels.QuranViewModel
@@ -17,12 +19,11 @@ import dagger.hilt.android.AndroidEntryPoint
 class QuranPageFragment(private val pageNumber: Int) : BaseFragment<FragmentQuranPageBinding>() {
     override val layoutFragmentId: Int= com.example.straterproject.R.layout.fragment_quran_page
     override val viewModel: QuranViewModel by viewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(com.example.straterproject.R.layout.fragment_quran_page, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_quran_page, container, false)
         return rootView
     }
 
@@ -31,6 +32,5 @@ class QuranPageFragment(private val pageNumber: Int) : BaseFragment<FragmentQura
         val quranImageView = view.findViewById<ImageView>(com.example.straterproject.R.id.quranImageView)
         val quranPage:Int = viewModel.getQuranImageByPageNumber(requireContext(),pageNumber)
         quranImageView.setImageResource(quranPage)
-
+       }
     }
-}
