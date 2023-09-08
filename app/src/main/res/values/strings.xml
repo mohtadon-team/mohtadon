@@ -12,4 +12,7 @@
     <string name="more">More</string>
     <string name="fmradio">Radio</string>
     <string name="reciters">Reciters</string>
+    <string name="next_prayer">الصلاة التالية</string>
+    <string name="all_prayers">جميع الصلوات</string>
+    <string name="Qibla">القبلة</string>
 </resources>

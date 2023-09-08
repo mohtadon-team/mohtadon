@@ -5,7 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.example.domain.entity.QuranResponse
+import com.example.domain.models.QuranResponse
 import com.example.straterproject.ui.viewModels.MainActivityViewModel
 import com.example.straterproject.R
 import com.example.straterproject.databinding.ActivityMainBinding
@@ -14,7 +14,7 @@ import com.example.straterproject.ui.base.BaseActivity
 
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val layoutActivityId: Int = R.layout.activity_main
 

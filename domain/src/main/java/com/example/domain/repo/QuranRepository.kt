@@ -1,6 +1,6 @@
 package com.example.domain.repo
 
-import com.example.domain.entity.QuranResponse
+import com.example.domain.models.QuranResponse
 
 interface QuranRepository {
 

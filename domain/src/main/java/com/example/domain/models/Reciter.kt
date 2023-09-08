@@ -1,4 +1,4 @@
-package com.example.domain.entity
+package com.example.domain.models
 
 data class Reciter(
     val Server: String,

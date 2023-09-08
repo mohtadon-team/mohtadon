@@ -1,6 +1,6 @@
 package com.example.data.dataSource.remote
 
-import com.example.domain.entity.QuranResponse
+import com.example.domain.models.QuranResponse
 import retrofit2.http.GET
 
 

@@ -1,7 +1,7 @@
 package com.example.domain.repo
 
-import com.example.domain.entity.SurahAyatResponse
-import com.example.domain.entity.SurahResponse
+import com.example.domain.models.SurahAyatResponse
+import com.example.domain.models.SurahResponse
 
 interface SurahRepository {
     suspend fun getAllSurah() :SurahResponse

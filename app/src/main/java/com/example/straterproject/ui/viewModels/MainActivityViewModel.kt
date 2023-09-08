@@ -3,7 +3,7 @@ package com.example.straterproject.ui.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.domain.entity.QuranResponse
+import com.example.domain.models.QuranResponse
 import com.example.domain.usecases.GetAllReciterUseCase
 import com.example.straterproject.ui.UiState
 import com.example.straterproject.ui.base.BaseViewModel
