@@ -27,7 +27,7 @@ import com.example.straterproject.ui.base.BaseFragment
 import com.example.straterproject.utilities.LATITUDE
 import com.example.straterproject.utilities.LONGITUDE
 import com.example.straterproject.utilities.SH_PER_FILE_NAME
-import com.google.android.gms.location.LocationServices
+
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
 import java.time.LocalTime

@@ -2,11 +2,7 @@ package com.example.straterproject.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import com.example.domain.models.QuranResponse
+
 import com.example.straterproject.ui.viewModels.MainActivityViewModel
 import com.example.straterproject.R
 import com.example.straterproject.databinding.ActivityMainBinding

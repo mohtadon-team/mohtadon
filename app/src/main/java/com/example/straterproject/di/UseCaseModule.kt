@@ -4,9 +4,7 @@ import com.example.domain.repo.RadioRepository
 import com.example.domain.repo.RecitersRepository
 import com.example.domain.repo.SurahRepository
 import com.example.domain.usecases.GetAllRadioStation
-import com.example.data.dataSource.remote.QuranRepositoryImpl
 import com.example.domain.repo.PrayerTimesRepository
-import com.example.domain.repo.QuranRepository
 import com.example.domain.usecases.GetAllReciterUseCase
 import com.example.domain.usecases.GetAllSurahUseCase
 import com.example.domain.usecases.GetSurahAyahsUseCase

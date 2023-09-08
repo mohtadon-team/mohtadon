@@ -5,7 +5,6 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
@@ -16,8 +15,10 @@ import android.view.MenuItem
 import android.widget.PopupMenu
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import com.example.data.dataSource.repository.CoordinatesPrefRepositoryImp
+import com.example.straterproject.R
 import com.example.straterproject.databinding.ActivityHomeBinding
 import com.example.straterproject.ui.base.BaseActivity
 import com.example.straterproject.utilities.LastPlayedTrackPreference
@@ -33,12 +34,10 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
-import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 
-@AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     override val layoutActivityId: Int = com.example.straterproject.R.layout.activity_home
     lateinit var navController: NavController
