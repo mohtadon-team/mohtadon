@@ -42,12 +42,19 @@ object RepositoryModule {
     fun provideRadioRepository(radioService: RadioService):RadioRepository{
         return RadioRepositoryImpl(radioService)
     }
+
+    @Provides
+    fun providePrayerTimesRepository(
+        prayerTimesService: PrayerTimesService): PrayerTimesRepository{
+        return PrayerTimesRepositoryImp(  prayerTimesService )
+    }
+
 }
 
-     fun bindPrayerTimesRepository(
-       prayerTimesService: PrayerTimesService): PrayerTimesRepository{
-         return PrayerTimesRepositoryImp(  prayerTimesService )
-     }
+//     fun bindPrayerTimesRepository(
+//       prayerTimesService: PrayerTimesService): PrayerTimesRepository{
+//         return PrayerTimesRepositoryImp(  prayerTimesService )
+//     }
 
 //    @Provides
 //     fun bindQuranRepository(

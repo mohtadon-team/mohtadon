@@ -24,14 +24,9 @@ import com.example.domain.usecases.GetTodayPrayerTimesUseCase
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentHomeBinding
 import com.example.straterproject.ui.base.BaseFragment
-import com.example.straterproject.utilities.LATITUDE
-import com.example.straterproject.utilities.LONGITUDE
-import com.example.straterproject.utilities.SH_PER_FILE_NAME
 
 import dagger.hilt.android.AndroidEntryPoint
-import java.time.LocalDate
-import java.time.LocalTime
-import java.util.concurrent.TimeUnit
+
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(

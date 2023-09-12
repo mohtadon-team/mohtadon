@@ -1,10 +1,10 @@
 package com.example.straterproject.ui.activities
 
-import android.content.SharedPreferences
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
@@ -15,42 +15,35 @@ import android.view.MenuItem
 import android.widget.PopupMenu
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import com.example.data.dataSource.repository.CoordinatesPrefRepositoryImp
-import com.example.straterproject.R
 import com.example.straterproject.databinding.ActivityHomeBinding
 import com.example.straterproject.ui.base.BaseActivity
-import com.example.straterproject.utilities.LastPlayedTrackPreference
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import com.example.straterproject.utilities.LATITUDE
 import com.example.straterproject.utilities.LONGITUDE
 import com.example.straterproject.utilities.REQUEST_PERMISSION_CODE
-import com.example.straterproject.utilities.SH_PER_FILE_NAME
 import com.google.android.gms.location.Granularity
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
+
 
 @AndroidEntryPoint
-
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     override val layoutActivityId: Int = com.example.straterproject.R.layout.activity_home
     lateinit var navController: NavController
+//    lateinit var coordinatesPrefRepositoryImp: CoordinatesPrefRepositoryImp
 
     @Inject
     lateinit var sharedPreferences: SharedPreferences
-
-    lateinit var coordinatesPrefRepositoryImp: CoordinatesPrefRepositoryImp
+    lateinit var  editor: SharedPreferences.Editor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-
-        setTheme(R.style.Theme_StraterProject)
         val navHostFragment =
             supportFragmentManager.findFragmentById(com.example.straterproject.R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
@@ -97,14 +90,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         smoothBottomBar.setupWithNavController(popupMenu.menu, navController)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        val editor = sharedPreferences.edit()
-        editor.clear()
-        editor.apply()
-
-    }
-
 
     @SuppressLint("MissingPermission")
     private fun getCurrentLocation() {
@@ -132,9 +117,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
                         currentLocation?.time
 
-                        coordinatesPrefRepositoryImp = CoordinatesPrefRepositoryImp(this@HomeActivity)
-                        coordinatesPrefRepositoryImp.putLatitude(LATITUDE ,currentLocation?.latitude.toString() )
-                        coordinatesPrefRepositoryImp.putLongitude(LONGITUDE , currentLocation?.longitude.toString())
+//                        coordinatesPrefRepositoryImp = CoordinatesPrefRepositoryImp(this@HomeActivity)
+//                        sharedPreferences.putString(LATITUDE ,currentLocation?.latitude.toString() )
+//                        sharedPreferences.putString(LONGITUDE , currentLocation?.longitude.toString())
+                        editor =  sharedPreferences.edit()
+                        editor.putString(LATITUDE ,currentLocation?.latitude.toString() )
+                        editor.putString(LONGITUDE , currentLocation?.longitude.toString())
+                        editor.commit()
+
 
 
                     }

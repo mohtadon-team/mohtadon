@@ -1,10 +1,13 @@
 package com.example.straterproject.ui.viewModels
 
+import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.data.dataSource.repository.CoordinatesPrefRepositoryImp
 import com.example.domain.models.todayPrayerTimes.TodayPrayerTimes
 import com.example.domain.usecases.GetTodayPrayerTimesUseCase
 import com.example.straterproject.ui.base.BaseViewModel
@@ -13,8 +16,6 @@ import com.example.straterproject.ui.fragments.home.HomeUiState
 import com.example.straterproject.utilities.Event
 import com.example.straterproject.utilities.LATITUDE
 import com.example.straterproject.utilities.LONGITUDE
-import com.example.straterproject.utilities.SH_PER_FILE_NAME
-import dagger.hilt.android.internal.Contexts.getApplication
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -27,7 +28,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getTodayPrayerTimesUseCase: GetTodayPrayerTimesUseCase
+    private val getTodayPrayerTimesUseCase: GetTodayPrayerTimesUseCase ,
+//    @ApplicationContext context: Context
+    private val sharedPreferences: SharedPreferences
+
 ) : BaseViewModel() {
 
     private val _homeUiState = MutableStateFlow(HomeUiState())
@@ -36,14 +40,13 @@ class HomeViewModel @Inject constructor(
     private val _homeUiEvent = MutableStateFlow<Event<HomeUIEvent?>>(Event(null))
     val homeUIEvent = _homeUiEvent.asStateFlow()
 
+    lateinit var coordinatesPrefRepository: CoordinatesPrefRepositoryImp
+
     init {
         _homeUiState.update {
             it.copy(isLoading = true)
         }
-        val sharedpreferences =
-            getApplication().getSharedPreferences("preference_key", Context.MODE_PRIVATE)
 
-        val sharedPreferences: SharedPreferences = getApplication().getSharedPreferences(SH_PER_FILE_NAME, Context.MODE_PRIVATE)!!
         val latitude = sharedPreferences.getString(LATITUDE, "0.0" )?.toDouble()
         val longitude = sharedPreferences.getString(LONGITUDE,"0.0")?.toDouble()
 
@@ -72,8 +75,8 @@ class HomeViewModel @Inject constructor(
         return LocalDate.now().toString()
     }
 
-    private fun getTodayPrayerTimes(): TodayPrayerTimes {
-        var todayPrayerTimes:TodayPrayerTimes = null
+    private fun getTodayPrayerTimes(): TodayPrayerTimes? {
+        var todayPrayerTimes: TodayPrayerTimes? = null
         viewModelScope.launch {
             async {
                 val todayPrayerTimes = getTodayPrayerTimesUseCase("", 0.0, 0.0)

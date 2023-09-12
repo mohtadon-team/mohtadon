@@ -10,21 +10,13 @@ class CoordinatesPrefRepositoryImp(context: Context) : CoordinatesPrefRepository
 
     override val editor: SharedPreferences.Editor = pref.edit()
 
-    override  fun putLatitude(key: String, value: String) {
+    override  fun putString(key: String, value: String) {
         editor.putString(key, value)
         editor.commit()
     }
 
-    override  fun putLongitude(key: String, value: String) {
-        editor.putString(key, value)
-        editor.commit()
+    override  fun getString(key: String , defaultValue:String ): String {
+        return pref.getString(key, defaultValue)!!
     }
 
-    override  fun getLatitude(key: String): String {
-        return pref.getString(key, "")!!
-    }
-
-    override  fun getLongitude(key: String): String {
-        return pref.getString(key, "")!!
-    }
 }

@@ -6,9 +6,7 @@ interface CoordinatesPrefRepository {
     abstract val pref: SharedPreferences
     abstract val editor: SharedPreferences.Editor
 
-     fun putLatitude(key: String, value: String)
-     fun putLongitude(key: String, value: String)
-     fun getLatitude(key: String): String
-     fun getLongitude(key: String): String
+     fun putString(key: String, value: String)
+     fun getString(key: String , defaultValue:String): String
 
 }
