@@ -18,13 +18,11 @@
     <string name="search_with_aya">search with aya</string>
     <string name="setting">setting</string>
     <string name="track">track</string>
-    <string name="next_prayer">الصلاة التالية</string>
-    <string name="all_prayers">جميع الصلوات</string>
-    <string name="Qibla">القبلة</string>
-    <string name="do_you_pray_fajr">هل صليت الفجر اليوم ؟</string>
-    <string name="do_you_pray_dhuhr">هل صليت الظهر اليوم ؟</string>
-    <string name="do_you_pray_asr">هل صليت العصر اليوم ؟</string>
-    <string name="do_you_pray_maghrib">هل صليت المغرب اليوم ؟</string>
-    <string name="do_you_pray_isha">هل صليت العشاء اليوم ؟</string>
+
+    <string name="do_you_pray_fajr">do you pray fajr?</string>
+    <string name="do_you_pray_dhuhr">do you pray duhr?</string>
+    <string name="do_you_pray_asr">do you pray asr?</string>
+    <string name="do_you_pray_maghrib">do you pray maghrib?</string>
+    <string name="do_you_pray_isha">do you pray isha?</string>
 
 </resources>

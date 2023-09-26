@@ -11,8 +11,6 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
-import android.view.MenuItem
-import android.widget.PopupMenu
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -41,15 +39,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
     @Inject
     lateinit var sharedPreferences: SharedPreferences
-    lateinit var  editor: SharedPreferences.Editor
+    lateinit var editor: SharedPreferences.Editor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val navHostFragment =
             supportFragmentManager.findFragmentById(com.example.straterproject.R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
 
-        //  handle menu item clicks
-
+        //  handle bottom navigation item clicks
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 com.example.straterproject.R.id.homeFragment -> {
@@ -80,11 +77,15 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 else -> false
             }
         }
+        // set default selection to homeFragment
+        binding.bottomNav.selectedItemId = com.example.straterproject.R.id.homeFragment
+        getCurrentLocation()
     }
 
 
     @SuppressLint("MissingPermission")
     private fun getCurrentLocation() {
+
         if (isLocationPermissionTaken()) {
             if (isLocationEnable()) {
 
@@ -112,11 +113,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 //                        coordinatesPrefRepositoryImp = CoordinatesPrefRepositoryImp(this@HomeActivity)
 //                        sharedPreferences.putString(LATITUDE ,currentLocation?.latitude.toString() )
 //                        sharedPreferences.putString(LONGITUDE , currentLocation?.longitude.toString())
-                        editor =  sharedPreferences.edit()
-                        editor.putString(LATITUDE ,currentLocation?.latitude.toString() )
-                        editor.putString(LONGITUDE , currentLocation?.longitude.toString())
+                        editor = sharedPreferences.edit()
+                        editor.putString(LATITUDE, currentLocation?.latitude.toString())
+                        editor.putString(LONGITUDE, currentLocation?.longitude.toString())
                         editor.commit()
-
 
 
                     }
@@ -130,20 +130,18 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             }
         } else {
             requestLocationPermission()
-            getCurrentLocation()
+
         }
     }
 
 
     private fun isLocationPermissionTaken(): Boolean {
-        if (ActivityCompat.checkSelfPermission(
-                this, Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        ) if (ActivityCompat.checkSelfPermission(
-                this, Manifest.permission.ACCESS_COARSE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        ) return true
-        return false
+        return (ActivityCompat.checkSelfPermission(
+            this, Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(
+            this, Manifest.permission.ACCESS_COARSE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED)
     }
 
 

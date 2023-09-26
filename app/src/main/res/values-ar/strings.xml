@@ -17,4 +17,9 @@
     <string name="search_with_aya">بحث بالايه</string>
     <string name="setting">الاعدادات</string>
     <string name="track">متابعه</string>
+    <string name="do_you_pray_fajr">هل صليت الفجر اليوم ؟</string>
+    <string name="do_you_pray_dhuhr">هل صليت الظهر اليوم ؟</string>
+    <string name="do_you_pray_asr">هل صليت العصر اليوم ؟</string>
+    <string name="do_you_pray_maghrib">هل صليت المغرب اليوم ؟</string>
+    <string name="do_you_pray_isha">هل صليت العشاء اليوم ؟</string>
 </resources>

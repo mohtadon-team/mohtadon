@@ -87,5 +87,13 @@
         <action
             android:id="@+id/action_quranTabsFragment_to_quranFragment"
             app:destination="@id/quranFragment" />
+        <action
+            android:id="@+id/action_quranTabsFragment_to_savedQuranPagesFragment"
+            app:destination="@id/savedQuranPagesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/savedQuranPagesFragment"
+        android:name="com.example.straterproject.ui.quran.fragments.SavedQuranPagesFragment"
+        android:label="fragment_saved_quran_pages"
+        tools:layout="@layout/fragment_saved_quran_pages" />
 </navigation>

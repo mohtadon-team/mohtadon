@@ -2,30 +2,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_50sdp"
-    android:orientation="vertical"
     android:background="@color/main_color"
-    >
+    android:orientation="vertical">
 
-
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/baseline_search_24"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    android:layout_margin="@dimen/_5sdp"/>
     <TextView
-        android:visibility="visible"
+        android:id="@+id/header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:fontFamily="@font/cairo_bold"
         android:text="المصحف"
-        android:id="@+id/header_title"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_large" />
+        android:textSize="@dimen/text_large"
+        android:visibility="visible" />
 
-    <androidx.appcompat.widget.SearchView
-
-        android:id="@+id/search_view"
+    <EditText
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_medium"
-        android:layout_marginTop="@dimen/spacing_medium"
-        android:layout_marginEnd="@dimen/spacing_medium"
-        android:layout_marginBottom="@dimen/spacing_medium" />
+        android:background="@drawable/search_card_background"
+        android:id="@+id/quran_search_et"
+        android:hint="بحث"
+        android:textColorHint="@color/white"
+        android:gravity="center_vertical"
+        android:padding="@dimen/spacing_too_small"
+        android:layout_margin="@dimen/spacing_small"
+        android:drawablePadding="@dimen/spacing_too_small"
+        android:drawableStart="@drawable/baseline_search_24" />
 
 </RelativeLayout>

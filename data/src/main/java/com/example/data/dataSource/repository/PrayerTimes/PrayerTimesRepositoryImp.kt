@@ -21,7 +21,7 @@ class PrayerTimesRepositoryImp @Inject constructor(
         if (respones != null) {
             return prayerTimesMapper.map(respones)
         } else {
-            throw Throwable("Not Success")
+            throw Throwable("Failed to fetch prayer times. Response: $respones")
         }
 
     }
