@@ -11,6 +11,7 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
+import android.util.Log
 import android.view.MenuItem
 import android.widget.PopupMenu
 import androidx.core.app.ActivityCompat
@@ -47,6 +48,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(com.example.straterproject.R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
+
+
+
+
         // Setup the SmoothBottomBar
         val popupMenu = PopupMenu(this, null)
         popupMenu.inflate(com.example.straterproject.R.menu.bottom_nav_menu)
@@ -88,6 +93,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
         // Set up the SmoothBottomBar with the PopupMenu and NavController
         smoothBottomBar.setupWithNavController(popupMenu.menu, navController)
+
+        getCurrentLocation()
     }
 
 
@@ -117,12 +124,15 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
                         currentLocation?.time
 
-//                        coordinatesPrefRepositoryImp = CoordinatesPrefRepositoryImp(this@HomeActivity)
-//                        sharedPreferences.putString(LATITUDE ,currentLocation?.latitude.toString() )
-//                        sharedPreferences.putString(LONGITUDE , currentLocation?.longitude.toString())
                         editor =  sharedPreferences.edit()
+
+
                         editor.putString(LATITUDE ,currentLocation?.latitude.toString() )
                         editor.putString(LONGITUDE , currentLocation?.longitude.toString())
+
+//                        Log.i("ahmed", currentLocation?.latitude.toString())
+//                        Log.i("ahmed", currentLocation?.longitude.toString())
+
                         editor.commit()
 
 

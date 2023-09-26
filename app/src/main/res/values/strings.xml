@@ -15,4 +15,10 @@
     <string name="next_prayer">الصلاة التالية</string>
     <string name="all_prayers">جميع الصلوات</string>
     <string name="Qibla">القبلة</string>
+    <string name="do_you_pray_fajr">هل صليت الفجر اليوم ؟</string>
+    <string name="do_you_pray_dhuhr">هل صليت الظهر اليوم ؟</string>
+    <string name="do_you_pray_asr">هل صليت العصر اليوم ؟</string>
+    <string name="do_you_pray_maghrib">هل صليت المغرب اليوم ؟</string>
+    <string name="do_you_pray_isha">هل صليت العشاء اليوم ؟</string>
+
 </resources>

@@ -7,6 +7,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
+import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
 import coil.load
 import com.example.straterproject.R
 import com.example.straterproject.ui.UiState
@@ -21,11 +22,17 @@ import com.example.straterproject.ui.UiState
 //}
 
 
-
 @BindingAdapter("showVisibleWhenError")
-fun <T> showVisibleWhenError(view: View, state : UiState<T>?) {
+fun <T> showVisibleWhenError(view: View, state: UiState<T>?) {
     view.isVisible = state is UiState.Error
 }
+
+@BindingAdapter("setCircularIndicatorMaxProgress","setCircularIndicatorProgress")
+fun <T> CircularProgressIndicator.setCircularIndicatorProgress( maxProgress: String,progress:String ) {
+    this.setMaxProgress(maxProgress.toDouble())
+    this.setCurrentProgress(progress.toDouble());
+}
+
 
 @BindingAdapter("showVisibleWhenLoading")
 fun <T> showVisibleWhenLoading(view: View, state: UiState<T>?) {
@@ -33,61 +40,64 @@ fun <T> showVisibleWhenLoading(view: View, state: UiState<T>?) {
 }
 
 @BindingAdapter("makeTextScrollable")
-fun makeTextScrollable(textView: TextView, scrollable : Boolean) {
-    if (scrollable){
+fun makeTextScrollable(textView: TextView, scrollable: Boolean) {
+    if (scrollable) {
         textView.isSelected = true
         textView.setSingleLine()
-        textView.ellipsize= TextUtils.TruncateAt.MARQUEE
+        textView.ellipsize = TextUtils.TruncateAt.MARQUEE
     }
 }
+
 @BindingAdapter("setImageIsLoading")
-fun setImageIsLoading(imageView: ImageView, isByffering :Boolean) {
-    if (isByffering){
+fun setImageIsLoading(imageView: ImageView, isByffering: Boolean) {
+    if (isByffering) {
         imageView.setImageResource(R.drawable.loading)
     }
 }
-@BindingAdapter("setImagePlayOrStop")
-fun setImagePlayOrStop(imageView: ImageView, isPlay : Boolean ) {
 
-    if (isPlay){
+@BindingAdapter("setImagePlayOrStop")
+fun setImagePlayOrStop(imageView: ImageView, isPlay: Boolean) {
+
+    if (isPlay) {
         imageView.setImageResource(R.drawable.pause)
 
-    }else{
+    } else {
         imageView.setImageResource(R.drawable.play)
     }
 }
 
 @BindingAdapter("loadImageResource")
-fun loadImage(imageView: ImageView, source :String?) {
+fun loadImage(imageView: ImageView, source: String?) {
     imageView.load(source)
 }
 
 
 @BindingAdapter("isRepeatClickBackground")
-fun isRepeatClickBackground(imageView: ImageView, isRepeat :Boolean) {
+fun isRepeatClickBackground(imageView: ImageView, isRepeat: Boolean) {
 
     if (isRepeat) imageView.setBackgroundResource(R.drawable.corner_image)
-    else   imageView.background = null
+    else imageView.background = null
 
 }
 
 
 @BindingAdapter("isShuffleClickedBackground")
-fun isShuffleClickedBackground(imageView: ImageView, isShuffled :Boolean) {
+fun isShuffleClickedBackground(imageView: ImageView, isShuffled: Boolean) {
     if (isShuffled) imageView.setBackgroundResource(R.drawable.corner_image)
-    else   imageView.background = null
+    else imageView.background = null
 }
 
 @BindingAdapter("setMaxProgressForSeekBar")
-fun setMaxProgressForSeekBar(seekBar: SeekBar, maxProgress : Long) {
+fun setMaxProgressForSeekBar(seekBar: SeekBar, maxProgress: Long) {
     seekBar.max = maxProgress.toInt()
 }
 
 @BindingAdapter("setCurrentProgressForSeekBar")
-fun setCurrentProgressForSeekBar(seekBar: SeekBar, progress : Long) {
+fun setCurrentProgressForSeekBar(seekBar: SeekBar, progress: Long) {
     seekBar.progress = progress.toInt()
 }
+
 @BindingAdapter("setTimeMinutes")
-fun setTimeMinutes(textView: TextView, progress : Long) {
+fun setTimeMinutes(textView: TextView, progress: Long) {
     textView.text = convertLongDurationToTime(progress)
 }

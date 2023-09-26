@@ -11,10 +11,10 @@ import com.example.straterproject.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 
-@AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    override val layoutFragmentId: Int=R.layout.fragment_home
-    override val viewModel: ViewModel
-        get() = TODO("Not yet implemented")
-
-}
+//@AndroidEntryPoint
+//class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+//    override val layoutFragmentId: Int=R.layout.fragment_home
+//    override val viewModel: ViewModel
+//        get() = TODO("Not yet implemented")
+//
+//}
