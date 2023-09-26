@@ -30,12 +30,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListener {
     override val layoutFragmentId= R.layout.fragment_reciters
     override val viewModel : RecitersViewModel by viewModels()
-      val audioItemPlayerViewModel : AudioItemPlayerViewModel by activityViewModels()
     private lateinit var recitersAdapter: RecitersAdapter
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
         recitersAdapter = RecitersAdapter(requireContext() , this)
         binding.recitersRv.apply {
@@ -48,16 +51,6 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListe
             handleStae(it)
         }
 
-        binding.button2.setOnClickListener{
-            audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddNewAudioItem(
-                AudioItem(
-                    reciterAndHisMoshaf = "dsuy",
-                    surah =  "surah",
-                    image = "" ,
-                    source = "https://backup.qurango.net/radio/sahabah"
-                )
-            ))
-        }
 
     }
 
@@ -80,20 +73,17 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListe
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onMoshafClick(moshaf: MoshafEnitity) {
-
         val action = RecitersFragmentDirections.actionRecitersFragmentToSurahsFragment(moshaf )
         findNavController().navigate(action)
+    }
 
-//        startServiceIfNotStarted()
-//       val audioItem = AudioItem(
-//           reciter = moshaf.reciterName ,
-//           moshaf = moshaf.name,
-//           image = ""  ,
-//           source = moshaf.server.plus("003.mp3")
-//       )
-//       // Toast.makeText(requireContext(), audioItem.source, Toast.LENGTH_SHORT).show()
-//        audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddNewAudioItem(audioItem))
-
+    override fun onStart() {
+        super.onStart()
+        val actionBar =  (activity as AppCompatActivity).supportActionBar
+        actionBar?.apply {
+            customView = binding.fragmentToolbar
+            show()
+        }
     }
 
 
