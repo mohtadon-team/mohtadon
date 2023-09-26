@@ -16,17 +16,8 @@ class PagesManager {
             val formatter = DecimalFormat("000")
             val symbols = DecimalFormatSymbols(Locale.US)
             formatter.decimalFormatSymbols = symbols
-            //  val drawableName = "page" + formatter.format(pageNumber.toLong()) + ".png"
             val drawableName = "page" + formatter.format(pageNumber)
             Log.d("name", drawableName)
-//            //quran/images/page
-//            var istr: InputStream? = null
-//            try {
-//                istr = context.assets.open(drawableName)
-//            } catch (e: IOException) {
-//                e.printStackTrace()
-//            }
-            //Drawable.createFromStream(istr, null)
             return context.resources.getIdentifier(drawableName,"drawable",context.packageName)
         }
     }

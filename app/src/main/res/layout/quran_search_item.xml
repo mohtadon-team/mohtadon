@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_card_background"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/spacing_small">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:padding="@dimen/_3sdp"
+                android:layout_weight="2">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:backgroundTint="@color/brown"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_small"
+                    app:cardCornerRadius="@dimen/_10sdp">
+                <LinearLayout
+                    android:padding="@dimen/spacing_too_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="سوره :"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_too_large" />
+
+                    <TextView
+                        android:id="@+id/sora_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:text="الفاتحه"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_too_large" />
+
+                </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:backgroundTint="@color/brown"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_medium"
+                    app:cardCornerRadius="@dimen/_10sdp">
+                <LinearLayout
+                    android:padding="@dimen/spacing_too_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="رقم الايه :"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_too_large" />
+
+                    <TextView
+                        android:layout_marginStart="4dp"
+                        android:id="@+id/aya_no"
+                        android:text="120"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/text_too_large" />
+                </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/aya_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_too_large"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+</layout>

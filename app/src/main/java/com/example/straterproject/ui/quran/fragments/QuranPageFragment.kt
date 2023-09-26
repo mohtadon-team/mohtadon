@@ -1,4 +1,4 @@
-package com.example.straterproject.ui.fragments
+package com.example.straterproject.ui.quran.fragments
 
 import android.content.Context
 import android.os.Bundle

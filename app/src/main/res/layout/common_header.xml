@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_50sdp"
     android:orientation="vertical"
-    android:background="#80D6B89E"
+    android:background="@color/main_color"
     >
 
 
@@ -15,7 +15,7 @@
         android:fontFamily="@font/cairo_bold"
         android:text="المصحف"
         android:id="@+id/header_title"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/text_large" />
 
     <androidx.appcompat.widget.SearchView

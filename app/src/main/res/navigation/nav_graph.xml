@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/quranFragment"
-        android:name="com.example.straterproject.ui.fragments.QuranFragment"
+        android:name="com.example.straterproject.ui.quran.fragments.QuranFragment"
         android:label="QuranFragment"
         tools:layout="@layout/fragment_quran">
         <action
@@ -41,7 +41,7 @@
         tools:layout="@layout/fragment_more"/>
     <fragment
         android:id="@+id/quranViewPagerFragment"
-        android:name="com.example.straterproject.ui.fragments.QuranViewPagerFragment"
+        android:name="com.example.straterproject.ui.quran.fragments.QuranViewPagerFragment"
         android:label="fragment_quran_view_pager"
         tools:layout="@layout/fragment_quran_view_pager" >
         <argument
@@ -51,8 +51,9 @@
     </fragment>
     <fragment
         android:id="@+id/quranPageFragment"
-        android:name="com.example.straterproject.ui.fragments.QuranPageFragment"
-        android:label="QuranPageFragment" />
+        android:name="com.example.straterproject.ui.quran.fragments.QuranPageFragment"
+        android:label="QuranPageFragment"
+        tools:layout="@layout/fragment_quran_page"/>
     <fragment
         android:id="@+id/surahsFragment"
         android:name="com.example.straterproject.ui.reciters.surahs.SurahsFragment"
@@ -69,4 +70,22 @@
         android:id="@+id/audioItemControllerFragment"
         android:name="com.example.straterproject.ui.reciters.player.AudioItemControllerFragment"
         android:label="AudioItemControllerFragment" />
+    <fragment
+        android:id="@+id/quranSearchFragment"
+        android:name="com.example.straterproject.ui.quran.search.fragments.QuranSearchFragment"
+        android:label="QuranSearchFragment"
+        tools:layout="@layout/fragment_quran_search">
+        <action
+            android:id="@+id/action_quranSearchFragment_to_quranViewPagerFragment"
+            app:destination="@id/quranViewPagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quranTabsFragment"
+        android:name="com.example.straterproject.ui.quran.fragments.QuranTabsFragment"
+        android:label="QuranTabsFragment"
+        tools:layout="@layout/fragment_quran_tabs">
+        <action
+            android:id="@+id/action_quranTabsFragment_to_quranFragment"
+            app:destination="@id/quranFragment" />
+    </fragment>
 </navigation>

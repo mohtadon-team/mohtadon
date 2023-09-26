@@ -1,4 +1,4 @@
-package com.example.straterproject.ui.fragments
+package com.example.straterproject.ui.quran.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -7,13 +7,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import com.example.straterproject.R
-import com.example.straterproject.ui.adapters.QuranPagerAdapter
+import com.example.straterproject.ui.quran.adapters.QuranPagerAdapter
+import io.hussienfahmy.mefab.MovableExpandedFloatingActionButton
+import io.hussienfahmy.mefab.fabs.OnEdgeFabClickListener
 
 
 class QuranViewPagerFragment : Fragment() {
@@ -60,5 +63,21 @@ class QuranViewPagerFragment : Fragment() {
             saveButton.setBackgroundResource(R.drawable.filled_save_icon)
             viewPager.currentItem=604-savedPage
         }
+       val searchTxt=view.findViewById<TextView>(R.id.search_with_aya)
+        searchTxt.setOnClickListener {
+            findNavController().navigate(R.id.quranSearchFragment)
+        }
+        val fabmenu=view.findViewById<MovableExpandedFloatingActionButton>(R.id.me_fab)
+        fabmenu.setOnEdgeFabClickListener(OnEdgeFabClickListener { id ->
+            Toast.makeText(
+                context,
+                when (id) {
+                    R.id.save_page -> "Add Clicked"
+                    R.id.move_to_page -> "Check Mark Clicked"
+                    R.id.search_in_quran -> "Clear Clicked"
+                    else -> ""
+                }, Toast.LENGTH_SHORT
+            ).show()
+        })
     }
 }

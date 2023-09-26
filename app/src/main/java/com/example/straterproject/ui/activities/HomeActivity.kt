@@ -47,13 +47,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(com.example.straterproject.R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
-        // Setup the SmoothBottomBar
-        val popupMenu = PopupMenu(this, null)
-        popupMenu.inflate(com.example.straterproject.R.menu.bottom_nav_menu)
 
-        // Attach a listener to handle menu item clicks
-        popupMenu.setOnMenuItemClickListener { item: MenuItem ->
-            when (item.itemId) {
+        //  handle menu item clicks
+
+        binding.bottomNav.setOnItemSelectedListener {
+            when (it.itemId) {
                 com.example.straterproject.R.id.homeFragment -> {
                     navController.navigate(com.example.straterproject.R.id.homeFragment)
                     true
@@ -64,8 +62,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                     true
                 }
 
-                com.example.straterproject.R.id.quranFragment -> {
-                    navController.navigate(com.example.straterproject.R.id.quranFragment)
+                com.example.straterproject.R.id.quranTabsFragment -> {
+                    navController.navigate(com.example.straterproject.R.id.quranTabsFragment)
                     true
                 }
 
@@ -82,12 +80,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 else -> false
             }
         }
-
-        // Get a reference to your SmoothBottomBar
-        val smoothBottomBar = binding.bottomNav
-
-        // Set up the SmoothBottomBar with the PopupMenu and NavController
-        smoothBottomBar.setupWithNavController(popupMenu.menu, navController)
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.straterproject.ui.adapters
+package com.example.straterproject.ui.quran.adapters
 
 import android.content.ContentValues.TAG
 import android.util.Log

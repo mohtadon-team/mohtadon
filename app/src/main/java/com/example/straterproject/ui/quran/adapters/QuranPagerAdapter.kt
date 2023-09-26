@@ -1,9 +1,9 @@
-package com.example.straterproject.ui.adapters
+package com.example.straterproject.ui.quran.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.straterproject.ui.fragments.QuranPageFragment
+import com.example.straterproject.ui.quran.fragments.QuranPageFragment
 
 
 class QuranPagerAdapter (fa: FragmentActivity) : FragmentStateAdapter(fa) {
