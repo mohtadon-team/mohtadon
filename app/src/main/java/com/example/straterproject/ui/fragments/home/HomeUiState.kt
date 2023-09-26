@@ -1,10 +1,15 @@
 package com.example.straterproject.ui.fragments.home
 
+import com.example.domain.models.todayPrayerTimes.TodayPrayerTimes
+
 data class HomeUiState(
-
-    val nextSalahState: HomeItem = HomeItem.NextSalah(NextSalahUiState("" , 0)) ,
+    val todayPrayerTimes: TodayPrayerTimes? = null,
+    val nextSalah: HomeItem = HomeItem.NextSalah("" , ""),
     val isLoading:Boolean = false,
-    val error : List<String> = emptyList()
-
-
+    val error : Boolean = false,
+    val nextSalahName:String  = "",
+    val nextSalahTime:String  = "",
+    val currentTimeAndNextSalahTimeDifference:String = "" ,
+    val doYouPrayTheLastSalah:String = "",
+    val thePercentageBetweenCurrentTimeAndNextSalahTime:String = ""
     )
