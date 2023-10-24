@@ -11,5 +11,8 @@ data class HomeUiState(
     val nextSalahTime:String  = "",
     val currentTimeAndNextSalahTimeDifference:String = "" ,
     val doYouPrayTheLastSalah:String = "",
-    val thePercentageBetweenCurrentTimeAndNextSalahTime:String = ""
+    val thePercentageBetweenCurrentTimeAndNextSalahTime:String = "" ,
+    val currentDate:String="" ,
+    val randomAya:String = "" ,
+    val randomDuaa:String = ""
     )

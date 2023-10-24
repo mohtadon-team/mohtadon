@@ -14,4 +14,10 @@ class QuranRepositoryImpl @Inject constructor(
             quranDao.getAyaBySubText(subAya)
         }
     }
+
+    override suspend fun getAyaId(ayaId: Int): String {
+        return withContext(Dispatchers.IO){
+            quranDao.getAyaById(ayaId)
+        }
+    }
 }

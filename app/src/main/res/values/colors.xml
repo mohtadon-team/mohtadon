@@ -22,5 +22,15 @@
     <color name="black">#2b2b2b</color>
     <color name="dark_black">#000</color>
     <color name="black_silver">#707070</color>
+    <color name="orange">#FF7700</color>
+
+
+    <color name="home_rv_item_color_1">#2EC4B6</color>
+    <color name="home_rv_item_color_2">#75DDDD</color>
+    <color name="home_rv_item_color_3">#FFC49B</color>
+    <color name="home_rv_item_color_4">#57CC99</color>
+    <color name="home_rv_item_color_5">#A0DDFF</color>
+    <color name="home_rv_item_color_6">#148BA1</color>
+
 
 </resources>

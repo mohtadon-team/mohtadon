@@ -8,261 +8,175 @@
         <variable
             name="viewModel"
             type="com.example.straterproject.ui.viewModels.HomeViewModel" />
+
+
+
     </data>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/background_color">
+<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--        android:id="@+id/home_swiper_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        >-->
 
-        <TextView
-            android:id="@+id/hijri_date_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_large"
-            android:textColor="@color/dark_black"
-            android:textSize="@dimen/text_medium"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="الجمعة, 4 رمضان 1440" />
-
-        <TextView
-            android:id="@+id/miladi_date_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:textColor="@color/dark_black"
-            android:textSize="@dimen/text_medium"
-            app:layout_constraintEnd_toEndOf="@+id/hijri_date_text"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/hijri_date_text"
-            app:layout_constraintTop_toBottomOf="@+id/hijri_date_text"
-            tools:text=" 4 اغسطس 2023" />
-
-        <TextView
-            android:id="@+id/today_events_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_medium"
-            android:text="المولد النبوى الشريف "
-            android:textColor="@color/dark_black"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/miladi_date_text"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/hijri_date_text" />
-
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_margin="@dimen/spacing_medium"
-            app:cardCornerRadius="@dimen/radius_large"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/miladi_date_text"
-            app:layout_constraintVertical_bias="0">
+            android:layout_height="match_parent"
+            android:background="@color/background_color">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:id="@+id/hijri_date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_large"
+                android:text="@string/home_welcome_text"
+                android:textColor="@color/orange"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/miladi_date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="@{viewModel.homeUiState.currentDate}"
+                android:textColor="@color/dark_black"
+                android:textSize="@dimen/text_medium"
+                app:layout_constraintEnd_toEndOf="@+id/hijri_date_text"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/hijri_date_text"
+                app:layout_constraintTop_toBottomOf="@+id/hijri_date_text"
+                tools:text=" 4 اغسطس 2023" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/miladi_date_text"
+                app:layout_constraintVertical_bias="0">
 
-
-                <ImageView
-                    android:id="@+id/imageView"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/home_screen_photo" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.7"
-                    android:background="@color/black"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="@dimen/checkbox_dimen"
-                    android:layout_height="@dimen/checkbox_dimen"
-                    android:layout_margin="@dimen/spacing_medium"
-                    android:background="@drawable/circle_checkbox"
-                    android:buttonTint="#0000"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <TextView
-                    android:id="@+id/salah_number_text"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_too_small"
-                    android:text="1/5 "
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_medium"
-                    app:layout_constraintEnd_toEndOf="@+id/checkBox"
-                    app:layout_constraintStart_toStartOf="@+id/checkBox"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+                    android:background="@color/main_color"
+                    android:padding="@dimen/spacing_medium">
 
-                <TextView
-                    android:id="@+id/salah_question_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/spacing_medium"
-                    android:text="@{viewModel.homeUiState.doYouPrayTheLastSalah}"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_large"
-                    app:layout_constraintBottom_toBottomOf="@+id/checkBox"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox"
-                    app:layout_constraintTop_toTopOf="@+id/checkBox" />
+                    <TextView
+                        android:id="@+id/next_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:alpha="0.6"
+                        android:text="@string/next_prayer"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_large"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/spacing_medium"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    android:max="5"
-                    android:progress="2"
-                    android:progressTint="@color/white"
-                    android:rotation="180"
-                    app:layout_constraintEnd_toEndOf="@+id/salah_question_text"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox"
-                    app:layout_constraintTop_toBottomOf="@+id/salah_question_text" />
+                    <TextView
+                        android:id="@+id/next_salah_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@{viewModel.homeUiState.nextSalahName}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_too_large"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/next_text"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/next_text"
+                        app:layout_constraintTop_toBottomOf="@+id/next_text"
+                        tools:text="المغرب" />
 
 
-                <TextView
-                    android:id="@+id/next_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_medium"
-                    android:text="@string/next_prayer"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_large"
-                    app:layout_constraintEnd_toEndOf="@+id/progressBar"
-                    app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-                <TextView
-                    android:id="@+id/next_salah_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_medium"
-                    android:text="@{viewModel.homeUiState.nextSalahName}"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_too_large"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/next_text"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/next_text"
-                    app:layout_constraintTop_toBottomOf="@+id/next_text" />
-
-                <TextView
-                    android:id="@+id/next_salah_time_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    android:text="@{viewModel.homeUiState.nextSalahTime}"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_large"
-                    app:layout_constraintEnd_toEndOf="@+id/next_salah_text"
-                    app:layout_constraintTop_toBottomOf="@+id/next_salah_text" />
+                    <TextView
+                        android:id="@+id/next_salah_time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@{viewModel.homeUiState.nextSalahTime}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_too_large"
+                        app:layout_constraintBottom_toBottomOf="@+id/next_salah_text"
+                        app:layout_constraintStart_toEndOf="@+id/next_salah_text"
+                        app:layout_constraintTop_toTopOf="@+id/next_salah_text"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:text="6:54 م" />
 
 
-                <TextView
-                    android:id="@+id/all_salah_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/all_prayers"
-                    android:textColor="#FFC107"
-                    android:textSize="@dimen/text_large"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/next_salah_time_text"
-                    app:layout_constraintTop_toBottomOf="@+id/next_salah_time_text"
-                    app:layout_constraintVertical_bias="0.409" />
+                    <TextView
+                        android:id="@+id/track_prayer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_extra_large"
+                        android:text="@string/track_prayer"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_too_large"
+                        android:textStyle="bold"
+                        app:drawableLeftCompat="@drawable/baseline_arrow_back_ios_24"
+                        app:drawableTint="@color/orange"
+                        app:layout_constraintStart_toStartOf="@+id/next_salah_text"
+                        app:layout_constraintTop_toBottomOf="@+id/next_salah_text" />
 
+                    <ImageView
+                        android:id="@+id/athan_sound_state_image"
+                        android:layout_width="@dimen/athan_sound_state_dimen"
+                        android:layout_height="@dimen/athan_sound_state_dimen"
+                        android:layout_marginEnd="@dimen/spacing_large"
+                        android:src="@drawable/not_silent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
 
-                <TextView
-                    android:id="@+id/qibla_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/spacing_extra_large"
-                    android:text="@string/Qibla"
-                    android:textColor="#FFC107"
-                    android:textSize="@dimen/text_large"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/all_salah_text"
-                    app:layout_constraintEnd_toStartOf="@+id/all_salah_text"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/all_salah_text"
-                    app:layout_constraintVertical_bias="0.0" />
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nabawi_mosque"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/athan_sound_state_image"
+                        app:layout_constraintVertical_bias="0.47" />
 
-                <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
-                    android:id="@+id/circularProgressIndicator"
-                    android:layout_width="@dimen/home_circle_progress_bar_dimen"
-                    android:layout_height="@dimen/home_circle_progress_bar_dimen"
-                    android:layout_margin="@dimen/spacing_medium"
-                    android:clickable="false"
-                    app:drawDot="true"
-                    app:direction="clockwise"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.03"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.75"
-                    app:progressBackgroundColor="#54000000"
-                    app:progressBackgroundStrokeWidth="5dp"
-                    app:progressCap="round"
-                    app:progressColor="@color/white"
-                    app:progressStrokeWidth="5dp"
-                    app:startAngle="270"
-                    app:textColor="#0000" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
-                <ImageView
-                    android:id="@+id/athan_sound_state_image"
-                    android:layout_width="@dimen/athan_sound_state_dimen"
-                    android:layout_height="@dimen/athan_sound_state_dimen"
-                    android:src="@drawable/baseline_volume_up_24"
-                    app:layout_constraintBottom_toBottomOf="@+id/circularProgressIndicator"
-                    app:layout_constraintEnd_toEndOf="@+id/circularProgressIndicator"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="@+id/circularProgressIndicator"
-                    app:layout_constraintTop_toTopOf="@+id/circularProgressIndicator"
-                    app:layout_constraintVertical_bias="0.3"
-                    app:tint="@color/white" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_navigation_items_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                tools:listitem="@layout/home_rv_item_template" />
 
-                <TextView
-                    android:id="@+id/next_salah_remining_time_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_medium"
-                    android:text="@{viewModel.homeUiState.currentTimeAndNextSalahTimeDifference}"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_large"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/athan_sound_state_image"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="@+id/athan_sound_state_image"
-                    app:layout_constraintTop_toBottomOf="@+id/athan_sound_state_image" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_rv_today_tings"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_navigation_items_rv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
 
 </layout>
