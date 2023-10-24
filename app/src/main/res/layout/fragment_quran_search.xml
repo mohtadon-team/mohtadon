@@ -12,16 +12,9 @@
         android:orientation="vertical"
         tools:context=".ui.quran.search.fragments.QuranSearchFragment">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/search_card_background"
-            android:id="@+id/quran_search_et"
-            android:hint="@string/search_with_aya"
-            android:padding="@dimen/spacing_too_small"
-            android:layout_margin="@dimen/spacing_small"
-            android:drawablePadding="@dimen/spacing_too_small"
-            android:drawableStart="@drawable/baseline_search_24" />
+        <include
+            layout="@layout/common_header"
+            android:id="@+id/header"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

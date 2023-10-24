@@ -47,6 +47,9 @@
         <argument
             android:name="startPageNum"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_quranViewPagerFragment_to_quranSearchFragment2"
+            app:destination="@id/quranSearchFragment" />
 
     </fragment>
     <fragment
@@ -90,10 +93,27 @@
         <action
             android:id="@+id/action_quranTabsFragment_to_savedQuranPagesFragment"
             app:destination="@id/savedQuranPagesFragment" />
+        <action
+            android:id="@+id/action_quranTabsFragment_to_quranViewPagerFragment"
+            app:destination="@id/quranViewPagerFragment" />
     </fragment>
     <fragment
         android:id="@+id/savedQuranPagesFragment"
         android:name="com.example.straterproject.ui.quran.fragments.SavedQuranPagesFragment"
         android:label="fragment_saved_quran_pages"
-        tools:layout="@layout/fragment_saved_quran_pages" />
+        tools:layout="@layout/fragment_saved_quran_pages" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/quranOptionsFragment"
+        android:name="com.example.straterproject.ui.quran.fragments.QuranOptionsFragment"
+        android:label="QuranOptionsFragment"
+        tools:layout="@layout/fragment_quran_options">
+        <action
+            android:id="@+id/action_quranOptionsFragment_to_quranTabsFragment"
+            app:destination="@id/quranTabsFragment" />
+        <action
+            android:id="@+id/action_quranOptionsFragment_to_recitersFragment"
+            app:destination="@id/recitersFragment" />
+    </fragment>
 </navigation>

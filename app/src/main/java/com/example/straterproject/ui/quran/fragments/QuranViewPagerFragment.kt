@@ -1,6 +1,7 @@
 package com.example.straterproject.ui.quran.fragments
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,26 +11,35 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
+import com.example.data.dataSource.remote.response.quran.models.SavedPageModel
 import com.example.straterproject.R
+import com.example.straterproject.databinding.FragmentQuranViewPagerBinding
+import com.example.straterproject.ui.base.BaseFragment
 import com.example.straterproject.ui.quran.adapters.QuranPagerAdapter
+import com.google.common.reflect.TypeToken
+import com.google.gson.Gson
+import dagger.hilt.android.AndroidEntryPoint
 import io.hussienfahmy.mefab.MovableExpandedFloatingActionButton
 import io.hussienfahmy.mefab.fabs.OnEdgeFabClickListener
+import java.lang.reflect.Array
+import java.lang.reflect.Array.set
+import javax.inject.Inject
 
-
-class QuranViewPagerFragment : Fragment() {
+@AndroidEntryPoint
+class QuranViewPagerFragment : BaseFragment<FragmentQuranViewPagerBinding>() {
 
     private val args: QuranViewPagerFragmentArgs by navArgs()
-    private val sharedPreferencesFileName = "QuranPagePrefs"
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_quran_view_pager, container, false)
-        return rootView
-    }
+
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
+    override val layoutFragmentId: Int=R.layout.fragment_quran_view_pager
+    override val viewModel: ViewModel
+        get() = TODO("Not yet implemented")
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,45 +49,56 @@ class QuranViewPagerFragment : Fragment() {
         viewPager.adapter = quranPagesAdapter
         //set current item
         viewPager.currentItem = 604 - startPage
+        binding.quranHeader.saveMark.visibility=View.VISIBLE
+        binding.quranHeader.saveMark.setOnClickListener {
+            val currentPageNum = 604 - viewPager.currentItem
+            if (getList() == null) {
+                var list: List<SavedPageModel>
+                list = mutableListOf()
+                list.add(SavedPageModel(currentPageNum))
+                setList("saved_page", list)
+            } else {
+                //size
 
+                var mlist: MutableList<SavedPageModel> = getList()
+                if (mlist.size < 10) {
+                    mlist.add(SavedPageModel(currentPageNum))
+                    setList("saved_page", mlist)
+                }
 
-
-        val sharedPreferences =
-            requireActivity().getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE)
-        val saveButton = view.findViewById<TextView>(R.id.saveBtn)
-        saveButton.setOnClickListener {
-            saveButton.setBackgroundResource(R.drawable.filled_save_icon)
-            // Save the current page number to SharedPreferences
-            val editor = sharedPreferences.edit()
-            val currentPageNum=604 - viewPager.currentItem
-            editor.putInt("currentPageNumber", currentPageNum)
-            editor.apply()
-            Log.d("currentPageNumber", "Num" + currentPageNum)
+            }
         }
-
-
-        val showsaveButton = view.findViewById<TextView>(R.id.goTosavedBtn)
-        showsaveButton.setOnClickListener {
-            val savedPage = sharedPreferences.getInt("currentPageNumber", -1)
-            Log.d("savedPage", "P"+savedPage)
-            saveButton.setBackgroundResource(R.drawable.filled_save_icon)
-            viewPager.currentItem=604-savedPage
-        }
-       val searchTxt=view.findViewById<TextView>(R.id.search_with_aya)
-        searchTxt.setOnClickListener {
-            findNavController().navigate(R.id.quranSearchFragment)
-        }
-        val fabmenu=view.findViewById<MovableExpandedFloatingActionButton>(R.id.me_fab)
-        fabmenu.setOnEdgeFabClickListener(OnEdgeFabClickListener { id ->
-            Toast.makeText(
-                context,
-                when (id) {
-                    R.id.save_page -> "Add Clicked"
-                    R.id.move_to_page -> "Check Mark Clicked"
-                    R.id.search_in_quran -> "Clear Clicked"
-                    else -> ""
-                }, Toast.LENGTH_SHORT
-            ).show()
-        })
     }
+
+    fun <T> setList(key: String, list: List<T>) {
+
+        val gson = Gson()
+        val json = gson.toJson(list)
+        set(key, json)
+    }
+
+    fun set(key: String, value: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString(key, value)
+        editor.commit()
+        editor.apply()
+    }
+
+    fun getList(): MutableList<SavedPageModel> {
+        var arrayItems: MutableList<SavedPageModel> = mutableListOf()
+
+        val serializedObject = sharedPreferences.getString("saved_page", null)
+
+        if (serializedObject != null) {
+            val gson = Gson()
+            val type = object : TypeToken<List<SavedPageModel>>() {}.type
+            arrayItems = gson.fromJson(serializedObject, type)
+        } else {
+//            arrayItems = emptyList().toMutableList()
+        }
+
+        return arrayItems
+    }
+
+
 }

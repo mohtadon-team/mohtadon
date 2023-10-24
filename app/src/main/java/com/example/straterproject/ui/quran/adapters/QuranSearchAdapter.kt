@@ -1,5 +1,6 @@
 package com.example.straterproject.ui.quran.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -35,10 +36,11 @@ class QuranSearchAdapter(var ioclicksearch: IoClickSearchItem?) :
     }
 
     class QuranSearchHolder(val binding: QuranSearchItemBinding) : ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(aya: Aya) {
             binding.apply {
                 soraName.text = aya.sora_name_ar
-                ayaNo.text = aya.aya_no.toString()
+                ayaNo.text ="ايه"+" "+aya.aya_no.toString()
                 ayaContent.text = aya.aya_text
             }
 

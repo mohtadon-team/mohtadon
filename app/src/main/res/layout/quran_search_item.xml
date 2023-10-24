@@ -9,88 +9,57 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/search_card_background"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/spacing_small">
+        android:layout_margin="@dimen/spacing_small"
+        android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:padding="@dimen/_3sdp"
-                android:layout_weight="2">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:backgroundTint="@color/main_color"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/spacing_small"
-                    app:cardCornerRadius="@dimen/_10sdp">
-                <LinearLayout
-                    android:padding="@dimen/spacing_too_small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="سوره :"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_too_large" />
+            <TextView
+                android:id="@+id/sora_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_too_small"
+                android:fontFamily="@font/cairo_bold"
+                android:text="سوره"
+                android:textColor="@color/search_title"
+                android:textSize="@dimen/text_medium" />
 
-                    <TextView
-                        android:id="@+id/sora_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="8dp"
-                        android:text="الفاتحه"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_too_large" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_too_small"
+                android:fontFamily="@font/cairo_bold"
+                android:text="|"
+                android:textColor="@color/search_title"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="bold" />
 
-                </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:backgroundTint="@color/main_color"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/spacing_medium"
-                    app:cardCornerRadius="@dimen/_10sdp">
-                <LinearLayout
-                    android:padding="@dimen/spacing_too_small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="رقم الايه :"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_too_large" />
-
-                    <TextView
-                        android:layout_marginStart="4dp"
-                        android:id="@+id/aya_no"
-                        android:text="120"
-                        android:textColor="@color/white"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textSize="@dimen/text_too_large" />
-                </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
+            <TextView
+                android:id="@+id/aya_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:fontFamily="@font/cairo_bold"
+                android:text="رقم الايه"
+                android:textColor="@color/search_title"
+                android:textSize="@dimen/text_medium" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/aya_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_too_large"
-            android:textColor="@color/black" />
-
+            android:textColor="@color/green_text"
+            android:textSize="@dimen/text_medium"  />
+        <View
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/background_color" />
     </LinearLayout>
+
 </layout>

@@ -1,62 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.quran.fragments.QuranViewPagerFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-    />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:orientation="vertical">
-    <io.hussienfahmy.mefab.MovableExpandedFloatingActionButton
-        android:id="@+id/me_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/brown"
-        android:backgroundTintMode="src_over"
-        app:closeAfterEdgeFabClick="true"
-        app:edges="@menu/fab_menu" />
+        android:orientation="vertical"
+        tools:context=".ui.quran.fragments.QuranViewPagerFragment">
+
+
+        <include
+            android:id="@+id/quran_header"
+            layout="@layout/common_header" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layoutDirection="ltr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
- <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="@dimen/_50sdp"
-     android:background="@android:color/transparent"
-     android:orientation="horizontal">
-
-     <TextView
-         android:id="@+id/saveBtn"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="حفظ\nعلامه"
-         android:gravity="center"
-         android:background="@drawable/outline_save"
-         android:textSize="@dimen/text_medium"
-         android:textStyle="bold"/>
-
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="match_parent"
-         android:textSize="@dimen/text_large"
-         android:drawableStart="@drawable/baseline_search_24"
-         android:id="@+id/search_with_aya"
-         android:text="بحث بالايه"/>
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="انتقال\nلعلامه"
-         android:gravity="center"
-         android:id="@+id/goTosavedBtn"
-         android:background="@drawable/outline_save"
-         android:textSize="@dimen/text_medium"
-         android:textStyle="bold"/>
-
- </LinearLayout>
-</FrameLayout>
+</layout>

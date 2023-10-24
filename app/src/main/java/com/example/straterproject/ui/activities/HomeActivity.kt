@@ -59,8 +59,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                     true
                 }
 
-                com.example.straterproject.R.id.quranTabsFragment -> {
-                    navController.navigate(com.example.straterproject.R.id.quranTabsFragment)
+                com.example.straterproject.R.id.quranOptionsFragment -> {
+                    navController.navigate(com.example.straterproject.R.id.quranOptionsFragment)
                     true
                 }
 

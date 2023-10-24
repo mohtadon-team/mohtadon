@@ -11,8 +11,9 @@ object SurahMapper {
             Surah(
                 id = chapterDto?.id ?: 0,
                 nameArabic = chapterDto?.name_arabic ,
+                pages = chapterDto?.pages.orEmpty(),
                 revelationPlace = chapterDto?.revelation_place ,
-                pages = chapterDto?.pages.orEmpty()
+                verses_count = chapterDto?.verses_count?:0
             )
         } ?: emptyList()
     }

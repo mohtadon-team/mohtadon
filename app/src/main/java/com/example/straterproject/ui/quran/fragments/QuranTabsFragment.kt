@@ -23,6 +23,9 @@ class QuranTabsFragment : BaseFragment<FragmentQuranTabsBinding>(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpTabLayout()
+        binding.commonHeader.search.setOnClickListener {
+            findNavController().navigate(R.id.quranSearchFragment)
+        }
     }
 
     private fun setUpTabLayout() {

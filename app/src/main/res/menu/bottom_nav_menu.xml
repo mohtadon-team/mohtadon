@@ -8,7 +8,7 @@
         android:icon="@drawable/check"/>
     <item
         android:title="@string/quran"
-        android:id="@+id/quranTabsFragment"
+        android:id="@+id/quranOptionsFragment"
         android:icon="@drawable/quran_icon"/>
     <item
         android:title="@string/home"

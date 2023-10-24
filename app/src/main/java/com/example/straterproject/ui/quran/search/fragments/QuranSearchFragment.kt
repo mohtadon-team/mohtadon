@@ -33,11 +33,12 @@ class QuranSearchFragment : BaseFragment<FragmentQuranSearchBinding>(), IoClickS
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchEditText = view.findViewById<EditText>(R.id.quran_search_et)
         val searchRecycler = view.findViewById<RecyclerView>(R.id.search_recycler)
         searchAdapter = QuranSearchAdapter(this)
-
-        searchEditText.addTextChangedListener(object : TextWatcher {
+        binding.header.headerTitle.visibility=View.GONE
+        binding.header.search.visibility=View.GONE
+        binding.header.quranSearchEt.visibility=View.VISIBLE
+        binding.header.quranSearchEt.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 

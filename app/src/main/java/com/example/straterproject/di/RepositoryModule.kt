@@ -6,7 +6,7 @@ import com.example.data.dataSource.local.QuranRepositoryImpl
 import com.example.data.dataSource.remote.RadioRepositoryImpl
 import com.example.data.dataSource.remote.RecitersRepositoryImpl
 import com.example.data.dataSource.remote.SurahRepositoryImpl
-import com.example.data.dataSource.remote.endPoint.QuranApiService
+import com.example.data.dataSource.remote.service.QuranApiService
 import com.example.data.dataSource.remote.service.RadioService
 import com.example.data.dataSource.remote.service.RecitersService
 import com.example.domain.repo.RadioRepository

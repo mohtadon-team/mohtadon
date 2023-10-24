@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
+class QuranFragment : BaseFragment<FragmentQuranBinding>(), IonSurahClick {
 
     override val layoutFragmentId: Int = R.layout.fragment_quran
     override val viewModel: SurahViewModel by viewModels()
@@ -29,7 +29,7 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         quranAdapter = QuranAdapter()
-        quranAdapter.ionSurahClick=this
+        quranAdapter.ionSurahClick = this
         setupRecyclerView()
         observeSurahList()
         viewModel.fetchSurah()
@@ -63,17 +63,16 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
     }
 
     private fun filterList(query: String?) {
-            val filteredList = if (query.isNullOrEmpty()) {
-                viewModel.items.value ?: emptyList()
-            } else {
-                viewModel.items.value?.filter { surah ->
-                    surah.nameArabic!!.contains(query, ignoreCase = true)
-                } ?: emptyList()
-            }
-
-            quranAdapter.setSurahList(filteredList)
+        val filteredList = if (query.isNullOrEmpty()) {
+            viewModel.items.value ?: emptyList()
+        } else {
+            viewModel.items.value?.filter { surah ->
+                surah.nameArabic!!.contains(query, ignoreCase = true)
+            } ?: emptyList()
         }
 
+        quranAdapter.setSurahList(filteredList)
+    }
 
 
     private fun setupRecyclerView() {
@@ -89,9 +88,9 @@ class QuranFragment : BaseFragment<FragmentQuranBinding>() ,IonSurahClick{
 
     override fun clickSurah(surah: Surah) {
         val pagesRange = surah.pages
-       val startPage=pagesRange[0]
-        Log.d("startPage", "clickSurah: "+pagesRange[0])
-        val action = QuranFragmentDirections.actionQuranFragmentToQuranViewPagerFragment(startPage)
+        val startPage = pagesRange[0]
+        Log.d("startPage", "clickSurah: " + pagesRange[0])
+        val action = QuranTabsFragmentDirections.actionQuranTabsFragmentToQuranViewPagerFragment(startPage)
         findNavController().navigate(action)
     }
 }

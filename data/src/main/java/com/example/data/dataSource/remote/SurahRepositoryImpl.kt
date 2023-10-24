@@ -1,7 +1,7 @@
 package com.example.data.dataSource.remote
 
 
-import com.example.data.dataSource.remote.endPoint.QuranApiService
+import com.example.data.dataSource.remote.service.QuranApiService
 import com.example.data.dataSource.remote.response.quran.SurahDto
 import com.example.data.dataSource.remote.response.quran.SurahMapper
 
