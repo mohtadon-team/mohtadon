@@ -13,17 +13,18 @@
 
 
     </data>
-<androidx.cardview.widget.CardView
+<LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="@dimen/spacing_medium"
-    android:background="@color/background_color">
+   >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="@color/background_color">
+        >
 
         <androidx.cardview.widget.CardView
             android:id="@+id/home_rv_item_background"
@@ -51,7 +52,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
-            android:background="@color/background_color"
             android:textColor="@color/black"
             android:textSize="@dimen/text_large"
             app:layout_constraintEnd_toEndOf="@+id/home_rv_item_background"
@@ -61,6 +61,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</LinearLayout>
 
 </layout>

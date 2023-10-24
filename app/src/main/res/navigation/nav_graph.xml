@@ -152,7 +152,8 @@
     <fragment
         android:id="@+id/duaaListFragment"
         android:name="com.example.straterproject.ui.duaa.duaaList.DuaaListFragment"
-        android:label="DuaaListFragment" >
+        android:label="DuaaListFragment"
+        tools:layout="@layout/fragment_duaa_list">
         <action
             android:id="@+id/action_duaaListFragment_to_duaaDetailsFragment"
             app:destination="@id/duaaDetailsFragment" />
@@ -169,7 +170,8 @@
     <fragment
         android:id="@+id/hadithListFragment"
         android:name="com.example.straterproject.ui.hadith.hadithList.HadithListFragment"
-        android:label="HadithListFragment" >
+        android:label="HadithListFragment"
+        tools:layout="@layout/fragment_hadith_list">
         <action
             android:id="@+id/action_hadithListFragment_to_hadithDetailsFragment"
             app:destination="@id/hadithDetailsFragment" />
@@ -177,7 +179,8 @@
     <fragment
         android:id="@+id/hadithDetailsFragment"
         android:name="com.example.straterproject.ui.hadith.hadithDetails.HadithDetailsFragment"
-        android:label="HadithDetailsFragment" >
+        android:label="HadithDetailsFragment"
+        tools:layout="@layout/fragment_hadith_details">
         <argument
             android:name="position"
             app:argType="integer" />
@@ -185,7 +188,8 @@
     <fragment
         android:id="@+id/ayatListFragment"
         android:name="com.example.straterproject.ui.tafseer.ayatList.AyatListFragment"
-        android:label="AyatListFragment" >
+        android:label="AyatListFragment"
+        tools:layout="@layout/fragment_ayat_list">
         <action
             android:id="@+id/action_ayatListFragment_to_ayaTafseerFragment"
             app:destination="@id/ayaTafseerFragment" />
@@ -193,7 +197,8 @@
     <fragment
         android:id="@+id/ayaTafseerFragment"
         android:name="com.example.straterproject.ui.tafseer.ayaTafseer.AyaTafseerFragment"
-        android:label="AyaTafseerFragment" >
+        android:label="AyaTafseerFragment"
+        tools:layout="@layout/fragment_aya_tafseer">
         <argument
             android:name="position"
             app:argType="integer" />
