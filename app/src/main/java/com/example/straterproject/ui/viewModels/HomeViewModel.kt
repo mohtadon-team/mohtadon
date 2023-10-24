@@ -6,11 +6,13 @@ import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.viewModelScope
+import com.example.domain.usecases.GetAyaByIdUseCase
 import com.example.domain.usecases.GetTodayPrayerTimesUseCase
 import com.example.straterproject.R
 import com.example.straterproject.ui.base.BaseViewModel
 import com.example.straterproject.ui.fragments.home.HomeUIEvent
 import com.example.straterproject.ui.fragments.home.HomeUiState
+import com.example.straterproject.ui.fragments.home.OnHomeRvItemListener
 import com.example.straterproject.utilities.Event
 import com.example.straterproject.utilities.LATITUDE
 import com.example.straterproject.utilities.LONGITUDE
@@ -20,10 +22,16 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.json.JSONObject
+import java.io.IOException
+import java.io.InputStream
 import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
+import java.util.Locale
+import java.util.Random
 import javax.inject.Inject
 
 
@@ -32,28 +40,40 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getTodayPrayerTimesUseCase: GetTodayPrayerTimesUseCase,
     private val sharedPreferences: SharedPreferences,
-    @ApplicationContext private val appContext: Context
-) : BaseViewModel() {
+    @ApplicationContext private val appContext: Context,
+    private val getAyaByIdUseCase: GetAyaByIdUseCase
+) : BaseViewModel(){
 
     private val _homeUiState = MutableStateFlow(HomeUiState())
     val homeUiState = _homeUiState.asStateFlow()
 
-    private val _homeUiEvent = MutableStateFlow<Event<HomeUIEvent?>>(Event(null))
-    val homeUIEvent = _homeUiEvent.asStateFlow()
 
 
-    val test = "ahmed"
+
     init {
         _homeUiState.update {
             it.copy(isLoading = true)
         }
-
-
         val currentDate = getCurrentDate().toString()
-
         getPrayerTimes(currentDate)
 
+        val currentDateInArabic = LocalDate.now(
+        ).format(
+            DateTimeFormatter.ofLocalizedDate(
+                FormatStyle.FULL   // or LONG or MEDIUM or SHORT
+            ).withLocale(
+                Locale(
+                    "ar", "eg"
+                )   // English language, with cultural norms of United States.
+            )
+        ).toString()
+        _homeUiState.update {
+            it.copy(currentDate = currentDateInArabic)
+        }
+//        Log.i("ahmed", (Random().nextInt(20).toString()))
 
+        getRandomDuaaByRandomNumber()
+        getRandomAyaByRandomNumber()
     }
 
     fun refreshTheDifferenceBetweenCurrentAndNextSalahTime() {
@@ -63,15 +83,13 @@ class HomeViewModel @Inject constructor(
     private fun calculateTheDifferenceBetweenCurrentAndNextSalahTime(nextSalah: LocalTime) {
         val currentTime = getCurrentTime()
         val differenceDuration = Duration.between(currentTime, nextSalah)
-
-//        Log.i("ahmed", differenceDuration.toHours().toString())
         _homeUiState.update {
             it.copy(
                 currentTimeAndNextSalahTimeDifference = LocalTime.of(
                     differenceDuration.toHours().toInt(),
                     (differenceDuration.toMinutes() % 60).toInt()
-                ).toString() ,
-                thePercentageBetweenCurrentTimeAndNextSalahTime = (differenceDuration.toMillis() %100 ).toString()
+                ).toString(),
+                thePercentageBetweenCurrentTimeAndNextSalahTime = (differenceDuration.toMillis() % 100).toString()
             )
         }
     }
@@ -85,11 +103,10 @@ class HomeViewModel @Inject constructor(
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
-                    nextSalahName = "Fajr",
+                    nextSalahName = (appContext.getString(R.string.fajr)),
                     nextSalahTime = todayPrayerTimes?.Fajr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_isha)
-
 
                 )
             }
@@ -98,7 +115,7 @@ class HomeViewModel @Inject constructor(
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
-                    nextSalahName = "Dhuhr",
+                    nextSalahName = (appContext.getString(R.string.dhuhr)),
                     nextSalahTime = todayPrayerTimes?.Dhuhr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_fajr)
@@ -109,7 +126,7 @@ class HomeViewModel @Inject constructor(
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
-                    nextSalahName = "Asr",
+                    nextSalahName = (appContext.getString(R.string.asr)),
                     nextSalahTime = todayPrayerTimes?.Asr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_dhuhr)
@@ -117,12 +134,11 @@ class HomeViewModel @Inject constructor(
                 )
             }
             calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.Asr)
-
         } else if (currentTime.isBefore(todayPrayerTimes?.Maghrib)) {
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
-                    nextSalahName = "Maghrib",
+                    nextSalahName = (appContext.getString(R.string.maghrib)),
                     nextSalahTime = todayPrayerTimes?.Maghrib?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_asr)
@@ -135,7 +151,7 @@ class HomeViewModel @Inject constructor(
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
-                    nextSalahName = "Isha",
+                    nextSalahName = (appContext.getString(R.string.isha)),
                     nextSalahTime = todayPrayerTimes?.Isha?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_maghrib)
@@ -147,7 +163,7 @@ class HomeViewModel @Inject constructor(
         } else {
 
             if (_homeUiState.value.nextSalahTime.isNullOrEmpty() || (!_homeUiState.value.nextSalahName.equals(
-                    "Fajr"
+                    (appContext.getString(R.string.fajr))
                 ) && LocalTime.parse(_homeUiState.value.nextSalahTime)
                     .isBefore(LocalTime.parse("24:00")))
             ) {
@@ -155,14 +171,13 @@ class HomeViewModel @Inject constructor(
                 _homeUiState.update {
                     it.copy(
                         isLoading = false,
-                        nextSalahName = "Fajr",
+                        nextSalahName = (appContext.getString(R.string.fajr)),
                         nextSalahTime = todayPrayerTimes?.Fajr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                             .toString(),
                         doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_isha)
 
                     )
                 }
-                Log.i("ahmed", "getTheNextSalahNameAndTime: ")
                 calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.Fajr)
             }
         }
@@ -209,4 +224,51 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+
+
+    private fun getRandomDuaaByRandomNumber() {
+        val randomDuaaNumber = Random().nextInt(51 - 0)
+        var duaa = ""
+        try {
+            val inputStream: InputStream = appContext.getAssets().open("duaa/duaa.json")
+            val size = inputStream.available()
+            val buffer = ByteArray(size)
+            inputStream.read(buffer)
+            inputStream.close()
+            val obj: JSONObject = JSONObject(String(buffer))
+            val m_jArry = obj.getJSONArray("data")
+            duaa = m_jArry.getJSONObject(randomDuaaNumber).getString("text")
+            _homeUiState.update {
+                it.copy(
+                    randomDuaa = duaa
+                )
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun getRandomAyaByRandomNumber() {
+        val randomAyahNumber = Random().nextInt(51 - 0)
+        var ayah = ""
+        try {
+            val inputStream: InputStream = appContext.getAssets().open("quran/ayat.json")
+            val size = inputStream.available()
+            val buffer = ByteArray(size)
+            inputStream.read(buffer)
+            inputStream.close()
+            val obj: JSONObject = JSONObject(String(buffer))
+            val m_jArry = obj.getJSONArray("data")
+            ayah = m_jArry.getJSONObject(randomAyahNumber).getString("text")
+            _homeUiState.update {
+                it.copy(
+                    randomAya = ayah
+                )
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
 }

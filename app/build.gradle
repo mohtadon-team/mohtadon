@@ -79,7 +79,7 @@ dependencies {
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation ("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
 
     // gson
     implementation 'com.google.code.gson:gson:2.9.0'
@@ -126,8 +126,16 @@ dependencies {
 
     // lottie
     implementation 'com.airbnb.android:lottie:5.2.0'
-   //fab
+
+    //fab
     implementation 'io.github.hussienfahmy:mefab:1.0.4'
 
+    // work manager
+    def work_version = "2.8.1"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+
+    // swipe refresh layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01"
 }
 

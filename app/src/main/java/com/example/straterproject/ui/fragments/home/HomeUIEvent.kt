@@ -5,6 +5,6 @@ sealed interface HomeUIEvent {
     object ClickSeeAllPrayerTimes: HomeUIEvent
     object ClickGetQibla: HomeUIEvent
     object ClickMuteNextSalahVoice: HomeUIEvent
-    object ClickMarkPerformTheCurrentSalah: HomeUIEvent
+    data class ClickHomeRvItem(val itemId: Int) : HomeUIEvent
 
 }

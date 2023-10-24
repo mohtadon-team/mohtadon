@@ -11,7 +11,7 @@
     <string name="more">المزيد</string>
     <string name="fmradio">الاذاعه</string>
     <string name="reciters">القراء</string>
-    <string name="next_prayer">الصلاة التالية</string>
+    <string name="next_prayer">الصلاة القادمة</string>
     <string name="all_prayers">جميع الصلوات</string>
     <string name="Qibla">القبلة</string>
     <string name="search_with_aya">بحث بالايه</string>
@@ -22,4 +22,15 @@
     <string name="do_you_pray_asr">هل صليت العصر اليوم ؟</string>
     <string name="do_you_pray_maghrib">هل صليت المغرب اليوم ؟</string>
     <string name="do_you_pray_isha">هل صليت العشاء اليوم ؟</string>
+    <string name="home_welcome_text">أهلا بك !</string>
+    <string name="track_prayer">متابعةالصلاة</string>
+
+
+
+
+    <string name="fajr">الفجر</string>
+    <string name="dhuhr">الضهر</string>
+    <string name="asr">العصر</string>
+    <string name="maghrib">المغرب</string>
+    <string name="isha">العشاء</string>
 </resources>

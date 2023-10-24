@@ -145,4 +145,18 @@ val suraMap = mapOf(
 const val baseUrl = "http://mp3quran.net/api/"
 const val REQUEST_PERMISSION_CODE = 1
 const val LONGITUDE = "longitude"
-const val LATITUDE = "latitude "
+const val LATITUDE = "latitude"
+const val FAJR = "fajr"
+const val DHUHR = "fhuhr"
+const val ASR = "asr"
+const val MAGHRIB = "maghrib"
+const val ISHA = "isha"
+
+//const val PRAYER_TIMES_ARRAY = "salah_name"
+const val SALAH_NAME = "salah_name"
+
+
+
+
+
+

@@ -24,7 +24,21 @@
         android:id="@+id/homeFragment"
         android:name="com.example.straterproject.ui.fragments.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_azkarListFragment"
+            app:destination="@id/azkarListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_duaaListFragment"
+            app:destination="@id/duaaListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_hadithListFragment"
+            app:destination="@id/hadithListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_ayatListFragment"
+            app:destination="@id/ayatListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/quranFragment"
         android:name="com.example.straterproject.ui.quran.fragments.QuranFragment"
@@ -115,5 +129,73 @@
         <action
             android:id="@+id/action_quranOptionsFragment_to_recitersFragment"
             app:destination="@id/recitersFragment" />
+    </fragment>
+        tools:layout="@layout/fragment_saved_quran_pages" />
+    <fragment
+        android:id="@+id/azkarListFragment"
+        android:name="com.example.straterproject.ui.azkar.azkarList.AzkarListFragment"
+        android:label="AzkarListFragment"
+        tools:layout="@layout/fragment_azkar_list">
+        <action
+            android:id="@+id/action_azkarListFragment_to_azkarDetailsFragment"
+            app:destination="@id/azkarDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/azkarDetailsFragment"
+        android:name="com.example.straterproject.ui.azkar.azkarDetails.AzkarDetailsFragment"
+        android:label="AzkarDetailsFragment"
+        tools:layout="@layout/fragment_azkar_details">
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/duaaListFragment"
+        android:name="com.example.straterproject.ui.duaa.duaaList.DuaaListFragment"
+        android:label="DuaaListFragment" >
+        <action
+            android:id="@+id/action_duaaListFragment_to_duaaDetailsFragment"
+            app:destination="@id/duaaDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/duaaDetailsFragment"
+        android:name="com.example.straterproject.ui.duaa.duaaDetails.DuaaDetailsFragment"
+        android:label="fragment_duaa_details"
+        tools:layout="@layout/fragment_duaa_details" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/hadithListFragment"
+        android:name="com.example.straterproject.ui.hadith.hadithList.HadithListFragment"
+        android:label="HadithListFragment" >
+        <action
+            android:id="@+id/action_hadithListFragment_to_hadithDetailsFragment"
+            app:destination="@id/hadithDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hadithDetailsFragment"
+        android:name="com.example.straterproject.ui.hadith.hadithDetails.HadithDetailsFragment"
+        android:label="HadithDetailsFragment" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/ayatListFragment"
+        android:name="com.example.straterproject.ui.tafseer.ayatList.AyatListFragment"
+        android:label="AyatListFragment" >
+        <action
+            android:id="@+id/action_ayatListFragment_to_ayaTafseerFragment"
+            app:destination="@id/ayaTafseerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ayaTafseerFragment"
+        android:name="com.example.straterproject.ui.tafseer.ayaTafseer.AyaTafseerFragment"
+        android:label="AyaTafseerFragment" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
     </fragment>
 </navigation>

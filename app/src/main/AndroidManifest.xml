@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:name=".MyApplication"
@@ -29,6 +31,26 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+<!--        <receiver android:name=".ui.fragments.home.AlarmReceiver"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+<!--        <receiver android:name=".ui.fragments.home.AlarmReceiver"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.yourapp.ACTION_ALARM" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+        <receiver
+            android:name=".ui.fragments.home.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.straterproject" />
+            </intent-filter>
+        </receiver>
         <activity
             android:name=".ui.activities.SplashActivity"
             android:exported="true">
