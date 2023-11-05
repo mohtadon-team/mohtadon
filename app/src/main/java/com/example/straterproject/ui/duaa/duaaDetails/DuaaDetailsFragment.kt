@@ -34,7 +34,7 @@ class DuaaDetailsFragment : BaseFragment<FragmentDuaaDetailsBinding>() {
     }
 
     private fun setDuaaText(position: Int) {
-        var duaaText = viewModel.getDuaaText(position)
+        val duaaText = viewModel.getDuaaText(position)
         binding.duaaText.text = duaaText
     }
 }

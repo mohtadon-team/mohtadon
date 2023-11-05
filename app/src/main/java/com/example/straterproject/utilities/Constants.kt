@@ -1,12 +1,10 @@
 package com.example.straterproject.utilities
 
-import android.os.Parcel
-import android.os.Parcelable
 import com.example.domain.entity.reciters.SuraEntity
 import com.example.straterproject.player.AudioItem
 
 const val RECITERS_BASE_URL = "https://www.mp3quran.net/api/v3/"
-const val baseUrl1="https://api.quran.com/api/v4/"
+const val PRAYERS_BASE_URL="https://api.quran.com/api/v4/"
 const val RADIO_BASE_URL = "https://www.mp3quran.net/api/"
 //                             radio-v2/radio_ar.json
 

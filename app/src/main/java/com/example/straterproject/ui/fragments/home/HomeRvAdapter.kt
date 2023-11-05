@@ -14,7 +14,7 @@ class HomeRvAdapter(
         RecyclerView.ViewHolder(binding.root)
 
 
-    var homeRvItems: List<HomeRvItem> = setHomeRvItems()
+    private var homeRvItems: List<HomeRvItem> = setHomeRvItems()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeRvViewHolder {
         val binding =
@@ -42,7 +42,7 @@ class HomeRvAdapter(
     override fun getItemCount(): Int = homeRvItems.size
 
     private fun setHomeRvItems(): ArrayList<HomeRvItem> {
-        var array = ArrayList<HomeRvItem>()
+        val array = ArrayList<HomeRvItem>()
         array.add(
             HomeRvItem( 1 ,
                 R.drawable.quran_icon, R.color.home_rv_item_color_1, R.string.home_rv_item_text_1

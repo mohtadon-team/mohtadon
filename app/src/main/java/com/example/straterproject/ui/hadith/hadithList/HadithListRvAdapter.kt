@@ -14,7 +14,7 @@ class HadithListRvAdapter(
     class hadithListRvViewHolder(val binding: HadithListRvItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    var hadithListItems: List<String> = hadithItems
+    private var hadithListItems: List<String> = hadithItems
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): hadithListRvViewHolder {

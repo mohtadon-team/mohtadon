@@ -14,7 +14,7 @@ class DuaaListFragment : BaseFragment<FragmentDuaaListBinding>(), OnDuaaListRvLi
     override val layoutFragmentId: Int = R.layout.fragment_duaa_list
     override val viewModel: DuaaListViewModel by viewModels()
 
-    lateinit var duaaListRvAdapter: DuaaListRvAdapter
+    private lateinit var duaaListRvAdapter: DuaaListRvAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,7 +26,7 @@ class DuaaListFragment : BaseFragment<FragmentDuaaListBinding>(), OnDuaaListRvLi
     }
 
     private fun setAdapter() {
-        var duaaItems = viewModel.duaaListUiState.value.duaaList
+        val duaaItems = viewModel.duaaListUiState.value.duaaList
         duaaListRvAdapter = DuaaListRvAdapter(this, duaaItems)
         binding.duaaListRv.adapter = duaaListRvAdapter
     }

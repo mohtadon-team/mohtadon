@@ -21,30 +21,22 @@ object MediaModule {
     @Provides
     @Singleton
     fun provideAudioAttributes(): AudioAttributes =
-        AudioAttributes.Builder()
-            .setContentType(C.AUDIO_CONTENT_TYPE_MUSIC)
-            .setUsage(C.USAGE_MEDIA)
+        AudioAttributes.Builder().setContentType(C.AUDIO_CONTENT_TYPE_MUSIC).setUsage(C.USAGE_MEDIA)
             .build()
 
     @Provides
     @Singleton
     fun providePlayer(
-        @ApplicationContext context: Context,
-        audioAttributes: AudioAttributes
-    ): ExoPlayer =
-        ExoPlayer.Builder(context)
-            .setAudioAttributes(audioAttributes, true)
-            .setHandleAudioBecomingNoisy(true)
-            .build()
+        @ApplicationContext context: Context, audioAttributes: AudioAttributes
+    ): ExoPlayer = ExoPlayer.Builder(context).setAudioAttributes(audioAttributes, true)
+        .setHandleAudioBecomingNoisy(true).build()
 
 
     @Provides
     @Singleton
     fun provideMediaSession(
-        @ApplicationContext context: Context,
-        player: ExoPlayer
-    ): MediaSession =
-        MediaSession.Builder(context, player).build()
+        @ApplicationContext context: Context, player: ExoPlayer
+    ): MediaSession = MediaSession.Builder(context, player).build()
 
 
 }

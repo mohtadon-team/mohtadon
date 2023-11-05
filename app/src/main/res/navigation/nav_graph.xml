@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_homeFragment_to_ayatListFragment"
             app:destination="@id/ayatListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_qiblaFragment"
+            app:destination="@id/qiblaFragment" />
     </fragment>
     <fragment
         android:id="@+id/quranFragment"
@@ -187,20 +190,24 @@
     </fragment>
     <fragment
         android:id="@+id/ayatListFragment"
-        android:name="com.example.straterproject.ui.tafseer.ayatList.AyatListFragment"
+        android:name="com.example.straterproject.ui.tafseer.surahList.SurahListFragment"
         android:label="AyatListFragment"
         tools:layout="@layout/fragment_ayat_list">
         <action
-            android:id="@+id/action_ayatListFragment_to_ayaTafseerFragment"
+            android:id="@+id/action_surahListFragment_to_ayaTafseerFragment"
             app:destination="@id/ayaTafseerFragment" />
     </fragment>
     <fragment
         android:id="@+id/ayaTafseerFragment"
-        android:name="com.example.straterproject.ui.tafseer.ayaTafseer.AyaTafseerFragment"
+        android:name="com.example.straterproject.ui.tafseer.ayaTafseer.SurahTafseerFragment"
         android:label="AyaTafseerFragment"
         tools:layout="@layout/fragment_aya_tafseer">
         <argument
             android:name="position"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/qiblaFragment"
+        android:name="com.example.straterproject.ui.qiblaFinder.QiblaFragment"
+        android:label="QiblaFragment" />
 </navigation>

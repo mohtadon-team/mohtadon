@@ -8,7 +8,7 @@ import com.example.data.dataSource.remote.service.RecitersService
 import com.example.straterproject.BuildConfig.PRAYER_TIMES_BASE_URL
 import com.example.straterproject.utilities.RADIO_BASE_URL
 import com.example.straterproject.utilities.RECITERS_BASE_URL
-import com.example.straterproject.utilities.baseUrl1
+import com.example.straterproject.utilities.PRAYERS_BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -73,7 +73,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideSecondRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder().baseUrl(baseUrl1).client(okHttpClient)
+        return Retrofit.Builder().baseUrl(PRAYERS_BASE_URL).client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 

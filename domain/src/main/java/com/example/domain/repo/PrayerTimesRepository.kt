@@ -1,9 +1,16 @@
 package com.example.domain.repo
 
-import com.example.domain.models.todayPrayerTimes.TodayPrayerTimes
+import com.example.domain.models.prayerTimes.MonthPrayerTimes
+import com.example.domain.models.todayPrayerTimes.DayPrayerTimes
 
 interface PrayerTimesRepository {
-   suspend fun getTodayPrayerTimes(
+   suspend fun getDayPrayerTimes(
         date: String, latitude: Double, longitude: Double
-    ): TodayPrayerTimes
+    ): DayPrayerTimes
+
+
+   suspend fun getMonthPrayerTimes(
+       month:Int , year:Int ,latitude: Double, longitude: Double
+   ): MonthPrayerTimes
+
 }

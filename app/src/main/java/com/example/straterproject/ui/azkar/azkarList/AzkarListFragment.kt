@@ -26,10 +26,9 @@ class AzkarListFragment : BaseFragment<FragmentAzkarListBinding>(), OnAzkarListR
     }
 
     private fun setAdapter() {
-        var azkarItems = viewModel.azkarListUiState.value.azkarList
+        val azkarItems = viewModel.azkarListUiState.value.azkarList
 
         azkarListRvAdapter = AzkarListRvAdapter(this, azkarItems)
-//        azkarListRvAdapter = AzkarListRvAdapter(this , arrayListOf())
 
         binding.azkarListRv.adapter = azkarListRvAdapter
     }

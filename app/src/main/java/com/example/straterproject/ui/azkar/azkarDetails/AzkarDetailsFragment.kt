@@ -14,7 +14,7 @@ class AzkarDetailsFragment : BaseFragment<FragmentAzkarListBinding>() {
     override val layoutFragmentId: Int = R.layout.fragment_azkar_list
     override val viewModel: AzkarDetailsViewModel by viewModels()
     private val args: AzkarDetailsFragmentArgs by navArgs()
-    lateinit var azkarDetailsRvAdapter: AzkarDetailsRvAdapter
+    private lateinit var azkarDetailsRvAdapter: AzkarDetailsRvAdapter
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -27,7 +27,7 @@ class AzkarDetailsFragment : BaseFragment<FragmentAzkarListBinding>() {
     }
 
     private fun setAdapter(position: Int) {
-        var azkarDetailsItems = viewModel.getSpecificAzkarDetails(position)
+        val azkarDetailsItems = viewModel.getSpecificAzkarDetails(position)
 
         azkarDetailsRvAdapter = AzkarDetailsRvAdapter(azkarDetailsItems)
 

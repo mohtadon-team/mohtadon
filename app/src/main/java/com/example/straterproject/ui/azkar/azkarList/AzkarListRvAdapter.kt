@@ -6,9 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.straterproject.databinding.AzkarListRvItemBinding
 
 class AzkarListRvAdapter(
-    private val listener: OnAzkarListRvListener,
-    private val azkarItems:ArrayList<String>
-    ): RecyclerView.Adapter<AzkarListRvAdapter.AzkarListRvViewHolder>()  {
+    private val listener: OnAzkarListRvListener, private val azkarItems: ArrayList<String>
+) : RecyclerView.Adapter<AzkarListRvAdapter.AzkarListRvViewHolder>() {
 
     class AzkarListRvViewHolder(val binding: AzkarListRvItemBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -39,6 +38,7 @@ class AzkarListRvAdapter(
 
 
 }
+
 interface OnAzkarListRvListener {
     fun onItemclick(position: Int)
 }

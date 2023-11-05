@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.qiblaFinder.QiblaFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:backgroundTint="#EAEAEA"
+            app:cardCornerRadius="@dimen/radius_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/spacing_small"
+                android:padding="@dimen/spacing_medium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_large"
+                app:drawableStartCompat="@drawable/location_1"
+                tools:text="السادس من اكتوبر " />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/hijri_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_too_large"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cardView3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cardView3"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="11 ربيع الثانى 1445" />
+
+        <TextView
+            android:id="@+id/miladi_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:textColor="@color/dark_black"
+            android:textSize="@dimen/text_too_large"
+            app:layout_constraintEnd_toEndOf="@+id/hijri_date_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/hijri_date_text"
+            app:layout_constraintTop_toBottomOf="@+id/hijri_date_text"
+            tools:text=" 4 اغسطس 2023" />
+
+
+        <ImageView
+            android:id="@+id/first_image"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:src="@drawable/dial"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/miladi_date_text" />
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="240dp"
+            android:id="@+id/second_image"
+            android:src="@drawable/qibla_arrow"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/first_image"
+            app:layout_constraintEnd_toEndOf="@+id/first_image"
+            app:layout_constraintStart_toStartOf="@+id/first_image"
+            app:layout_constraintTop_toTopOf="@+id/first_image" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/image_qibla"-->
+<!--            android:layout_width="37dp"-->
+<!--            android:layout_height="240dp"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:src="@drawable/qibla_arrow"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/image_dial"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/image_dial"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/image_dial"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/image_dial" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/image_dial"-->
+<!--            android:layout_width="320dp"-->
+<!--            android:layout_height="320dp"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:src="@drawable/dial"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/miladi_date_text" />-->
+
+<!--      -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

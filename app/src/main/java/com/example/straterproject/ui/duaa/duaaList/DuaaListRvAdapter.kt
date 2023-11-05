@@ -13,7 +13,7 @@ class DuaaListRvAdapter(
     class DuaaListRvViewHolder(val binding: DuaaListRvItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    var duaaListItems: List<String> = duaaItems
+    private var duaaListItems: List<String> = duaaItems
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DuaaListRvViewHolder {

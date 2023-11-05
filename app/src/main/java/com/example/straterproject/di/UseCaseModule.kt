@@ -10,7 +10,8 @@ import com.example.domain.usecases.GetAllReciterUseCase
 import com.example.domain.usecases.GetAllSurahUseCase
 import com.example.domain.usecases.GetAyaByIdUseCase
 import com.example.domain.usecases.GetSurahAyahsUseCase
-import com.example.domain.usecases.GetTodayPrayerTimesUseCase
+import com.example.domain.usecases.GetDayPrayerTimesUseCase
+import com.example.domain.usecases.GetMonthPrayerTimesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,11 +42,19 @@ object UseCaseModule {
 
 
     @Provides
-    fun providePrayerTimesUseCase(
+    fun provideDayPrayerTimesUseCase(
          prayerTimesRepository: PrayerTimesRepository
-    ):GetTodayPrayerTimesUseCase{
-        return GetTodayPrayerTimesUseCase(prayerTimesRepository)
+    ):GetDayPrayerTimesUseCase{
+        return GetDayPrayerTimesUseCase(prayerTimesRepository)
     }
+
+    @Provides
+    fun provideMonthPrayerTimesUseCase(
+        prayerTimesRepository: PrayerTimesRepository
+    ):GetMonthPrayerTimesUseCase{
+        return GetMonthPrayerTimesUseCase(prayerTimesRepository)
+    }
+
 
 
     @Provides

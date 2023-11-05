@@ -1,20 +1,31 @@
 package com.example.data.dataSource.remote.service
 
-import com.example.data.dataSource.remote.response.todayPrayerTimes.TodayPrayerTimesDto
+import com.example.data.dataSource.remote.response.DayPrayerTimes.DayPrayerTimesDto
+import com.example.data.dataSource.remote.response.monthPrayerTimes.MonthPrayerTimesDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 
-interface PrayerTimesService  {
+interface PrayerTimesService {
 
     @GET("v1/timings/{date}")
-     suspend fun getTodayPrayerTimes(
-        @Path("date") date: String ,
-        @Query("latitude") latitude: Double ,
-        @Query("longitude") longitude: Double  ,
-    ): Response<TodayPrayerTimesDto>
+    suspend fun getDayPrayerTimes(
+        @Path("date") date: String,
+        @Query("latitude") latitude: Double,
+        @Query("longitude") longitude: Double,
+    ): Response<DayPrayerTimesDto>
+
+
+    @GET("v1/calendar")
+    suspend fun getMonthPrayerTimes(
+        @Query("month") month: Int,
+        @Query("year") year: Int,
+        @Query("latitude") latitude: Double,
+        @Query("longitude") longitude: Double ,
+        @Query("method") method:Int = 4
+    ): Response<MonthPrayerTimesDto>
 
 
 }

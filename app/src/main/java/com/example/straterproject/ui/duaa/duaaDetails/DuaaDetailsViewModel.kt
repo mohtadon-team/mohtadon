@@ -20,7 +20,7 @@ class DuaaDetailsViewModel @Inject constructor(
         var duaaText: String = ""
 
         try {
-            val inputStream: InputStream = appContext.getAssets().open("duaa/duaa2.json")
+            val inputStream: InputStream = appContext.assets.open("duaa/duaa2.json")
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
@@ -28,7 +28,7 @@ class DuaaDetailsViewModel @Inject constructor(
 
 
             val duaaJsonArray: JSONArray = JSONArray(String(buffer))
-            var duaaObject: JSONObject = duaaJsonArray.getJSONObject(id)
+            val duaaObject: JSONObject = duaaJsonArray.getJSONObject(id)
             duaaText = duaaObject.getString("zekr")
 
             return duaaText

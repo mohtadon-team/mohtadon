@@ -12,7 +12,7 @@ class AzkarDetailsRvAdapter constructor(
     class AzkarDetailsRvViewHolder(val binding: AzkarDetailsRvItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    var azkarDetailsItems: List<ZekrDetailsModel> = azkarItems
+    private var azkarDetailsItems: List<ZekrDetailsModel> = azkarItems
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AzkarDetailsRvViewHolder {
@@ -27,7 +27,7 @@ class AzkarDetailsRvAdapter constructor(
 
     override fun onBindViewHolder(holder: AzkarDetailsRvViewHolder, position: Int) {
         holder.binding.apply {
-            var zekrDetailsItem = azkarDetailsItems.get(position)
+            val zekrDetailsItem = azkarDetailsItems.get(position)
             zekrText.text = zekrDetailsItem.zekrText
             zekrNumberOfRepeats.text = zekrDetailsItem.zekrNumberOfRepeation.toString()
         }

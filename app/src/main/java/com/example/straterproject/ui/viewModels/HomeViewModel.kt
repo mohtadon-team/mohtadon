@@ -7,13 +7,10 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecases.GetAyaByIdUseCase
-import com.example.domain.usecases.GetTodayPrayerTimesUseCase
+import com.example.domain.usecases.GetDayPrayerTimesUseCase
 import com.example.straterproject.R
 import com.example.straterproject.ui.base.BaseViewModel
-import com.example.straterproject.ui.fragments.home.HomeUIEvent
 import com.example.straterproject.ui.fragments.home.HomeUiState
-import com.example.straterproject.ui.fragments.home.OnHomeRvItemListener
-import com.example.straterproject.utilities.Event
 import com.example.straterproject.utilities.LATITUDE
 import com.example.straterproject.utilities.LONGITUDE
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -38,16 +35,14 @@ import javax.inject.Inject
 @RequiresApi(Build.VERSION_CODES.O)
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getTodayPrayerTimesUseCase: GetTodayPrayerTimesUseCase,
+    private val getDayPrayerTimesUseCase: GetDayPrayerTimesUseCase,
     private val sharedPreferences: SharedPreferences,
     @ApplicationContext private val appContext: Context,
     private val getAyaByIdUseCase: GetAyaByIdUseCase
-) : BaseViewModel(){
+) : BaseViewModel() {
 
     private val _homeUiState = MutableStateFlow(HomeUiState())
     val homeUiState = _homeUiState.asStateFlow()
-
-
 
 
     init {
@@ -70,10 +65,149 @@ class HomeViewModel @Inject constructor(
         _homeUiState.update {
             it.copy(currentDate = currentDateInArabic)
         }
-//        Log.i("ahmed", (Random().nextInt(20).toString()))
 
         getRandomDuaaByRandomNumber()
         getRandomAyaByRandomNumber()
+        Log.i("ahmed", "test")
+
+//        try {
+//            val inputStream: InputStream = appContext.getAssets().open("quranPages.json")
+//            val size = inputStream.available()
+//            val buffer = ByteArray(size)
+//            inputStream.read(buffer)
+//            inputStream.close()
+//            val jsonArray = JSONArray(String(buffer))
+//            val jsonObject:JSONObject = jsonArray.getJSONObject(5)
+//            jsonObject.put("surah_name" , "ahmed")
+//            val inputStream: InputStream = appContext.assets.open("quranPages.json")
+//            val outputFile = File(appContext.filesDir, "test")
+//            val outputStream = outputFile.outputStream()
+//            inputStream.use { input ->
+//                outputStream.use { output ->
+//                    input.copyTo(output)
+//                }
+//            }
+//            val file = File(appContext.filesDir, "test")
+//            val jsonString = file.readText()
+////            val jsonArray = JsonArray(jsonString)
+//            val jsonArray = JSONArray(jsonString)
+////            jsonArray.getJSONObject(0).put("surah_name","ahmed")
+//            Log.i("ahmed", jsonArray.length().toString())
+//
+//            for (i in 0..25){
+//                jsonArray.getJSONObject(i).put("surah_id" , 8)
+//                jsonArray.getJSONObject(i).put("surah_name" , "الأنفالquran ")
+//                jsonArray.getJSONObject(i).put("page" , i + 151 )
+//            }
+//            Log.i("ahmed", jsonArray.toString())
+//            // Modify the JSON object
+////            jsonObject.put(key, value)
+////
+////            // Write the modified JSON back to the file
+////            file.writeText(jsonObject.toString())
+//        }catch (e:Throwable){
+//            Log.i("ahmed", "error")
+//
+//        }
+
+//        val pageNumber = 20 // Change this to the desired page number
+//
+//        val surah = Constants.getPageSurah(pageNumber)
+//        val surah = Constants.getPageSurah(pageNumber)
+//        var pageNumber = 30
+//        var surahName = when(pageNumber){
+//            1 -> "الفاتحة"
+//            in 2..49 -> "البقرة"
+//
+//            in 50..76 -> "آل عمران"
+//
+//            in 77..106 -> "النساء"
+//
+//            in 106..127 -> "المائدة"
+//
+//            in 128..150 -> "الأنعام"
+//
+//            in 151..176 -> "الأعراف"
+//
+//
+//            in   177..186 -> "الأنفال"
+//
+//
+//            in  187..207 -> "التوبة"
+//
+//            in 208..221 -> "يونس"
+//
+//            in 221..235 -> "هود"
+//
+//            in    235..248 -> "يوسف"
+//
+//            in   249..255 -> "الرعد"
+//
+//            in  255..261 -> "ابراهيم"
+//
+//            in 262..267 -> "الحجر"
+//
+//            in 267..281 -> "النحل"
+//
+//            in 282..293 -> "الإسراء"
+//
+//            in  293..304 -> "الكهف"
+//
+//            in 305.. 312 -> "مريم"
+//
+//            in  312..321 -> "طه "
+//
+//            in  322..331 -> "الأنبياء"
+//
+//            in 332..341 -> "الحج"
+//
+//            in  342..349 -> "المؤمنون"
+//
+//            in 350..359 -> "النور"
+//
+//            in  359..366 -> "الفرقان"
+//
+//            in  367..376 -> "الشعراء"
+//
+//            in 377..385 -> "النمل"
+//
+//            in 385..396-> "القصص"
+//
+//            in 396..404 -> "العنكبوت"
+//
+//            in  404..410 -> "الروم"
+//
+//            in  404..410 -> "الروم"
+//
+//            in   411..414-> "لقمان"
+//
+//            in   415..417 -> "السجدة"
+//
+//            in   418..427 -> "الأحزاب"
+//
+//            in    428..434 -> "سبإ"
+//
+//            in  434..440 -> "فاطر"
+//
+//            in  440..445-> "يس"
+//
+//            in  446..452-> "الصافات"
+//
+//            in   453..458 -> "ص"
+//
+//            in  458..467 -> "الزمر"
+//
+//            in   467..476 -> "غافر"
+//
+//            in  477..482-> "فصلت"
+//
+//            in 483..489 -> "الشورى"
+//
+//            in  489..495 -> "الزخرف"
+//
+//
+//
+//        }
     }
 
     fun refreshTheDifferenceBetweenCurrentAndNextSalahTime() {
@@ -96,73 +230,73 @@ class HomeViewModel @Inject constructor(
 
     private fun getTheNextSalahNameAndTime() {
 
-        val todayPrayerTimes = _homeUiState.value.todayPrayerTimes
+        val todayPrayerTimes = _homeUiState.value.dayPrayerTimes
         val currentTime = getCurrentTime()
 
-        if (currentTime.isBefore(todayPrayerTimes?.Fajr)) {
+        if (currentTime.isBefore(todayPrayerTimes?.fajr)) {
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
                     nextSalahName = (appContext.getString(R.string.fajr)),
-                    nextSalahTime = todayPrayerTimes?.Fajr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
+                    nextSalahTime = todayPrayerTimes?.fajr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_isha)
 
                 )
             }
-            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.Fajr)
-        } else if (currentTime.isBefore(todayPrayerTimes?.Dhuhr)) {
+            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.fajr)
+        } else if (currentTime.isBefore(todayPrayerTimes?.dhuhr)) {
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
                     nextSalahName = (appContext.getString(R.string.dhuhr)),
-                    nextSalahTime = todayPrayerTimes?.Dhuhr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
+                    nextSalahTime = todayPrayerTimes?.dhuhr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_fajr)
                 )
             }
-            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.Dhuhr)
-        } else if (currentTime.isBefore(todayPrayerTimes?.Asr)) {
+            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.dhuhr)
+        } else if (currentTime.isBefore(todayPrayerTimes?.asr)) {
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
                     nextSalahName = (appContext.getString(R.string.asr)),
-                    nextSalahTime = todayPrayerTimes?.Asr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
+                    nextSalahTime = todayPrayerTimes?.asr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_dhuhr)
 
                 )
             }
-            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.Asr)
-        } else if (currentTime.isBefore(todayPrayerTimes?.Maghrib)) {
+            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.asr)
+        } else if (currentTime.isBefore(todayPrayerTimes?.maghrib)) {
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
                     nextSalahName = (appContext.getString(R.string.maghrib)),
-                    nextSalahTime = todayPrayerTimes?.Maghrib?.format(DateTimeFormatter.ofPattern("hh:mm a"))
+                    nextSalahTime = todayPrayerTimes?.maghrib?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_asr)
 
                 )
             }
-            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.Maghrib)
+            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.maghrib)
 
-        } else if (currentTime.isBefore(todayPrayerTimes?.Isha)) {
+        } else if (currentTime.isBefore(todayPrayerTimes?.isha)) {
             _homeUiState.update {
                 it.copy(
                     isLoading = false,
                     nextSalahName = (appContext.getString(R.string.isha)),
-                    nextSalahTime = todayPrayerTimes?.Isha?.format(DateTimeFormatter.ofPattern("hh:mm a"))
+                    nextSalahTime = todayPrayerTimes?.isha?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                         .toString(),
                     doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_maghrib)
 
                 )
             }
-            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.Isha)
+            calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.isha)
 
         } else {
 
-            if (_homeUiState.value.nextSalahTime.isNullOrEmpty() || (!_homeUiState.value.nextSalahName.equals(
+            if (_homeUiState.value.nextSalahTime.isEmpty() || (!_homeUiState.value.nextSalahName.equals(
                     (appContext.getString(R.string.fajr))
                 ) && LocalTime.parse(_homeUiState.value.nextSalahTime)
                     .isBefore(LocalTime.parse("24:00")))
@@ -172,13 +306,13 @@ class HomeViewModel @Inject constructor(
                     it.copy(
                         isLoading = false,
                         nextSalahName = (appContext.getString(R.string.fajr)),
-                        nextSalahTime = todayPrayerTimes?.Fajr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
+                        nextSalahTime = todayPrayerTimes?.fajr?.format(DateTimeFormatter.ofPattern("hh:mm a"))
                             .toString(),
                         doYouPrayTheLastSalah = appContext.getString(R.string.do_you_pray_isha)
 
                     )
                 }
-                calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.Fajr)
+                calculateTheDifferenceBetweenCurrentAndNextSalahTime(todayPrayerTimes!!.fajr)
             }
         }
     }
@@ -208,10 +342,10 @@ class HomeViewModel @Inject constructor(
 
         viewModelScope.launch {
             try {
-                var result = getTodayPrayerTimesUseCase(date, latitude!!, longitude!!)
+                val result = getDayPrayerTimesUseCase(date, latitude!!, longitude!!)
                 _homeUiState.update {
                     it.copy(
-                        todayPrayerTimes = result
+                        dayPrayerTimes = result
                     )
                 }
                 getTheNextSalahNameAndTime()
@@ -226,22 +360,23 @@ class HomeViewModel @Inject constructor(
     }
 
 
-
     private fun getRandomDuaaByRandomNumber() {
-        val randomDuaaNumber = Random().nextInt(51 - 0)
+        val randomDuaaNumber = Random().nextInt(50 - 0)
         var duaa = ""
         try {
-            val inputStream: InputStream = appContext.getAssets().open("duaa/duaa.json")
+            val inputStream: InputStream = appContext.assets.open("duaa/duaa.json")
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
-            val obj: JSONObject = JSONObject(String(buffer))
-            val m_jArry = obj.getJSONArray("data")
-            duaa = m_jArry.getJSONObject(randomDuaaNumber).getString("text")
+            val duaaObject = JSONObject(String(buffer))
+            val duaaArray = duaaObject.getJSONArray("data")
+            duaa = duaaArray.getJSONObject(randomDuaaNumber).getString("text")
             _homeUiState.update {
                 it.copy(
                     randomDuaa = duaa
+//                    randomDuaa = "sjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjk"
+
                 )
             }
         } catch (e: IOException) {
@@ -250,7 +385,7 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun getRandomAyaByRandomNumber() {
-        val randomAyahNumber = Random().nextInt(51 - 0)
+        val randomAyahNumber = Random().nextInt(50 - 0)
         var ayah = ""
         try {
             val inputStream: InputStream = appContext.getAssets().open("quran/ayat.json")
@@ -258,12 +393,14 @@ class HomeViewModel @Inject constructor(
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
-            val obj: JSONObject = JSONObject(String(buffer))
-            val m_jArry = obj.getJSONArray("data")
-            ayah = m_jArry.getJSONObject(randomAyahNumber).getString("text")
+            val ayaObject = JSONObject(String(buffer))
+            val ayaArray = ayaObject.getJSONArray("data")
+            ayah = ayaArray.getJSONObject(randomAyahNumber).getString("text")
             _homeUiState.update {
                 it.copy(
                     randomAya = ayah
+//                    randomAya = "sjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjksjkdfghfjksdhjkdfshjkghdjkfhgjkldfshgjklfhgjklhjklfsdhgjkfgjkfhjkdshagjklsahjklfghjk"
+
                 )
             }
         } catch (e: IOException) {

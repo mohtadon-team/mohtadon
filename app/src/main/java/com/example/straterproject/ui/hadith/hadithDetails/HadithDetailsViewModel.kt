@@ -28,7 +28,7 @@ class HadithDetailsViewModel @Inject constructor(
 
 
             val hadithJsonArray: JSONArray = JSONArray(String(buffer))
-            var hadithObject: JSONObject = hadithJsonArray.getJSONObject(id)
+            val hadithObject: JSONObject = hadithJsonArray.getJSONObject(id)
             hadithText = hadithObject.getString("arab")
 
             return hadithText

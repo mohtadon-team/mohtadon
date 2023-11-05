@@ -2,8 +2,6 @@ package com.example.straterproject.ui.activities
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.AlarmManager
-import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -18,10 +16,9 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.data.azan.AlarmScheduler
-import com.example.data.azan.AlarmScheduling
 import com.example.straterproject.databinding.ActivityHomeBinding
 import com.example.straterproject.ui.base.BaseActivity
+import com.example.straterproject.utilities.AzanPrayersUtil
 import com.example.straterproject.utilities.LATITUDE
 import com.example.straterproject.utilities.LONGITUDE
 import com.example.straterproject.utilities.REQUEST_PERMISSION_CODE
@@ -32,7 +29,6 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Calendar
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -41,7 +37,6 @@ import javax.inject.Inject
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     override val layoutActivityId: Int = com.example.straterproject.R.layout.activity_home
     lateinit var navController: NavController
-//    lateinit var coordinatesPrefRepositoryImp: CoordinatesPrefRepositoryImp
 
     @Inject
     lateinit var sharedPreferences: SharedPreferences
@@ -55,76 +50,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             supportFragmentManager.findFragmentById(com.example.straterproject.R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
 
-
-//        Log.i("ahmed",applicationContext.packageName
-//        )
-
-
-
-
-        // Set the time for 12:01 AM
-        val calendar = Calendar.getInstance()
-        calendar.set(Calendar.HOUR_OF_DAY, 0)
-        calendar.set(Calendar.MINUTE, 1)
-        calendar.set(Calendar.SECOND, 0)
-
-        // Create an Intent for your BroadcastReceiver
-
-        // Get the AlarmManager service
-//        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-//        val alarmIntent = Intent(this, AlarmReceiver::class.java)
-//        val pendingIntent =
-//            PendingIntent.getBroadcast(this, 1, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-
-
-
-//        if (System.currentTimeMillis() > calendar.timeInMillis) {
-//            calendar.add(Calendar.DAY_OF_YEAR, 1)
-//            alarmManager.set(  AlarmManager.RTC_WAKEUP,
-//                System.currentTimeMillis(),
-//                pendingIntent)
-//        }
-
-
-        // Set up a repeating alarm that triggers daily
-//        alarmManager.setRepeating(
-//            AlarmManager.RTC_WAKEUP,
-//            calendar.timeInMillis + 50,
-//            AlarmManager.INTERVAL_DAY,
-//            pendingIntent
-//        )
-
-//        val registerPrayerRequest: OneTimeWorkRequest =
-//            OneTimeWorkRequest.Builder(RefreshPrayerTimesForWorker::class.java)
-////                .addTag(prayerTag)  // this to prevent the repeat if more prayer have the same time
-////                .setInitialDelay(delay, TimeUnit.MILLISECONDS)
-////                .setInputData(input)
-//                .build()
-
-//        WorkManager.getInstance(applicationContext).enqueueUniqueWork(
-//            "prayerTag",
-//            ExistingWorkPolicy.REPLACE,  // هنا لو حصل تكرار هيشيل القديم ويحط الجديد
-//            registerPrayerRequest
-//        )
-
-//        val configuration = Configuration(applicationContext.getResources().getConfiguration())
-//        configuration.locale = Locale.ROOT
-//        applicationContext.getResources()
-//            .updateConfiguration(configuration, applicationContext.getResources().getDisplayMetrics())
-//        lateinit var jsonString: String
-//        try {
-//            jsonString = baseContext.assets.open("duaa/duaa.json")
-//                .bufferedReader()
-//                .use {
-//                    it.readText() }
-//        } catch (ioException: IOException) {
-//
-//        }
-//        jsonString.indexOf('2').toString()
-//        Log.i("ahmed", jsonString.substring(
-//            jsonString.indexOf('3') + 18 ,
-//            jsonString.indexOf('4') - 24
-//        ) )
 
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
@@ -159,8 +84,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         // set default selection to homeFragment
         binding.bottomNav.selectedItemId = com.example.straterproject.R.id.homeFragment
         getCurrentLocation()
-    }
 
+        AzanPrayersUtil().registerPrayers(this)
+
+    }
 
 
     @SuppressLint("MissingPermission")
@@ -169,11 +96,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         if (isLocationPermissionTaken()) {
             if (isLocationEnable()) {
 
-                var fusedLocationProviderClient =
+                val fusedLocationProviderClient =
                     LocationServices.getFusedLocationProviderClient(this)
                 lateinit var locationCallback: LocationCallback
 
-                var locationRequest: LocationRequest = LocationRequest.Builder(
+                val locationRequest: LocationRequest = LocationRequest.Builder(
                     Priority.PRIORITY_HIGH_ACCURACY, TimeUnit.MINUTES.toMillis(5)
                 ).apply {
                     setGranularity(Granularity.GRANULARITY_PERMISSION_LEVEL)
@@ -190,9 +117,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
                         currentLocation?.time
 
-//                        coordinatesPrefRepositoryImp = CoordinatesPrefRepositoryImp(this@HomeActivity)
-//                        sharedPreferences.putString(LATITUDE ,currentLocation?.latitude.toString() )
-//                        sharedPreferences.putString(LONGITUDE , currentLocation?.longitude.toString())
+
                         editor = sharedPreferences.edit()
                         editor.putString(LATITUDE, currentLocation?.latitude.toString())
                         editor.putString(LONGITUDE, currentLocation?.longitude.toString())
@@ -259,20 +184,4 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         }
 
     }
-
-
-//    fun getDuaa(context: Context): String {
-//
-//        lateinit var jsonString: String
-//        try {
-//            jsonString = context.assets.open("duaa/duaa.json")
-//                .bufferedReader()
-//                .use { it.readText() }
-//        } catch (ioException: IOException) {
-//
-//        }
-//
-//        val listCountryType = object : TypeToken<List<Country>>() {}.type
-//        return Gson().fromJson(jsonString, listCountryType)
-//}
 }

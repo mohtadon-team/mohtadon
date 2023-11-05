@@ -32,7 +32,7 @@ class HadithDetailsFragment : BaseFragment<FragmentHadithDetailsBinding>() {
     }
 
     private fun setDuaaText(position: Int) {
-        var hadithText = viewModel.getHadithText(position)
+        val hadithText = viewModel.getHadithText(position)
         binding.hadithText.text = hadithText
     }
 }

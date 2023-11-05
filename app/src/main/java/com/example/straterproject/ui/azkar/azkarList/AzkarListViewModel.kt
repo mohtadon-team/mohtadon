@@ -28,25 +28,21 @@ class AzkarListViewModel @Inject constructor(
 
     private fun collectAzkarListData() {
 
-        var azkarListItems = ArrayList<String>()
+        val azkarListItems = ArrayList<String>()
         try {
-            val inputStream: InputStream = appContext.getAssets().open("azkar/azkar.json")
+            val inputStream: InputStream = appContext.assets.open("azkar/azkar.json")
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
             val azkarJsonArray: JSONArray = JSONArray(String(buffer))
             for (position in 0..131) {
-                var zekrObject: JSONObject = azkarJsonArray.getJSONObject(position)
-                var zekrName = zekrObject.getString("category")
+                val zekrObject: JSONObject = azkarJsonArray.getJSONObject(position)
+                val zekrName = zekrObject.getString("category")
                 azkarListItems.add(zekrName)
-//                Log.i("ahmed", "test")
-//
-//
-//                Log.i("ahmed", zekrName)
+
             }
-//            val m_jArry = obj.getJSONArray("data")
-//            ayah = m_jArry.getJSONObject(randomAyahNumber).getString("text")
+
             _azkarListUiState.update {
                 it.copy(
                     azkarList = azkarListItems

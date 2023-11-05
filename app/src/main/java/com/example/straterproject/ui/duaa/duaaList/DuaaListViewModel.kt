@@ -28,17 +28,17 @@ class DuaaListViewModel @Inject constructor(
 
     private fun collectDuaaListData() {
 
-        var duaaListItems = ArrayList<String>()
+        val duaaListItems = ArrayList<String>()
         try {
-            val inputStream: InputStream = appContext.getAssets().open("duaa/duaa2.json")
+            val inputStream: InputStream = appContext.assets.open("duaa/duaa2.json")
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
             val duaaJsonArray: JSONArray = JSONArray(String(buffer))
             for (position in 0..131) {
-                var duaaObject: JSONObject = duaaJsonArray.getJSONObject(position)
-                var duaaName = duaaObject.getString("category")
+                val duaaObject: JSONObject = duaaJsonArray.getJSONObject(position)
+                val duaaName = duaaObject.getString("category")
                 duaaListItems.add(duaaName)
 
             }

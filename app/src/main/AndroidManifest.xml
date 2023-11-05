@@ -31,6 +31,11 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+<!--        <provider-->
+<!--            android:name="androidx.startup.InitializationProvider"-->
+<!--            android:authorities="${applicationId}.androidx-startup"-->
+<!--            tools:node="remove">-->
+<!--        </provider>-->
 <!--        <receiver android:name=".ui.fragments.home.AlarmReceiver"-->
 <!--            android:exported="true">-->
 <!--            <intent-filter>-->

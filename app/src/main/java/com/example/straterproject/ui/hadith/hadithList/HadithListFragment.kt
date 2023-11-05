@@ -15,7 +15,7 @@ class HadithListFragment : BaseFragment<FragmentHadithListBinding>(), OnHadithLi
     override val layoutFragmentId: Int = R.layout.fragment_hadith_list
     override val viewModel: HadithListViewModel by viewModels()
 
-    lateinit var hadithListRvAdapter: HadithListRvAdapter
+    private lateinit var hadithListRvAdapter: HadithListRvAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,7 +27,7 @@ class HadithListFragment : BaseFragment<FragmentHadithListBinding>(), OnHadithLi
     }
 
     private fun setAdapter() {
-        var hadithItems = viewModel.hadithListUiState.value.hadithList
+        val hadithItems = viewModel.hadithListUiState.value.hadithList
         hadithListRvAdapter = HadithListRvAdapter(this, hadithItems)
         binding.hadithListRv.adapter = hadithListRvAdapter
     }
