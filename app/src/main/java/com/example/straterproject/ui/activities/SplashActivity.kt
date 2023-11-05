@@ -18,18 +18,18 @@ class SplashActivity : AppCompatActivity() {
     private var mySound: MediaPlayer? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_splash)
-        supportActionBar?.hide()
-        mySound = MediaPlayer.create(this, R.raw.splash_sound)
-        mySound?.start()
-
-        GlobalScope.launch(Dispatchers.Main) {
-            delay(12000)
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        setContentView(R.layout.activity_splash)
+//        supportActionBar?.hide()
+//        mySound = MediaPlayer.create(this, R.raw.splash_sound)
+//        mySound?.start()
+//
+//        GlobalScope.launch(Dispatchers.Main) {
+//            delay(12000)
             nextActivity()
         }
-    }
+//    }
 
     private fun nextActivity() {
         val intent = Intent(this, HomeActivity::class.java)

@@ -67,7 +67,7 @@
             android:id="@+id/first_image"
             android:layout_width="320dp"
             android:layout_height="320dp"
-            android:src="@drawable/dial"
+            android:src="@drawable/compass"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
