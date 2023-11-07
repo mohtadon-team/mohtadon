@@ -9,17 +9,14 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.QuranFragment">
+        tools:context=".ui.quran.fragments.QuranFragment">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-<include
-    layout="@layout/common_header"
-    android:id="@+id/common_header"/>
+
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_below="@id/common_header"
                 android:id="@+id/surahRec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

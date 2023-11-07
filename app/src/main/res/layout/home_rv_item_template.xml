@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="listener"
+            type="com.example.straterproject.ui.fragments.home.OnHomeRvItemListener" />
+
+        <variable
+            name="item"
+            type="com.example.straterproject.ui.fragments.home.HomeRvItem" />
+
+
+    </data>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="@dimen/spacing_medium"
+   >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/home_rv_item_background"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/orange"
+            app:cardCornerRadius="@dimen/radius_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/home_rv_item_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:tint="@color/white"
+                tools:src="@drawable/duaa" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/home_rv_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_large"
+            app:layout_constraintEnd_toEndOf="@+id/home_rv_item_background"
+            app:layout_constraintStart_toStartOf="@+id/home_rv_item_background"
+            app:layout_constraintTop_toBottomOf="@+id/home_rv_item_background"
+            tools:text="التفسير" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+
+</layout>

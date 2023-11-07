@@ -10,25 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.fragments.MoreFragment">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/arabic_lang_btn"
-            android:text="@string/arabic_language"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/eng_lang_btn"
-            android:text="@string/english_language"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reset_lang_btn"
-        android:text="reset to device language"/>
-</LinearLayout>
+
     </FrameLayout>
 </layout>

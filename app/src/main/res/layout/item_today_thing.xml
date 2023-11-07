@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_color">
+
+    <TextView
+        android:id="@+id/item_thing_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_medium"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="دعاء اليوم " />
+
+
+    <TextView
+        android:id="@+id/track_prayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:text="المزيد"
+        android:textColor="@color/main_color"
+        android:textSize="@dimen/text_large"
+        app:drawableLeftCompat="@drawable/baseline_arrow_back_ios_24"
+        app:drawableTint="@color/main_color"
+        app:layout_constraintBottom_toBottomOf="@+id/item_thing_tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_thing_tv_title" />
+
+
+    <TextView
+        android:id="@+id/item_thing_tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_medium"
+        android:background="@drawable/home_textview_today_thing_shape"
+        android:gravity="start"
+        android:padding="@dimen/spacing_small"
+        tools:text="ksdjkhjkhsjhsjkhvjklshjklhjdfkhkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhk
+        ksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkljdfsgjkhdkljdfsgjkhdk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_thing_tv_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>

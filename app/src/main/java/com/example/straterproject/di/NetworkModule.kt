@@ -1,16 +1,14 @@
 package com.example.straterproject.di
 
 
-import com.example.data.dataSource.remote.endPoint.QuranApiService
-
+import com.example.data.dataSource.remote.service.QuranApiService
 import com.example.data.dataSource.remote.service.PrayerTimesService
 import com.example.data.dataSource.remote.service.RadioService
 import com.example.data.dataSource.remote.service.RecitersService
-import com.example.straterproject.BuildConfig
+import com.example.straterproject.BuildConfig.PRAYER_TIMES_BASE_URL
 import com.example.straterproject.utilities.RADIO_BASE_URL
 import com.example.straterproject.utilities.RECITERS_BASE_URL
-import com.example.straterproject.utilities.baseUrl1
-import com.google.gson.Gson
+import com.example.straterproject.utilities.PRAYERS_BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,6 +34,12 @@ object NetworkModule {
 
     }
 
+    @Provides
+    @Singleton
+    fun provideGsonConverterFactory(): GsonConverterFactory {
+        return GsonConverterFactory.create()
+    }
+
     @Named("provideRetrofitForReciters")
     @Provides
     @Singleton
@@ -43,9 +47,11 @@ object NetworkModule {
         return Retrofit.Builder().baseUrl(RECITERS_BASE_URL).client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
+
+
     @Provides
     @Singleton
-    fun provideRecitersService(@Named("provideRetrofitForReciters")retrofit: Retrofit): RecitersService {
+    fun provideRecitersService(@Named("provideRetrofitForReciters") retrofit: Retrofit): RecitersService {
         return retrofit.create(RecitersService::class.java)
     }
 
@@ -56,75 +62,41 @@ object NetworkModule {
         return Retrofit.Builder().baseUrl(RADIO_BASE_URL).client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
+
     @Provides
     @Singleton
-    fun provideRadioService(@Named("provideRetrofitForRadio")retrofit: Retrofit): RadioService {
+    fun provideRadioService(@Named("provideRetrofitForRadio") retrofit: Retrofit): RadioService {
         return retrofit.create(RadioService::class.java)
     }
-
-
-
 
     @Named("secondRetrofit")
     @Provides
     @Singleton
     fun provideSecondRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(baseUrl1)
-            .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        return Retrofit.Builder().baseUrl(PRAYERS_BASE_URL).client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
     @Provides
     @Singleton
-    fun provideSeconApiService(@Named("secondRetrofit") retrofit: Retrofit): QuranApiService {
+    fun provideSecondApiService(@Named("secondRetrofit") retrofit: Retrofit): QuranApiService {
         return retrofit.create(QuranApiService::class.java)
     }
 
-        @Singleton
-        @Provides
-        @Named("prayer_times")
-        fun providePrayerTimesService(
-            @Named("prayer_times") retrofit: Retrofit
-        ): PrayerTimesService {
-            return retrofit.create(PrayerTimesService::class.java)
-        }
+    @Named("provideRetrofitForPrayerTimes")
+    @Provides
+    @Singleton
+    fun providePrayerTimesRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder().baseUrl(PRAYER_TIMES_BASE_URL).client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
 
-        @Singleton
-        @Provides
-        @Named("prayer_times")
-        fun providePrayerTimesRetrofit(
-            @Named("prayer_times") client: OkHttpClient,
-            @Named("prayer_times") gsonConverterFactory: GsonConverterFactory
-        ): Retrofit {
-            return Retrofit.Builder().baseUrl(BuildConfig.PRAYER_TIMES_BASE_URL).client(client)
-                .addConverterFactory(gsonConverterFactory).build()
+    @Provides
+    @Singleton
+    fun providePrayerTimesService(@Named("provideRetrofitForPrayerTimes") retrofit: Retrofit): PrayerTimesService {
+        return retrofit.create(PrayerTimesService::class.java)
+    }
 
-        }
 
-            @Provides
-            @Named("prayer_times")
-            fun providePrayerTimesOkHttpClient(): OkHttpClient {
-                return OkHttpClient.Builder().build()
-            }
-
-            @Singleton
-            @Provides
-            @Named("prayer_times")
-            fun providePrayerTimesGsonConverterFactory(): GsonConverterFactory {
-                return GsonConverterFactory.create()
-            }
-
-            @Singleton
-            fun provideSecondApiService(@Named("secondRetrofit") retrofit: Retrofit): QuranApiService {
-                return retrofit.create(QuranApiService::class.java)}
-
-                @Provides
-                @Named("prayer_times")
-                fun providePrayerTimesGson(): Gson {
-                    return Gson()
-                }
-
-            }
+}
 

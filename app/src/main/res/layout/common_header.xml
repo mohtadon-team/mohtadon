@@ -2,30 +2,56 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_50sdp"
-    android:orientation="vertical"
-    android:background="#80D6B89E"
-    >
+    android:background="@color/main_color"
+    android:orientation="vertical">
 
-
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:src="@drawable/search" />
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/save_mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:src="@drawable/bookmark_icon" />
     <TextView
-        android:visibility="visible"
+        android:id="@+id/header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:fontFamily="@font/cairo_bold"
         android:text="المصحف"
-        android:id="@+id/header_title"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_large" />
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_large"
+        android:visibility="visible" />
 
-    <androidx.appcompat.widget.SearchView
-
-        android:id="@+id/search_view"
+    <EditText
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_medium"
-        android:layout_marginTop="@dimen/spacing_medium"
-        android:layout_marginEnd="@dimen/spacing_medium"
-        android:layout_marginBottom="@dimen/spacing_medium" />
+        android:background="@drawable/search_card_background"
+        android:id="@+id/quran_search_et"
+        android:hint="بحث"
+        android:textColorHint="@color/card_background"
+        android:gravity="center_vertical"
+        android:padding="@dimen/spacing_small"
+        android:textColor="@color/card_background"
+        android:layout_margin="@dimen/spacing_small"
+        android:drawablePadding="@dimen/spacing_too_small"
+        android:drawableEnd="@drawable/search" />
 
 </RelativeLayout>

@@ -1,0 +1,39 @@
+package com.example.straterproject.ui.quran.fragments
+
+import android.content.Context
+import android.graphics.drawable.Drawable
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.straterproject.R
+import com.example.straterproject.databinding.FragmentQuranPageBinding
+import com.example.straterproject.ui.base.BaseFragment
+import com.example.straterproject.ui.viewModels.QuranViewModel
+import dagger.hilt.android.AndroidEntryPoint
+
+
+@AndroidEntryPoint
+class QuranPageFragment(private val pageNumber: Int) : BaseFragment<FragmentQuranPageBinding>() {
+    override val layoutFragmentId: Int= com.example.straterproject.R.layout.fragment_quran_page
+    override val viewModel: QuranViewModel by viewModels()
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val rootView = inflater.inflate(R.layout.fragment_quran_page, container, false)
+        return rootView
+    }
+
+    override fun onViewCreated(view: View,  savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val quranImageView = view.findViewById<ImageView>(com.example.straterproject.R.id.quranImageView)
+        val quranPage: Drawable? = viewModel.getQuranImageByPageNumber(requireContext(),pageNumber)
+        quranImageView.setImageDrawable(quranPage)
+
+       }
+    }

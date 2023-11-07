@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/surah_tafseer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_large"
+            android:layout_margin="@dimen/spacing_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="الفاتحة"
+            android:textColor="@color/orange"
+            />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_large"
+            android:layout_marginStart="@dimen/spacing_small"
+            app:layout_constraintBottom_toBottomOf="@+id/surah_tafseer_name"
+            app:layout_constraintStart_toEndOf="@+id/surah_tafseer_name"
+            app:layout_constraintTop_toTopOf="@+id/surah_tafseer_name" />
+
+        <TextView
+            android:id="@+id/surah_tafseer_ayah_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:textSize="@dimen/text_large"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="7 ايات " />
+
+        <TextView
+            android:id="@+id/ayah_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:gravity="start"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/text_too_large"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/surah_tafseer_name"
+            app:layout_constraintTop_toBottomOf="@+id/surah_tafseer_name"
+            tools:text="الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ" />
+
+        <TextView
+            android:id="@+id/ayah_tafseer_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_large"
+            android:gravity="start"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ayah_text"
+            app:layout_constraintTop_toBottomOf="@+id/ayah_text"
+            tools:text="لثناء على الله بصفاته التي كلُّها أوصاف كمال, وبنعمه الظاهرة والباطنة، الدينية والدنيوية، وفي ضمنه أَمْرٌ لعباده أن يحمدوه, فهو المستحق له وحده, وهو سبحانه المنشئ للخلق, القائم بأمورهم, المربي لجميع خلقه بنعمه, ولأوليائه بالإيمان والعمل الصالح." />
+
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="3dp"
+            android:layout_marginTop="@dimen/spacing_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ayah_tafseer_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

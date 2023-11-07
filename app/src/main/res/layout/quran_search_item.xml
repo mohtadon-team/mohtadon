@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sora_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_too_small"
+                android:fontFamily="@font/cairo_bold"
+                android:text="سوره"
+                android:textColor="@color/search_title"
+                android:textSize="@dimen/text_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_too_small"
+                android:fontFamily="@font/cairo_bold"
+                android:text="|"
+                android:textColor="@color/search_title"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/aya_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:fontFamily="@font/cairo_bold"
+                android:text="رقم الايه"
+                android:textColor="@color/search_title"
+                android:textSize="@dimen/text_medium" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/aya_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green_text"
+            android:textSize="@dimen/text_medium"  />
+        <View
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/background_color" />
+    </LinearLayout>
+
+</layout>

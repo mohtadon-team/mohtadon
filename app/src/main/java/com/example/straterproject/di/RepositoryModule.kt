@@ -1,18 +1,27 @@
 package com.example.straterproject.di
 
 
+import com.example.data.dataSource.local.QuranDao
+import com.example.data.dataSource.local.QuranRepositoryImpl
 import com.example.data.dataSource.remote.RadioRepositoryImpl
 import com.example.data.dataSource.remote.RecitersRepositoryImpl
 import com.example.data.dataSource.remote.SurahRepositoryImpl
-import com.example.data.dataSource.remote.endPoint.QuranApiService
+import com.example.data.dataSource.remote.service.QuranApiService
 import com.example.data.dataSource.remote.service.RadioService
 import com.example.data.dataSource.remote.service.RecitersService
 import com.example.domain.repo.RadioRepository
 import com.example.domain.repo.RecitersRepository
 import com.example.domain.repo.SurahRepository
+
+import com.example.data.dataSource.remote.service.PrayerTimesService
+import com.example.data.dataSource.repository.PrayerTimes.PrayerTimesRepositoryImp
+import com.example.domain.repo.PrayerTimesRepository
+import com.example.domain.repo.QuranRepository
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+
 import dagger.hilt.components.SingletonComponent
 
 
@@ -34,4 +43,34 @@ object RepositoryModule {
     fun provideRadioRepository(radioService: RadioService):RadioRepository{
         return RadioRepositoryImpl(radioService)
     }
+
+    @Provides
+    fun providePrayerTimesRepository(
+        prayerTimesService: PrayerTimesService): PrayerTimesRepository{
+        return PrayerTimesRepositoryImp(  prayerTimesService )
+    }
+    @Provides
+    fun provideQuranSearchRepository(
+        quranDao: QuranDao
+    ):QuranRepository{
+        return QuranRepositoryImpl(quranDao)
+    }
+
 }
+
+//     fun bindPrayerTimesRepository(
+//       prayerTimesService: PrayerTimesService): PrayerTimesRepository{
+//         return PrayerTimesRepositoryImp(  prayerTimesService )
+//     }
+
+//    @Provides
+//     fun bindQuranRepository(
+//        apiService: ApiService ,
+//    ): QuranRepository{
+//         return QuranRepositoryImpl(apiService)
+//     }
+
+//    @Provides
+//    fun provideRadioRepository(radioService: RadioService):RadioRepository {
+//        return
+
