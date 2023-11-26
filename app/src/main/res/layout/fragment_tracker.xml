@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.straterproject.ui.prayers_tracker.TrackerViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_color"
+        tools:context=".ui.prayers_tracker.TrackerFragment">
+
+        <TextView
+            android:id="@+id/current_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_large"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_too_large"
+            android:textStyle="bold"
+            android:text="@{viewModel.trackerUiState.currentDate}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="4 نوفمبر 2023" />
+
+        <ImageView
+            android:id="@+id/switch_calender_view_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:scaleType="centerCrop"
+            android:src="@drawable/calendar_1"
+            app:layout_constraintBottom_toBottomOf="@+id/current_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/current_date"
+            app:layout_constraintTop_toTopOf="@+id/current_date"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/current_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/weekly_calender"
+            app:layout_constraintStart_toStartOf="@+id/weekly_calender"
+            app:layout_constraintTop_toBottomOf="@+id/current_date"
+            tools:text="Novamber 2023" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/weekly_calender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_month"
+            tools:itemCount="7"
+            tools:listitem="@layout/weekly_calender_rv_item" />
+
+
+        <ImageView
+            android:id="@+id/previous_week_button"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:src="@drawable/left_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/current_month"
+            app:layout_constraintStart_toEndOf="@+id/current_month"
+            app:layout_constraintTop_toTopOf="@+id/current_month"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/next_week_button"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:rotation="180"
+            android:src="@drawable/left_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/current_month"
+            app:layout_constraintEnd_toStartOf="@+id/current_month"
+            app:layout_constraintTop_toTopOf="@+id/current_month"
+            app:tint="@color/white" />
+
+        <!--        android:visibility="gone"-->
+        <!--        />-->
+        <!--        style="@android:style/Widget.ProgressBar.Horizontal"-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/weekly_calender_salah_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/tracker_rv_backgeound"
+            android:paddingTop="70dp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weekly_calender"
+            tools:itemCount="5"
+            tools:listitem="@layout/tracker_prayers_rv_item" />
+
+        <ProgressBar
+            android:id="@+id/daily_prayers_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:background="@drawable/tracking_progress_bar_background"
+            android:elevation="20dp"
+            android:max="5"
+            android:maxHeight="@dimen/_4sdp"
+            android:minHeight="@dimen/_4sdp"
+            android:paddingHorizontal="@dimen/spacing_small"
+            android:paddingVertical="@dimen/spacing_extra_large"
+            android:progress="3"
+            android:progressDrawable="@drawable/tracking_progress_bar_style"
+            android:textAlignment="center"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weekly_calender" />
+
+        <TextView
+            android:id="@+id/daily_prayers_progress_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_small"
+            android:elevation="20dp"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/daily_prayers_progress"
+            app:layout_constraintEnd_toEndOf="@+id/daily_prayers_progress"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/daily_prayers_progress"
+            app:layout_constraintTop_toTopOf="@+id/daily_prayers_progress"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="20%" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/monthly_calender_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:background="@drawable/tracker_rv_backgeound"
+            android:paddingTop="@dimen/_170sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_date"
+            tools:itemCount="5"
+            tools:listitem="@layout/tracker_prayers_rv_item" />
+
+        <CalendarView
+            android:id="@+id/monthly_calendar_View"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_230sdp"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:background="@drawable/tracker_month_calender_shape"
+            android:dateTextAppearance="@style/CalenderViewDayCustomText"
+            android:elevation="20dp"
+            android:switchTextAppearance="@style/CalenderViewSwitchCustomText"
+            android:theme="@style/CalenderViewCustom"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_date" />
+
+
+
+<!--        <androidx.constraintlayout.widget.Group-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id=""-->
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/weekly_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="weekly_calender , weekly_calender_salah_rv , next_week_button , previous_week_button , current_month , daily_prayers_progress , daily_prayers_progress_percentage"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/month_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="monthly_calendar_View,monthly_calender_rv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

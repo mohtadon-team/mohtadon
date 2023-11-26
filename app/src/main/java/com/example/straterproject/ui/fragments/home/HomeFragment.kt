@@ -89,7 +89,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
 
             1 -> {
 //                HomeFragmentDirections.actionHomeFragmentToSurahsFragment()
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToQiblaFragment())
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTrackerFragment())
             }
 
             2 -> {

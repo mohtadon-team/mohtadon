@@ -35,6 +35,7 @@
     <color name="home_rv_item_color_4">#57CC99</color>
     <color name="home_rv_item_color_5">#A0DDFF</color>
     <color name="home_rv_item_color_6">#148BA1</color>
+    <color name="salah_tracker_salah_performed_color">#1A433D1A</color>
 
 
 </resources>

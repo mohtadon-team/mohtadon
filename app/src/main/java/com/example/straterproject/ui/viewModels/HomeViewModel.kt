@@ -68,7 +68,6 @@ class HomeViewModel @Inject constructor(
 
         getRandomDuaaByRandomNumber()
         getRandomAyaByRandomNumber()
-        Log.i("ahmed", "test")
 
 //        try {
 //            val inputStream: InputStream = appContext.getAssets().open("quranPages.json")
