@@ -42,6 +42,11 @@
             android:id="@+id/action_homeFragment_to_moreFragment"
             app:destination="@id/moreFragment" />
 
+            android:id="@+id/action_homeFragment_to_qiblaFragment"
+            app:destination="@id/qiblaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_trackerFragment"
+            app:destination="@id/trackerFragment" />
     </fragment>
     <fragment
         android:id="@+id/quranFragment"
@@ -253,4 +258,9 @@
         android:name="com.example.straterproject.ui.sebha.fragments.RosaryFragment"
         android:label="RosaryFragment"
         tools:layout="@layout/fragment_rosary"/>
+        android:label="QiblaFragment" />
+    <fragment
+        android:id="@+id/trackerFragment"
+        android:name="com.example.straterproject.ui.prayers_tracker.TrackerFragment"
+        android:label="TrackerFragment" />
 </navigation>

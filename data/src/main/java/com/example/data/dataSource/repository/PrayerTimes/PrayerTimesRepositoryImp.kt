@@ -1,7 +1,6 @@
 package com.example.data.dataSource.repository.PrayerTimes
 
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import com.example.data.dataSource.remote.mapper.DayPrayerTimesMapper
 import com.example.data.dataSource.remote.mapper.MonthPrayerTimesMapper
@@ -15,9 +14,8 @@ class PrayerTimesRepositoryImp @Inject constructor(
     private val prayerTimesService: PrayerTimesService
 ) : PrayerTimesRepository {
 
-    @Inject
     lateinit var dayPrayerTimesMapper: DayPrayerTimesMapper
-
+    lateinit var monthPrayerTimesMapper: MonthPrayerTimesMapper
 
     @RequiresApi(Build.VERSION_CODES.O)
     override suspend fun getDayPrayerTimes(
@@ -26,7 +24,7 @@ class PrayerTimesRepositoryImp @Inject constructor(
 
 
         val response = prayerTimesService.getDayPrayerTimes(date, latitude, longitude).body()
-
+        dayPrayerTimesMapper = DayPrayerTimesMapper()
 //        if (respones != null) {
         return dayPrayerTimesMapper.map(response!!)
 //        } else {
@@ -40,12 +38,11 @@ class PrayerTimesRepositoryImp @Inject constructor(
         month: Int, year: Int, latitude: Double, longitude: Double
     ): MonthPrayerTimes {
 
-        val monthPrayerTimesMapper = MonthPrayerTimesMapper()
+        monthPrayerTimesMapper = MonthPrayerTimesMapper()
 
 //        Log.i("ahmed", "getMonthPrayerTimes 1 ")
         val response = prayerTimesService.getMonthPrayerTimes(
-                month, year,
-            latitude, longitude
+            month, year, latitude, longitude
         ).body()
 //            .body()
 //        Log.i("ahmed", "getMonthPrayerTimes 2 ")
