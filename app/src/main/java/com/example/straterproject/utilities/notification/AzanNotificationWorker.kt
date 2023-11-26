@@ -14,7 +14,7 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.example.data.utils.Constant.Companion.NOTIFICATION_CONTENT_KEY
 import com.example.data.utils.Constant.Companion.NOTIFICATION_TITLE_KEY
-import com.example.straterproject.ui.fragments.home.HomeFragment
+import com.example.straterproject.ui.home.HomeFragment
 
 class AzanNotificationWorker(context: Context, workerParams: WorkerParameters) :
     Worker(context, workerParams) {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/spacing_medium">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/more_rv_item_cardview"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="@dimen/radius_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/more_rv_item_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+           android:src="@drawable/qibla" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/more_rv_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintEnd_toEndOf="@+id/more_rv_item_cardview"
+        app:layout_constraintStart_toStartOf="@+id/more_rv_item_cardview"
+        app:layout_constraintTop_toBottomOf="@+id/more_rv_item_cardview"
+        tools:text="القبله" />
+</androidx.constraintlayout.widget.ConstraintLayout>

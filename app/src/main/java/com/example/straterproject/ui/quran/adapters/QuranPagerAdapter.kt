@@ -9,9 +9,8 @@ import com.example.straterproject.ui.quran.fragments.QuranPageFragment
 class QuranPagerAdapter (fa: FragmentActivity) : FragmentStateAdapter(fa) {
      val TOTAL_PAGES_NUM = 604
 
-    override fun createFragment(position: Int): Fragment {
-        return  QuranPageFragment(TOTAL_PAGES_NUM - position)
-    }
+    override fun createFragment(position: Int): Fragment =QuranPageFragment.newInstance(TOTAL_PAGES_NUM - position)
+
 
     override fun getItemCount(): Int {
         return TOTAL_PAGES_NUM

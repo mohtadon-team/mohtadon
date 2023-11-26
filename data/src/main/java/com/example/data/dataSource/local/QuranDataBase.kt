@@ -1,6 +1,6 @@
 package com.example.data.dataSource.local
 
-import com.example.domain.models.Aya
+import com.example.domain.models.quran.Aya
 import androidx.room.Database
 import androidx.room.RoomDatabase
 

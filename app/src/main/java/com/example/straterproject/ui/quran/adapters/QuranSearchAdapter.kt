@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.domain.models.Aya
+import com.example.domain.models.quran.Aya
 import com.example.straterproject.databinding.QuranSearchItemBinding
 import com.example.straterproject.ui.quran.search.interfaces.IoClickSearchItem
 

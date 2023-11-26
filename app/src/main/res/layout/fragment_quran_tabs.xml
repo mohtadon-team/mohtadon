@@ -50,6 +50,7 @@
                         android:textSize="@dimen/text_too_large" />
 
                     <TextView
+                        android:id="@+id/lastReadInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="سوره النساء | ايه 150"

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.namesOfAllah.fragments.NameOfAllahMeaningFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include
+                layout="@layout/common_header"
+                android:id="@+id/page_header"/>
+            <TextView
+                android:layout_below="@id/page_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="الله"
+                android:id="@+id/name_title"
+                android:textColor="@color/orange_text"
+                android:textSize="@dimen/text_too_large"/>
+            <TextView
+                android:layout_below="@id/name_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/meaning_txt"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_medium"
+                android:textColor="@color/green_subtitle_text"
+                android:text="وهو الاسم الأعظم الذي تفرد به الحق سبحانه وخص به نفسه وجعله أول أسمائه، وأضافها كلها إليه فهو علم على ذاته سبحانه"/>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>

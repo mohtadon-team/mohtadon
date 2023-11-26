@@ -3,10 +3,10 @@ package com.example.data.dataSource.remote
 
 import com.example.data.dataSource.remote.service.QuranApiService
 import com.example.data.dataSource.remote.response.quran.SurahDto
-import com.example.data.dataSource.remote.response.quran.SurahMapper
+import com.example.data.dataSource.remote.mapper.quran.SurahMapper
 
 
-import com.example.domain.entity.Surah
+import com.example.domain.models.quran.Surah
 
 import com.example.domain.repo.SurahRepository
 import javax.inject.Inject

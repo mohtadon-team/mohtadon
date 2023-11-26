@@ -2,7 +2,7 @@ package com.example.domain.repo
 
 
 
-import com.example.domain.entity.Surah
+import com.example.domain.models.quran.Surah
 
 
 interface SurahRepository {

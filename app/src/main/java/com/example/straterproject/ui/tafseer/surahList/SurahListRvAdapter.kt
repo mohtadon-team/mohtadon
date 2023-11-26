@@ -3,7 +3,6 @@ package com.example.straterproject.ui.tafseer.surahList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.domain.entity.Surah
 
 import com.example.straterproject.databinding.SurahListRvItemBinding
 

@@ -2,7 +2,8 @@ package com.example.data.dataSource.local
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.example.domain.models.Aya
+import com.example.domain.models.quran.PageData
+import com.example.domain.models.quran.Aya
 
 
 @Dao
@@ -12,4 +13,6 @@ interface QuranDao {
 
     @Query("SELECT aya_text FROM quran WHERE id IS :ayaId")
     fun getAyaById(ayaId:Int):String
+    @Query("SELECT page as pageNumber, sora_name_ar as soraName, jozz as jozzaName FROM quran WHERE page = :pageNum")
+    fun getSoraNameByPage(pageNum: Int): PageData
 }

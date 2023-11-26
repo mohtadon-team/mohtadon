@@ -3,17 +3,16 @@ package com.example.straterproject.ui.quran.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.domain.entity.Surah
+import com.example.domain.models.quran.Surah
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentQuranBinding
 import com.example.straterproject.ui.quran.adapters.QuranAdapter
 import com.example.straterproject.ui.base.BaseFragment
-import com.example.straterproject.ui.interfaces.IonSurahClick
+import com.example.straterproject.ui.quran.interfaces.IonSurahClick
 import com.example.straterproject.ui.viewModels.SurahViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,6 +1,8 @@
 package com.example.straterproject.ui.quran.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
@@ -11,6 +13,7 @@ import com.example.straterproject.ui.quran.adapters.QuranTabsAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class QuranTabsFragment : BaseFragment<FragmentQuranTabsBinding>(),
@@ -18,7 +21,8 @@ class QuranTabsFragment : BaseFragment<FragmentQuranTabsBinding>(),
     override val layoutFragmentId: Int = R.layout.fragment_quran_tabs
     override val viewModel: ViewModel
         get() = TODO("Not yet implemented")
-
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,6 +30,8 @@ class QuranTabsFragment : BaseFragment<FragmentQuranTabsBinding>(),
         binding.commonHeader.search.setOnClickListener {
             findNavController().navigate(R.id.quranSearchFragment)
         }
+        val name= sharedPreferences.getString("suraName",null).toString()
+        binding.lastReadInfo.text=name
     }
 
     private fun setUpTabLayout() {

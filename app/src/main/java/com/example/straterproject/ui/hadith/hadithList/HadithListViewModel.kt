@@ -1,7 +1,9 @@
 package com.example.straterproject.ui.hadith.hadithList
 
 import android.content.Context
+import com.example.straterproject.R
 import com.example.straterproject.ui.base.BaseViewModel
+import com.example.straterproject.ui.more.MoreItemModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,9 +30,10 @@ class HadithListViewModel @Inject constructor(
 
     private fun collectHadithListData() {
 
+
         var hadithListItems = ArrayList<String>()
         try {
-            val inputStream: InputStream = appContext.getAssets().open("hadith/bukhari.json")
+            val inputStream: InputStream = appContext.getAssets().open("hadith/hisnAlMuslim.json")
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
@@ -38,8 +41,8 @@ class HadithListViewModel @Inject constructor(
             val hadithJsonArray: JSONArray = JSONArray(String(buffer))
             for (position in 0 until hadithJsonArray.length()) {
                 var hadithObject: JSONObject = hadithJsonArray.getJSONObject(position)
-                var hadithName = hadithObject.getString("number")
-                hadithListItems.add("الحديث رقم $hadithName")
+                var hadithName = hadithObject.getString("category")
+                hadithListItems.add(hadithName)
 
             }
 

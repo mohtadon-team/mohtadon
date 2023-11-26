@@ -10,7 +10,7 @@ import com.example.domain.usecases.GetAyaByIdUseCase
 import com.example.domain.usecases.GetDayPrayerTimesUseCase
 import com.example.straterproject.R
 import com.example.straterproject.ui.base.BaseViewModel
-import com.example.straterproject.ui.fragments.home.HomeUiState
+import com.example.straterproject.ui.home.HomeUiState
 import com.example.straterproject.utilities.LATITUDE
 import com.example.straterproject.utilities.LONGITUDE
 import dagger.hilt.android.lifecycle.HiltViewModel

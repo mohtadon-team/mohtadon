@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.straterproject.databinding.SurahItemBinding
-import com.example.domain.entity.Surah
-import com.example.straterproject.ui.interfaces.IonSurahClick
+import com.example.domain.models.quran.Surah
+import com.example.straterproject.ui.quran.interfaces.IonSurahClick
 
 class QuranAdapter : RecyclerView.Adapter<QuranAdapter.QuranHolder>() {
     private val surahList: MutableList<Surah> = mutableListOf()
-    var ionSurahClick:IonSurahClick?=null
+    var ionSurahClick: IonSurahClick?=null
     fun setSurahList(surahList: List<Surah>) {
         this.surahList.clear()
         this.surahList.addAll(surahList)

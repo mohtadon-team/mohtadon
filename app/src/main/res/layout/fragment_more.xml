@@ -6,10 +6,23 @@
 
     </data>
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.MoreFragment">
+        tools:context=".ui.more.fragments.MoreFragment">
 
-    </FrameLayout>
+        <include
+            android:id="@+id/page_header"
+            layout="@layout/common_header" />
+
+        <GridView
+            android:id="@+id/more_GV"
+            android:layout_margin="@dimen/spacing_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/page_header"
+            android:numColumns="4"
+            tools:listitem="@layout/more_list_item" />
+
+    </RelativeLayout>
 </layout>
