@@ -84,10 +84,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
     override fun onItemclick(position: Int) {
         when (position) {
             0 -> {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAzkarListFragment())
             }
 
             1 -> {
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAzkarListFragment())
+
 //                HomeFragmentDirections.actionHomeFragmentToSurahsFragment()
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTrackerFragment())
             }

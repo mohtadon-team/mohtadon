@@ -9,7 +9,7 @@
         android:id="@+id/recitersFragment"
         android:name="com.example.straterproject.ui.reciters.reciterInfo.RecitersFragment"
         android:label="fragment_reciters"
-        tools:layout="@layout/fragment_reciters" >
+        tools:layout="@layout/fragment_reciters">
         <action
             android:id="@+id/action_recitersFragment_to_surahsFragment"
             app:destination="@id/surahsFragment" />
@@ -41,7 +41,7 @@
         <action
             android:id="@+id/action_homeFragment_to_moreFragment"
             app:destination="@id/moreFragment" />
-
+        <action
             android:id="@+id/action_homeFragment_to_qiblaFragment"
             app:destination="@id/qiblaFragment" />
         <action
@@ -79,7 +79,7 @@
         android:id="@+id/quranViewPagerFragment"
         android:name="com.example.straterproject.ui.quran.fragments.QuranViewPagerFragment"
         android:label="fragment_quran_view_pager"
-        tools:layout="@layout/fragment_quran_view_pager" >
+        tools:layout="@layout/fragment_quran_view_pager">
         <argument
             android:name="startPageNum"
             app:argType="integer" />
@@ -92,11 +92,11 @@
         android:id="@+id/quranPageFragment"
         android:name="com.example.straterproject.ui.quran.fragments.QuranPageFragment"
         android:label="QuranPageFragment"
-        tools:layout="@layout/fragment_quran_page"/>
+        tools:layout="@layout/fragment_quran_page" />
     <fragment
         android:id="@+id/surahsFragment"
         android:name="com.example.straterproject.ui.reciters.surahs.SurahsFragment"
-        android:label="SurahsFragment" >
+        android:label="SurahsFragment">
 
         <argument
             android:name="moshaf"
@@ -137,7 +137,7 @@
         android:id="@+id/savedQuranPagesFragment"
         android:name="com.example.straterproject.ui.quran.fragments.SavedQuranPagesFragment"
         android:label="fragment_saved_quran_pages"
-        tools:layout="@layout/fragment_saved_quran_pages" >
+        tools:layout="@layout/fragment_saved_quran_pages">
 
     </fragment>
     <fragment
@@ -152,7 +152,6 @@
             android:id="@+id/action_quranOptionsFragment_to_recitersFragment"
             app:destination="@id/recitersFragment" />
     </fragment>
-        tools:layout="@layout/fragment_saved_quran_pages" />
     <fragment
         android:id="@+id/azkarListFragment"
         android:name="com.example.straterproject.ui.azkar.azkarList.AzkarListFragment"
@@ -184,7 +183,7 @@
         android:id="@+id/duaaDetailsFragment"
         android:name="com.example.straterproject.ui.duaa.duaaDetails.DuaaDetailsFragment"
         android:label="fragment_duaa_details"
-        tools:layout="@layout/fragment_duaa_details" >
+        tools:layout="@layout/fragment_duaa_details">
         <argument
             android:name="position"
             app:argType="integer" />
@@ -229,7 +228,7 @@
         android:id="@+id/qiblaFragment"
         android:name="com.example.straterproject.ui.qiblaFinder.QiblaFragment"
         android:label="QiblaFragment"
-        tools:layout="@layout/fragment_qibla"/>
+        tools:layout="@layout/fragment_qibla" />
     <fragment
         android:id="@+id/namesOfAllahFragment"
         android:name="com.example.straterproject.ui.namesOfAllah.fragments.NamesOfAllahFragment"
@@ -241,24 +240,24 @@
     </fragment>
     <fragment
         android:id="@+id/nameOfAllahMeaningFragment"
-        tools:layout="@layout/fragment_name_of_allah_meaning"
         android:name="com.example.straterproject.ui.namesOfAllah.fragments.NameOfAllahMeaningFragment"
-        android:label="NameOfAllahMeaningFragment" >
+        android:label="NameOfAllahMeaningFragment"
+        tools:layout="@layout/fragment_name_of_allah_meaning">
         <argument
             android:name="name"
-            app:argType="string"/>
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/shehadaFragment"
         android:name="com.example.straterproject.ui.shehada.fragments.ShehadaFragment"
         android:label="ShehadaFragment"
-        tools:layout="@layout/fragment_shehada"/>
+        tools:layout="@layout/fragment_shehada" />
     <fragment
         android:id="@+id/rosaryFragment"
         android:name="com.example.straterproject.ui.sebha.fragments.RosaryFragment"
         android:label="RosaryFragment"
-        tools:layout="@layout/fragment_rosary"/>
-        android:label="QiblaFragment" />
+        tools:layout="@layout/fragment_rosary" />
+
     <fragment
         android:id="@+id/trackerFragment"
         android:name="com.example.straterproject.ui.prayers_tracker.TrackerFragment"
