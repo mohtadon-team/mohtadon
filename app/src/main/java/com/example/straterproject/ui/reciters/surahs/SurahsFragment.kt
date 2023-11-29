@@ -1,30 +1,42 @@
 package com.example.straterproject.ui.reciters.surahs
 
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.entity.reciters.MoshafEnitity
 import com.example.straterproject.R
+import com.example.straterproject.databinding.AudioItemControllerFragmentBinding
 import com.example.straterproject.databinding.SurahsToPlayFragmentBinding
 import com.example.straterproject.player.MediaService
 import com.example.straterproject.ui.PlayerEvents
 import com.example.straterproject.ui.base.BaseFragment
+import com.example.straterproject.ui.reciters.player.AudioItemControllerFragment
 import com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel
 import com.example.straterproject.utilities.moshafEntityToAudioItemList
 import com.example.straterproject.utilities.suraMap
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListener {
 
     override val layoutFragmentId = R.layout.surahs_to_play_fragment
-    override val viewModel: AudioItemPlayerViewModel by activityViewModels()
+
+    private val  audioItemPlayerViewModel: AudioItemPlayerViewModel by activityViewModels()
+    override val viewModel :SurahViewModel by viewModels()
+
     private val args: SurahsFragmentArgs by navArgs()
 
     private lateinit var moshaf: MoshafEnitity
@@ -37,6 +49,7 @@ class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListe
 
 
         binding.viewModel = viewModel
+
         moshaf = args.moshaf
         surahAdapter = SurahAdapter(this)
         val surahList = moshaf.surah_list.split(',').map { suraMap[it] }
@@ -48,7 +61,7 @@ class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListe
             setHasFixedSize(true)
         }
 
-        viewModel.onPlayerEvents(PlayerEvents.AddPlaylist(moshafEntityToAudioItemList(moshaf)))
+        audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(moshafEntityToAudioItemList(moshaf)))
 
 
     }
@@ -69,8 +82,28 @@ class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListe
     }
 
     override fun onSurahClick(position: Int) {
-        viewModel.onPlayerEvents(PlayerEvents.GoToSpecificItem(position))
-        findNavController().navigate(R.id.action_surahsFragment_to_audioItemControllerFragment)
+        audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(moshafEntityToAudioItemList(moshaf)))
+        audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.GoToSpecificItem(position))
+
+
+        val audioItemControllerFragment = AudioItemControllerFragment()
+        audioItemControllerFragment.show(childFragmentManager,audioItemControllerFragment.tag)
+
+//        val bottomSheetDialog = BottomSheetDialog(requireActivity())
+//        val sheetBinding = AudioItemControllerFragmentBinding.inflate(LayoutInflater.from(requireActivity()))
+//        bottomSheetDialog.setContentView(sheetBinding.root)
+////
+//        val  bottomSheetBehavior = BottomSheetBehavior.from(sheetBinding.root)
+//        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+//
+//        val layout = sheetBinding.bottomSheet
+//
+//        assert(layout!=null)
+//
+//        layout.minimumHeight= Resources.getSystem().displayMetrics.heightPixels
+//
+//        bottomSheetDialog.show()
+
     }
 }
 

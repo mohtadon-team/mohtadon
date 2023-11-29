@@ -59,6 +59,11 @@ class RecitersAdapter(val context : Context ,val listener: OnMoshafListener) : R
         holder.binding.childRv.adapter = moshafAdapter
 
 
+
+        holder.binding.root.setOnClickListener {
+            currentItem.isExpandable = !currentItem.isExpandable
+            notifyItemChanged(position)
+        }
     }
     override fun getItemCount(): Int = reciters.size
 

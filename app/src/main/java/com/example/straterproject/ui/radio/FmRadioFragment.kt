@@ -11,6 +11,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +31,7 @@ import com.example.straterproject.utilities.moshafEntityToAudioItemList
 import com.example.straterproject.utilities.radioEntityToAudioItemList
 import com.example.straterproject.utilities.suraMap
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -48,7 +50,6 @@ class FmRadioFragment : BaseFragment<FragmentFmRadioBinding>() , OnRadioStationL
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
@@ -60,37 +61,19 @@ class FmRadioFragment : BaseFragment<FragmentFmRadioBinding>() , OnRadioStationL
             setHasFixedSize(true)
         }
 
-        viewModel.radioStations.observe(viewLifecycleOwner) {
 
-            when(it){
-                is UiState.Success ->{
-                    it.let {
-                        radioAdapter.radioStations = it.data!!
-                        radios = it.data!!
-                     audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(radioEntityToAudioItemList(radios)))
-                    }
-                }
-
-                is UiState.Error ->{
-                    Toast.makeText(requireContext(),  it.message  , Toast.LENGTH_SHORT).show()
-                    Log.i("i", it.message)
-                }
-
-                is UiState.Loading ->{
-                    Toast.makeText(requireContext(),  "Loading"  , Toast.LENGTH_SHORT).show()
-
-                }
+        lifecycleScope.launch {
+            viewModel.uiState.collect{
+                radioAdapter.radioStations = it.radioStations
+                radios = it.radioStations
+                audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(radioEntityToAudioItemList(radios)))
             }
-
         }
-
-
 
     }
 
 
     override fun onStationClick(position: Int) {
-
         audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.GoToSpecificItem(position))
         lastPlayedTrackPreference.lastPlayedTrackId = position.toLong()
         radioAdapter.notifyItemChanged(position)

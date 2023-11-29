@@ -9,41 +9,70 @@
 
     </data>
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-       <com.google.android.material.textfield.TextInputEditText
-           android:id="@+id/fragment_toolbar"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:background="?attr/colorPrimary"
-           app:layout_constraintEnd_toEndOf="parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/main_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-          android:afterTextChanged="@{(text) -> viewModel.searchInReciterList(text)}"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:src="@drawable/back_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-   </com.google.android.material.textfield.TextInputEditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_bold"
+                android:text="القراء"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_too_too_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/list_of_reciters"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/tajawal_bold"-->
+<!--            android:text="قائمة القراء"-->
+<!--            android:textColor="@color/orange_text"-->
+<!--            android:layout_margin="@dimen/_7sdp"-->
+<!--            android:textSize="@dimen/text_too_too_large"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">-->
+
+<!--        </TextView>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reciters_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
 
-
-
-
-
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/reciters_rv"
-           android:layout_width="match_parent"
-           android:layout_height="0dp"
-           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/fragment_toolbar"
-           app:layout_constraintBottom_toBottomOf="parent"
-           tools:listitem="@layout/reciter_item" />
-
-
-   </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

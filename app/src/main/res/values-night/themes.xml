@@ -8,4 +8,18 @@
         <item name="android:windowLightStatusBar"  tools:targetApi="m">true</item>
 
     </style>
+
+
+    <style name="corner_image" >
+        <item name="cornerSize" >10%</item>
+    </style>
+
+    <style name="circle_image" >
+        <item name="cornerSize" >50%</item>
+    </style>
+
+    <style name="corner_image_only_from_top" >
+        <item name="cornerSizeTopLeft" >@dimen/_15sdp</item>
+        <item name="cornerSizeTopRight" >@dimen/_15sdp</item>
+    </style>
 </resources>

@@ -6,13 +6,17 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.location.Location
 import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
+import android.util.Log
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -29,6 +33,7 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -49,6 +54,17 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(com.example.straterproject.R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
+
+
+        // ar language
+        val locale = Locale("ar")
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+
+        // light mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
 
         binding.bottomNav.setOnItemSelectedListener {
@@ -182,6 +198,22 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         } else {
             requestLocationPermission()
         }
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("LIFE" ,"AC onDestroy")
+        Toast.makeText(this, "AC onDestroy", Toast.LENGTH_SHORT).show()
+        finish()
+    }
+
+    override fun finish() {
+        super.finish()
+    }
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "AC onStop", Toast.LENGTH_SHORT).show()
 
     }
 }

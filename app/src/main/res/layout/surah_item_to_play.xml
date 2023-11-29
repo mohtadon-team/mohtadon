@@ -2,73 +2,67 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-    </data>
 
     <androidx.cardview.widget.CardView
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
         android:layout_width="match_parent"
-        app:cardCornerRadius="@dimen/radius_small"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/spacing_too_small"
-        android:layout_margin="@dimen/spacing_small"
-
-         >
+        app:cardCornerRadius="@dimen/_9sdp"
+        android:layout_height="70dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/card_view_background"
-            >
+            android:background="@color/background_color">
 
-            <TextView
-                android:layout_margin="@dimen/spacing_small"
-                android:id="@+id/surah_number"
+            <ImageButton
+                app:tint="@color/home_rv_item_color_6"
+                android:background="@android:color/transparent"
+                android:id="@+id/play"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/pattern"
-                android:textColor="@color/brown"
-                android:gravity="center"
-                android:textSize="@dimen/text_small"
+                android:src="@drawable/surahnum_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </TextView>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:textColor="@color/brown"
+
+                android:background="@android:color/transparent"
+                android:id="@+id/surah_number_text"
+                android:layout_width="@dimen/_35sdp"
+                android:gravity="center"
+                android:layout_height="@dimen/_35sdp"
+
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/orange_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/surah_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_bold"
+                android:textColor="@color/green_text"
+                android:textSize="@dimen/text_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:makeTextScrollable="@{true}" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:fontFamily="@font/cairo_bold"
-                android:text=""
-                android:textSize="@dimen/text_medium"
-                android:layout_marginStart="@dimen/spacing_medium"
-                app:layout_constraintBottom_toBottomOf="@+id/surah_number"
-                app:layout_constraintStart_toEndOf="@+id/surah_number"
-                app:layout_constraintTop_toTopOf="@+id/surah_number">
-
-            </TextView>
-
-            <ImageView
-
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
-                android:layout_margin="@dimen/spacing_small"
-                android:src="@drawable/left_arrow"
-
-                app:layout_constraintBottom_toBottomOf="@+id/surah_name"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/surah_name"
-                app:tint="@color/brown">
-
-            </ImageView>
-
-
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="70dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+
 </layout>

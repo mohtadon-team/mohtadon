@@ -11,6 +11,7 @@ import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
 import coil.load
 import com.example.straterproject.R
 import com.example.straterproject.ui.UiState
+import me.tankery.lib.circularseekbar.CircularSeekBar
 
 //@BindingAdapter("app:setItemList")
 //fun <T> setItemList(view: RecyclerView,  list :List<Music>?) {
@@ -59,10 +60,10 @@ fun setImageIsLoading(imageView: ImageView, isByffering: Boolean) {
 fun setImagePlayOrStop(imageView: ImageView, isPlay: Boolean) {
 
     if (isPlay) {
-        imageView.setImageResource(R.drawable.pause)
+        imageView.setImageResource(R.drawable.pause_ic)
 
     } else {
-        imageView.setImageResource(R.drawable.play)
+        imageView.setImageResource(R.drawable.play_ic)
     }
 }
 
@@ -97,7 +98,23 @@ fun setCurrentProgressForSeekBar(seekBar: SeekBar, progress: Long) {
     seekBar.progress = progress.toInt()
 }
 
+@BindingAdapter("setMaxProgressForCircularSeekBar")
+fun setMaxProgressForCircularSeekBar(seekBar: CircularSeekBar, maxProgress: Long) {
+    seekBar.max = maxProgress.toFloat()
+}
+
+@BindingAdapter("setCurrentProgressForCircularSeekBar")
+fun setCurrentProgressForCircularSeekBar(seekBar: CircularSeekBar, progress: Long) {
+    seekBar.progress = progress.toFloat()
+}
+
 @BindingAdapter("setTimeMinutes")
 fun setTimeMinutes(textView: TextView, progress: Long) {
     textView.text = convertLongDurationToTime(progress)
+}
+
+
+@BindingAdapter("app:isVisible")
+fun isVisible(view: View, isVisible :Boolean) {
+    view.isVisible = isVisible
 }

@@ -41,8 +41,8 @@ class SurahAdapter (
 
     override fun onBindViewHolder(holder: SurahViewHolder, position: Int) {
         holder.binding.surahName.text = suras[position]!!.name
-        holder.binding.surahNumber.text = suras[position]!!.originalNumber.toInt().toString()
-        holder.binding.surahName.setOnClickListener {
+        holder.binding.surahNumberText.text =suras[position]!!.originalNumber
+        holder.binding.root.setOnClickListener {
             listener.onSurahClick( position)
         }
     }

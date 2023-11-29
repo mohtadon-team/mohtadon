@@ -10,22 +10,178 @@
             type="com.example.straterproject.ui.radio.RadioViewModel" />
 
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/home_rv_item_color_6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> viewModel.onBackClick()}"
+                android:src="@drawable/back_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/close"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> viewModel.onCloseClick()}"
+                android:src="@drawable/close_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageButton>
+
+            <EditText
+                android:id="@+id/search_edit_txt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                 android:layout_margin="@dimen/_5sdp"
+                android:afterTextChanged="@{(text) -> viewModel.onSearchTextChange(text) }"
+                android:background="@drawable/search_background_shape"
+                android:drawableEnd="@drawable/search"
+                android:fontFamily="@font/cairo_bold"
+                android:hint="ابحث عن قناة"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:textColorHint="#99FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/close"
+                app:layout_constraintTop_toTopOf="@+id/close" />
+
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> viewModel.onSearchClick()}"
+                android:src="@drawable/baseline_search_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_bold"
+                android:gravity="center"
+                android:text="الإذاعة"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/back"
+                app:layout_constraintEnd_toStartOf="@+id/search"
+                app:layout_constraintStart_toEndOf="@+id/back"
+                app:layout_constraintTop_toTopOf="@+id/back"
+                >
+
+            </TextView>
+
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/tab_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="title,search,back"
+                app:isVisible="@{viewModel.uiState.tabTitleVisible}">
+
+            </androidx.constraintlayout.widget.Group>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/tab_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="close,search_edit_txt"
+                app:isVisible="@{viewModel.uiState.tabSearchVisible}">
+
+            </androidx.constraintlayout.widget.Group>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:fontFamily="@font/tajawal_bold"
+            android:text="قائمة القنوات"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_too_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/repeat_ic">
+
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/repeat_ic"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/repeat_ic"
+
+            app:layout_constraintEnd_toStartOf="@+id/shuffle_ic"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/shuffle_ic"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/shuffle_ic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        </ImageButton>
 
 
         <androidx.recyclerview.widget.RecyclerView
+
             android:id="@+id/rv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/include"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/radio_item" />
+            app:layout_constraintTop_toBottomOf="@+id/repeat_ic"
+            tools:listitem="@layout/radio_item"></androidx.recyclerview.widget.RecyclerView>
 
+        <include
+            android:id="@+id/include"
+            layout="@layout/bottom_control_radio_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </include>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

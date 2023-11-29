@@ -233,8 +233,11 @@ class PlayerController(
 }
 
 fun toAudioItem(mediaItem: MediaItem): AudioItem =
+
     AudioItem (
-        reciterAndHisMoshaf = mediaItem.mediaMetadata.title.toString(),
+        reciterAndHisMoshaf = mediaItem.mediaMetadata.displayTitle.toString(),
+        reciter = mediaItem.mediaMetadata.displayTitle.toString().split("-", limit = 2)[0],
+        moshaf = mediaItem.mediaMetadata.displayTitle.toString().split("-", limit = 2)[1],
         surah =  mediaItem.mediaMetadata.artist.toString(),
         image = mediaItem.mediaMetadata.artworkUri.toString(),
         source = mediaItem.mediaId
@@ -242,8 +245,8 @@ fun toAudioItem(mediaItem: MediaItem): AudioItem =
 
 fun getMetaDataFromAudioItem(audioItem: AudioItem): MediaMetadata {
     return MediaMetadata.Builder()
-        .setTitle(audioItem.reciterAndHisMoshaf)
-        .setAlbumTitle(audioItem.reciterAndHisMoshaf)
+        .setTitle(audioItem.reciter)
+        .setAlbumTitle(audioItem.moshaf)
         .setDisplayTitle(audioItem.reciterAndHisMoshaf)
         .setArtist(audioItem.surah)
         .setAlbumArtist(audioItem.surah)

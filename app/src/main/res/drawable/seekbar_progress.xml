@@ -10,12 +10,12 @@
             <shape
                 android:shape="rectangle" >
 
-                <size android:height="2dp"/>
+                <size android:height="1dp"/>
 
                 <corners
                     android:radius="1dp" />
 
-                <solid android:color="@color/black_silver"/>
+                <solid android:color="@color/home_rv_item_color_6"/>
 
             </shape>
 

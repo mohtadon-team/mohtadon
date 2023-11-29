@@ -4,46 +4,90 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <androidx.cardview.widget.CardView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:padding="@dimen/_5sdp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="@dimen/radius_small"
-        >
+        android:foregroundGravity="right">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_9sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_9sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            android:background="@color/card_view_background"
-            android:foregroundGravity="right">
-
-            <TextView
-                android:id="@+id/reciter_name"
-                android:textColor="@color/brown"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_small"
-                android:fontFamily="@font/cairo_bold"
-                android:textSize="@dimen/text_large"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </TextView>
-
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/child_rv"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                tools:listitem="@layout/moshaf_item"
-                android:layout_margin="@dimen/spacing_small"
-                app:layout_constraintTop_toBottomOf="@+id/reciter_name">
+                android:background="@color/background_color"
 
-            </androidx.recyclerview.widget.RecyclerView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                android:layout_height="match_parent">
+
+                <TextView
+
+                    android:id="@+id/reciter_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/tajawal_bold"
+                    android:textColor="@color/green_text"
+                    android:textSize="@dimen/text_too_large"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/child_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/spacing_small"
+                    app:layout_constraintTop_toBottomOf="@+id/reciter_name"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:listitem="@layout/moshaf_item">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/show_moshf"-->
+                <!--                    android:layout_width="@dimen/_18sdp"-->
+                <!--                    android:layout_height="@dimen/_18sdp"-->
+                <!--                    android:layout_marginHorizontal="@dimen/_15sdp"-->
+                <!--                    android:src="@drawable/down_arrow"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent"-->
+                <!--                    app:tint="@color/home_rv_item_color_6"></ImageView>-->
+
+                <ImageView
+                    android:id="@+id/hide_moshf"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:src="@drawable/up_arrow"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/home_rv_item_color_6"></ImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </layout>

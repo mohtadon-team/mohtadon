@@ -2,206 +2,309 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
     <data >
         <variable
             name="viewModel"
             type="com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel" />
-
-
-
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/card_view_background"
-        >
+        android:id="@+id/coordinatorlayout_bottom_sheet">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/title"
-            android:layout_width="0dp"
-            app:tint="@color/brown"
-            makeTextScrollable="@{true}"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@{viewModel.currentSongFlow.reciterAndHisMoshaf}"
-            android:fontFamily="@font/cairo_bold"
-            android:textSize="@dimen/text_large"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/home_rv_item_color_6"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/artist"
-            app:tint="@color/brown"
-            android:layout_width="411dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="@dimen/text_large"
-            android:text="@{viewModel.currentSongFlow.surah}"
-            android:fontFamily="@font/cairo_bold"
-            makeTextScrollable="@{true}"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
+            </View>
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/image_music"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/head_phone" />
+            <TextView
+                android:id="@+id/title_and_surah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_bold"
+                makeTextScrollable="@{true}"
+                android:gravity="center"
+                android:text="@{viewModel.currentSongFlow.reciterAndHisMoshaf}"
+                android:textColor="@color/card_background"
+                android:textSize="@dimen/text_too_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
+                tools:text="سعد الغامدى">
+            </TextView>
 
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/title_and_surah"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
+            </View>
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/progress_duration"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            app:tint="@color/brown"
-            android:gravity="center"
-            android:fontFamily="@font/cairo_bold"
-            setTimeMinutes="@{viewModel.currentSongProgressInMinutes}"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/seekBar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/seekBar" />
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:background="@color/white"
+                android:id="@+id/view3"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+            </androidx.cardview.widget.CardView>
 
-        <SeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="0dp"
-            android:layout_height="8dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/top_corner_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3">
 
-            android:progressDrawable="@drawable/seekbar_style"
-
-            android:thumb="@drawable/custom_thumb"
-
-            setMaxProgressForSeekBar="@{viewModel.currentSongDurationInMinutes}"
-            setCurrentProgressForSeekBar="@{viewModel.currentSongProgressInMinutes}"
-            app:layout_constraintEnd_toStartOf="@+id/total_duration"
-            app:layout_constraintStart_toEndOf="@+id/progress_duration"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/total_duration"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            app:tint="@color/brown"
-            android:gravity="center"
-            setTimeMinutes="@{viewModel.currentSongDurationInMinutes}"
-            android:fontFamily="@font/cairo_bold"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/seekBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/seekBar" />
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:background="@android:color/transparent"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:src="@drawable/close_ic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/home_rv_item_color_6">
+                </ImageButton>
 
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.62" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    app:tint="@color/brown"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    tools:text="سعد الغامدى"
+                    android:text="@{viewModel.currentSongFlow.surah}"
+                    android:fontFamily="@font/tajawal_bold"
+                    android:textSize="@dimen/text_max"
+                    android:textColor="@color/home_rv_item_color_6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/circularSeekBar" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.75" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/artist"
+                    android:layout_width="411dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tajawal_medium"
+                    android:gravity="center"
+                    android:text="@{viewModel.currentSongFlow.reciter}"
+                    android:textSize="@dimen/text_too_too_large"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    app:tint="#1E433D"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    tools:text=" سورة القرة " />
 
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.80" />
-
-
-        <ImageView
-            android:id="@+id/play_or_pause"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:padding="20dp"
-            setImagePlayOrStop="@{viewModel.isPlayPlaying()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guideline4"
-            app:tint="@color/brown" />
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:padding="20dp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guideline4" />
-
-
-        <ImageView
-            android:id="@+id/previous"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="16dp"
-            app:tint="@color/brown"
-            android:src="@drawable/next"
-            app:layout_constraintBottom_toBottomOf="@+id/play_or_pause"
-            app:layout_constraintEnd_toStartOf="@+id/play_or_pause"
-            app:layout_constraintTop_toTopOf="@+id/play_or_pause" />
-
-        <ImageView
-            android:id="@+id/rewind"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/forward"
-            app:tint="@color/brown"
-            app:layout_constraintBottom_toBottomOf="@+id/previous"
-            app:layout_constraintEnd_toStartOf="@+id/previous"
-            app:layout_constraintTop_toTopOf="@+id/previous" />
-
-        <ImageView
-            android:id="@+id/next"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            app:tint="@color/brown"
-            android:src="@drawable/previous"
-            app:layout_constraintBottom_toBottomOf="@+id/play_or_pause"
-            app:layout_constraintStart_toEndOf="@+id/play_or_pause"
-            app:layout_constraintTop_toTopOf="@+id/play_or_pause" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/rwayh"
+                    android:layout_width="411dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tajawal_regular"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@{viewModel.currentSongFlow.moshaf}"
+                    android:textSize="@dimen/text_large"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/artist"
+                    app:tint="#1E433D"
+                    tools:text="حفص عن عاصم " />
 
 
-        <ImageView
-            android:id="@+id/forward"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/rewind"
-            app:tint="@color/brown"
-            app:layout_constraintBottom_toBottomOf="@+id/next"
-            app:layout_constraintStart_toEndOf="@+id/next"
-            app:layout_constraintTop_toTopOf="@+id/next" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_music"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/quran_im"
+                    app:layout_constraintBottom_toBottomOf="@+id/circularSeekBar"
+                    app:layout_constraintEnd_toEndOf="@+id/circularSeekBar"
+                    app:layout_constraintStart_toStartOf="@+id/circularSeekBar"
+                    app:layout_constraintTop_toTopOf="@+id/circularSeekBar"
+                    app:shapeAppearanceOverlay="@style/circle_image"
+                    app:strokeColor="@color/card_background"
+                    app:strokeWidth="@dimen/_1sdp" />
+
+                <me.tankery.lib.circularseekbar.CircularSeekBar
+
+                    android:id="@+id/circularSeekBar"
+                    android:layout_width="250dp"
+                    app:cs_circle_color = "@color/card_view_background"
+                    app:cs_progress = "70"
+                    app:cs_circle_style = "round"
+                    app:cs_circle_stroke_width = "2sp"
+                    app:cs_circle_progress_color = "@color/main_color"
+                    app:cs_pointer_color = "@color/home_rv_item_color_6"
+                    app:cs_pointer_halo_color = "@color/green_text"
+                    android:layout_height="250dp"
+                    setMaxProgressForCircularSeekBar="@{viewModel.currentSongDurationInMinutes}"
+                    setCurrentProgressForCircularSeekBar="@{viewModel.currentSongProgressInMinutes}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+
+                 />
 
 
 
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/progress_duration"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    app:tint="@color/brown"
+                    android:gravity="center"
+                    android:fontFamily="@font/tajawal_regular"
+                    setTimeMinutes="@{viewModel.currentSongProgressInMinutes}"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/seekBar" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:progressTint="@color/main_color"
+                    android:thumbTint="@color/main_color"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    setMaxProgressForSeekBar="@{viewModel.currentSongDurationInMinutes}"
+                    setCurrentProgressForSeekBar="@{viewModel.currentSongProgressInMinutes}"
+                    app:layout_constraintEnd_toStartOf="@+id/total_duration"
+                    app:layout_constraintStart_toEndOf="@+id/progress_duration"
+                    app:layout_constraintTop_toBottomOf="@+id/rwayh" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/total_duration"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:tint="@color/brown"
+                    android:gravity="center"
+                    setTimeMinutes="@{viewModel.currentSongDurationInMinutes}"
+                    android:fontFamily="@font/tajawal_regular"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+
+
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.84" />
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:id="@+id/play_or_pause"
+                    setImagePlayOrStop="@{viewModel.isPlayPlaying()}"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBar"
+                    app:layout_constraintVertical_bias="0.529"
+                   />
+
+
+
+
+                <ImageView
+                    android:id="@+id/previous"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    app:tint="@color/home_rv_item_color_6"
+                    android:src="@drawable/next"
+                    app:layout_constraintBottom_toBottomOf="@+id/play_or_pause"
+                    app:layout_constraintEnd_toStartOf="@+id/play_or_pause"
+                    app:layout_constraintTop_toTopOf="@+id/play_or_pause" />
+
+                <ImageView
+                    android:id="@+id/repeat"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/repeat_ic"
+                    app:layout_constraintBottom_toBottomOf="@+id/previous"
+                    app:layout_constraintEnd_toStartOf="@+id/previous"
+                    app:layout_constraintTop_toTopOf="@+id/previous" />
+
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    app:tint="@color/home_rv_item_color_6"
+                    android:src="@drawable/previous"
+                    app:layout_constraintBottom_toBottomOf="@+id/play_or_pause"
+                    app:layout_constraintStart_toEndOf="@+id/play_or_pause"
+                    app:layout_constraintTop_toTopOf="@+id/play_or_pause" />
+
+
+                <ImageView
+                    android:id="@+id/shuffe"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/shuffle_ic"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/next"
+                    app:layout_constraintStart_toEndOf="@+id/next"
+                    app:layout_constraintTop_toTopOf="@+id/next" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
 
 
 </layout>

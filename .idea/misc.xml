@@ -3,6 +3,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidProject/straterproject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Eslam Mohsen/AndroidStudioProjects/Mohtadon APP/app/src/main/res/layout/fragment_fm_radio.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/Eslam Mohsen/AndroidStudioProjects/Mohtadon APP/app/src/main/res/layout/radio_item.xml" value="0.2391304347826087" />
         <entry key="..\:/Users/Eslam/Desktop/Quran Bot/app/src/main/res/font/g.xml" value="0.27685185185185185" />
         <entry key="..\:/Users/Eslam/Desktop/Quran Bot/app/src/main/res/layout/activity_main.xml" value="0.24682971014492755" />
       </map>
@@ -17,7 +19,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.264" />
+        <option name="scale" value="0.152" />
       </ProjectState>
     </option>
   </component>

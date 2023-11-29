@@ -22,6 +22,7 @@ import com.example.straterproject.ui.PlayerEvents
 import com.example.straterproject.ui.UiState
 
 import com.example.straterproject.ui.base.BaseFragment
+import com.example.straterproject.ui.reciters.player.AudioItemControllerFragment
 import com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel
 import dagger.hilt.android.AndroidEntryPoint
 //import kotlinx.android.synthetic.main.common_header.view.*
@@ -41,6 +42,7 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListe
         binding.lifecycleOwner = this
 
         recitersAdapter = RecitersAdapter(requireContext() , this)
+
         binding.recitersRv.apply {
             adapter = recitersAdapter
             layoutManager = LinearLayoutManager(requireContext())
@@ -50,7 +52,6 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListe
         viewModel.reciters.observe(viewLifecycleOwner){
             handleStae(it)
         }
-
 
     }
 
@@ -73,18 +74,11 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListe
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onMoshafClick(moshaf: MoshafEnitity) {
-        val action = RecitersFragmentDirections.actionRecitersFragmentToSurahsFragment(moshaf )
+        val action = RecitersFragmentDirections.actionRecitersFragmentToSurahsFragment(moshaf)
         findNavController().navigate(action)
     }
 
-    override fun onStart() {
-        super.onStart()
-        val actionBar =  (activity as AppCompatActivity).supportActionBar
-        actionBar?.apply {
-            customView = binding.fragmentToolbar
-            show()
-        }
-    }
+
 
 
 }

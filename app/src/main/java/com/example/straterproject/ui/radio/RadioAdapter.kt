@@ -3,6 +3,7 @@ package com.example.straterproject.ui.radio
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -46,22 +47,21 @@ class RadioAdapter (
     override fun onBindViewHolder(holder: RadioStationViewHolder, position: Int) {
         holder.binding.apply {
             radioStationName.text = radioStations[position]!!.name
-            radioStationNumber.text = position.toString()
         }
-//
+            // 0 == play
         if (position == lastPlayedTrackPreference.lastPlayedTrackId.toInt()) {
-            holder.binding.playOrPause.visibility = View.VISIBLE
+            holder.binding.play.visibility = View.GONE
+            holder.binding.pause.visibility = View.VISIBLE
         }else {
-            holder.binding.playOrPause.visibility = View.GONE
+            holder.binding.play.visibility = View.VISIBLE
+            holder.binding.pause.visibility = View.GONE
         }
-
 
 
         holder.binding.root.setOnClickListener {
-           lastPlayedTrackPreference.beforelastPlayedTrackId = lastPlayedTrackPreference.lastPlayedTrackId
+            lastPlayedTrackPreference.beforelastPlayedTrackId = lastPlayedTrackPreference.lastPlayedTrackId
             notifyItemChanged(lastPlayedTrackPreference.beforelastPlayedTrackId.toInt())
             listener.onStationClick(position)
-
         }
 
     }

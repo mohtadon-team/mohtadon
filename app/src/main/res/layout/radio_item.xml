@@ -3,69 +3,50 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-    <data >
-        <variable
-            name="viewModel"
-            type="com.example.straterproject.ui.radio.RadioViewModel" />
-    </data>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-           app:cardCornerRadius="@dimen/radius_small"
-           android:layout_height="wrap_content"
-            android:padding="@dimen/spacing_too_small"
-            android:layout_margin="@dimen/spacing_small" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/card_view_background"
+            android:layout_height="70dp"
             >
 
+            <ImageButton
 
-            <TextView
-                android:id="@+id/radio_station_number"
+                android:background="@android:color/transparent"
+                android:id="@+id/play"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:layout_margin="@dimen/spacing_small"
-                android:background="@drawable/pattern"
-                android:gravity="center"
-                android:textColor="@color/brown"
-                android:textSize="@dimen/text_small"
-               app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/fm_play_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:visibility="gone"
+                android:background="@android:color/transparent"
+                android:id="@+id/pause"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/fm_puase_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
             <TextView
                 android:id="@+id/radio_station_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="@dimen/text_medium"
-                android:fontFamily="@font/cairo_bold"
+                android:fontFamily="@font/tajawal_bold"
+                android:textColor="@color/green_text"
+                android:textSize="@dimen/text_large"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline6"
                 app:layout_constraintStart_toStartOf="@+id/guideline5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:makeTextScrollable="@{true}" />
-
-
-           <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/play_or_pause"
-
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_30sdp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                android:visibility="gone"
-                app:lottie_rawRes="@raw/is_playing_anim"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/guideline6"
-                app:layout_constraintTop_toTopOf="parent">
-
-           </com.airbnb.lottie.LottieAnimationView>
 
 
 
@@ -74,19 +55,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="84dp" />
+                app:layout_constraintGuide_begin="70dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="312dp" />
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+
 
 
 </layout>
