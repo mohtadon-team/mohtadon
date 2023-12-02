@@ -17,17 +17,11 @@ class DuaaDetailsViewModel @Inject constructor(
 
 
     fun getDuaaText(id: Int): String {
-        var duaaText: String = ""
+        var duaaText = ""
 
         try {
-            val inputStream: InputStream = appContext.assets.open("duaa/duaa2.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-
-
-            val duaaJsonArray: JSONArray = JSONArray(String(buffer))
+            val buffer = getinputstreamBuffer()
+            val duaaJsonArray = JSONArray(String(buffer))
             val duaaObject: JSONObject = duaaJsonArray.getJSONObject(id)
             duaaText = duaaObject.getString("zekr")
 
@@ -38,6 +32,16 @@ class DuaaDetailsViewModel @Inject constructor(
         }
 
         return duaaText
+    }
+
+    private fun getinputstreamBuffer(): ByteArray {
+        val inputStream: InputStream = appContext.assets.open("duaa/duaa2.json")
+        val size = inputStream.available()
+        val buffer = ByteArray(size)
+        inputStream.read(buffer)
+        inputStream.close()
+
+        return buffer
     }
 
 }

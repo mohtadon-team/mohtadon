@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.straterproject.databinding.AzkarDetailsRvItemBinding
 
 class AzkarDetailsRvAdapter constructor(
-    private val azkarItems: ArrayList<ZekrDetailsModel>
+    azkarItems: ArrayList<ZekrDetailsModel>
 ) : RecyclerView.Adapter<AzkarDetailsRvAdapter.AzkarDetailsRvViewHolder>() {
 
     class AzkarDetailsRvViewHolder(val binding: AzkarDetailsRvItemBinding) :
@@ -31,9 +31,5 @@ class AzkarDetailsRvAdapter constructor(
             zekrText.text = zekrDetailsItem.zekrText
             zekrNumberOfRepeats.text = zekrDetailsItem.zekrNumberOfRepeation.toString()
         }
-
-
     }
-
-
 }

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.more.fragments.MoreFragment">
@@ -17,12 +18,15 @@
 
         <GridView
             android:id="@+id/more_GV"
-            android:layout_margin="@dimen/spacing_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/page_header"
+            android:layout_margin="@dimen/spacing_medium"
             android:numColumns="4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/page_header"
             tools:listitem="@layout/more_list_item" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

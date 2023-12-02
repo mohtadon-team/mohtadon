@@ -43,11 +43,6 @@ class SurahListViewModel @Inject constructor(
                 val surahName = SurahObject.getString("name")
                 val surahRevelationPlace = SurahObject.getString("type")
                 val surahNumberOfAyat = SurahObject.getJSONArray("array").length()
-//                    val zekrName = SurahObject.getString("category")
-//                    val id: Int,
-//                    val nameArabic: String?,
-//                    val revelationPlace: String?,
-//                    val pages: List<Int>,
                 surahListItems.add(
                     SurahModel(
                         surahId.toInt(), surahName, surahRevelationPlace, surahNumberOfAyat
@@ -67,45 +62,5 @@ class SurahListViewModel @Inject constructor(
         } catch (e: IOException) {
             e.printStackTrace()
         }
-//        viewModelScope.launch {
-//            try {
-//                val itemList = getAllSurahUseCase.invoke()
-//                Log.i("ahmed", itemList.toString())
-//                _surahListUiState.update {
-//                    it.copy(
-//                        surahList = itemList
-//                    )
-//
-//                }
-//
-//                Log.i("ahmed", _surahListUiState.value.surahList.toString())
-////                surahs.value = itemList
-//            } catch (e: Exception) {
-//                // Handle error
-//            }
-//        var ayaListItems = ArrayList<String>()
-//        try {
-//            val inputStream: InputStream = appContext.getAssets().open("tafseer/ar_muyassar.json")
-//            val size = inputStream.available()
-//            val buffer = ByteArray(size)
-//            inputStream.read(buffer)
-//            inputStream.close()
-//            val ayaJsonArray: JSONArray = JSONArray(String(buffer))
-//            for (position in 0 until ayaJsonArray.length()) {
-//                var ayaObject: JSONObject = ayaJsonArray.getJSONObject(position)
-//                var ayaName = ayaObject.getString("id")
-//                ayaListItems.add("الايه رقم $ayaName")
-//
-//            }
-//
-//            _surahListUiState.update {
-//                it.copy(
-//                    surahList = ayaListItems
-//                )
-//            }
-//
-//        } catch (e: IOException) {
-//            e.printStackTrace()
-//        }
     }
 }

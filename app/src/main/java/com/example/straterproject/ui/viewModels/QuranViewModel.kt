@@ -13,9 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class QuranViewModel  @Inject constructor
     (private  val repository: QuranRepositoryImpl): BaseViewModel()  {
-    fun getQuranImageByPageNumber(context: Context, pageNumber: Int): Drawable? {
-        return PagesManager.getQuranImageByPageNumber(context, pageNumber)
-    }
+
     suspend fun getSoraName(pageNum: Int): PageData {
         return repository.getSoraName(pageNum)
     }

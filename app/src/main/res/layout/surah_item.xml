@@ -6,108 +6,158 @@
 
     </data>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
-        android:layout_margin="@dimen/spacing_small"
-        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/surahInfoLayout"
-            android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/surahInfoLayout"
+        android:layout_width="match_parent"
+        android:padding="@dimen/spacing_medium"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_small"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_surah_num"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_margin="@dimen/spacing_small"
+            android:background="@drawable/surahnum_icon"
+            android:fontFamily="@font/cairo_bold"
+            android:gravity="center"
+            android:text="114"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:orientation="vertical"-->
+        <!--                android:layout_margin="@dimen/spacing_too_small">-->
+
+        <TextView
+            android:id="@+id/tvSurahName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_small"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:layout_marginEnd="@dimen/spacing_small"
-            android:layout_marginBottom="@dimen/spacing_small"
-            android:orientation="horizontal">
+            android:fontFamily="@font/cairo_bold"
+            android:text="@string/surah_name"
+            android:textColor="@color/green_text"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_surah_num"
+            app:layout_constraintStart_toEndOf="@+id/tv_surah_num"
+            app:layout_constraintTop_toTopOf="@+id/tv_surah_num"
+            app:layout_constraintVertical_bias="0.09" />
 
-            <TextView
-                android:id="@+id/tv_surah_num"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_margin="@dimen/spacing_small"
-                android:background="@drawable/surahnum_icon"
-                android:fontFamily="@font/cairo_bold"
-                android:gravity="center"
-                android:text="114"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_medium"
-                android:textStyle="bold" />
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:orientation="horizontal">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="@dimen/spacing_too_small">
+        <TextView
+            android:id="@+id/tvSurahType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:fontFamily="@font/cairo_bold"
+            android:text="مكيه"
+            android:textColor="@color/green_subtitle_text"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_surah_num"
+            app:layout_constraintStart_toEndOf="@+id/tv_surah_num"
+            app:layout_constraintTop_toBottomOf="@+id/tvSurahName" />
 
-                <TextView
-                    android:id="@+id/tvSurahName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/cairo_bold"
-                    android:text="@string/surah_name"
-                    android:textColor="@color/green_text"
-                    android:textSize="@dimen/text_medium"
-                    android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:fontFamily="@font/cairo_bold"
+            android:text="|"
+            android:textColor="@color/green_subtitle_text"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSurahType"
+            app:layout_constraintStart_toEndOf="@+id/tvSurahType"
+            app:layout_constraintTop_toTopOf="@+id/tvSurahType" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvVerseNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:fontFamily="@font/cairo_bold"
+            android:text="ايات"
+            android:textColor="@color/green_subtitle_text"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/tvSurahName"
+            app:layout_constraintVertical_bias="1.0" />
 
-                    <TextView
-                        android:id="@+id/tvSurahType"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/spacing_too_small"
-                        android:fontFamily="@font/cairo_bold"
-                        android:text="مكيه"
-                        android:textColor="@color/green_subtitle_text"
-                        android:textSize="@dimen/text_medium"
-                        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:fontFamily="@font/cairo_bold"
+            android:text="|"
+            android:textColor="@color/green_subtitle_text"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvVerseNum"
+            app:layout_constraintStart_toEndOf="@+id/tvVerseNum"
+            app:layout_constraintTop_toTopOf="@+id/tvVerseNum" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/cairo_bold"
-                        android:text="|"
-                        android:layout_marginEnd="@dimen/spacing_too_small"
-                        android:textColor="@color/green_subtitle_text"
-                        android:textSize="@dimen/text_medium"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/tvVerseNum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/spacing_medium"
-                        android:fontFamily="@font/cairo_bold"
-                        android:text="ايات"
-                        android:textColor="@color/green_subtitle_text"
-                        android:textSize="@dimen/text_medium"
-                        android:textStyle="bold" />
-                </LinearLayout>
+        <TextView
+            android:id="@+id/tv_number_of_pages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:fontFamily="@font/cairo_bold"
+            android:text="10 صفحات "
+            android:textColor="@color/green_subtitle_text"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/textView4" />
+        <!--                </LinearLayout>-->
 
-            </LinearLayout>
+        <!--            </LinearLayout>-->
 
-        </LinearLayout>
+        <!--        </LinearLayout>-->
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/spacing_small"
-            android:layout_marginTop="@dimen/spacing_small"
             android:layout_marginEnd="@dimen/spacing_small"
-            android:layout_marginBottom="@dimen/spacing_small"
-            android:src="@drawable/rounded_arrow" />
+            android:src="@drawable/rounded_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_marginLeft="@dimen/_5sdp"
-            android:layout_marginRight="@dimen/_5sdp"
             android:layout_height="@dimen/_2sdp"
             android:layout_alignParentBottom="true"
-            android:background="@color/background_color" />
-    </RelativeLayout>
+            android:background="@color/background_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -28,9 +28,7 @@ class AzkarDetailsFragment : BaseFragment<FragmentAzkarListBinding>() {
 
     private fun setAdapter(position: Int) {
         val azkarDetailsItems = viewModel.getSpecificAzkarDetails(position)
-
         azkarDetailsRvAdapter = AzkarDetailsRvAdapter(azkarDetailsItems)
-
         binding.azkarListRv.adapter = azkarDetailsRvAdapter
     }
 }

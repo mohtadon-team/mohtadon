@@ -14,28 +14,28 @@ import com.example.straterproject.ui.more.MoreItemModel
 class MoreListAdapter(
     private val listener: OnNameGridViewListener,
     private val context: FragmentActivity?,
-    private val data: ArrayList<MoreItemModel>
+    private val moreItemsList: ArrayList<MoreItemModel>
 ) : BaseAdapter(),
     AdapterView.OnItemClickListener {
     override fun getCount(): Int {
-        return data.size
+        return moreItemsList.size
     }
 
-    override fun getItem(p0: Int): Any {
-        return data[p0]
+    override fun getItem(position: Int): Any {
+        return moreItemsList[position]
     }
 
-    override fun getItemId(p0: Int): Long {
-        return p0.toLong()
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
     }
 
-    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+    override fun getView(position0: Int, position1: View?, position2: ViewGroup?): View {
         val inflater = LayoutInflater.from(context)
-        val view = p1 ?: inflater.inflate(R.layout.more_list_item, p2, false)
+        val view = position1 ?: inflater.inflate(R.layout.more_list_item, position2, false)
         val textView: TextView = view.findViewById(R.id.more_rv_item_name)
         val imageView: ImageView = view.findViewById(R.id.more_rv_item_image)
-        textView.text = data[p0].name
-        imageView.setImageResource(data[p0].image)
+        textView.text = moreItemsList[position0].name
+        imageView.setImageResource(moreItemsList[position0].image)
 
         return view
     }

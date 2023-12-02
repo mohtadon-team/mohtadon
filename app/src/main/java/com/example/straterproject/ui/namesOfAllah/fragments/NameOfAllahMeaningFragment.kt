@@ -12,8 +12,6 @@ import com.example.straterproject.databinding.FragmentNameOfAllahMeaningBinding
 import com.example.straterproject.ui.base.BaseFragment
 import com.example.straterproject.ui.namesOfAllah.adapters.NamesGridViewAdapter
 import com.example.straterproject.ui.namesOfAllah.viewModels.NameMeaningViewModel
-import com.example.straterproject.ui.quran.fragments.QuranTabsFragmentDirections
-import com.example.straterproject.ui.quran.fragments.QuranViewPagerFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

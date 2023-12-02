@@ -11,6 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentTrackerBinding
 import com.example.straterproject.ui.base.BaseFragment
+import com.example.straterproject.ui.prayers_tracker.adapter.CalenderSalahRvAdapter
+import com.example.straterproject.ui.prayers_tracker.adapter.OnWeeklyCalenderListener
+import com.example.straterproject.ui.prayers_tracker.adapter.WeekCalenderRvAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.time.LocalDate

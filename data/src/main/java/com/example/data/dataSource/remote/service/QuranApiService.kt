@@ -6,6 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface QuranApiService {
+
     @GET("chapters?language=en")
     suspend fun getAllSurah(): SurahDto
     @GET("surah/{surahNum}")

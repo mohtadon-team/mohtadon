@@ -28,7 +28,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                tools:text="الحديث الاول "
+                tools:text="اختبار "
                 app:drawableEndCompat="@drawable/right_arrow" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

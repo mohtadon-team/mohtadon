@@ -2,6 +2,7 @@ package com.example.straterproject.ui.hadith.hadithDetails
 
 import android.content.Context
 import com.example.straterproject.ui.base.BaseViewModel
+import com.example.straterproject.utilities.getInputStreambuffer
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import org.json.JSONArray
@@ -20,12 +21,8 @@ class HadithDetailsViewModel @Inject constructor(
         var hadithText: String = ""
 
         try {
-            val inputStream: InputStream = appContext.getAssets().open("hadith/bukhari.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
 
+            val buffer = ("hadith/bukhari.json").getInputStreambuffer(appContext)
 
             val hadithJsonArray: JSONArray = JSONArray(String(buffer))
             val hadithObject: JSONObject = hadithJsonArray.getJSONObject(id)

@@ -23,11 +23,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_large"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/spacing_too_small"
+            android:text="@{viewModel.trackerUiState.currentDate}"
             android:textColor="@color/white"
             android:textSize="@dimen/text_too_large"
             android:textStyle="bold"
-            android:text="@{viewModel.trackerUiState.currentDate}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -108,9 +108,9 @@
             android:id="@+id/weekly_calender_salah_rv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="@dimen/_45sdp"
             android:background="@drawable/tracker_rv_backgeound"
-            android:paddingTop="70dp"
+            android:paddingTop="@dimen/_60sdp"
             android:visibility="visible"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -190,24 +190,23 @@
             app:layout_constraintTop_toBottomOf="@+id/current_date" />
 
 
-
-<!--        <androidx.constraintlayout.widget.Group-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id=""-->
+        <!--        <androidx.constraintlayout.widget.Group-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:id=""-->
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/weekly_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            app:constraint_referenced_ids="weekly_calender , weekly_calender_salah_rv , next_week_button , previous_week_button , current_month , daily_prayers_progress , daily_prayers_progress_percentage"/>
+            app:constraint_referenced_ids="weekly_calender , weekly_calender_salah_rv , next_week_button , previous_week_button , current_month , daily_prayers_progress , daily_prayers_progress_percentage" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/month_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:constraint_referenced_ids="monthly_calendar_View,monthly_calender_rv"/>
+            app:constraint_referenced_ids="monthly_calendar_View,monthly_calender_rv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

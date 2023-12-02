@@ -28,7 +28,6 @@ class DuaaDetailsFragment : BaseFragment<FragmentDuaaDetailsBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = this
-
         setDuaaText(args.position)
 
     }

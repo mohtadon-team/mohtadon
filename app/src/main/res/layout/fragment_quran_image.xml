@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.quran2.quranImage.QuranImageFragment"
+    android:background="@drawable/quran_page_border"
+    android:padding="@dimen/spacing_small">
+
+    <ImageView
+        android:id="@+id/quran_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_small"
+        android:scaleType="fitXY"
+        android:src="@drawable/trans_page" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

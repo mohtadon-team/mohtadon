@@ -27,12 +27,8 @@ class HadithDetailsFragment : BaseFragment<FragmentHadithDetailsBinding>() {
 
         binding.lifecycleOwner = this
 
-        setDuaaText(args.position)
+        binding.hadithText.text = args.hadithText
 
     }
 
-    private fun setDuaaText(position: Int) {
-        val hadithText = viewModel.getHadithText(position)
-        binding.hadithText.text = hadithText
-    }
 }

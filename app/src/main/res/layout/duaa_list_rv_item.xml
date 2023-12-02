@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/radius_large"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/spacing_too_small"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_too_large"
                 app:layout_constraintBottom_toBottomOf="parent"

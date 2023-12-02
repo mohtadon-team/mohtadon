@@ -12,14 +12,14 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/spacing_medium"
-            android:background="@color/background_color">
+            android:background="@color/background_color"
+            android:padding="@dimen/spacing_small">
 
             <TextView
                 android:id="@+id/surah_number_text"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
-                android:layout_margin="@dimen/spacing_medium"
+                android:layout_marginVertical="@dimen/spacing_medium"
                 android:background="@drawable/quran_surah_number_image"
                 android:gravity="center"
                 android:textColor="@color/black"
@@ -79,18 +79,32 @@
                 tools:text="7 ايات " />
 
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <ImageView
                 android:id="@+id/fab_get_surah_tafseer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/main_color"
-                android:src="@drawable/right_arrow"
-                app:borderWidth="0dp"
-                app:fabCustomSize="@dimen/_35sdp"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:layout_marginBottom="@dimen/spacing_small"
+                android:src="@drawable/rounded_arrow"
                 app:layout_constraintBottom_toBottomOf="@+id/surah_number_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/surah_number_text"
-                />
+                app:layout_constraintTop_toTopOf="@+id/surah_number_text" />
+
+            <!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+            <!--                android:id="@+id/fab_get_surah_tafseer"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:backgroundTint="@color/main_color"-->
+            <!--                android:src="@drawable/right_arrow"-->
+            <!--                app:borderWidth="0dp"-->
+            <!--                app:fabCustomSize="@dimen/_35sdp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/surah_number_text"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/surah_number_text" />-->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
