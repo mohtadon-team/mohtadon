@@ -74,6 +74,9 @@
         <action
             android:id="@+id/action_moreFragment_to_rosaryFragment"
             app:destination="@id/rosaryFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_hijriCalenderFragment"
+            app:destination="@id/hijriCalenderFragment" />
     </fragment>
     <fragment
         android:id="@+id/quranViewPagerFragment"
@@ -262,4 +265,9 @@
         android:id="@+id/trackerFragment"
         android:name="com.example.straterproject.ui.prayers_tracker.TrackerFragment"
         android:label="TrackerFragment" />
+    <fragment
+        android:id="@+id/hijriCalenderFragment"
+        android:name="com.example.straterproject.ui.hijriCalender.HijriCalenderFragment"
+        android:label="fragment_hijri_calender"
+        tools:layout="@layout/fragment_hijri_calender" />
 </navigation>

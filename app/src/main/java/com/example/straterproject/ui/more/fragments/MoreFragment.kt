@@ -75,7 +75,8 @@ class MoreFragment : BaseFragment<FragmentMoreBinding>(), MoreListAdapter.OnName
                     var shareMessage = "\nLet me recommend you this application\n\n"
                     shareMessage =
                         """
-                        ${shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID
+                        ${
+                            shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID
                         }
                         
                         
@@ -95,12 +96,17 @@ class MoreFragment : BaseFragment<FragmentMoreBinding>(), MoreListAdapter.OnName
                 startActivity(intent)
 
             }
+
             6 -> {
                 val intent = Intent(Intent.ACTION_VIEW).apply {
                     data = Uri.parse("https://www.youtube.com/live/EB0Y1ztWnic?si=U-1uZH0FBjzjr_JN")
                     setPackage("com.google.android.youtube")
                 }
                 startActivity(intent)
+            }
+
+            7 -> {
+                findNavController().navigate(R.id.action_moreFragment_to_hijriCalenderFragment)
             }
         }
     }

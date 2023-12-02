@@ -139,6 +139,11 @@ dependencies {
     def work_version = "2.8.1"
     implementation "androidx.work:work-runtime-ktx:$work_version"
 
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.4.6'
+    //hijri calender
+    implementation 'com.github.eltohamy:material-hijri-calendarview:1.1.0'
+    implementation 'com.github.msarhan:ummalqura-calendar:1.1.9'
+
 
     // swipe refresh layout
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01"

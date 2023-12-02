@@ -10,12 +10,18 @@ import androidx.work.WorkerFactory
 import androidx.work.WorkerParameters
 import com.example.domain.usecases.GetMonthPrayerTimesUseCase
 import com.example.straterproject.utilities.notification.RegisterPrayerTimesWorker
+import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
 
 @HiltAndroidApp
-class MyApplication : Application()
+class MyApplication : Application(){
+    override fun onCreate() {
+        super.onCreate()
+     AndroidThreeTen.init(this)
+    }
+}
 // , Configuration.Provider {
 //
 //    @Inject

@@ -33,6 +33,7 @@ class MoreViewModel @Inject constructor(
         moreListItems.add(MoreItemModel("مشاركه بالاجر",R.drawable.qibla_blue_icon))
         moreListItems.add(MoreItemModel("مكه لايف",R.drawable.qibla_blue_icon))
         moreListItems.add(MoreItemModel("المدينه لايف",R.drawable.qibla_blue_icon))
+        moreListItems.add(MoreItemModel("التقويم الهجري",R.drawable.qibla_blue_icon))
 
 
 
