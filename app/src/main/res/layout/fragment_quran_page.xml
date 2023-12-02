@@ -7,30 +7,29 @@
 
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.quran.fragments.QuranPageFragment">
+        android:padding="@dimen/spacing_small"
+        android:background="@drawable/quran_page_border"
+        tools:context=".ui.quran.quranPage.QuranPageFragment">
 
-        <RelativeLayout
-            android:background="@drawable/quran_page_border"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/spacing_large"
-            android:paddingEnd="@dimen/spacing_large"
-            android:paddingTop="@dimen/spacing_large"
-            android:paddingBottom="@dimen/spacing_small">
 
-            <ImageView
-                android:id="@+id/quranImageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:src="@drawable/trans_page" />
+        <ImageView
+            android:id="@+id/quranImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:padding="@dimen/spacing_small"
+            android:src="@drawable/trans_page"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        </RelativeLayout>
 
-    </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </layout>

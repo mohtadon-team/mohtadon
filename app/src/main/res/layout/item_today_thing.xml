@@ -14,9 +14,9 @@
         android:textColor="@color/orange"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="دعاء اليوم " />
 
@@ -44,9 +44,9 @@
         android:background="@drawable/home_textview_today_thing_shape"
         android:gravity="start"
         android:padding="@dimen/spacing_small"
-        tools:text="ksdjkhjkhsjhsjkhvjklshjklhjdfkhkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhk
-        ksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkljdfsgjkhdkljdfsgjkhdk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_thing_tv_title" />
+        app:layout_constraintTop_toBottomOf="@+id/item_thing_tv_title"
+        tools:text="ksdjkhjkhsjhsjkhvjklshjklhjdfkhkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhk
+        ksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkljdfsgjkhdkljdfsgjkhdk" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,10 +21,9 @@ import java.util.*
 class MoreFragment : BaseFragment<FragmentMoreBinding>(), MoreListAdapter.OnNameGridViewListener,
     AdapterView.OnItemClickListener {
     override val layoutFragmentId: Int = R.layout.fragment_more
-
     override val viewModel: MoreViewModel by viewModels()
-
     lateinit var listAdapter: MoreListAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
@@ -34,8 +33,7 @@ class MoreFragment : BaseFragment<FragmentMoreBinding>(), MoreListAdapter.OnName
     }
 
     private fun setMoreList() {
-        val moreItems =
-            viewModel.moreListItems.value.moreList
+        val moreItems = viewModel.moreListItems.value.moreList
         listAdapter = MoreListAdapter(this, activity, moreItems)
         binding.moreGV.adapter = listAdapter
         binding.moreGV.onItemClickListener = this

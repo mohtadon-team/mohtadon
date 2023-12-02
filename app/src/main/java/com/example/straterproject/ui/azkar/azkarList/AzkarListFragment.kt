@@ -20,16 +20,13 @@ class AzkarListFragment : BaseFragment<FragmentAzkarListBinding>(), OnAzkarListR
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = this
-
         setAdapter()
 
     }
 
     private fun setAdapter() {
         val azkarItems = viewModel.azkarListUiState.value.azkarList
-
         azkarListRvAdapter = AzkarListRvAdapter(this, azkarItems)
-
         binding.azkarListRv.adapter = azkarListRvAdapter
     }
 

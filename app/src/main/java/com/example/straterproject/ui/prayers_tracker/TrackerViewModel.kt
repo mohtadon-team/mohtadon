@@ -2,11 +2,12 @@ package com.example.straterproject.ui.prayers_tracker
 
 import android.content.SharedPreferences
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecases.GetDayPrayerTimesUseCase
 import com.example.straterproject.ui.base.BaseViewModel
+import com.example.straterproject.ui.prayers_tracker.models.Salah
+import com.example.straterproject.ui.prayers_tracker.uistate.TrackerUiState
 import com.example.straterproject.utilities.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +16,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.time.DayOfWeek
 import java.time.LocalDate
-import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 import java.util.Locale

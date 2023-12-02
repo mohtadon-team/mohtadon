@@ -4,16 +4,21 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentHadithListBinding
 import com.example.straterproject.ui.base.BaseFragment
+import com.example.straterproject.ui.hadith.hadithDetails.HadithDetailsFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.navigation.fragment.findNavController
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HadithListFragment : BaseFragment<FragmentHadithListBinding>(), OnHadithListRvListener {
     override val layoutFragmentId: Int = R.layout.fragment_hadith_list
     override val viewModel: HadithListViewModel by viewModels()
+    private val args: HadithListFragmentArgs by navArgs()
 
     private lateinit var hadithListRvAdapter: HadithListRvAdapter
 
@@ -21,21 +26,34 @@ class HadithListFragment : BaseFragment<FragmentHadithListBinding>(), OnHadithLi
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = this
-
         setAdapter()
 
     }
 
     private fun setAdapter() {
-        val hadithItems = viewModel.hadithListUiState.value.hadithList
-        hadithListRvAdapter = HadithListRvAdapter(this, hadithItems)
-        binding.hadithListRv.adapter = hadithListRvAdapter
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.hadithListUiState.collect {
+                when (args.position) {
+                    0 -> {
+                        val hadithItems = viewModel.hadithListUiState.value.prayersHadithList
+                        hadithListRvAdapter = HadithListRvAdapter(this@HadithListFragment, hadithItems)
+                        binding.hadithListRv.adapter = hadithListRvAdapter
+                    }
+                    1 -> {
+                        val hadithItems = viewModel.hadithListUiState.value.fastingHadithList
+                        hadithListRvAdapter = HadithListRvAdapter(this@HadithListFragment, hadithItems)
+                        binding.hadithListRv.adapter = hadithListRvAdapter
+                    }
+                }
+            }
+        }
     }
 
-    override fun onItemclick(position: Int) {
+    override fun onItemclick(hadithText: String) {
         findNavController().navigate(
             HadithListFragmentDirections.actionHadithListFragmentToHadithDetailsFragment(
-                position
+                hadithText
             )
         )
     }

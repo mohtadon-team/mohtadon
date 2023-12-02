@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.quran2.quranContainer.QuranContainerFragment">
+
+    <include
+        android:id="@+id/quran_header"
+        layout="@layout/common_header" />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/quran_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="top"
+        app:layout_constraintTop_toBottomOf="@+id/quran_header" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

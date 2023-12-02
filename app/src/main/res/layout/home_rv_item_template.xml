@@ -5,11 +5,11 @@
     <data>
         <variable
             name="listener"
-            type="com.example.straterproject.ui.home.OnHomeRvItemListener" />
+            type="com.example.straterproject.ui.home.adapters.OnHomeRvItemListener" />
 
         <variable
             name="item"
-            type="com.example.straterproject.ui.home.HomeRvItem" />
+            type="com.example.straterproject.ui.home.rvitems.HomeRvItem" />
 
 
     </data>

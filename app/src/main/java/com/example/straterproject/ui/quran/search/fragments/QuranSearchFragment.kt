@@ -13,8 +13,8 @@ import com.example.domain.models.quran.Aya
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentQuranSearchBinding
 import com.example.straterproject.ui.base.BaseFragment
-import com.example.straterproject.ui.quran.adapters.QuranSearchAdapter
-import com.example.straterproject.ui.quran.search.interfaces.IoClickSearchItem
+import com.example.straterproject.ui.quran.search.adapter.IoClickSearchItem
+import com.example.straterproject.ui.quran.search.adapter.QuranSearchAdapter
 import com.example.straterproject.ui.quran.search.viewModels.QuranSearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers

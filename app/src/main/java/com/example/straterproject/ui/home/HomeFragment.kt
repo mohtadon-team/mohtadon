@@ -13,7 +13,10 @@ import com.example.domain.usecases.GetMonthPrayerTimesUseCase
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentHomeBinding
 import com.example.straterproject.ui.base.BaseFragment
-import com.example.straterproject.ui.viewModels.HomeViewModel
+import com.example.straterproject.ui.home.adapters.HomeRvAdapter
+import com.example.straterproject.ui.home.adapters.HomeTodayThingsRvAdapter
+import com.example.straterproject.ui.home.adapters.OnHomeRvItemListener
+import com.example.straterproject.ui.home.rvitems.HomeTodayThingsRvItem
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -43,7 +46,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = this
-        binding.viewModel = viewModel
+//        binding.viewModel = viewModel
+
+        binding.viewModel  = viewModel
+
 
         setAdapter()
         setTodayThingsData()
@@ -98,7 +104,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
             }
 
             3 -> {
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHadithListFragment())
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHadithCategoryFragment())
             }
 
             4 -> {

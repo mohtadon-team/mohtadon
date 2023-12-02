@@ -33,9 +33,6 @@
             android:id="@+id/action_homeFragment_to_duaaListFragment"
             app:destination="@id/duaaListFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_hadithListFragment"
-            app:destination="@id/hadithListFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_ayatListFragment"
             app:destination="@id/ayatListFragment" />
         <action
@@ -47,12 +44,15 @@
         <action
             android:id="@+id/action_homeFragment_to_trackerFragment"
             app:destination="@id/trackerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_hadithCategoryFragment"
+            app:destination="@id/hadithCategoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/quranFragment"
-        android:name="com.example.straterproject.ui.quran.fragments.QuranFragment"
+        android:name="com.example.straterproject.ui.quran.quranList.QuranListFragment"
         android:label="QuranFragment"
-        tools:layout="@layout/fragment_quran">
+        tools:layout="@layout/fragment_quran_list">
         <action
             android:id="@+id/action_quranFragment_to_quranViewPagerFragment"
             app:destination="@id/quranViewPagerFragment" />
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/quranViewPagerFragment"
-        android:name="com.example.straterproject.ui.quran.fragments.QuranViewPagerFragment"
+        android:name="com.example.straterproject.ui.quran.quranViewPager.QuranViewPagerFragment"
         android:label="fragment_quran_view_pager"
         tools:layout="@layout/fragment_quran_view_pager">
         <argument
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/quranPageFragment"
-        android:name="com.example.straterproject.ui.quran.fragments.QuranPageFragment"
+        android:name="com.example.straterproject.ui.quran.quranPage.QuranPageFragment"
         android:label="QuranPageFragment"
         tools:layout="@layout/fragment_quran_page" />
     <fragment
@@ -120,10 +120,11 @@
         <action
             android:id="@+id/action_quranSearchFragment_to_quranViewPagerFragment"
             app:destination="@id/quranViewPagerFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/quranTabsFragment"
-        android:name="com.example.straterproject.ui.quran.fragments.QuranTabsFragment"
+        android:name="com.example.straterproject.ui.quran.quranTaps.QuranTabsFragment"
         android:label="QuranTabsFragment"
         tools:layout="@layout/fragment_quran_tabs">
         <action
@@ -135,17 +136,18 @@
         <action
             android:id="@+id/action_quranTabsFragment_to_quranViewPagerFragment"
             app:destination="@id/quranViewPagerFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/savedQuranPagesFragment"
-        android:name="com.example.straterproject.ui.quran.fragments.SavedQuranPagesFragment"
+        android:name="com.example.straterproject.ui.quran.savedQuranPages.SavedQuranPagesFragment"
         android:label="fragment_saved_quran_pages"
         tools:layout="@layout/fragment_saved_quran_pages">
 
     </fragment>
     <fragment
         android:id="@+id/quranOptionsFragment"
-        android:name="com.example.straterproject.ui.quran.fragments.QuranOptionsFragment"
+        android:name="com.example.straterproject.ui.quran.QuranOptionsFragment"
         android:label="QuranOptionsFragment"
         tools:layout="@layout/fragment_quran_options">
         <action
@@ -199,6 +201,9 @@
         <action
             android:id="@+id/action_hadithListFragment_to_hadithDetailsFragment"
             app:destination="@id/hadithDetailsFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/hadithDetailsFragment"
@@ -206,8 +211,8 @@
         android:label="HadithDetailsFragment"
         tools:layout="@layout/fragment_hadith_details">
         <argument
-            android:name="position"
-            app:argType="integer" />
+            android:name="hadithText"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/ayatListFragment"
@@ -270,4 +275,13 @@
         android:name="com.example.straterproject.ui.hijriCalender.HijriCalenderFragment"
         android:label="fragment_hijri_calender"
         tools:layout="@layout/fragment_hijri_calender" />
+    <fragment
+        android:id="@+id/hadithCategoryFragment"
+        android:name="com.example.straterproject.ui.hadith.hadithCategory.HadithCategoryFragment"
+        android:label="HadithCategoryFragment" >
+        <action
+            android:id="@+id/action_hadithCategoryFragment_to_hadithListFragment"
+            app:destination="@id/hadithListFragment" />
+    </fragment>
+
 </navigation>

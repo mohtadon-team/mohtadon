@@ -2,6 +2,7 @@ package com.example.straterproject.ui.azkar.azkarList
 
 import android.content.Context
 import com.example.straterproject.ui.base.BaseViewModel
+import com.example.straterproject.utilities.getInputStreambuffer
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,20 +29,12 @@ class AzkarListViewModel @Inject constructor(
 
     private fun collectAzkarListData() {
 
-        val azkarListItems = ArrayList<String>()
+        var azkarListItems: ArrayList<String>
         try {
-            val inputStream: InputStream = appContext.assets.open("azkar/azkar.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-            val azkarJsonArray: JSONArray = JSONArray(String(buffer))
-            for (position in 0..131) {
-                val zekrObject: JSONObject = azkarJsonArray.getJSONObject(position)
-                val zekrName = zekrObject.getString("category")
-                azkarListItems.add(zekrName)
+            val buffer = ("azkar/azkar.json").getInputStreambuffer(appContext)
+            val azkarJsonArray = JSONArray(String(buffer))
 
-            }
+            azkarListItems = getJsonArrayContent(azkarJsonArray)
 
             _azkarListUiState.update {
                 it.copy(
@@ -53,4 +46,26 @@ class AzkarListViewModel @Inject constructor(
             e.printStackTrace()
         }
     }
+
+    private fun getinputstreamBuffer(): ByteArray {
+        val inputStream: InputStream = appContext.assets.open("azkar/azkar.json")
+        val size = inputStream.available()
+        val buffer = ByteArray(size)
+        inputStream.read(buffer)
+        inputStream.close()
+
+        return buffer
+    }
+
+    private fun getJsonArrayContent(azkarJsonArray: JSONArray): ArrayList<String> {
+        val azkarListItems = ArrayList<String>()
+        for (position in 0..131) {
+            val zekrObject: JSONObject = azkarJsonArray.getJSONObject(position)
+            val zekrName = zekrObject.getString("category")
+            azkarListItems.add(zekrName)
+        }
+
+        return azkarListItems
+    }
+
 }

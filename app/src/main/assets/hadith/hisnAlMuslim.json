@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "category": "prayer",
     "title": "Chapter: When going to the mosque",
     "reference": "Reference : Hisn al-Muslim 19",
@@ -7,6 +8,7 @@
     "english": "Allāhummaj'al fī qalbī nūran, \nwa fī lisānī nūran, \nwa fī sam`ī nūran, \nwa fī baṣarī nūran, \nwa min fawqī nūran, \nwa min taḥtī nūran, \nwa `an yamīnī nūran, \nwa `an shimālī nūran, \nwa min 'amāmī nūran, \nwa min khalfī nūran, \nwaj`al fī nafsī nūran, \nwa 'a`ẓim lī nūran, \nwa `ẓẓim lī nūran, \nwaj`allī nūran, \nwaj`alnī nūran, \nAllāhumma 'a`tinī nūran, \nwaj'al fī `aṣabī nūran, \nwa fī laḥmī nūran, \nwa fī damī nūran, \nwa fī sha`rī nūran, \nwa fī basharī nūran. \n[Allāhummaj`allī nūran fī qabrī \nwa nūran fī `iẓāmī.] \n[Wa zidnī nūran, \nwa zidnī nūran, \nwa zidnī nūran.]\n[Wa hab lī nūran `alā nūr.]\n\n\nO Allah, place light in my heart, \nand on my tongue light, \nand in my ears light \nand in my sight light, \nand above me light, \nand below me light, \nand to my right light, \nand to my left light, \nand before me light \nand behind me light. \nPlace in my soul light. \nMagnify for me light, \nand amplify for me light. \nMake for me light \nand make me a light. \nO Allah, grant me light, \nand place light in my nerves, \nand in my body light \nand in my blood light \nand in my hair light \nand in my skin light.1 \n[O Allah, make for me a light in my \ngrave... \nand a light in my bones.]\n(At-Tirmidhi 5/483 (Hadith no. 3419).) \n[Increase me in light, \nincrease me in light, \nincrease me in light .]\n(Al-Bukhari in Al-'Adab Al-Mufrad (Hadith no. 695), p. 258. See also \nAl-Albani, Sahih Al-'Adab Al-Mufrad(no. 536).)\n [Grant me light upon light.] \n(Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/118.)\n\nReference:\n1 Up to this point was reported by Al-Bukhari 11 / 116 (Hadith no. 6316) \nand by Muslim 1/526, 529-530 (Hadithno. 763).\n"
   },
   {
+    "id": 2,
     "category": "prayer",
     "title": "Chapter: Upon entering the mosque",
     "reference": "Reference : Hisn al-Muslim 20",
@@ -14,6 +16,7 @@
     "english": "'A`ūdhu billāhi l-`aẓīm, \nwa bi-wajhihil-karīm, \nwa sultānihil-qadīm, \nmin ash-shaytānir-rajīm. \n[Bismillāhi, wassalātu wassalāmu `alā rasūlillāhi.] \nAllāhummaftaḥ lī 'abwāba raḥmatik.\n\nI seek refuge in Almighty Allah, \nBy His Noble Face, \nBy His primordial power, \nFrom Satan the outcast.1 \n[In the Name of Allah, and blessings 2 and peace be upon the Messenger of Allah.3\nO Allah, open before me the doors of Your mercy.4\n\nReference:\n1. Abu Dawud and Al-Albani, Sahihul-Jdmi' As-Saghir (Hadithno. 4591).\n2. Ibn As-Sunni (Hadith no. 88), graded good by Al-Albani.\n3. Abu Dawud 1/126, see also Al-Albani, Sahihul-Jami'As-Saghir 1/528.\n4. Muslim 1/494. \nThere is also a report in Sunan Ibn Majah on the authority of Fatimah (RA), : \"O Allah, forgive me my sins and open for me the doors \nof Your mercy.\" It was graded authentic by \nAl-Albani due to supporting Ahadith. See Sahih Ibn Majah 1/128-9.\n"
   },
   {
+    "id": 3,
     "category": "prayer",
     "title": "Chapter: Upon leaving the mosque",
     "reference": "Reference : Hisn al-Muslim 21",
@@ -21,6 +24,7 @@
     "english": "Bismillāhi waṣṣalātu wassalāmu 'alā Rasūlillāhi, \nAllāhumma 'innī 'as'aluka min faḍlika,\nAllāhumma`ṣimnī min ash-shaytānir-rajīm.\n\nIn the Name of Allah, and peace and blessings be upon the Messenger of Allah.\nO Allah, I ask for Your favor,\nO Allah, protect me from Satan the outcast.\n\nReference:\nibid.\n"
   },
   {
+    "id": 4,
     "category": "prayer",
     "title": "Chapter: Concerning the athan (the call to prayer)",
     "reference": "Reference : Hisn al-Muslim 22",
@@ -28,6 +32,7 @@
     "english": "Repeat what the Mu'adh-dhin says, except for when he says:\nHayya 'alas-Salāh (hasten to the prayer) and Hayya 'alal-Falāh (hasten to salvation). Here you should say: \nLā ḥawla wa lā quwwata 'illā billāh.\n\nThere is no might and no power except by Allah.\n\nReference:\nAl-Bukhari 1/152, Muslim 1/288.\n"
   },
   {
+    "id": 5,
     "category": "prayer",
     "title": "Chapter: Concerning the athan (the call to prayer)",
     "reference": "Reference : Hisn al-Muslim 23",
@@ -35,6 +40,7 @@
     "english": "Wa 'anā 'ash-hadu 'an lā 'ilāha 'illallāhu \nwaḥdahu lā sharīka lahu \nwa 'anna Muḥammadan 'abduhu wa rasūluhu, \nraḍītu billāhi rabban, \nwa bi Muḥammadin rasūlan \nwa bi 'l-islāmi dīnan.\n\nI bear witness that none has the right to be worshipped but Allah\nalone, Who has no partner, \nand that Muhammad is His slave and His Messenger. \nI am pleased with Allah as my Lord, \nwith Muhammad as my Messenger \nand with Islam as my religion.1\n\n[To be recited in Arabic after the mu'adh-dhin's tashahhud or the words of affirmation of Faith] 2\n\nReference:\n1. Muslim 1/290.\n2. Ibn Khuzaymah 1/220.\n"
   },
   {
+    "id": 6,
     "category": "prayer",
     "title": "Chapter: Concerning the athan (the call to prayer)",
     "reference": "Reference : Hisn al-Muslim 24",
@@ -42,6 +48,7 @@
     "english": "After replying to the call of Mu'adh-dhin. you should recite in Arabic Allah's blessings on the Prophet (ﷺ).\n\nReference:\nMuslim 1/288\n"
   },
   {
+    "id": 7,
     "category": "prayer",
     "title": "Chapter: Concerning the athan (the call to prayer)",
     "reference": "Reference : Hisn al-Muslim 25",
@@ -49,6 +56,7 @@
     "english": "Allāhumma rabba hādhihi 'd-da'wati 't-tāmmah\nwaṣ-ṣalāti 'l-qā'imah, \n'āti Muhammadani 'l-wasīlata walfaḍīlata,\nwab 'ath-hu maqāma 'm-mahmūdani 'l-ladhī wa`adtahu, \n['innaka lā tukhliful-mī'ād]\n\nO Allah , Lord of this perfect call \nand established prayer. \nGrant Muhammad the intercession and favor,\nand raise him to the honored station You have promised him, \n[verily You do not neglect promises].\n\nReference:\nAl-Bukhari 1/152, and the addition between brackets is from Al-Bayhaqi \n1/410 with a good (Hasan) chain of narration. See 'Abdul-Azlz bin Baz's \nTuhfatul-'Akhyar, pg. 38.\n"
   },
   {
+    "id": 8,
     "category": "prayer",
     "title": "Chapter: Concerning the athan (the call to prayer)",
     "reference": "Reference : Hisn al-Muslim 26",
@@ -56,6 +64,7 @@
     "english": "Between the call to prayer and the 'Iqamah, you should supplicate Allah for yourself. \nInvocation during this time is not rejected.\n\nReference:\nAt-Tirmidhi, Abu Dawud, Ahmed. See Irwaa Al-Ghalil 1/262\n"
   },
   {
+    "id": 9,
     "category": "prayer",
     "title": "Chapter: At the start of the prayer (after takbeer)",
     "reference": "Reference : Hisn al-Muslim 27",
@@ -63,6 +72,7 @@
     "english": "Allāhumma bā'id baynī wa bayna khatāyāya\nkamā bāa'adta bayn al-mashriqi wal-maghribi,\nAllāhumma naqqinī min khatāyāya \nkamā yunaqqa 'th-thawbu 'l-'abyaḍu min ad-danasi, \nAllāhumma 'ghsilnī min khatāyāya, \nbi 'th-thalji wal-mā'i wal-barad.\n\nO Allah, separate me from my sins \nas You have separated the East from the West. \nO Allah, cleanse me of my transgressions \nas the white garment is cleansed of stains. \nO Allah, wash away my sins \nwith ice and water and frost.\n\nReference:\nAl-Bukhari 1/181, Muslim 1/419.\n"
   },
   {
+    "id": 10,
     "category": "prayer",
     "title": "Chapter: At the start of the prayer (after takbeer)",
     "reference": "Reference : Hisn al-Muslim 28",
@@ -70,6 +80,7 @@
     "english": "Subhānaka Allāhumma wa biḥamdika, \nwa tabāraka 'smuka, \nwa ta'ālā jadduka, \nwa lā 'ilāha ghayruk.\n\nGlory is to You O Allah, and praise. \nBlessed is Your Name \nand Exalted is Your Majesty. \nThere is none worthy of worship but You\n\nReference:\nAbu Dawud, Ibn Majah, An-Nasa'i, At-Tirmidhi. See Al-Albani, Sahih \nAt-Tirmidhi 1/77 and Sahih Ibn Majah 1/135.\n"
   },
   {
+    "id": 11,
     "category": "prayer",
     "title": "Chapter: At the start of the prayer (after takbeer)",
     "reference": "Reference : Hisn al-Muslim 29",
@@ -77,6 +88,7 @@
     "english": "Wajjahtu wajhiya li 'l-ladhî faṭara s-samāwāti wa 'l-arḍa, \nḥanīfan wa mā ana min al-mushrikīna. \nInna salāti wa nusukī, wa mahyāya wa mamātī lillāhi rabbi 'l-`ālamīna,\nlā sharīka lahu. Wa bi dhālika umirtu wa ana min al-muslimīna. \nAllāhumma anta 'l-maliku lā ilāha illā anta.\nAnta rabbī wa ana `abduka, \nẓalamtu nafsī wa`taraftu bi dhanbī. \nFaghfir lī dhunūbī jamī`an, \ninnahu lā yaghfiru 'dh-dhunūba illā anta. \nWahdinī li-aḥsani 'l-akhlāqi, \nlā yahdī li aḥsanihā illā anta. \nWaṣrif `annī sayyi'ahā, \nlā yaṣrifu `annī sayyi'ahā illā anta. \nLabbayka wa sa`dayka, \nwa 'l-khayru kulluhu bi yadayka, \nwa 'sh-sharru laysa ilayka, \nana bika wa ilayka, \ntabārakta wa ta`ālayta, \nastaghfiruka wa atūbu ilayka.\n\n\"I have turned my face sincerely towards He who has brought forth the heavens and the Earth \nand I am not of those who associate (others with Allah). \nIndeed my prayer, my sacrifice, my life and my death are for Allah, Lord of the worlds,\nno partner has He, with this I am commanded and I am of the Muslims. \nO Allah, You are the Sovereign, none has the right to be worshipped except You. \nYou are my Lord and I am Your servant, \nI have wronged my own soul and have acknowledged my sin, \nso forgive me all my sins \nfor no one forgives sins except You. \nGuide me to the best of characters \nfor none can guide to it other than You, \nand deliver me from the worst of characters \nfor none can deliver me from it other than You. \nHere I am, in answer to Your call, happy to serve you. \nAll good is within Your hands \nand evil does not stem from You. \nI exist by your will and will return to you. \nBlessed and High are You, \nI seek Your forgiveness and repent unto You.\"\n\nReference:\nMuslim 1/534\n"
   },
   {
+    "id": 12,
     "category": "prayer",
     "title": "Chapter: At the start of the prayer (after takbeer)",
     "reference": "Reference : Hisn al-Muslim 30",
@@ -84,6 +96,7 @@
     "english": "Allāhumma, rabba Jibrā'īla, wa Mīkā'īla, wa Isrāfīla \nFāṭira 's-samāwāti wa 'l-arḍi, `\nālima 'l-ghaybi wa 'sh-shahādati, \nanta taḥkumu bayna `ibādika fīmā kānū fīhi yakhtalifūna. \nIhdinī li makhtulifa fīhi min al-ḥaqqi bi idhnika. \nInnaka tahdī man tashā'u ilā ṣirāṭin mustaqīm.\n\nO Allah, Lord of Jibraīl, Mīkaīl and Israfīl (great angels),\nCreator of the heavens and the Earth, \nKnower of the seen and the unseen. \nYou are the arbitrator between Your servants in that which they have disputed. \nGuide me to the truth by Your leave, in that which they have differed, \nfor verily You guide whom You will to a straight path.\"\n\nReference:\nMuslim 1/534\n"
   },
   {
+    "id": 13,
     "category": "prayer",
     "title": "Chapter: At the start of the prayer (after takbeer)",
     "reference": "Reference : Hisn al-Muslim 31",
@@ -91,6 +104,7 @@
     "english": "Allāhu 'Akbar Kabīra, \nAllāhu 'Akbar Kabīra, \nAllāhu 'Akbar Kabīra, \nwalḥamdu lillāhi kathīra, \nwalḥamdu lillāhi kathīra, \nwalḥamdu lillāhi kathīra, \nwa Subḥānallāhi bukratan wa'aṣīla.[Recite three times in Arabic.] \n'A `ūdhu billāhi min ash-shayṭān\nmin nafkhihi, wa nafthihi, wa hamzihi.\n\n\nAllah is the Greatest, Most Great. \nAllah is the Greatest, Most Great. \nAllah is the Greatest, Most Great. \nPraise is to Allah, abundantly. \nPraise is to Allah, abundantly. \nPraise is to Allah, abundantly. \nGlory is to Allah, at the break of day and at its end. [Recite three times in Arabic.] \nI seek refuge in Allah from Satan. \nFrom his breath, and from his voice, and from his whisper.\n\nReference:\nAbu Dawud 1/203, Ibn Majah 1/265, ai Ahmad 4/85. Muslim recorded a similar \nHadil 1/420.\n"
   },
   {
+    "id": 14,
     "category": "prayer",
     "title": "Chapter: At the start of the prayer (after takbeer)",
     "reference": "Reference : Hisn al-Muslim 32",
@@ -98,6 +112,7 @@
     "english": "Allāhumma lakal-ḥamdu 'Anta nūrussamāwāti wal'arḍhi wa man fīhinna, \nwa lakal-ḥamdu 'Anta qayyimus-samāwāti wal'arḍi wa man fīhinna, \n[wa lakal-ḥamdu 'Anta Rabbus-samāwāti wal'arḍi wa man fīhinna] \n[wa lakal-ḥamdu laka mulkus-samāwāti wal'arḍi wa man fīhinna] \n[wa lakal-ḥamdu 'Anta Malikus-samāwāti wal'arḍi] \n[wa lakal-ḥamdu]\n['Antal-ḥaqq, wa wa`dukal-ḥaqq, \nwa qawlukal-ḥaqq, wa liqā'ukal-ḥaqq, \nwaljannatu ḥaqq, wannāru ḥaqq, \nwannabiyyūna ḥaqq, wa Muḥammadun (sallallāhu 'alayhi wa sallam) ḥaqq, \nwassā`atu ḥaqq] \n[Allāhumma laka 'aslamtu, wa `alayka tawakkaltu, \nwa bika 'āmantu, wa 'ilayka 'anabtu, \nwa bika khāṣamtu, wa 'ilayka ḥākamtu. \nFaghfir lī maa qaddamtu, wa mā 'akhkhartu, \nwa mā 'asrartu, wa mā 'a`lantu \n['Antal-Muqaddimu, wa 'Antal-Mu'akhkhiru \nlaa 'ilāha 'illā 'Anta] \n['Anta 'ilāhī lā 'ilāha 'illā 'Anta].\n\n\nO Allah, praise is to You. \nYou are the Light of the heavens and the earth and all that they contain. \nPraise is to You, You are the Sustainer of the heavens and the earth and all they contain. \n[Praise is to You, You are the Lord of the heavens and the earth and all they contain.] \n[Praise is to You, Yours is dominion of the heavens and the earth and all they contain.] \n[Praise is to You, You are the King of the heavens and the earth.] \n[And praise is to You.] \n[You are the Truth, Your Promise is true, \nYour Word is true, Your audience is true, \nParadise is true, Hell is true, \nthe Prophets are true, and Muhammad (peace and blessings be upon him) is true, \nand the Hour of Judgment is true.] \n[O Allah, to You I have submitted, and upon You I depend. \nI have believed in You and to You I turn in repentance . \nFor Your sake I dispute and by Your standard I judge. \nForgive me what I have sent before me and what I have left behind me, \nwhat I have concealed and what I have declared.] \n[You are the One Who sends forth and You are the One Who delays, \nthere is none who has the right to be worshipped but You.] \n[You are my God, there is none who has the right to be worshipped but \nYou.]\n\nReference:\nAl-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/3 , 11/ 116, 13/371, 423, 465. \nSee also Muslim for a shorter account, 1/532.\n"
   },
   {
+    "id": 15,
     "category": "prayer",
     "title": "Chapter: While bowing in prayer",
     "reference": "Reference : Hisn al-Muslim 33",
@@ -105,6 +120,7 @@
     "english": "Subḥāna Rabbiyal-`Aẓīm.[three times]\n\nGlory to my Lord the Exalted (three times in Arabic)\n\nReference:\nAbu Dawud, Ibn Majah, An-Nasa'i, At-Tirmidhi, and Ahmad. See Al-Albani's \nSahih At-Tirmidhi 1/83.\n"
   },
   {
+    "id": 16,
     "category": "prayer",
     "title": "Chapter: While bowing in prayer",
     "reference": "Reference : Hisn al-Muslim 34",
@@ -112,6 +128,7 @@
     "english": "Subḥānaka Allāhumma Rabbanā wa biḥamdika \nAllāhum-maghfir lī.\n\nGlory is to You , O Allah , our Lord , and praise is Yours . \nO Allah , forgive me.\n\nReference:\nAl-Bukhari 1/99, Muslim 1/350.\n"
   },
   {
+    "id": 17,
     "category": "prayer",
     "title": "Chapter: While bowing in prayer",
     "reference": "Reference : Hisn al-Muslim 35",
@@ -119,6 +136,7 @@
     "english": "Subbūḥun, Quddūsun, Rabbul-malā'ikati warrūḥ.\n\nGlory (to You) , Most Holy (are You) , \nLord of the angels and the Spirit.\n\nReference:\nMuslim 1/353, Abu Dawud 1/230.\n"
   },
   {
+    "id": 18,
     "category": "prayer",
     "title": "Chapter: While bowing in prayer",
     "reference": "Reference : Hisn al-Muslim 36",
@@ -126,6 +144,7 @@
     "english": "Allāhumma laka raka`tu, \nwa bika 'āmantu, wa laka 'aslamtu \nkhasha`a laka sam`ee wa baṣarī, \nwa mukhkhī, wa `aẓmī, wa `aṣabī, \nwa mastaqalla bihi qadamī.\n\nO Allah , to You I bow (in prayer) \nand in You I believe and to You I have submitted. \nBefore You my hearing is humbled, and my sight, \nand my mind, my bones, my nerves \nand what my feet have mounted upon (for travel).\n\nReference:\nMuslim 1/534, Abu Dawud, An-Nasa'i and At- Tirmidhi.\n"
   },
   {
+    "id": 19,
     "category": "prayer",
     "title": "Chapter: While bowing in prayer",
     "reference": "Reference : Hisn al-Muslim 37",
@@ -133,6 +152,7 @@
     "english": "Subḥāna dhil-jabarūti, walmalakūti, walkibriyā'i, wal`aẓamati.\n\nGlory is to You, Master of power, of dominion, of majesty and greatness.\n\nReference:\nAbu Dawud 1/230, An-Nasa'i and Ahmad. Its chain of narration is good \n(Hasan).\n"
   },
   {
+    "id": 20,
     "category": "prayer",
     "title": "Chapter: Upon rising from the bowing position",
     "reference": "Reference : Hisn al-Muslim 38",
@@ -140,6 +160,7 @@
     "english": "Sami`allāhu liman ḥamidah.\n\nAllah hears whoever praises Him.\n\nReference:\nAl-Bukhari, cf. Al-Asqalani, Fathul-Bari 2/282.\n"
   },
   {
+    "id": 21,
     "category": "prayer",
     "title": "Chapter: Upon rising from the bowing position",
     "reference": "Reference : Hisn al-Muslim 39",
@@ -147,6 +168,7 @@
     "english": "Rabbanā wa lakal-ḥamd, \nḥamdan kathīran ṭayyiban mubārakan fīh.\n\nOur Lord, praise is Yours, \nabundant, good and blessed praise.\n\nReference:\nAl-Bukhari, cf. Al-Asqalani, Fathul-Bari 2/284.\n"
   },
   {
+    "id": 22,
     "category": "prayer",
     "title": "Chapter: Upon rising from the bowing position",
     "reference": "Reference : Hisn al-Muslim 40",
@@ -154,6 +176,7 @@
     "english": "Mil'a 's-samāwāti wa mil'a 'l-'arḍi wa mā baynahumā, \nwa mil'a mā shi'ta min shay'in ba`d. \n'Ahla 'th-thanā'i wa 'l-majdi, \n'aḥaqqu mā qāla 'l-`abdu,\nwa kullunā laka `abdun. \nAllāhumma lā māni`a limā 'a`ṭayta, \nwa lā mu`ṭiya limā mana`ta,\nwa lā yanfa`u dhal-jaddi minka 'l-jadd.\n.\n\n(A praise that) fills the heavens and the earth and what lies between them, \nand whatever else You please. \n(You Allah) are most worthy of praise and majesty, and what the slave has said - we are all Your slaves. \nO Allah, there is none who can withhold what You give,\nand none may give what You have withheld. \nAnd the might of the mighty person cannot benefit him against You.\n\nReference:\nMuslim 1/346.\n"
   },
   {
+    "id": 23,
     "category": "prayer",
     "title": "Chapter: While prostrating",
     "reference": "Reference : Hisn al-Muslim 41",
@@ -161,6 +184,7 @@
     "english": "Subḥāna Rabbiya ‘l-a`lā.\n\nGlory is to my Lord, the Most High. (This is said three times in Arabic.)\n\nReference:\nAbu Dawud, Ibn Majah, An-Nasa'i, At-Tirmidhi, and Ahmad. See also \nAl-Albani, Sahih At-Tirmidhi 1/83.\n"
   },
   {
+    "id": 24,
     "category": "prayer",
     "title": "Chapter: While prostrating",
     "reference": "Reference : Hisn al-Muslim 42",
@@ -168,6 +192,7 @@
     "english": "Subḥānaka Allāhumma Rabbanā wa biḥamdika \nAllāhumma ‘ghfir lī.\n\n\nGlory is to You, O Allah, our Lord, and praise is Yours. \nO Allah, forgive me.\n\nReference:\nAl-Bukhari and Muslim, see invocation no. 34 above.\n"
   },
   {
+    "id": 25,
     "category": "prayer",
     "title": "Chapter: While prostrating",
     "reference": "Reference : Hisn al-Muslim 43",
@@ -175,6 +200,7 @@
     "english": "Subbūḥun, Quddūsun, Rabbu ‘l-malā'ikati warrūḥ.\n\n\nGlory (to You), Most Holy (are You), Lord of the angels and the Spirit.\n\nReference:\nMuslim 1/533, see invocation no. 35 above.\n"
   },
   {
+    "id": 26,
     "category": "prayer",
     "title": "Chapter: While prostrating",
     "reference": "Reference : Hisn al-Muslim 44",
@@ -182,6 +208,7 @@
     "english": "Allāhumma laka sajadtu \nwa bika āmantu, \nwa laka aslamtu, \nsajada waj’hiya lilladhī khalaqahu, wa ṣawwarahu, \nwa shaqqa sam`ahu wa baṣarahu, \ntabārakallāhu 'aḥsanul-khāliqīn.\n\n\nO Allah, to You I prostrate myself and in You I believe. \nTo You I have submitted. \nMy face is prostrated to the One Who created it, fashioned it, and gave it hearing and sight. \nBlessed is Allah, the Best of creators\n\nReference:\nMuslim 1/534 and others.\n"
   },
   {
+    "id": 27,
     "category": "prayer",
     "title": "Chapter: While prostrating",
     "reference": "Reference : Hisn al-Muslim 45",
@@ -189,6 +216,7 @@
     "english": "Subḥāna dhi ’l-jabarūti, wa ’l-malakūti, wa ‘l-kibriyā'i, wa ‘l-aẓamati.\n\n\nGlory is to the master of power, sovereignty, of majesty and greatness.\n\nReference:\nAbu Dawud 1/230, An-Nasa'i, Ahmad. See also Al-Albani, Sahih Abu Dawud \n1/166, see invocation no. 37 above.\n"
   },
   {
+    "id": 28,
     "category": "prayer",
     "title": "Chapter: While prostrating",
     "reference": "Reference : Hisn al-Muslim 46",
@@ -196,6 +224,7 @@
     "english": "Allāhumma’ghfir lī dhanbī kullahu, \ndiqqahu wa jillahu, \nwa awwalahu wa ākhirahu \nwa `alāniyyatahu wa sirrahu.\n\n\nO Allah, forgive me all my sins, \ngreat and small, \nthe first and the last, \nthose that are apparent and those that are hidden.\n\nReference:\nMuslim 1/350.\n"
   },
   {
+    "id": 29,
     "category": "prayer",
     "title": "Chapter: While prostrating",
     "reference": "Reference : Hisn al-Muslim 47",
@@ -203,6 +232,7 @@
     "english": "Allāhumma innī a`ūdhu biriḍāka min sakhaṭika, \nwa bimu`āfātika min `uqūbatika \nwa a`ūdhu bika minka\nlā uḥṣī thanā'an `alayka \nanta kamā athnayta `alā nafsika.\n\n\nO Allah, I seek protection in Your pleasure from Your anger,\nand I seek protection in Your forgiveness from Your punishment. \nI seek protection in You from You. \nI cannot count Your praises. \nYou are as You have praised Yourself.\n\nReference:\nMuslim 1/352.\n"
   },
   {
+    "id": 30,
     "category": "prayer",
     "title": "Chapter: Between the two prostrations",
     "reference": "Reference : Hisn al-Muslim 48",
@@ -210,6 +240,7 @@
     "english": "Rabbi’ghfir lī, Rabbi’ghfir lī.\n\nLord, forgive me. My Lord, forgive me.\n\nReference:\nAbu Dawud 1/231. See also Al-Albani, Sahihibn Mdjah 1/148.\n"
   },
   {
+    "id": 31,
     "category": "prayer",
     "title": "Chapter: Between the two prostrations",
     "reference": "Reference : Hisn al-Muslim 49",
@@ -217,6 +248,7 @@
     "english": "Allāhumma’ghfir lī, war’ḥamnī, \nwahdinī, wajburnī, \nwa `āfinī, warzuqnī, warfa`nī.\n\n\nO Allah forgive me, have mercy on me, \nguide me, support me, \nprotect me, provide for me, and elevate me.\n\nReference:\nAbu Dawud, Ibn Majah, At-Tirmidhi. See also Al-Albani, Sahih At-Tirmidhi \n1/90 and Sahih Ibn Majah 1/148.\n"
   },
   {
+    "id": 32,
     "category": "prayer",
     "title": "Chapter: When prostrating due to recitation of the Quran",
     "reference": "Reference : Hisn al-Muslim 50",
@@ -224,6 +256,7 @@
     "english": "Sajada wajhiya lilladhī khalaqahu, \nwa shaqqa sam`ahu wa baṣarahu biḥawlihi wa quwwatihi.\nFatabārakallāhu 'aḥsanul-khāliqīn.\n\nI have prostrated my face to the One Who created it, \nand gave it hearing and sight by His might and His power. \nGlory is to Allah, the Best of creators.\n\nReference:\nAt-Tirmidhi 2/474, Ahmad 6/30, and Al-Hakim\n"
   },
   {
+    "id": 33,
     "category": "prayer",
     "title": "Chapter: When prostrating due to recitation of the Quran",
     "reference": "Reference : Hisn al-Muslim 51",
@@ -231,6 +264,7 @@
     "english": "Allāhummak’tub lī bihā `indaka ajra, \nwaḍa` `annī bihā wizra,\nwaj`alhā lī `indaka dhukhra, \nwa taqabbal’hā minnī kamā taqabbal’tahā min `abdika Dāwūd.\n\n\nO Allah, write it as a reward for me, \nand release me from a burden for it, \nand make it a treasure for me with You.\nAccept it from me as You accepted it from your servant Dawud.\n\nReference:\nAt-Tirmidhi 2/473, and Al-Hakim who graded it authentic and Ath-Thahabi \nagreed 1/219.\n"
   },
   {
+    "id": 34,
     "category": "prayer",
     "title": "Chapter: The Tashahhud",
     "reference": "Reference : Hisn al-Muslim 52",
@@ -238,6 +272,7 @@
     "english": "Attaḥiyyātu lillāhi waṣṣalawātu, waṭṭayyibāt,\nassalāmu `alayka 'ayyuhan-Nabiyyu \nwa raḥmatullāhi wa barakātuh, \nassalāmu `alaynā wa `alā ‘ibādillāhiṣ-ṣāliḥīn. \n'Ash-hadu 'an lā 'ilāha 'illallāh \nwa 'ash-hadu 'anna Muḥammadan `abduhu wa rasūluh.\n\n\nAll greetings of humility are for Allah, and all prayers and goodness. \nPeace be upon you, O Prophet, and the mercy of Allah and His blessings. \nPeace be upon us and upon the righteous slaves of Allah. I bear witness \nthat there is none worthy of worship but Allah, and I bear witness that \nMuhammad is His slave and His Messenger.\n\nReference:\nAl-Bukhari, Muslim 1/301. See also Al-Asqalani, Fathul-Bal 1/13\n"
   },
   {
+    "id": 35,
     "category": "prayer",
     "title": "Chapter: Prayers upon the Prophet ﷺ after the tashahhud",
     "reference": "Reference : Hisn al-Muslim 53",
@@ -245,6 +280,7 @@
     "english": "Allāhumma ṣalli `alā Muḥammadinwa `alā ’āli Muḥammadin, \nkamā ṣallayta `alā 'Ibrāhīma wa `alā ’āli 'Ibrāhīma, 'innaka ḥamīdum-majīd.\nAllāhumma bārik `alā Muḥammadin wa `alā ’āli Muḥammadin, \nkamā bārakta `alā 'Ibrāhīma wa `alā 'āli 'Ibrāhīma, \n'innaka ḥamīdum-majīd.\n\n\nO Allah, bestow Your favor on Muhammad and on the family of Muhammad as You have bestowed Your favor on Ibrahim and on the family of Ibrahim, You are Praiseworthy, Most Glorious. \nO Allah, bless Muhammad and the family of Muhammad as You have blessed Ibrahim and the family of Ibrahim, You are Praiseworthy, Most Glorious.\n\nReference:\nAl-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/408.\n"
   },
   {
+    "id": 36,
     "category": "prayer",
     "title": "Chapter: Prayers upon the Prophet ﷺ after the tashahhud",
     "reference": "Reference : Hisn al-Muslim 54",
@@ -252,6 +288,7 @@
     "english": "Allāhumma ṣalli `alā Muḥammadin\nwa `alā 'azwājihi wa dhurriyyatihi,\nkamā ṣallayta `alā 'āli 'Ibrāhīma. \nWa bārik `alā Muḥammadin\nwa `alā 'azwājihi wa dhurriyyatihi, \nkamā bārakta `alā 'āli 'Ibrāhīma.\n'Innaka ḥamīdum-majīd.\n\n\nO Allah, bestow Your favor on Muhammad and upon his wives and progeny as You have bestowed Your favor upon the family of Ibrahim. \nAnd bless Muhammad and his wives and progeny as You have blessed the family of Ibrahim, You are full of praise, Most Glorious.\n\nReference:\nAl-Bukhari, from Al-Asqalani, Fathul-Bari 6/ 407, Muslim 1/306.\n"
   },
   {
+    "id": 37,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 55",
@@ -259,6 +296,7 @@
     "english": "Allāhumma ‘innī ‘a`ūdhu bika min `adhābi ‘l-qabri, \nwa min `adhābi jahannam, \nwa min fitnati ‘l-maḥyā wa ‘l-mamāti, \nwa min sharri fitnati ‘l-masīḥid-dajjāl.\n\n\nO Allah, I seek refuge in You from the punishment of the grave, and from the punishment of Hell-fire, and from the trials of life and death, and \nfrom the evil of the trial of the False Messiah.\n\nReference:\nAl-Bukhari 2/102, Muslim 1/412, and this is Muslim's wording.\n"
   },
   {
+    "id": 38,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 56",
@@ -266,6 +304,7 @@
     "english": "Allāhumma 'innī ‘a`ūdhu bika min `adhābi ‘l-qabr, \nwa ‘a`ūdhu bika min fitnati ‘l-masīḥid-dajjāl, \nwa ‘a`ūdhu bika min fitnati ‘l-maḥyā wa ‘l-mamāt. \nAllāhumma ‘innī ‘a`ūdhu bika mina ‘l-m’athami wa ‘l-maghram.\n\n\nO Allah, I seek refuge in You from the punishment of the grave,\nand I seek refuge in You from the trial of the False Messiah, \nand I seek refuge in You from the trials of life and death. \nO Allah, I seek refuge in You from sin and from debt.\n\nReference:\nAl-Bukhari 1/202, Muslim 1/412.\n"
   },
   {
+    "id": 39,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 57",
@@ -273,6 +312,7 @@
     "english": "Allāhumma ‘innī ẓalamtu nafsī ẓulman kathīran, \nwa lā yaghfiru-dhdhunūba illā 'anta, \nfaghfir lī maghfiratam’min `indika warḥamnī \ninnaka 'anta ‘l-Ghafūr ur-Rahīm.\n\n\nO Allah, I have greatly wronged myself,\nand no one forgives sins but You. \nSo, grant me forgiveness and have mercy on me.\nSurely, you are Forgiving, Merciful.\n\nReference:\nAl-Bukhari 8/168, Muslim 4/2078.\n"
   },
   {
+    "id": 40,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 58",
@@ -280,6 +320,7 @@
     "english": "Allāhummagh’fir lī mā qaddamtu, wa mā ‘akhkhartu, \nwa mā ‘asrartu, wa mā ‘a`lantu, \nwa mā ‘asraftu, wa mā 'anta ‘a`lamu bihi minnī.\n‘anta ‘l-Muqaddimu, wa 'anta ‘l-Mu‘akhkhiru \nlā 'ilāha 'illā 'anta.\n\n\nO Allah, forgive me what I have sent before me and what I have left behind me, \nwhat I have concealed and what I have done openly, \nwhat I have done in excess, and what You are better aware of than I. \nYou are the One Who sends forth and You are the One Who delays. \nThere is none worthy of worship but You.\n\nReference:\nMuslim 1/534.\n"
   },
   {
+    "id": 41,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 59",
@@ -287,6 +328,7 @@
     "english": "Allāhumma ‘a`innī `alā dhikrika, wa shukrika, \nwa ḥusni `ibādatik.\n\n\nO Allah, help me to remember You, to give You thanks, \nand to perform Your worship in the best manner.\n\nReference:\nAbu Dawud 2/86, An-Nasa'i 3/53. See also Al-Albani Sahih Abu Dawud 1 /284.\n"
   },
   {
+    "id": 42,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 60",
@@ -294,6 +336,7 @@
     "english": "Allāhumma 'innī ‘a`udhu bika mina ‘l-bukhl, \nwa ‘a`udhu bika mina ‘l-jubn,\nwa ‘a`udhu bika min ‘an ‘uradda ilā ‘ardhali ‘l-`umur, \nwa ‘a`udhu bika min fitnatid-dunyā wa `adhābi ‘l-qabr.\n\n\nO Allah, I seek Your protection from miserliness, \nI seek Your protection from cowardice, \nand I seek Your protection from being returned to feeble old age. \nI seek Your protection from the trials of this world and from the torment of the grave.\n\nReference:\nAl-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/35\n"
   },
   {
+    "id": 43,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 61",
@@ -301,6 +344,7 @@
     "english": "Allāhumma innī as'aluka ‘l-jannah\nwa a`ūdhu bika minan-nār.\n\n\nO Allah, I ask You for Paradise,\nand I seek Your protection from the Fire.\n\nReference:\nAbu Dawud. See also Al-Albani, Sahih Ibn Majah 2/328.\n"
   },
   {
+    "id": 44,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 62",
@@ -308,6 +352,7 @@
     "english": "Allāhumma bi `ilmika ‘l-ghayb, wa qudratika `ala ‘l-khalq,\naḥyinī mā `alimta ‘l-ḥayāta khayran lī,\nwa tawaffanī idhā  `alimta ‘l-wafāta khayran lī, \nAllāhumma innī as'aluka khash’yataka fil-ghaybi wash-shahādah, \nwa as'aluka kalimata ‘l-ḥaqqi fir-riḍā wa ‘l-ghaḍab, \nwa as'aluka ‘l-qaṣda fil-ghinā wa ‘l-faqr,\nwa as'aluka na`īman lā yanfad, \nwa as'aluka qurrata `aynin lā tanqati`, \nwa as'alukar-riḍā ba`dal-qaḍā', \nwa as'aluka barda ‘l-`ayshi ba`da ‘l-mawt, \nwa as'aluka ladh-dhatan-naẓari ilā wajhik,\nwash-shawqa ilā liqā'ik, \nfī ghayri ḍarrā'a muḍirrah, wa lā fitnatin muḍillah,\nAllāhumma zayyinnā bi zīnati ‘l-'īmān,\nwaj`alnā hudātan muhtadīn.\n\nO Allah, by Your Knowledge of the unseen and by Your Power over creation, \nlet me live if You know that life is good for me, \nand let me die if You know that death is good for me. \nO Allah, I ask You to grant me fear of You in private and in public. \nI ask you for the word of truth in times of contentment and anger. \nI ask You for moderation in wealth and in poverty. \nI ask you for blessings never ceasing and the coolness of my eye (i.e. pleasure) that never ends. \nI ask You for pleasure after Your Judgment\nand I ask You for a life of coolness after death. \nI ask You for the delight of gazing upon Your Face,\nand the joy of meeting You, \nwithout any harm and misleading trials befalling me.\nO Allah, dress us with the beauty of Faith\nand make us guides who are upon (correct) guidance.\n\nReference:\nAn-Nasa'i 3/54, 55, Ahmad 4/364. See also Al-Albani, Sahih An-Nasa'i 1/281.\n"
   },
   {
+    "id": 45,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 63",
@@ -315,6 +360,7 @@
     "english": "Allāhumma innī as'aluka yā Allāh\nbi'annaka ‘l-Wāḥidu ‘l-Aḥaduṣ-ṣamad, \nalladhī lam yalid wa lam yūlad, \nwa lam yakun lahu kufuwan aḥad, \nan taghfir lī dhunūbī, \ninnaka anta ‘l-Ghafūrur-Raḥīm.\n\n\nO Allah, I ask You. O Allah, You are the One, the Only, Self-Sufficient Master, Who was not begotten and begets not, and none is equal to Him. \nForgive me my sins, surely you are Forgiving, Merciful.\n\nReference:\nAn-Nasa'i 3/52, Ahmad 4/338. See also Al-Albani, Sahih An-Nasa'i 1/280 and \nSifat Salatun-Nabi, pg. 204.\n"
   },
   {
+    "id": 46,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 64",
@@ -322,6 +368,7 @@
     "english": "Allāhumma innī as'aluka bi'anna laka ‘l-ḥamd,\nlā ilāha illā ant, waḥdaka lā sharīka lak, \nal-Mannān, yā Badī`as-samāwāti wa ‘l-arḍ\nyā dha ‘l-Jalāli wa ‘l-'Ikrām, yā ḥayyu yā Qayyūm,\ninnī as'aluka ‘l-jannah, wa a`ūdhu bika minan-nār.\n\nO Allah, I ask You, as You are the Owner of praise, \nthere is none worthy of worship but You alone, You have no partner. \nYou are the Giver of all good. O Creator of the heavens and the earth,\nOwner of majesty and honor. O Living and Everlasting One, \nI ask you for Paradise, and I seek refuge in You from the fire.\n\nReference:\nAbu Dawud, An-Nasa'i, Ibn Majah, At-Tirmidhi. See also Al-Albani, Sahih Ibn \nMajah 2/329.\n"
   },
   {
+    "id": 47,
     "category": "prayer",
     "title": "Chapter: After the last tashahhud and before salam",
     "reference": "Reference : Hisn al-Muslim 65",
@@ -329,6 +376,7 @@
     "english": "Allāhumma innī as'aluka \nbi'annī ash-hadu annaka ant-Allāh \nlā 'ilāha 'illā ant,\nAl-Aḥaduṣ-ṣamad\nalladhī lam yalid wa lam yūlad \nwa lam yakun lahu kufuwan aḥad.\n\n\nO Allah, I ask You, by the fact that I bear witness that You are Allah. \nThere is none worthy of worship but You, \nthe Only God, Independent of creation, \nWho was not begotten and begets not, \nand none is equal to Him.\n\nReference:\nAbu Dawud 2/62, Ibn Majah 2/1267, At-Tirmidhi 5/515, Ahmad 5/360. See also \nAl-Albani, Sahih Ibn Majah 2/329 and Sahih At-Tirmidhi 3/163.\n"
   },
   {
+    "id": 48,
     "category": "prayer",
     "title": "Chapter: After salam",
     "reference": "Reference : Hisn al-Muslim 66",
@@ -336,6 +384,7 @@
     "english": "Astaghfirullāh (three times) \nAllāhumma antas-salām, \nwa minkas-salām, \ntabārakta yā dhal-Jalāli wal-'Ikrām.\n\nI seek the forgiveness of Allah (three times). \nO Allah, You are Peace and from You comes peace. \nBlessed are You, O Owner of majesty and honor.\n\nReference:\nMuslim 1/414.\n"
   },
   {
+    "id": 49,
     "category": "prayer",
     "title": "Chapter: After salam",
     "reference": "Reference : Hisn al-Muslim 67",
@@ -343,6 +392,7 @@
     "english": "Lā 'ilāha 'illallāh, \nwaḥdahu lā sharīka lah, \nlahu ‘l-mulku wa lahu ‘l-ḥamd,\nwa huwa `alā kulli shay'in qadīr, \nAllāhumma lā māni`a limā 'a`tayt, \nwa lā mu`tiya limā mana`t, \nwa lā yanfa`u dhal-jaddi minkal-jadd.\n\n\nNone has the right to be worshipped but Allah alone, \nHe has no partner, \nHis is the dominion and His is the praise,\nand He is Able to do all things. \nO Allah, there is none who can withhold what You give, \nand none may give what You have withheld,\nand the might of the mighty person cannot benefit him against You.\n\nReference:\nAl-Bukhari 1/255, Muslim 1/414.\n"
   },
   {
+    "id": 50,
     "category": "prayer",
     "title": "Chapter: After salam",
     "reference": "Reference : Hisn al-Muslim 68",
@@ -350,6 +400,7 @@
     "english": "Lā 'ilāha 'illallāh, \nwaḥdahu lā sharīka lah, \nlahul-mulku, wa lahul-ḥamd, \nwa huwa `alā kulli shay'in qadīr. \nLā ḥawla wa lā quwwata 'illā billāh, \nlā 'ilāha 'illallāh, \nwa lā na`budu 'illā 'iyyāh,\nlahun-ni`matu wa lahul-faḍl,\nwa lahuth-thanā'ul-ḥasan, \nlā 'ilāha 'illallāh, \nmukhliṣīna lahud-dīn, \nwa law karihal-kāfirūn.\n\n\nNone has the right to be worshipped but Allah alone, \nHe has no partner, \nHis is the dominion and His is the praise\nand He is Able to do all things. \nThere is no power and no might except by Allah. \nNone has the right to be worshipped but Allah, \nand we do not worship any other besides Him.\nHis is grace, and His is bounty,\nand to Him belongs the most excellent praise. \nNone has the right to be worshipped but Allah. \n(We are) sincere in making our religious devotion to Him, \neven though the disbelievers may dislike it.\n\nReference:\nMuslim 1/415.\n"
   },
   {
+    "id": 51,
     "category": "prayer",
     "title": "Chapter: After salam",
     "reference": "Reference : Hisn al-Muslim 69",
@@ -357,6 +408,7 @@
     "english": "Subḥānallāh,\nwalḥamdu lillāh, \nwallāhu 'akbar,\n(each said thirty-three times)\nLā 'ilāha 'illallāh\nwaḥdahu lā sharīka lahu, \nlahul-mulku wa lahul-ḥamd\nwa huwā`lā kulli shay'in qadīr.\n\n\nGlory is to Allah,\nand praise is to Allah, \nand Allah is the Most Great. \n(each said thirty-three times)\nNone has the right to be worshiped but Allah alone, \nHe has no partner, \nHis is the dominion and His is the praise\nand He is Able to do all things.\n\nReference:\nMuslim 1/418, Whoever says this after every prayer will be forgiven his \nsins even though they be as the foam of the sea.\n"
   },
   {
+    "id": 52,
     "category": "prayer",
     "title": "Chapter: After salam",
     "reference": "Reference : Hisn al-Muslim 70",
@@ -364,6 +416,7 @@
     "english": "Bismillāhir-Raḥmānir-Raḥīm. \nQul huwallāhu aḥad. \nAllāhuṣ-ṣamad. \nLam yalid wa lam yūlad. \nWa lam yakun lahu kufuwan aḥad.\n\nBismillāhir-Raḥmānir-Raḥīm. \nQul a`ūdhu birabbil-falaq. \nMin sharri mā khalaq. \nWa min sharri ghāsiqin idhā waqab. \nWa min sharrin-naffāthāti fil-`uqad. \nWa min sharri ḥāsidin idhā ḥasad.\n\nBismillāhir-Raḥmānir-Raḥīm. \nQul a`ūdhu birabbin-nās. \nMalikin-nās. 'Ilāhin-nās. \nMin sharri ‘l-waswāsil-khannās. \nAlladhī yuwaswisu fī ṣudūrin-nās. \nMinal-jinnati wannās.\n\n\n(Surahs 112 al-Ikhlas, 113 al-Falaq, and 114 an-Nas)\nThese Surahs should be recited in Arabic after each prayer. After the Maghrib and Fajr prayers, they should be recited three times each.\n\nWith the Name of Allah, the Most Gracious, the Most Merciful.\nSay: He is Allah (the) One.\nThe Self-Sufficient Master, Whom all creatures need,\nHe begets not nor was He begotten,\nand there is none equal to Him.\n\nWith the Name of Allah, the Most Gracious, the Most Merciful.\nSay: I seek refuge with (Allah) the Lord of the daybreak,\nfrom the evil of what He has created,\nand from the evil of the darkening (night) as it comes with its darkness,\nand from the evil of those who practice witchcraft when they blow in the knots,\nand from the evil of the envier when he envies.\n\nWith the Name of Allah, the Most Gracious, the Most Merciful.\nSay: I seek refuge with (Allah) the Lord of mankind,\nthe King of mankind,\nthe God of mankind,\nfrom the evil of the whisperer who withdraws,\nwho whispers in the breasts of mankind,\nof jinns and men. \n\nReference:\nAbu Dawud 2/86, An-Nasa'i 3/68. See also Al-Albani, Sahih At-Tirmidhi 2/8.\n"
   },
   {
+    "id": 53,
     "category": "prayer",
     "title": "Chapter: After salam",
     "reference": "Reference : Hisn al-Muslim 71",
@@ -371,6 +424,7 @@
     "english": "Allāhu lā ilāha illā huwa ‘l-Ḥayyul-Qayyūm, \nlā ta'khudhuhu sinatun wa lā nawm, \nlahu mā fis-samāwāti wa mā fil-ardh, \nman dhal-ladhī yashfa`u `indahu illā bi'idhnih, \nya`lamu mā bayna 'aydīhim wa mā khalfahum, \nwa lā yuḥītūna bishay'im-min `ilmihi illā bimā shā'a, \nwasi `a kursiyyuhus-samāwāti wal-ardh, \nwa lā ya'ūduhu hifẓuhumā, \nwa huwal-`Aliyyu ‘l-`Aẓīm.\n\n\nAllah! There is none worthy of worship but He, the Ever-Living, the One Who sustains and protects all that exists.\nNeither slumber nor sleep overtakes Him.\nTo Him belongs whatever is in the heavens and whatever is on the earth.\nWho is he that can intercede with Him except with His Permission?\nHe knows what happens to them in this world, and what will happen to them in the Hereafter.\nAnd they will never compass anything of His Knowledge except that which He wills.\nHis Throne extends over the heavens and the earth,\nand He feels no fatigue in guarding and preserving them.\nAnd He is the Most High, the Most Great. (Recite in Arabic after each prayer.)\n\nReference:\nAn-Nasa'i, 'Amalul-Yawm wal-Laylah (Hadith no. 100), also Ibn As-Sunni (no. \n121). See also Al-Albani, Sahihul-Jami' As-Saghir 5/339 and \nSilsilatul-Ahadith As-Sahihah 2/697 (no. 972).\n"
   },
   {
+    "id": 54,
     "category": "prayer",
     "title": "Chapter: After salam",
     "reference": "Reference : Hisn al-Muslim 72",
@@ -378,6 +432,7 @@
     "english": "Lā ilāha illallāh\nwaḥdahu lā sharīka lah, \nlahu‘l-mulku wa lahu‘l-ḥamd \nyuḥyī wa yumīt\nwa huwa `alā kulli shay'in qadīr.\n\n(Recite ten times in Arabic after the Maghrib and Fajr prayers.)\n\nNone has the right to be worshipped but Allah alone, Who has no partner. \nHis is the dominion and His is the praise. \nHe brings life and He causes death, \nand He is Able to do all things. \n\n\nReference:\nAt-Tirmidhi 5/515, Ahmad 4/227. See its checking in Ibn Al-Qayyim \nAl-Jawziyyah's Zddul-Ma'ad 1/300.\n"
   },
   {
+    "id": 55,
     "category": "prayer",
     "title": "Chapter: After salam",
     "reference": "Reference : Hisn al-Muslim 73",
@@ -385,37 +440,43 @@
     "english": "Allāhumma innī as'aluka `ilman nāfi`an, \nwa rizqan ṭayyiban, wa `amalam-mutaqabbala.\n\n[to be said after giving salam for the Fajr prayer.]\n\n\"O Allah, I ask You for knowledge which is beneficial, \nand sustenance which is good, and deeds which are acceptable.\"\n\n\nReference:\nIbn Majah and others. See Sahih Ibn Majah 1/152 and Majma' Az-Zawa'id 10/111\n"
   },
   {
-    "fast": [
-      {
-        "title": "Chapter: Upon breaking fast",
-        "reference": "Reference : Hisn al-Muslim 176",
-        "arabic": "\nذَهَـبَ الظَّمَـأُ،\nوَابْتَلَّـتِ العُـروق،\nوَثَبَـتَ الأجْـرُ إِنْ شـاءَ الله",
-        "english": "Dhahabaẓ-ẓama', \nwabtallati ‘l-`urūq, \nwa thabata ‘l-'ajru in shā Allāh.\n\n\nThe thirst is gone,\nthe veins are moistened, \nand the reward is confirmed, if Allah wills.\n\nReference:\nAbu Dawud 2/306 and others. See also Al- Albani, Sahihul-Jami' As-Saghir \n4/209.\n"
-      },
-      {
-        "title": "Chapter: Upon breaking fast",
-        "reference": "Reference : Hisn al-Muslim 177",
-        "arabic": "\nاللّهُـمَّ إِنَّـي أَسْـأَلُـكَ بِرَحْمَـتِكَ الّتي وَسِـعَت كُلَّ شيء، \nأَنْ تَغْـفِرَ لي",
-        "english": "Allāhumma innī as'aluka \nbi raḥmatika ‘l-latī wasi`at kulla shay' \nan taghfira lī.\n\n\nO Allah, I ask You by Your mercy, which encompasses all things, that You forgive me.\n\nReference:\nIbn Majah 1/557 from a supplication of Abdullah bin 'Amr. Al-Hafidh graded \nit as good in his checking of An-Nawawi's Kitabul-'Athkdr. See Sharhul- \nAthkar 4/342.\n"
-      },
-      {
-        "title": "Chapter: When breaking fast in someone’s home",
-        "reference": "Reference : Hisn al-Muslim 184",
-        "arabic": "\nأَفْطَـرَ عِنْدَكُم الصّـائِمونَ\nوَأَكَلَ طَعامَـكُمُ الأبْـرار،\nوَصَلَّـتْ عَلَـيْكُمُ الملائِكَـة",
-        "english": "Afṭara `indakumuṣ-ṣā'imūn, \nwa akala ṭa`āmakumu ‘l-'abrār, \nwa ṣallat `alaykumu ‘l-malā'ikah.\n\n\nWith you, those who are fasting have broken their fast, \nyou have fed those who are righteous, \nand the angels recite their prayers upon you.\n\nReference:\nAbu Dawud 3/367, Ibn Majah 1/556, An-Nasa'i, 'Amalul-Yawm wal-Laylah 296-8. \nAl-Albani graded it authentic in Sahih Abu Dawud 2/730.\n"
-      },
-      {
-        "title": "Chapter: By one fasting when presented with food and does not break his fast",
-        "reference": "Reference : Hisn al-Muslim 185",
-        "arabic": "\n(إِذَا دُعِيَ أَحَدُكُمْ فَلْيُجِبْ، فَإِنْ كَانَ صَائِماً فَلْيُصَلِّ، وَإِنْ كَانَ مُفْطِراً فَلْيَطْعَمْ) ، وَمَعْنَى فَلْيُصَلِّ أَيْ فَلْيَدْعُ.",
-        "english": "--\n\nWhen you are invited (to eat) then reply to the invitation. \nIf you are fasting then invoke Allah's blessings (on your host), \nand if you are not fasting then eat.\n\nReference:\nMuslim 2/1054.\n"
-      },
-      {
-        "title": "Chapter: When insulted while fasting",
-        "reference": "Reference : Hisn al-Muslim 186",
-        "arabic": "\nإِنِّي صَائِمٌ، \nإِنِّي صَائِمٌ",
-        "english": "Innī  ṣā'im,\ninnī  ṣā'im.\n\n\nI am fasting. \nI am fasting.\n\nReference:\nAl-Bukhari, cf. Al-Asqalani, Fathul-BAri 4/103, Muslim 2/806.\n"
-      }
-    ]
+    "id": 1,
+    "category": "fasting",
+    "title": "Chapter: Upon breaking fast",
+    "reference": "Reference : Hisn al-Muslim 176",
+    "arabic": "\nذَهَـبَ الظَّمَـأُ،\nوَابْتَلَّـتِ العُـروق،\nوَثَبَـتَ الأجْـرُ إِنْ شـاءَ الله",
+    "english": "Dhahabaẓ-ẓama', \nwabtallati ‘l-`urūq, \nwa thabata ‘l-'ajru in shā Allāh.\n\n\nThe thirst is gone,\nthe veins are moistened, \nand the reward is confirmed, if Allah wills.\n\nReference:\nAbu Dawud 2/306 and others. See also Al- Albani, Sahihul-Jami' As-Saghir \n4/209.\n"
+  },
+  {
+    "id": 2,
+    "category": "fasting",
+    "title": "Chapter: Upon breaking fast",
+    "reference": "Reference : Hisn al-Muslim 177",
+    "arabic": "\nاللّهُـمَّ إِنَّـي أَسْـأَلُـكَ بِرَحْمَـتِكَ الّتي وَسِـعَت كُلَّ شيء، \nأَنْ تَغْـفِرَ لي",
+    "english": "Allāhumma innī as'aluka \nbi raḥmatika ‘l-latī wasi`at kulla shay' \nan taghfira lī.\n\n\nO Allah, I ask You by Your mercy, which encompasses all things, that You forgive me.\n\nReference:\nIbn Majah 1/557 from a supplication of Abdullah bin 'Amr. Al-Hafidh graded \nit as good in his checking of An-Nawawi's Kitabul-'Athkdr. See Sharhul- \nAthkar 4/342.\n"
+  },
+  {
+    "id": 3,
+    "category": "fasting",
+    "title": "Chapter: When breaking fast in someone’s home",
+    "reference": "Reference : Hisn al-Muslim 184",
+    "arabic": "\nأَفْطَـرَ عِنْدَكُم الصّـائِمونَ\nوَأَكَلَ طَعامَـكُمُ الأبْـرار،\nوَصَلَّـتْ عَلَـيْكُمُ الملائِكَـة",
+    "english": "Afṭara `indakumuṣ-ṣā'imūn, \nwa akala ṭa`āmakumu ‘l-'abrār, \nwa ṣallat `alaykumu ‘l-malā'ikah.\n\n\nWith you, those who are fasting have broken their fast, \nyou have fed those who are righteous, \nand the angels recite their prayers upon you.\n\nReference:\nAbu Dawud 3/367, Ibn Majah 1/556, An-Nasa'i, 'Amalul-Yawm wal-Laylah 296-8. \nAl-Albani graded it authentic in Sahih Abu Dawud 2/730.\n"
+  },
+  {
+    "id": 4,
+    "category": "fasting",
+    "title": "Chapter: By one fasting when presented with food and does not break his fast",
+    "reference": "Reference : Hisn al-Muslim 185",
+    "arabic": "\n(إِذَا دُعِيَ أَحَدُكُمْ فَلْيُجِبْ، فَإِنْ كَانَ صَائِماً فَلْيُصَلِّ، وَإِنْ كَانَ مُفْطِراً فَلْيَطْعَمْ) ، وَمَعْنَى فَلْيُصَلِّ أَيْ فَلْيَدْعُ.",
+    "english": "--\n\nWhen you are invited (to eat) then reply to the invitation. \nIf you are fasting then invoke Allah's blessings (on your host), \nand if you are not fasting then eat.\n\nReference:\nMuslim 2/1054.\n"
+  },
+  {
+    "id": 5,
+    "category": "fasting",
+    "title": "Chapter: When insulted while fasting",
+    "reference": "Reference : Hisn al-Muslim 186",
+    "arabic": "\nإِنِّي صَائِمٌ، \nإِنِّي صَائِمٌ",
+    "english": "Innī  ṣā'im,\ninnī  ṣā'im.\n\n\nI am fasting. \nI am fasting.\n\nReference:\nAl-Bukhari, cf. Al-Asqalani, Fathul-BAri 4/103, Muslim 2/806.\n"
   }
 ]

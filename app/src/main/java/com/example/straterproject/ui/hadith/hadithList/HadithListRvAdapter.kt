@@ -3,7 +3,6 @@ package com.example.straterproject.ui.hadith.hadithList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.straterproject.databinding.DuaaListRvItemBinding
 import com.example.straterproject.databinding.HadithListRvItemBinding
 
 class HadithListRvAdapter(
@@ -28,12 +27,13 @@ class HadithListRvAdapter(
     }
 
     override fun onBindViewHolder(holder: hadithListRvViewHolder, position: Int) {
+        val hadithNumber = position + 1
         holder.binding.apply {
-            hadithName.text = hadithListItems.get(position)
+            "الحديث رقم $hadithNumber".also { hadithName.text = it }
         }
 
         holder.binding.root.setOnClickListener {
-            listener.onItemclick(position)
+            listener.onItemclick(hadithListItems.get(position))
         }
 
     }
@@ -41,5 +41,5 @@ class HadithListRvAdapter(
 
 }
 interface OnHadithListRvListener {
-    fun onItemclick(position: Int)
+    fun onItemclick(hadithText: String)
 }

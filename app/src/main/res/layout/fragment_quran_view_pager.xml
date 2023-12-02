@@ -4,21 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.quran.fragments.QuranViewPagerFragment">
-
+        tools:context=".ui.quran.quranViewPager.QuranViewPagerFragment">
 
         <include
             android:id="@+id/quran_header"
             layout="@layout/common_header" />
 
+
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
-            android:layoutDirection="ltr"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="0dp"
+            android:layoutDirection="ltr"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quran_header" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -20,7 +20,6 @@ class DuaaListFragment : BaseFragment<FragmentDuaaListBinding>(), OnDuaaListRvLi
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = this
-
         setAdapter()
 
     }

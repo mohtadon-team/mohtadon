@@ -17,6 +17,7 @@
             <include
                 layout="@layout/common_header"
                 android:id="@+id/page_header"/>
+
             <TextView
                 android:layout_below="@id/page_header"
                 android:layout_width="wrap_content"
