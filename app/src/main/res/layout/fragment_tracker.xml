@@ -26,7 +26,7 @@
             android:layout_marginTop="@dimen/spacing_too_small"
             android:text="@{viewModel.trackerUiState.currentDate}"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_too_large"
+            android:textSize="@dimen/text_large"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_large"
+            android:textSize="@dimen/text_medium"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/weekly_calender"
             app:layout_constraintStart_toStartOf="@+id/weekly_calender"
@@ -80,8 +80,8 @@
 
         <ImageView
             android:id="@+id/previous_week_button"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
             android:layout_marginStart="@dimen/spacing_medium"
             android:src="@drawable/left_arrow"
             app:layout_constraintBottom_toBottomOf="@+id/current_month"
@@ -91,8 +91,8 @@
 
         <ImageView
             android:id="@+id/next_week_button"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:rotation="180"
             android:src="@drawable/left_arrow"

@@ -2,6 +2,7 @@ package com.example.straterproject.ui.prayers_tracker
 
 import android.content.SharedPreferences
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecases.GetDayPrayerTimesUseCase
@@ -94,6 +95,7 @@ class TrackerViewModel @Inject constructor(
                             isItToday
                         ),
                     )
+
                 )
             }
         }
@@ -105,19 +107,24 @@ class TrackerViewModel @Inject constructor(
         val prayerArray = listOf(FAJR, DHUHR, ASR, MAGHRIB, ISHA)
 
         prayerArray.forEach {
+            Log.d("performed", "getTodayPrayersPerformedProgress: "+getTodayPerformSalah(it))
             if (getTodayPerformSalah(it)) {
                 result++
+                Log.d("result int", "getTodayPrayersPerformedProgress: $result")
             }
         }
+        _trackerUiState.value = _trackerUiState.value.copy(todayPrayersProgress = result)
 
-        _trackerUiState.update {
-            it.copy(todayPrayersProgress = result)
-        }
+//        _trackerUiState.update {
+//            _trackerUiState.value = it.copy(todayPrayersProgress = result)
+//            it.copy(todayPrayersProgress = result)
+//        }
 
         return result
     }
 
     fun getTodayPerformSalah(salahName: String): Boolean {
+
         return when (salahName) {
             FAJR -> sharedPreferences.getBoolean(IS_FAJR_PERFORMED, false)
             DHUHR -> sharedPreferences.getBoolean(IS_DHUHR_PERFORMED, false)
@@ -128,6 +135,7 @@ class TrackerViewModel @Inject constructor(
                 false
             }
         }
+
     }
 
     fun setTodayPerformSalah(salahName: String, value: Boolean) {

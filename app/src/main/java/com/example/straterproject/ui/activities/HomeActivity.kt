@@ -58,8 +58,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                     true
                 }
 
-                com.example.straterproject.R.id.recitersFragment -> {
-                    navController.navigate(com.example.straterproject.R.id.recitersFragment)
+                com.example.straterproject.R.id.trackerFragment -> {
+                    navController.navigate(com.example.straterproject.R.id.trackerFragment)
                     true
                 }
 

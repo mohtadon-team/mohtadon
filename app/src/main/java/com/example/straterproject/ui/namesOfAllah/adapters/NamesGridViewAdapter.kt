@@ -26,7 +26,7 @@ class NamesGridViewAdapter(private val listener: OnNameGridViewListener, private
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         val inflater = LayoutInflater.from(context)
-        val view = p1 ?: inflater.inflate(R.layout.names_of_allah_list_item, p2, false)
+        val view = p1 ?: inflater.inflate(R.layout.names_of_allah_list_item, null, false)
         val textView: TextView = view.findViewById(R.id.name_item_text)
         textView.text = data[p0]
         return view

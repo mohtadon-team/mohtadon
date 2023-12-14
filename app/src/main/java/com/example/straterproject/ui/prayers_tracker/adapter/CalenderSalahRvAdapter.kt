@@ -69,36 +69,31 @@ class CalenderSalahRvAdapter(
             salahTime.text = salah.time
         }
 
-        holder.binding.root.setOnClickListener {
-            if (salah.isItToday) {
+        holder.binding.salahChecked.setOnCheckedChangeListener { compoundButton, b ->
 
-                val isChecked = holder.binding.salahChecked.isChecked.not()
+            if (salah.isItToday) {
                 when (salah.name) {
-                    FAJR -> listener.onItemClick(FAJR, isChecked)
-                    DHUHR -> listener.onItemClick(DHUHR, isChecked)
-                    ASR -> listener.onItemClick(ASR, isChecked)
-                    MAGHRIB -> listener.onItemClick(MAGHRIB, isChecked)
-                    ISHA -> listener.onItemClick(ISHA, isChecked)
+                    com.example.straterproject.utilities.FAJR -> listener.onItemClick(com.example.straterproject.utilities.FAJR, b)
+                    com.example.straterproject.utilities.DHUHR -> listener.onItemClick(com.example.straterproject.utilities.DHUHR, b)
+                    com.example.straterproject.utilities.ASR -> listener.onItemClick(com.example.straterproject.utilities.ASR, b)
+                    com.example.straterproject.utilities.MAGHRIB -> listener.onItemClick(com.example.straterproject.utilities.MAGHRIB, b)
+                    com.example.straterproject.utilities.ISHA -> listener.onItemClick(com.example.straterproject.utilities.ISHA, b)
                 }
 
-                if (isChecked) {
-
-                    Log.i("ahmed", isChecked.toString())
+                if (b) {
                     holder.binding.view.setBackgroundColor(
-                        ContextCompat.getColor(
-                            holder.itemView.context, R.color.salah_tracker_salah_performed_color
+                        androidx.core.content.ContextCompat.getColor(
+                            holder.itemView.context, com.example.straterproject.R.color.salah_tracker_salah_performed_color
                         )
                     )
                 } else {
-                    Log.i("ahmed", isChecked.toString())
-                    holder.binding.view.setBackgroundColor(Color.WHITE)
+                    holder.binding.view.setBackgroundColor(android.graphics.Color.WHITE)
                 }
             }
 
         }
 
-
-    }
+        }
 
     override fun getItemCount(): Int = WeekCalenderItemsSalahItems.size
 

@@ -31,7 +31,7 @@ class MoreListAdapter(
 
     override fun getView(position0: Int, position1: View?, position2: ViewGroup?): View {
         val inflater = LayoutInflater.from(context)
-        val view = position1 ?: inflater.inflate(R.layout.more_list_item, position2, false)
+        val view = position1 ?: inflater.inflate(R.layout.more_list_item, null, false)
         val textView: TextView = view.findViewById(R.id.more_rv_item_name)
         val imageView: ImageView = view.findViewById(R.id.more_rv_item_image)
         textView.text = moreItemsList[position0].name

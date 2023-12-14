@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_medium"
         android:textColor="@color/orange"
-        android:textSize="@dimen/_20ssp"
+        android:textSize="@dimen/text_large"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -43,10 +43,10 @@
         android:layout_margin="@dimen/spacing_medium"
         android:background="@drawable/home_textview_today_thing_shape"
         android:gravity="start"
+        android:textSize="@dimen/text_medium"
         android:padding="@dimen/spacing_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_thing_tv_title"
-        tools:text="ksdjkhjkhsjhsjkhvjklshjklhjdfkhkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhk
-        ksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkksdjkhjkhsjhsjkhvjklshjklhjdfkhkljdfsgjkhdkljdfsgjkhdkljdfsgjkhdk" />
+        tools:text="@tools:sample/lorem/random" />
 </androidx.constraintlayout.widget.ConstraintLayout>

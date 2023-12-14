@@ -33,7 +33,7 @@
             android:layout_margin="@dimen/spacing_large"
             android:text="@string/home_welcome_text"
             android:textColor="@color/orange"
-            android:textSize="@dimen/_20ssp"
+            android:textSize="@dimen/text_too_large"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

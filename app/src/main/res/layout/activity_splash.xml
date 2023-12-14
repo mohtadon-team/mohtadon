@@ -8,6 +8,5 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/splash_img" />
+        android:src="@drawable/logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

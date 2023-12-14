@@ -6,12 +6,13 @@
     android:layout_margin="@dimen/_5sdp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_25sdp"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_margin="@dimen/_5sdp"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="@dimen/_5sdp"
-        app:cardMaxElevation="@dimen/_5sdp">
+        app:cardMaxElevation="@dimen/_5sdp"
+        android:elevation="@dimen/_20sdp">
         <TextView
             android:layout_gravity="center"
             android:id="@+id/name_item_text"
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:text="الله"
             android:textColor="@color/main_color"
-            android:textSize="@dimen/text_medium" />
+            android:textStyle="bold"
+            android:textSize="@dimen/text_large" />
     </androidx.cardview.widget.CardView>
 </LinearLayout>

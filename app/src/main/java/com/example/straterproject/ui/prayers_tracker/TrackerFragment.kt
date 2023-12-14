@@ -114,11 +114,12 @@ class TrackerFragment : BaseFragment<FragmentTrackerBinding>(), OnWeeklyCalender
 
         lifecycleScope.launch {
             viewModel.trackerUiState.collect {
+                Log.d("ahmed", "Collect block triggered. todayPrayersProgress: ${it.todayPrayersProgress}")
                 calenderSalahRvAdapter = CalenderSalahRvAdapter(it.dayPrayers, this@TrackerFragment)
                 binding.weeklyCalenderSalahRv.adapter = calenderSalahRvAdapter
 
                 binding.dailyPrayersProgress.progress = it.todayPrayersProgress
-                ("${(it.todayPrayersProgress * 10)}%").also {
+                ("${(it.todayPrayersProgress * 20)}%").also {
                     binding.dailyPrayersProgressPercentage.text = it
                 }
             }

@@ -69,10 +69,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".ui.activities.MainActivity"
-            android:exported="false">
-        </activity>
 
         <service
             android:name=".player.MediaService"

@@ -12,7 +12,7 @@
     <string name="more">More</string>
     <string name="fmradio">Radio</string>
     <string name="reciters">Reciters</string>
-    <string name="next_prayer">الصلاه التالية</string>
+    <string name="next_prayer">next prayer</string>
     <string name="all_prayers">All prayers</string>
     <string name="Qibla">Qibla</string>
     <string name="search_with_aya">search with aya</string>
@@ -24,8 +24,8 @@
     <string name="do_you_pray_asr">do you pray asr?</string>
     <string name="do_you_pray_maghrib">do you pray maghrib?</string>
     <string name="do_you_pray_isha">do you pray isha?</string>
-    <string name="home_welcome_text">أهلا بك !</string>
-    <string name="track_prayer">متابعةالصلاة</string>
+    <string name="home_welcome_text">welcome</string>
+    <string name="track_prayer">prayer tracker</string>
 
     <string name="fajr">Fajr</string>
     <string name="dhuhr">Dhuhr</string>

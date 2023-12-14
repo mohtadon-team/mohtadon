@@ -4,7 +4,7 @@
 
     <item
         android:title="@string/track"
-        android:id="@+id/recitersFragment"
+        android:id="@+id/trackerFragment"
         android:icon="@drawable/check"/>
     <item
         android:title="@string/quran"

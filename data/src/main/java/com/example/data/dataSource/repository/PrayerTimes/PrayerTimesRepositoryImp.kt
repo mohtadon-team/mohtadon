@@ -25,11 +25,13 @@ class PrayerTimesRepositoryImp @Inject constructor(
 
         val response = prayerTimesService.getDayPrayerTimes(date, latitude, longitude).body()
         dayPrayerTimesMapper = DayPrayerTimesMapper()
-//        if (respones != null) {
-        return dayPrayerTimesMapper.map(response!!)
-//        } else {
-//            throw Throwable("Failed to fetch prayer times. Response: $respones")
-//        }
+        if (response != null) {
+            dayPrayerTimesMapper = DayPrayerTimesMapper()
+            return dayPrayerTimesMapper.map(response)
+        } else {
+            throw RuntimeException("Prayer times response is null.")
+        }
+
 
     }
 

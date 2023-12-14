@@ -46,7 +46,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = this
-//        binding.viewModel = viewModel
 
         binding.viewModel  = viewModel
 
@@ -90,13 +89,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
     override fun onItemclick(position: Int) {
         when (position) {
             0 -> {
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAzkarListFragment())
+
             }
 
             1 -> {
-
-//                HomeFragmentDirections.actionHomeFragmentToSurahsFragment()
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTrackerFragment())
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAzkarListFragment())
             }
 
             2 -> {

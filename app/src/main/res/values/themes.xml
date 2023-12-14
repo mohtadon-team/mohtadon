@@ -28,14 +28,14 @@
     <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Medium">
         <item name="android:textColor">@color/main_color</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textSize">@dimen/text_medium</item>
     </style>
 
 
     <style name="CalenderViewDayCustomText" parent="android:TextAppearance.DeviceDefault.Medium">
         <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textSize">@dimen/text_medium</item>
 
     </style>
 

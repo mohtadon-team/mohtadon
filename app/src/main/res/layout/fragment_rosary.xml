@@ -24,9 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:hint="سبحان الله"
-            android:textColorHint="@color/orange_text"
             android:textColor="@color/orange_text"
-            android:background="@drawable/zekr_card"
+            android:background="@drawable/home_textview_today_thing_shape"
             />
 
         <Button
@@ -36,7 +35,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/ellipse"
             android:gravity="center"
-            android:text="11"
+            android:text="0"
             android:textColor="@color/main_color"
             android:textSize="@dimen/_30ssp"
             android:textStyle="bold" />
