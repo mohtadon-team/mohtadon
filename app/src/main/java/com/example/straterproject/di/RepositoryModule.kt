@@ -6,6 +6,7 @@ import com.example.data.dataSource.local.QuranRepositoryImpl
 import com.example.data.dataSource.remote.RadioRepositoryImpl
 import com.example.data.dataSource.remote.RecitersRepositoryImpl
 import com.example.data.dataSource.remote.SurahRepositoryImpl
+import com.example.data.dataSource.remote.service.HadithService
 import com.example.data.dataSource.remote.service.QuranApiService
 import com.example.data.dataSource.remote.service.RadioService
 import com.example.data.dataSource.remote.service.RecitersService
@@ -14,7 +15,9 @@ import com.example.domain.repo.RecitersRepository
 import com.example.domain.repo.SurahRepository
 
 import com.example.data.dataSource.remote.service.PrayerTimesService
+import com.example.data.dataSource.repository.HadithRepositoryImp
 import com.example.data.dataSource.repository.PrayerTimes.PrayerTimesRepositoryImp
+import com.example.domain.repo.HadithRepository
 import com.example.domain.repo.PrayerTimesRepository
 import com.example.domain.repo.QuranRepository
 
@@ -56,6 +59,11 @@ object RepositoryModule {
         return QuranRepositoryImpl(quranDao)
     }
 
+    @Provides
+    fun provideHadithRepository(
+        hadithService: HadithService): HadithRepository{
+        return HadithRepositoryImp(  hadithService )
+    }
 }
 
 //     fun bindPrayerTimesRepository(

@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentHijriCalenderBinding
 import com.example.straterproject.ui.base.BaseFragment
-import com.github.eltohamy.materialhijricalendarview.CalendarDay
+//import com.github.eltohamy.materialhijricalendarview.CalendarDay
 
 
 class HijriCalenderFragment : BaseFragment<FragmentHijriCalenderBinding>() {
@@ -20,8 +20,8 @@ class HijriCalenderFragment : BaseFragment<FragmentHijriCalenderBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val currentDate = CalendarDay.today()
-        binding.calendarView.setSelectedDate(currentDate)
+//        val currentDate = CalendarDay.today()
+//        binding.calendarView.setSelectedDate(currentDate)
 
     }
 

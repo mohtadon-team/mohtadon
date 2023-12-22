@@ -141,6 +141,7 @@ val suraMap = mapOf(
 
 
 const val baseUrl = "http://mp3quran.net/api/"
+const val hadithBaseUrl = "https://www.hadithapi.com/api/"
 const val REQUEST_PERMISSION_CODE = 1
 const val LONGITUDE = "longitude"
 const val LATITUDE = "latitude"
@@ -164,6 +165,8 @@ const val TOTAL_QURAN_PAGES_NUMBER = 604
 const val SALAH_NAME = "salah_name"
 
 
+ val HadithBookNames = arrayListOf("sahih-bukhari" , "sahih-muslim" , "al-tirmidhi" , "abu-dawood",
+    "ibn-e-majah", "sunan-nasai", "mishkat", "musnad-ahmad", "al-silsila-sahiha")
 
 
 

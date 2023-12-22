@@ -1,39 +1,39 @@
-package com.example.straterproject.ui.hadith.hadithList
+package com.example.straterproject.ui.hadith.hadithBookChapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.straterproject.databinding.HadithListRvItemBinding
 
-class HadithListRvAdapter(
+class HadithBookChaptersRvAdapter(
     private val listener: OnHadithListRvListener,
-    private val hadithItems:ArrayList<String>
-    ): RecyclerView.Adapter<HadithListRvAdapter.hadithListRvViewHolder>()  {
+    private val chapters:List<String>
+    ): RecyclerView.Adapter<HadithBookChaptersRvAdapter.HadithBookChaptersRvViewHolder>()  {
 
-    class hadithListRvViewHolder(val binding: HadithListRvItemBinding) :
+    class HadithBookChaptersRvViewHolder(val binding: HadithListRvItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    private var hadithListItems: List<String> = hadithItems
+    private var hadithBookChaptersItems: List<String> = chapters
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): hadithListRvViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HadithBookChaptersRvViewHolder {
         val binding =
             HadithListRvItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return hadithListRvViewHolder(binding)
+        return HadithBookChaptersRvViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
-        return hadithListItems.size
+        return hadithBookChaptersItems.size
     }
 
-    override fun onBindViewHolder(holder: hadithListRvViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HadithBookChaptersRvViewHolder, position: Int) {
         val hadithNumber = position + 1
         holder.binding.apply {
             "الحديث رقم $hadithNumber".also { hadithName.text = it }
         }
 
         holder.binding.root.setOnClickListener {
-            listener.onItemclick(hadithListItems.get(position))
+            listener.onItemclick(hadithBookChaptersItems.get(position))
         }
 
     }

@@ -25,7 +25,9 @@ class HadithCategoryViewModel @Inject constructor(
 
         _hadithCategoryUiState.update {
             it.copy(
-                hadithCategoryList = arrayListOf("احاديث الصلاة ", "احاديث الصيام")
+                hadithCategoryList = arrayListOf(" صحيح البخارى " , " صحيح مسلم " , " سنن الترمذي " ,
+                    " سنن أبي داود " ,  " سنن ابن ماجه " , " سنن النسائي " , " مشكاة المصابيح " , " مسند أحمد "
+                    , " السلسلة الصحيحة ")
             )
         }
     }

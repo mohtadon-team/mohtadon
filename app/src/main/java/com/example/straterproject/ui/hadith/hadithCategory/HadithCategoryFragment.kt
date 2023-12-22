@@ -35,7 +35,7 @@ class HadithCategoryFragment : BaseFragment<FragmentHadithCategoryBinding>() , O
 
     override fun onHadithCategoryitemClick(position: Int) {
         findNavController().navigate(
-            HadithCategoryFragmentDirections.actionHadithCategoryFragmentToHadithListFragment(
+            HadithCategoryFragmentDirections.actionHadithCategoryFragmentToHadithBookChaptersFragment(
                 position
             )
         )
