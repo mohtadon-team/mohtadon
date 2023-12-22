@@ -194,10 +194,10 @@
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/hadithListFragment"
-        android:name="com.example.straterproject.ui.hadith.hadithList.HadithListFragment"
-        android:label="HadithListFragment"
-        tools:layout="@layout/fragment_hadith_list">
+        android:id="@+id/hadithBookChaptersFragment"
+        android:name="com.example.straterproject.ui.hadith.hadithBookChapters.HadithBookChaptersFragment"
+        android:label="HadithBookChapters"
+        tools:layout="@layout/fragment_hadith_book_chapters">
         <action
             android:id="@+id/action_hadithListFragment_to_hadithDetailsFragment"
             app:destination="@id/hadithDetailsFragment" />
@@ -280,8 +280,8 @@
         android:name="com.example.straterproject.ui.hadith.hadithCategory.HadithCategoryFragment"
         android:label="HadithCategoryFragment" >
         <action
-            android:id="@+id/action_hadithCategoryFragment_to_hadithListFragment"
-            app:destination="@id/hadithListFragment" />
+            android:id="@+id/action_hadithCategoryFragment_to_hadithBookChaptersFragment"
+            app:destination="@id/hadithBookChaptersFragment" />
     </fragment>
 
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.straterproject.di
 
+import com.example.domain.repo.HadithRepository
 import com.example.domain.repo.RadioRepository
 import com.example.domain.repo.RecitersRepository
 import com.example.domain.repo.SurahRepository
@@ -12,6 +13,7 @@ import com.example.domain.usecases.GetAyaByIdUseCase
 import com.example.domain.usecases.GetSurahAyahsUseCase
 import com.example.domain.usecases.GetDayPrayerTimesUseCase
 import com.example.domain.usecases.GetMonthPrayerTimesUseCase
+import com.example.domain.usecases.GetSpecificHadithBookChaptersUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -61,4 +63,11 @@ object UseCaseModule {
     fun provideGetAyaByIdUseCas(quranRepository: QuranRepository):GetAyaByIdUseCase {
         return GetAyaByIdUseCase(quranRepository)
     }
+    @Provides
+    fun provideHadithBookChaptersUseCase(
+        hadithRepository: HadithRepository
+    ):GetSpecificHadithBookChaptersUseCase{
+        return GetSpecificHadithBookChaptersUseCase(hadithRepository)
+    }
+
 }

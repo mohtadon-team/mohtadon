@@ -5,7 +5,7 @@ plugins {
     id "dagger.hilt.android.plugin"
 
 }
-
+//$2y$10$4WAF2lNQo6TMv4T5Rb8lOP090ZHE8Bol4I1acy1nc8IdyXChTOB6
 android {
     compileSdk 32
 
@@ -15,6 +15,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+//        buildConfigField "String", "HADITH_API_KEY", "\$2y\$10\$4WAF2lNQo6TMv4T5Rb8lOP090ZHE8Bol4I1acy1nc8IdyXChTOB6\n"
+
     }
 
     buildTypes {

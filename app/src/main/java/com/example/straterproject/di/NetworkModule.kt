@@ -1,14 +1,17 @@
 package com.example.straterproject.di
 
 
+import com.example.data.dataSource.remote.service.HadithService
 import com.example.data.dataSource.remote.service.QuranApiService
 import com.example.data.dataSource.remote.service.PrayerTimesService
 import com.example.data.dataSource.remote.service.RadioService
 import com.example.data.dataSource.remote.service.RecitersService
+//import com.example.straterproject.BuildConfig.HADITH_BASE_URL
 import com.example.straterproject.BuildConfig.PRAYER_TIMES_BASE_URL
 import com.example.straterproject.utilities.RADIO_BASE_URL
 import com.example.straterproject.utilities.RECITERS_BASE_URL
 import com.example.straterproject.utilities.PRAYERS_BASE_URL
+import com.example.straterproject.utilities.hadithBaseUrl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -97,6 +100,18 @@ object NetworkModule {
         return retrofit.create(PrayerTimesService::class.java)
     }
 
+    @Named("provideRetrofitForHadith")
+    @Provides
+    @Singleton
+    fun provideHadithRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder().baseUrl(hadithBaseUrl).client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
 
+    @Provides
+    @Singleton
+    fun provideHadithService(@Named("provideRetrofitForHadith") retrofit: Retrofit): HadithService {
+        return retrofit.create(HadithService::class.java)
+    }
 }
 
