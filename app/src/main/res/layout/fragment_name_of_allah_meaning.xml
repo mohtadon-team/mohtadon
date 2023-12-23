@@ -14,30 +14,34 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <include
-                layout="@layout/common_header"
-                android:id="@+id/page_header"/>
+                android:id="@+id/page_header"
+                layout="@layout/common_header" />
 
             <TextView
-                android:layout_below="@id/page_header"
+                android:id="@+id/name_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:layout_below="@id/page_header"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/spacing_medium"
-                android:text="الله"
-                android:id="@+id/name_title"
+                android:text="@string/allah"
+                android:textAlignment="center"
                 android:textColor="@color/orange_text"
-                android:textSize="@dimen/text_too_large"/>
+                android:textSize="@dimen/text_too_large" />
+
             <TextView
-                android:layout_below="@id/name_title"
+                android:id="@+id/meaning_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/meaning_txt"
+                android:layout_below="@id/name_title"
+                android:background="@drawable/home_textview_today_thing_shape"
+                android:padding="@dimen/spacing_medium"
                 android:textAlignment="center"
-                android:textSize="@dimen/text_medium"
                 android:textColor="@color/green_subtitle_text"
-                android:text="وهو الاسم الأعظم الذي تفرد به الحق سبحانه وخص به نفسه وجعله أول أسمائه، وأضافها كلها إليه فهو علم على ذاته سبحانه"/>
+                android:textSize="@dimen/text_medium"
+                tools:text="وهو الاسم الأعظم الذي تفرد به الحق سبحانه وخص به نفسه وجعله أول أسمائه، وأضافها كلها إليه فهو علم على ذاته سبحانه" />
 
         </RelativeLayout>
 

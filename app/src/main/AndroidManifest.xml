@@ -20,7 +20,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/Theme.StraterProject"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
@@ -48,14 +48,7 @@
 <!--                <action android:name="com.yourapp.ACTION_ALARM" />-->
 <!--            </intent-filter>-->
 <!--        </receiver>-->
-        <receiver
-            android:name=".ui.fragments.home.AlarmReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.example.straterproject" />
-            </intent-filter>
-        </receiver>
+
         <activity
             android:name=".ui.activities.SplashActivity"
             android:exported="true">

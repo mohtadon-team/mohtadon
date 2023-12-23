@@ -37,7 +37,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -80,8 +80,9 @@
                     android:text="@string/next_prayer"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_large"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
 
                 <TextView
                     android:id="@+id/next_salah_text"
@@ -93,22 +94,22 @@
                     android:textSize="@dimen/text_too_large"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/next_text"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/next_text"
                     app:layout_constraintStart_toStartOf="@+id/next_text"
                     app:layout_constraintTop_toBottomOf="@+id/next_text"
                     tools:text="المغرب" />
-
 
                 <TextView
                     android:id="@+id/next_salah_time_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:text="@{viewModel.homeUiState.nextSalahTime}"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_too_large"
                     app:layout_constraintBottom_toBottomOf="@+id/next_salah_text"
-                    app:layout_constraintStart_toEndOf="@+id/next_salah_text"
+                    app:layout_constraintEnd_toStartOf="@+id/next_salah_text"
                     app:layout_constraintTop_toTopOf="@+id/next_salah_text"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="6:54 م" />
@@ -125,7 +126,7 @@
                     android:textStyle="bold"
                     app:drawableLeftCompat="@drawable/baseline_arrow_back_ios_24"
                     app:drawableTint="@color/orange"
-                    app:layout_constraintStart_toStartOf="@+id/next_salah_text"
+                    app:layout_constraintEnd_toEndOf="@+id/next_salah_text"
                     app:layout_constraintTop_toBottomOf="@+id/next_salah_text" />
 
                 <ImageView
@@ -134,7 +135,7 @@
                     android:layout_height="@dimen/athan_sound_state_dimen"
                     android:layout_marginEnd="@dimen/spacing_large"
                     android:src="@drawable/not_silent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="@color/white" />
 
@@ -145,7 +146,7 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/nabawi_mosque"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/athan_sound_state_image"
                     app:layout_constraintVertical_bias="0.47" />
 
@@ -163,7 +164,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView2"
-            tools:listitem="@layout/home_rv_item_template" />
+            tools:listitem="@layout/home_rv_item_template"
+            app:reverseLayout="true"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_rv_today_tings"

@@ -17,19 +17,19 @@
             android:background="@color/main_color">
 
             <TextView
-                android:id="@+id/hadith_name"
+                android:id="@+id/hadith_field_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/radius_large"
                 android:layout_marginStart="4dp"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_too_large"
+                app:drawableStartCompat="@drawable/right_arrow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                tools:text="اختبار "
-                app:drawableEndCompat="@drawable/right_arrow" />
+                tools:text="اختبار " />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

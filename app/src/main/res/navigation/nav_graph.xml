@@ -207,11 +207,14 @@
     </fragment>
     <fragment
         android:id="@+id/hadithDetailsFragment"
-        android:name="com.example.straterproject.ui.hadith.hadithDetails.HadithDetailsFragment"
+        android:name="com.example.straterproject.ui.hadith.chapterHadithList.BookChapterHadithList"
         android:label="HadithDetailsFragment"
-        tools:layout="@layout/fragment_hadith_details">
+        tools:layout="@layout/item_hadith_details">
         <argument
-            android:name="hadithText"
+            android:name="chapterNumber"
+            app:argType="integer" />
+        <argument
+            android:name="bookName"
             app:argType="string" />
     </fragment>
     <fragment

@@ -1,5 +1,6 @@
 package com.example.data.dataSource.remote.service
 
+import com.example.data.dataSource.remote.response.hadith.chapterHadith.ChapterHadithDto
 import com.example.data.dataSource.remote.response.hadith.chapters.BookChaptersDto
 import retrofit2.Response
 import retrofit2.http.GET
@@ -10,9 +11,15 @@ interface HadithService {
 
     @GET("{bookSlug}/chapters")
     suspend fun getHadithBookChapters(
-        @Path("apiKey ") apiKey: String = "\$2\$10\$4WAF2lNQo6TMv4T5Rb8lOP090ZHE8Bol4I1acy1nc8IdyXChTOB6",
-        @Query("bookSlug") bookSlug: String = "abu-dawood"
+        @Path("bookSlug") bookSlug: String ,
+        @Query("apiKey") apiKey: String = "$2y$10$4WAF2lNQo6TMv4T5Rb8lOP090ZHE8Bol4I1acy1nc8IdyXChTOB6"
         ): Response<BookChaptersDto>
 
-
+    @GET("hadiths")
+    suspend fun getChapterHadith(
+        @Query("apiKey") apiKey: String = "$2y$10$4WAF2lNQo6TMv4T5Rb8lOP090ZHE8Bol4I1acy1nc8IdyXChTOB6" ,
+        @Query("book") bookName:String ,
+        @Query("chapter") chapterNumber:Int,
+        @Query("paginate") paginate:Int = 100
+    ): Response<ChapterHadithDto>
 }

@@ -7,7 +7,6 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
-import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
 import coil.load
 import com.example.straterproject.R
 import com.example.straterproject.ui.UiState
@@ -26,13 +25,6 @@ import com.example.straterproject.ui.UiState
 fun <T> showVisibleWhenError(view: View, state: UiState<T>?) {
     view.isVisible = state is UiState.Error
 }
-
-@BindingAdapter("setCircularIndicatorMaxProgress","setCircularIndicatorProgress")
-fun <T> CircularProgressIndicator.setCircularIndicatorProgress( maxProgress: String,progress:String ) {
-    this.setMaxProgress(maxProgress.toDouble())
-    this.setCurrentProgress(progress.toDouble());
-}
-
 
 @BindingAdapter("showVisibleWhenLoading")
 fun <T> showVisibleWhenLoading(view: View, state: UiState<T>?) {
@@ -60,7 +52,6 @@ fun setImagePlayOrStop(imageView: ImageView, isPlay: Boolean) {
 
     if (isPlay) {
         imageView.setImageResource(R.drawable.pause)
-
     } else {
         imageView.setImageResource(R.drawable.play)
     }

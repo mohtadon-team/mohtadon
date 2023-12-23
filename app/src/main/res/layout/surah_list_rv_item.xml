@@ -25,7 +25,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_large"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="120" />
@@ -34,12 +34,12 @@
                 android:id="@+id/surah_name_tafseer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_too_large"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/surah_number_text"
-                app:layout_constraintStart_toEndOf="@+id/surah_number_text"
+                app:layout_constraintEnd_toStartOf="@+id/surah_number_text"
                 app:layout_constraintTop_toTopOf="@+id/surah_number_text"
                 app:layout_constraintVertical_bias="0.0"
                 tools:text="سورة الفاتحة" />
@@ -48,10 +48,10 @@
                 android:id="@+id/surah_type_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
                 android:textSize="@dimen/text_large"
                 app:layout_constraintBottom_toBottomOf="@+id/surah_number_text"
-                app:layout_constraintStart_toEndOf="@+id/surah_number_text"
+                app:layout_constraintEnd_toStartOf="@+id/surah_number_text"
                 app:layout_constraintTop_toBottomOf="@+id/surah_name_tafseer"
                 tools:text="مدنية" />
 
@@ -59,21 +59,21 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_marginEnd="@dimen/spacing_small"
                 android:text="|"
                 android:textSize="@dimen/text_large"
                 app:layout_constraintBottom_toBottomOf="@+id/surah_type_text"
-                app:layout_constraintStart_toEndOf="@+id/surah_type_text"
+                app:layout_constraintEnd_toStartOf="@+id/surah_type_text"
                 app:layout_constraintTop_toTopOf="@+id/surah_type_text" />
 
             <TextView
                 android:id="@+id/surah_number_of_ayat_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_marginEnd="@dimen/spacing_small"
                 android:textSize="@dimen/text_large"
                 app:layout_constraintBottom_toBottomOf="@+id/surah_type_text"
-                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
                 app:layout_constraintTop_toTopOf="@+id/surah_type_text"
                 app:layout_constraintVertical_bias="0.0"
                 tools:text="7 ايات " />
@@ -83,15 +83,10 @@
                 android:id="@+id/fab_get_surah_tafseer"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/spacing_small"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:layout_marginEnd="@dimen/spacing_small"
-                android:layout_marginBottom="@dimen/spacing_small"
+                android:layout_margin="@dimen/spacing_small"
                 android:src="@drawable/rounded_arrow"
                 app:layout_constraintBottom_toBottomOf="@+id/surah_number_text"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/surah_number_text" />
 
             <!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->

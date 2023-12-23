@@ -25,7 +25,7 @@ class HadithListViewModel @Inject constructor(
             val bookChapters = getSpecificHadithBookChaptersUseCase.invoke(bookName)
             _hadithBookChaptersUiState.update {
                 it.copy(
-//                    specificBookChaptersList = bookChapters.bookChapters
+                    specificBookChaptersList = bookChapters.bookChapters
                 )
             }
         }

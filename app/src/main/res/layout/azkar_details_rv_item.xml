@@ -40,16 +40,16 @@
         android:src="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/zekr_text"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/zekr_text"
         app:layout_constraintTop_toTopOf="@+id/zekr_text"
-        app:layout_constraintVertical_bias="0.941" />
+        app:layout_constraintVertical_bias="1" />
 
     <TextView
         android:id="@+id/zekr_number_of_repeats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="16dp"
+        android:layout_width="33dp"
+        android:layout_height="29dp"
+        android:elevation="@dimen/spacing_medium"
         android:maxLength="3"
         android:maxLines="1"
         android:textColor="@color/white"
