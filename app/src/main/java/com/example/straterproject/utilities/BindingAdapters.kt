@@ -35,11 +35,23 @@ fun <T> CircularProgressIndicator.setCircularIndicatorProgress( maxProgress: Str
 }
 
 
-@BindingAdapter("showVisibleWhenLoading")
-fun <T> showVisibleWhenLoading(view: View, state: UiState<T>?) {
-    view.isVisible = state is UiState.Loading
+@BindingAdapter("app:showWhenLoading")
+fun <T> showWhenLoading(view: View,isLoading :Boolean) {
+    if (isLoading){
+        view.visibility = View.VISIBLE
+    }else {
+        view.visibility = View.GONE
+    }
 }
 
+@BindingAdapter("app:hideWhenLoading")
+fun <T> hideWhenLoading(view: View,isLoading :Boolean) {
+    if (isLoading){
+        view.visibility = View.GONE
+    }else {
+        view.visibility = View.VISIBLE
+    }
+}
 @BindingAdapter("makeTextScrollable")
 fun makeTextScrollable(textView: TextView, scrollable: Boolean) {
     if (scrollable) {

@@ -1,6 +1,7 @@
 package com.example.straterproject.di
 
 
+import android.content.Context
 import com.example.data.dataSource.local.QuranDao
 import com.example.data.dataSource.local.QuranRepositoryImpl
 import com.example.data.dataSource.remote.RadioRepositoryImpl
@@ -18,9 +19,11 @@ import com.example.data.dataSource.repository.PrayerTimes.PrayerTimesRepositoryI
 import com.example.domain.repo.PrayerTimesRepository
 import com.example.domain.repo.QuranRepository
 
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 
 import dagger.hilt.components.SingletonComponent
 
@@ -55,6 +58,7 @@ object RepositoryModule {
     ):QuranRepository{
         return QuranRepositoryImpl(quranDao)
     }
+
 
 }
 

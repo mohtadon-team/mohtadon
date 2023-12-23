@@ -80,7 +80,7 @@ class PlayerController(
         } else {
             player.play()
         }
-       currentAudio.value = toAudioItem(player.currentMediaItem!!)
+        currentAudio.value = toAudioItem(player.currentMediaItem!!)
     }
 
     fun shuffleClick() {
@@ -104,7 +104,7 @@ class PlayerController(
     }
 
     fun seekForward() {
-       player.seekForward()
+        player.seekForward()
     }
     fun seekBack() {
         player.seekBack()
@@ -128,7 +128,7 @@ class PlayerController(
 
     fun addPlaylist(itemList: List<AudioItem>) {
 
-      val  mediaItems = ArrayList<MediaItem>()
+        val  mediaItems = ArrayList<MediaItem>()
 
         for (item in itemList) {
             val metadata = getMetaDataFromItem(item)
@@ -233,20 +233,17 @@ class PlayerController(
 }
 
 fun toAudioItem(mediaItem: MediaItem): AudioItem =
-
     AudioItem (
-        reciterAndHisMoshaf = mediaItem.mediaMetadata.displayTitle.toString(),
-        reciter = mediaItem.mediaMetadata.displayTitle.toString().split("-", limit = 2)[0],
-        moshaf = mediaItem.mediaMetadata.displayTitle.toString().split("-", limit = 2)[1],
+        reciterAndHisMoshaf = mediaItem.mediaMetadata.title.toString(),
         surah =  mediaItem.mediaMetadata.artist.toString(),
         image = mediaItem.mediaMetadata.artworkUri.toString(),
         source = mediaItem.mediaId
-)
+    )
 
 fun getMetaDataFromAudioItem(audioItem: AudioItem): MediaMetadata {
     return MediaMetadata.Builder()
-        .setTitle(audioItem.reciter)
-        .setAlbumTitle(audioItem.moshaf)
+        .setTitle(audioItem.reciterAndHisMoshaf)
+        .setAlbumTitle(audioItem.reciterAndHisMoshaf)
         .setDisplayTitle(audioItem.reciterAndHisMoshaf)
         .setArtist(audioItem.surah)
         .setAlbumArtist(audioItem.surah)

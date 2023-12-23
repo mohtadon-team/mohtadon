@@ -14,7 +14,6 @@ val AudioItemWithInitialValue =
         "",
         "",
         "",
-        "","",
         ""
     )
 

@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -12,7 +13,10 @@ import com.example.domain.usecases.GetAyaByIdUseCase
 import com.example.domain.usecases.GetMonthPrayerTimesUseCase
 import com.example.straterproject.R
 import com.example.straterproject.databinding.FragmentHomeBinding
+import com.example.straterproject.player.AudioItem
+import com.example.straterproject.ui.PlayerEvents
 import com.example.straterproject.ui.base.BaseFragment
+import com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel
 import com.example.straterproject.ui.viewModels.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,6 +27,8 @@ import javax.inject.Inject
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
     override val layoutFragmentId: Int = R.layout.fragment_home
     override val viewModel: HomeViewModel by viewModels()
+
+    private val vm : AudioItemPlayerViewModel by viewModels()
 
     @Inject
     lateinit var sharedPreferences: SharedPreferences
@@ -44,6 +50,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
 
         setAdapter()
         setTodayThingsData()

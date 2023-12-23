@@ -1,14 +1,10 @@
 package com.example.straterproject.ui.radio
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.example.domain.entity.radio.RadioEntity
-import com.example.domain.entity.reciters.ReciterEntity
+import com.example.domain.models.AppException
 import com.example.domain.usecases.GetAllRadioStation
-import com.example.domain.usecases.GetAllReciterUseCase
-import com.example.straterproject.ui.UiState
 import com.example.straterproject.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -23,9 +19,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RadioViewModel @Inject constructor(
-    private val getAllRadioStation: GetAllRadioStation ,
-   private val savedStateHandle: SavedStateHandle
-): BaseViewModel() {
+    private val getAllRadioStation: GetAllRadioStation,
+    private val savedStateHandle: SavedStateHandle,
+  ): BaseViewModel() {
 
 
     private var _uiState = MutableStateFlow(RadioUiSate())
@@ -40,17 +36,16 @@ class RadioViewModel @Inject constructor(
 
     private fun getAllRadioStation() = viewModelScope.launch {
         try {
+            _uiState.update { it.copy(isLoading = true) }
             val result = getAllRadioStation.invoke()
-            _uiState.update {
-                it.copy(radioStations = result ?: emptyList())
-            }
+            _uiState.update { it.copy(radioStations = result ?: emptyList() , isLoading = false , isDataExist = true) }
             savedStateHandle["radioStations"] = result ?: emptyList()
-        }catch (e:Exception){
-
+        }catch (e:AppException){
+            _uiState.update { it.copy(isError = true , errorMessage = e.message.toString() , isLoading = false) }
         }
     }
 
-    fun searchInRadio(query :CharSequence) = viewModelScope.launch {
+    private fun searchInRadio(query :CharSequence) = viewModelScope.launch {
             val x =  savedStateHandle.get<List<RadioEntity>>("radioStations")
             val filteredList = x?.filter { it.name.contains(query) } ?: emptyList()
              _uiState.update {
@@ -58,12 +53,12 @@ class RadioViewModel @Inject constructor(
           }
    }
     fun onSearchTextChange(text : CharSequence) {
-        _uiState.update { it.copy(searchText = text.toString()) }
-        searchInRadio(text)
+        _uiState.update { it.copy(  searchText = text.toString() ) }
+        searchInRadio(_uiState.value.searchText)
     }
 
     fun onCloseClick() {
-        _uiState.update { it.copy(isTabSearchVisible = false , isTabTitleVisible = true ,searchText= "") }
+        _uiState.update { it.copy(isTabSearchVisible = false , isTabTitleVisible = true , searchText = "" ) }
     }
 
     fun onBackClick() {

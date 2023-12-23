@@ -12,7 +12,6 @@ import com.example.straterproject.R
 import com.example.straterproject.databinding.RadioItemBinding
 import com.example.straterproject.utilities.LastPlayedTrackPreference
 
-
 class RadioAdapter (
     private val listener: OnRadioStationListener ,
     private val lastPlayedTrackPreference: LastPlayedTrackPreference
@@ -23,7 +22,6 @@ class RadioAdapter (
     private val diffCallback = object : DiffUtil.ItemCallback<RadioEntity>() {
         override fun areItemsTheSame(oldItem: RadioEntity, newItem: RadioEntity): Boolean {
             return oldItem.name == newItem.name
-
         }
 
         override fun areContentsTheSame(oldItem: RadioEntity, newItem: RadioEntity): Boolean {
@@ -47,28 +45,26 @@ class RadioAdapter (
     override fun onBindViewHolder(holder: RadioStationViewHolder, position: Int) {
         holder.binding.apply {
             radioStationName.text = radioStations[position]!!.name
+//            radioNumber.text = (position+1).toString()
         }
-            // 0 == play
-        if (position == lastPlayedTrackPreference.lastPlayedTrackId.toInt()) {
-            holder.binding.play.visibility = View.GONE
-            holder.binding.pause.visibility = View.VISIBLE
-        }else {
-            holder.binding.play.visibility = View.VISIBLE
-            holder.binding.pause.visibility = View.GONE
-        }
-
-
+//
+//         if (position == lastPlayedTrackPreference.lastPlayedTrackId.toInt()) {
+//            holder.binding.play.visibility = View.GONE
+//            holder.binding.pause.visibility = View.VISIBLE
+//        }else {
+//            holder.binding.play.visibility = View.VISIBLE
+//            holder.binding.pause.visibility = View.GONE
+//        }
+//
         holder.binding.root.setOnClickListener {
-            lastPlayedTrackPreference.beforelastPlayedTrackId = lastPlayedTrackPreference.lastPlayedTrackId
-            notifyItemChanged(lastPlayedTrackPreference.beforelastPlayedTrackId.toInt())
+//            lastPlayedTrackPreference.beforelastPlayedTrackId = lastPlayedTrackPreference.lastPlayedTrackId
+//            notifyItemChanged(lastPlayedTrackPreference.beforelastPlayedTrackId.toInt())
             listener.onStationClick(position)
         }
 
     }
     override fun getItemCount(): Int = radioStations.size
 }
-
-
 
 interface OnRadioStationListener {
     fun onStationClick(position:Int)

@@ -8,7 +8,9 @@
         <variable
             name="viewModel"
             type="com.example.straterproject.ui.reciters.surahs.SurahViewModel" />
-
+ <variable
+     name="playerViewModel"
+     type="com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel" />
 
 
     </data>
@@ -142,7 +144,10 @@
                 android:textSize="@dimen/text_large"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></TextView>
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+            </TextView>
 
             <TextView
                 android:id="@+id/textView4"
@@ -184,11 +189,23 @@
             android:id="@+id/rv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/include"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
             tools:listitem="@layout/surah_item_to_play" />
 
+        <include
+            app:showOrNot="@{true}"
+            android:id="@+id/include"
+            app:viewModel="@{playerViewModel}"
+            layout="@layout/bottom_control_audio_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </include>
 
         <!--        <include-->
         <!--            android:layout_marginTop="5dp"-->
@@ -202,7 +219,5 @@
         <!--            app:layout_constraintEnd_toEndOf="parent"-->
         <!--            app:layout_constraintStart_toStartOf="parent">-->
         <!--        </include>-->
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

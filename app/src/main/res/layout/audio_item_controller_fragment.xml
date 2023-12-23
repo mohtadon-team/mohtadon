@@ -79,7 +79,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view3">
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/close"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_20sdp"
@@ -114,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/tajawal_medium"
                     android:gravity="center"
-                    android:text="@{viewModel.currentSongFlow.reciter}"
+                    android:text="@{viewModel.currentSongFlow.surah}"
                     android:textSize="@dimen/text_too_too_large"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -130,7 +130,7 @@
                     android:fontFamily="@font/tajawal_regular"
                     android:gravity="center"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:text="@{viewModel.currentSongFlow.moshaf}"
+                    android:text="@{viewModel.currentSongFlow.surah}"
                     android:textSize="@dimen/text_large"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -169,7 +169,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.495"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+                    app:layout_constraintTop_toBottomOf="@+id/close"
 
                  />
 

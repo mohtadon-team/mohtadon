@@ -13,8 +13,6 @@ fun moshafEntityToAudioItemList(moshafEnitity: MoshafEnitity) :List<AudioItem> {
          listOfAudioItem.add(
              AudioItem(
                  reciterAndHisMoshaf = moshafEnitity.reciterName.plus(" - ${moshafEnitity.moshafName}"),
-                 moshaf = moshafEnitity.moshafName ,
-                 reciter = moshafEnitity.reciterName ,
                  surah = suraMap[it]?.name ?: "",
                  image = "https://png.pngtree.com/png-clipart/20210323/ourmid/pngtree-holy-quran-with-navy-cover-png-image_3131452.jpg",
                  source = moshafEnitity.server.plus(suraMap[it]?.originalNumber).plus(".mp3")
@@ -33,10 +31,9 @@ fun radioEntityToAudioItemList(radioEntity: List<RadioEntity>) :List<AudioItem> 
 
         listOfAudioItem.add( AudioItem(
             reciterAndHisMoshaf = it.name,
-            reciter = "",
+
             surah =  "مباشر",
             image = "",
-            moshaf ="" ,
             source = it.source
         ) )
 

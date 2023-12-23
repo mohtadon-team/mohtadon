@@ -6,35 +6,31 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            >
+            android:layout_height="70dp">
 
             <ImageButton
-
+                app:tint="@color/main_color"
                 android:background="@android:color/transparent"
                 android:id="@+id/play"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:src="@drawable/fm_play_ic"
+                android:src="@drawable/quran_orangeicon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:visibility="gone"
-                android:background="@android:color/transparent"
-                android:id="@+id/pause"
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:src="@drawable/fm_puase_ic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-
+<!--            <TextView-->
+<!--                android:id="@+id/radio_number"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="@dimen/_35sdp"-->
+<!--                android:layout_height="@dimen/_35sdp"-->
+<!--                android:textColor="@color/orange_text"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/guideline5"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <TextView
                 android:id="@+id/radio_station_name"
@@ -58,8 +54,18 @@
                 app:layout_constraintGuide_begin="70dp" />
 
 
+            <View
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E1EDED"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/play">
 
-
+            </View>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

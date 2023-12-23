@@ -55,7 +55,11 @@ class AudioItemControllerFragment (
                   playOrPause.setOnClickListener { viewModel!!.onPlayerEvents(PlayerEvents.PausePlay) }
                   next.setOnClickListener { viewModel!!.onPlayerEvents(PlayerEvents.Next) }
                   previous.setOnClickListener { viewModel!!.onPlayerEvents(PlayerEvents.Previous) }
+                  close.setOnClickListener {
+                      dismiss()
+                  }
               }
+
 
 
 
