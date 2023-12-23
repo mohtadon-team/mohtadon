@@ -10,6 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.media3.common.util.Log
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.entity.reciters.MoshafEnitity
@@ -22,9 +23,15 @@ import com.example.straterproject.ui.PlayerEvents
 import com.example.straterproject.ui.UiState
 
 import com.example.straterproject.ui.base.BaseFragment
+import com.example.straterproject.ui.radio.RadioUiEffect
+import com.example.straterproject.ui.reciters.player.AudioItemControllerFragment
 import com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel
+import com.example.straterproject.utilities.collect
+import com.example.straterproject.utilities.collectLast
+import com.example.straterproject.utilities.moshafEntityToAudioItemList
+import com.example.straterproject.utilities.radioEntityToAudioItemList
 import dagger.hilt.android.AndroidEntryPoint
-//import kotlinx.android.synthetic.main.common_header.view.*
+
 
 @AndroidEntryPoint
 class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListener {
@@ -32,6 +39,7 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListe
     override val viewModel : RecitersViewModel by viewModels()
     private lateinit var recitersAdapter: RecitersAdapter
 
+    private val audioItemPlayerViewModel : AudioItemPlayerViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,50 +49,39 @@ class RecitersFragment : BaseFragment<FragmentRecitersBinding>() , OnMoshafListe
         binding.lifecycleOwner = this
 
         recitersAdapter = RecitersAdapter(requireContext() , this)
-        binding.recitersRv.apply {
+
+        binding.rv.apply {
             adapter = recitersAdapter
             layoutManager = LinearLayoutManager(requireContext())
             setHasFixedSize(true)
         }
 
-        viewModel.reciters.observe(viewLifecycleOwner){
-            handleStae(it)
+
+        collect(viewModel.uiState){
+            recitersAdapter.reciters = it.reciters
+        }
+
+        collectLast(viewModel.uiEffect){
+            when(it){
+                ReciterUiEffect.Back ->  activity?.onBackPressed()
+                ReciterUiEffect.SearchCancel -> {}
+            }
         }
 
 
     }
 
-    private fun handleStae(state: UiState<List<ReciterEntity>>?) {
-       when(state){
-           is UiState.Error -> {
-               Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
-           }
-           is UiState.Success -> {
-               recitersAdapter.reciters = state.data!!
-           }
-           UiState.Loading -> {
-               Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
-           }
 
-           else -> {}
-       }
-    }
 
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onMoshafClick(moshaf: MoshafEnitity) {
-        val action = RecitersFragmentDirections.actionRecitersFragmentToSurahsFragment(moshaf )
+        val action = RecitersFragmentDirections.actionRecitersFragmentToSurahsFragment(moshaf)
         findNavController().navigate(action)
+       // audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.GoToSpecificItem(moshaf.id))
     }
 
-    override fun onStart() {
-        super.onStart()
-        val actionBar =  (activity as AppCompatActivity).supportActionBar
-        actionBar?.apply {
-            customView = binding.fragmentToolbar
-            show()
-        }
-    }
+
 
 
 }

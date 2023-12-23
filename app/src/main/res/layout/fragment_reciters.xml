@@ -1,49 +1,402 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
 
-    <data>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data >
         <variable
             name="viewModel"
             type="com.example.straterproject.ui.reciters.reciterInfo.RecitersViewModel" />
 
+
     </data>
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-       <com.google.android.material.textfield.TextInputEditText
-           android:id="@+id/fragment_toolbar"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:background="?attr/colorPrimary"
-           app:layout_constraintEnd_toEndOf="parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-          android:afterTextChanged="@{(text) -> viewModel.searchInReciterList(text)}"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent">
-
-   </com.google.android.material.textfield.TextInputEditText>
-
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/home_rv_item_color_6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
 
+            <ImageButton
+                android:id="@+id/close"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> viewModel.onCloseClick()}"
+                android:src="@drawable/close_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageButton>
+
+            <EditText
+                android:id="@+id/search_edit_txt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:afterTextChanged="@{(text) -> viewModel.onSearchTextChange(text) }"
+                android:background="@drawable/search_background_shape"
+                android:drawableEnd="@drawable/search"
+                android:fontFamily="@font/tajawal_regular"
+                android:text ="@{viewModel.uiState.searchText}"
+                android:hint="ابحث عن أي قارئ"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:textColorHint="#99FFFFFF"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/close"
+                app:layout_constraintTop_toTopOf="@+id/close" />
+
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> viewModel.onSearchClick()}"
+                android:src="@drawable/baseline_search_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_bold"
+                android:gravity="center"
+                android:text="القراء"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
 
 
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/reciters_rv"
-           android:layout_width="match_parent"
-           android:layout_height="0dp"
-           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/fragment_toolbar"
-           app:layout_constraintBottom_toBottomOf="parent"
-           tools:listitem="@layout/reciter_item" />
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/tab_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="title,search"
+                app:isVisible="@{viewModel.uiState.tabTitleVisible}">
+
+            </androidx.constraintlayout.widget.Group>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/tab_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="close,search_edit_txt"
+                app:isVisible="@{viewModel.uiState.tabSearchVisible}">
+
+            </androidx.constraintlayout.widget.Group>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-   </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            tools:listitem="@layout/reciter_item">
+        </androidx.recyclerview.widget.RecyclerView>
 
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_animation"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_animation"
+            app:showWhenLoading="@{viewModel.uiState.loading}" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/error_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_300sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/error2_animation"
+            app:showWhenLoading="@{viewModel.uiState.error}" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/error_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:fontFamily="@font/tajawal_bold"
+            app:showWhenLoading = "@{viewModel.uiState.error}"
+            android:text="@{viewModel.uiState.errorMessage}"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="@dimen/text_too_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/error_animation">
+
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+
+    <!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+    <!--    <data >-->
+    <!--        <variable-->
+    <!--            name="viewModel"-->
+    <!--            type="com.example.straterproject.ui.radio.RadioViewModel" />-->
+
+
+
+    <!--            <variable-->
+    <!--                name="playerViewModel"-->
+    <!--                type="com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel" />-->
+
+
+    <!--    </data>-->
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:id="@+id/tab"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+
+    <!--            android:id="@+id/constraintLayout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize"-->
+    <!--            android:background="@color/home_rv_item_color_6"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+
+    <!--            <ImageButton-->
+    <!--                android:id="@+id/back"-->
+    <!--                android:layout_width="@dimen/_24sdp"-->
+    <!--                android:layout_height="@dimen/_24sdp"-->
+    <!--                android:layout_margin="@dimen/_10sdp"-->
+    <!--                android:backgroundTint="@android:color/transparent"-->
+
+    <!--                android:src="@drawable/back_ic"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--            </ImageButton>-->
+
+    <!--            <ImageButton-->
+    <!--                android:id="@+id/close"-->
+    <!--                android:layout_width="@dimen/_24sdp"-->
+    <!--                android:layout_height="@dimen/_24sdp"-->
+    <!--                android:layout_margin="@dimen/_10sdp"-->
+    <!--                android:backgroundTint="@android:color/transparent"-->
+
+    <!--                android:src="@drawable/close_ic"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"></ImageButton>-->
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/search_edit_txt"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                 android:layout_margin="@dimen/_5sdp"-->
+
+    <!--                android:background="@drawable/search_background_shape"-->
+    <!--                android:drawableEnd="@drawable/search"-->
+    <!--                android:fontFamily="@font/cairo_bold"-->
+    <!--                android:hint="ابحث عن قناة"-->
+    <!--                android:paddingHorizontal="@dimen/_10sdp"-->
+    <!--                android:textColorHint="#99FFFFFF"-->
+    <!--                app:layout_constraintBottom_toBottomOf="@+id/close"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/close"-->
+    <!--                app:layout_constraintTop_toTopOf="@+id/close" />-->
+
+    <!--            <ImageButton-->
+    <!--                android:id="@+id/search"-->
+    <!--                android:layout_width="@dimen/_24sdp"-->
+    <!--                android:layout_height="@dimen/_24sdp"-->
+    <!--                android:layout_margin="@dimen/_10sdp"-->
+    <!--                android:backgroundTint="@android:color/transparent"-->
+
+    <!--                android:src="@drawable/baseline_search_24"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                >-->
+
+    <!--            </ImageButton>-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/title"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:fontFamily="@font/tajawal_bold"-->
+    <!--                android:gravity="center"-->
+    <!--                android:text="الإذاعة"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="@dimen/_17sdp"-->
+    <!--                app:layout_constraintBottom_toBottomOf="@+id/back"-->
+    <!--                app:layout_constraintEnd_toStartOf="@+id/search"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/back"-->
+    <!--                app:layout_constraintTop_toTopOf="@+id/back"-->
+    <!--                >-->
+
+    <!--            </TextView>-->
+
+
+
+
+
+
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="@dimen/_10sdp"-->
+    <!--            android:fontFamily="@font/tajawal_bold"-->
+    <!--            android:text="قائمة القنوات"-->
+    <!--            android:textColor="@color/orange"-->
+    <!--            android:textSize="@dimen/text_too_large"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">-->
+
+    <!--        </TextView>-->
+
+    <!--         -->
+
+    <!--       -->
+
+
+    <!--        <androidx.recyclerview.widget.RecyclerView-->
+
+    <!--            android:id="@+id/rv"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/include"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textView2"-->
+    <!--            tools:listitem="@layout/radio_item"></androidx.recyclerview.widget.RecyclerView>-->
+
+
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</layout>-->
+
+
+    <!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools">-->
+
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.example.straterproject.ui.reciters.reciterInfo.RecitersViewModel" />-->
+
+<!--    </data>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/constraintLayout2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="@color/main_color"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="@dimen/_24sdp"-->
+<!--                android:layout_height="@dimen/_24sdp"-->
+<!--                android:layout_marginHorizontal="@dimen/_10sdp"-->
+<!--                android:src="@drawable/back_ic"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/tajawal_bold"-->
+<!--                android:text="القراء"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="@dimen/text_too_too_large"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            </TextView>-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/list_of_reciters"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:fontFamily="@font/tajawal_bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="قائمة القراء"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/orange_text"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_margin="@dimen/_7sdp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="@dimen/text_too_too_large"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </TextView>&ndash;&gt;-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/reciters_rv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--</layout>-->

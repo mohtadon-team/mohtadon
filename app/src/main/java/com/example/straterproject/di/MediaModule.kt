@@ -1,5 +1,6 @@
 package com.example.straterproject.di
 
+import android.app.Application
 import android.content.Context
 
 import androidx.media3.common.AudioAttributes
@@ -37,6 +38,7 @@ object MediaModule {
     fun provideMediaSession(
         @ApplicationContext context: Context, player: ExoPlayer
     ): MediaSession = MediaSession.Builder(context, player).build()
+
 
 
 }

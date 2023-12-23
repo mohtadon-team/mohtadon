@@ -31,10 +31,12 @@ fun radioEntityToAudioItemList(radioEntity: List<RadioEntity>) :List<AudioItem> 
 
         listOfAudioItem.add( AudioItem(
             reciterAndHisMoshaf = it.name,
+
             surah =  "مباشر",
             image = "",
             source = it.source
         ) )
+
     }
     return  listOfAudioItem
 }

@@ -6,21 +6,29 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.location.Location
 import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
+import android.util.Log
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.straterproject.databinding.ActivityHomeBinding
+ import com.example.straterproject.databinding.ActivityHomeBinding
 import com.example.straterproject.ui.base.BaseActivity
+import com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel
 import com.example.straterproject.utilities.AzanPrayersUtil
 import com.example.straterproject.utilities.LATITUDE
 import com.example.straterproject.utilities.LONGITUDE
+import com.example.straterproject.utilities.LastPlayedTrackPreference
 import com.example.straterproject.utilities.REQUEST_PERMISSION_CODE
 import com.google.android.gms.location.Granularity
 import com.google.android.gms.location.LocationCallback
@@ -29,6 +37,7 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -39,6 +48,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     lateinit var navController: NavController
 
     @Inject
+    lateinit var lastPlayedTrackPreference: LastPlayedTrackPreference
+
+    @Inject
     lateinit var sharedPreferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
 
@@ -46,9 +58,20 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(com.example.straterproject.R.id.nav_host_fragment) as NavHostFragment?
+        val navHostFragment = supportFragmentManager.findFragmentById(com.example.straterproject.R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
+
+        lastPlayedTrackPreference.lastPlayedTrackId = -1
+        lastPlayedTrackPreference.beforelastPlayedTrackId = -1
+        // ar language
+        val locale = Locale("ar")
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+
+        // light mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
 
         binding.bottomNav.setOnItemSelectedListener {
@@ -148,7 +171,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         ) == PackageManager.PERMISSION_GRANTED)
     }
 
-
     private fun isLocationEnable(): Boolean {
         val locationManager: LocationManager =
             this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -174,14 +196,17 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
 
     override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<out String>, grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_PERMISSION_CODE && permissions.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+      requestCode: Int, permissions: Array<out String>, grantResults: IntArray
+    ){
+          super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_PERMISSION_CODE && permissions.isNotEmpty() &&
+            grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] ==
+            PackageManager.PERMISSION_GRANTED) {
             getCurrentLocation()
         } else {
             requestLocationPermission()
         }
-
     }
+
+
 }

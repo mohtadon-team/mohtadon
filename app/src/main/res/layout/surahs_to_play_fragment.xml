@@ -7,48 +7,217 @@
     <data >
         <variable
             name="viewModel"
-            type="com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel" />
-
+            type="com.example.straterproject.ui.reciters.surahs.SurahViewModel" />
+ <variable
+     name="playerViewModel"
+     type="com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel" />
 
 
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
-        <include
-            layout="@layout/common_header"
-            android:id="@+id/common_header"
+       >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/home_rv_item_color_6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        </include>
 
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> viewModel.onBackClick()}"
+                android:src="@drawable/back_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/close"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> viewModel.onCloseClick()}"
+                android:src="@drawable/close_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageButton>
+
+            <EditText
+                android:id="@+id/search_edit_txt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:afterTextChanged="@{(text) -> viewModel.onSearchTextChange(text) }"
+                android:background="@drawable/search_background_shape"
+                android:drawableEnd="@drawable/search"
+                android:fontFamily="@font/tajawal_regular"
+                android:hint="ابحث عن السورة"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:textColorHint="#99FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/close"
+                app:layout_constraintTop_toTopOf="@+id/close" />
+
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> viewModel.onSearchClick()}"
+                android:src="@drawable/baseline_search_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_bold"
+                android:gravity="center"
+                android:text="السور"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/back"
+                app:layout_constraintEnd_toStartOf="@+id/search"
+                app:layout_constraintStart_toEndOf="@+id/back"
+                app:layout_constraintTop_toTopOf="@+id/back">
+
+            </TextView>
+
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/tab_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="title,search,back"
+                app:isVisible="@{viewModel.uiState.tabTitleVisible}">
+
+            </androidx.constraintlayout.widget.Group>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/tab_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="close,search_edit_txt"
+                app:isVisible="@{viewModel.uiState.tabSearchVisible}">
+
+            </androidx.constraintlayout.widget.Group>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/reciter_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/tajawal_regular"
+                android:text="القارئ الشيخ"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/tajawal_regular"
+                android:text="سعد الغامدى"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_too_too_large"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t1">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/tajawal_regular"
+                android:text="حفص عن عاصم | مرتل"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/include"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/common_header"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
             tools:listitem="@layout/surah_item_to_play" />
 
+        <include
+            app:showOrNot="@{true}"
+            android:id="@+id/include"
+            app:viewModel="@{playerViewModel}"
+            layout="@layout/bottom_control_audio_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </include>
 
-<!--        <include-->
-<!--            android:layout_marginTop="5dp"-->
-<!--            android:id="@+id/bottom_control_music_panel"-->
-<!--            layout="@layout/bottom_control_audio_panal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_margin="10dp"-->
-<!--            android:layout_height="0dp"-->
-<!--            app:viewModel="@{viewModel}"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent">-->
-<!--        </include>-->
-
-
+        <!--        <include-->
+        <!--            android:layout_marginTop="5dp"-->
+        <!--            android:id="@+id/bottom_control_music_panel"-->
+        <!--            layout="@layout/bottom_control_audio_panal"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_margin="10dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            app:viewModel="@{viewModel}"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent">-->
+        <!--        </include>-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

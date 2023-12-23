@@ -7,13 +7,13 @@ import java.io.Serializable
 
 
 data class MoshafEnitity(
-    val reciterName: String,
-    val id: Int,
-    val moshafType: Int,
-    val moshafName: String,
-    val server: String,
-    val surah_list: String,
-    val surah_total: Int
+    val reciterName: String = "",
+    val id: Int = 0,
+    val moshafType: Int= 0,
+    val moshafName: String= "",
+    val server: String= "",
+    val surah_list: String= "",
+    val surah_total: Int= 0
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
@@ -23,8 +23,7 @@ data class MoshafEnitity(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readInt()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(reciterName)

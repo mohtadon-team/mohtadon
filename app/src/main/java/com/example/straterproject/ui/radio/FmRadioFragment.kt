@@ -26,6 +26,8 @@ import com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel
 import com.example.straterproject.ui.reciters.surahs.SurahAdapter
 import com.example.straterproject.ui.reciters.surahs.SurahsFragmentArgs
 import com.example.straterproject.utilities.LastPlayedTrackPreference
+import com.example.straterproject.utilities.collect
+import com.example.straterproject.utilities.collectLast
 import com.example.straterproject.utilities.moshafEntityToAudioItemList
 import com.example.straterproject.utilities.radioEntityToAudioItemList
 import com.example.straterproject.utilities.suraMap
@@ -38,18 +40,19 @@ class FmRadioFragment : BaseFragment<FragmentFmRadioBinding>() , OnRadioStationL
 
     @Inject
     lateinit var lastPlayedTrackPreference: LastPlayedTrackPreference
-
-    override val layoutFragmentId= R.layout.fragment_fm_radio
+    override val layoutFragmentId = R.layout.fragment_fm_radio
     override val viewModel: RadioViewModel by viewModels ()
-    private val audioItemPlayerViewModel: AudioItemPlayerViewModel by activityViewModels  ()
+    private val audioItemPlayerViewModel: AudioItemPlayerViewModel by activityViewModels()
+
     private lateinit var radioAdapter: RadioAdapter
-    private   var radios: List<RadioEntity>  = ArrayList()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
         binding.viewModel = viewModel
+        binding.playerViewModel = audioItemPlayerViewModel
         binding.lifecycleOwner = this
 
         radioAdapter = RadioAdapter(this , lastPlayedTrackPreference)
@@ -60,42 +63,28 @@ class FmRadioFragment : BaseFragment<FragmentFmRadioBinding>() , OnRadioStationL
             setHasFixedSize(true)
         }
 
-        viewModel.radioStations.observe(viewLifecycleOwner) {
-
-            when(it){
-                is UiState.Success ->{
-                    it.let {
-                        radioAdapter.radioStations = it.data!!
-                        radios = it.data!!
-                     audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(radioEntityToAudioItemList(radios)))
-                    }
-                }
-
-                is UiState.Error ->{
-                    Toast.makeText(requireContext(),  it.message  , Toast.LENGTH_SHORT).show()
-                    Log.i("i", it.message)
-                }
-
-                is UiState.Loading ->{
-                    Toast.makeText(requireContext(),  "Loading"  , Toast.LENGTH_SHORT).show()
-
-                }
-            }
-
+        collect(viewModel.uiState){
+            radioAdapter.radioStations = it.radioStations
+            audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(radioEntityToAudioItemList(it.radioStations)))
         }
 
+//        collectLast(viewModel.uiEffect){
+//            when(it){
+//                RadioUiEffect.Back ->  activity?.onBackPressed()
+//                RadioUiEffect.SearchCancel -> binding.searchEditTxt.text
+//            }
+//        }
 
+        binding.include.playOrPause.setOnClickListener {
+            audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.PausePlay)
+        }
 
     }
 
-
     override fun onStationClick(position: Int) {
-
         audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.GoToSpecificItem(position))
         lastPlayedTrackPreference.lastPlayedTrackId = position.toLong()
         radioAdapter.notifyItemChanged(position)
     }
-
-
 
 }

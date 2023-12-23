@@ -7,11 +7,11 @@ plugins {
 }
 //$2y$10$4WAF2lNQo6TMv4T5Rb8lOP090ZHE8Bol4I1acy1nc8IdyXChTOB6
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -50,6 +50,7 @@ dependencies {
     implementation project(path: ':domain')
     // Room
     implementation "androidx.room:room-runtime:2.5.2"
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.9'
     kapt "androidx.room:room-compiler:2.5.2"
     implementation "androidx.room:room-ktx:2.5.2"
     androidTestImplementation "androidx.room:room-testing:2.5.2"
@@ -66,4 +67,10 @@ dependencies {
     //hilt
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-android-compiler:2.44"
+
+    // media3
+    implementation "androidx.media3:media3-exoplayer:1.1.0"
+    implementation "androidx.media3:media3-ui:1.1.0"
+    implementation "androidx.media3:media3-common:1.1.0"
+    implementation 'androidx.media3:media3-session:1.1.0'
 }

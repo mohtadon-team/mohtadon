@@ -17,6 +17,13 @@ fun <T> LifecycleOwner.collectLast(flow: Flow<T>, action: suspend (T) -> Unit) {
         }
     }
 }
+fun <T> LifecycleOwner.collect(flow: Flow<T>, action: suspend (T) -> Unit) {
+    lifecycleScope.launch {
+        repeatOnLifecycle(Lifecycle.State.STARTED) {
+            flow.collect(action)
+        }
+    }
+}
 
 fun  String.getInputStreambuffer(appContext: Context):ByteArray{
     val inputStream: InputStream = appContext.assets.open(this)

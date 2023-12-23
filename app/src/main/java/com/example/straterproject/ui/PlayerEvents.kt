@@ -1,7 +1,7 @@
 package com.example.straterproject.ui
 
-
 import com.example.straterproject.player.AudioItem
+
 
 sealed class PlayerEvents {
     data class  AddPlaylist(val audios: List<AudioItem>): PlayerEvents()

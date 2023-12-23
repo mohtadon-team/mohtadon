@@ -47,8 +47,8 @@ class AudioItemPlayerViewModel @Inject constructor(
 
     private val playerController =
         PlayerController(player , _currentSong, _currentMediaPosition,
-                      _currentSongDurationInMinutes, _currentSongProgressInMinutes, _isPlayPlaying,
-                      _isPlayerBuffering, _isShuffleClicked, _isRepeatClick,  viewModelScope)
+            _currentSongDurationInMinutes, _currentSongProgressInMinutes, _isPlayPlaying,
+            _isPlayerBuffering, _isShuffleClicked, _isRepeatClick,  viewModelScope)
 
     init {
         player.addListener(playerController)

@@ -2,11 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
 
-    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_small"
@@ -30,27 +29,29 @@
             android:id="@+id/moshaf_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_small"
-            android:fontFamily="@font/cairo_bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2"
-            app:tint="@color/brown">
+            android:layout_margin="7dp"
+            android:layout_marginHorizontal="@dimen/spacing_small"
+            android:fontFamily="@font/tajawal_regular"
+            android:textColor="@color/green_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="حفص عن عاصم - مرتل">
+            >
 
         </TextView>
 
         <ImageView
-
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_15sdp"
-            android:layout_margin="@dimen/spacing_small"
             android:src="@drawable/left_arrow"
-            app:layout_constraintBottom_toBottomOf="@+id/moshaf_name"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/moshaf_name"
-            app:tint="@color/brown">
+            app:tint="@color/orange"
+            app:layout_constraintTop_toTopOf="parent">
 
         </ImageView>
+
 
 
         <!--        <androidx.cardview.widget.CardView-->
