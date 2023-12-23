@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <data >
+    <data>
+
         <variable
             name="viewModel"
             type="com.example.straterproject.ui.reciters.reciterInfo.RecitersViewModel" />
@@ -12,7 +13,7 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,14 +21,11 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
-            android:id="@+id/constraintLayout"
+            android:id="@+id/headerLayout"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="@dimen/_50sdp"
             android:background="@color/home_rv_item_color_6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
+           android:layout_alignParentTop="true">
 
 
             <ImageButton
@@ -50,11 +48,11 @@
                 android:background="@drawable/search_background_shape"
                 android:drawableEnd="@drawable/search"
                 android:fontFamily="@font/tajawal_regular"
-                android:text ="@{viewModel.uiState.searchText}"
                 android:hint="ابحث عن أي قارئ"
                 android:paddingHorizontal="@dimen/_10sdp"
-                android:textColorHint="#99FFFFFF"
+                android:text="@{viewModel.uiState.searchText}"
                 android:textColor="@color/white"
+                android:textColorHint="#99FFFFFF"
                 app:layout_constraintBottom_toBottomOf="@+id/close"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/close"
@@ -114,22 +112,15 @@
             android:id="@+id/rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            tools:listitem="@layout/reciter_item">
-        </androidx.recyclerview.widget.RecyclerView>
+           android:layout_below="@id/headerLayout"
+            tools:listitem="@layout/reciter_item"></androidx.recyclerview.widget.RecyclerView>
 
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loading_animation"
             android:layout_width="150dp"
             android:layout_height="150dp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            android:layout_centerInParent="true"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/loading_animation"
@@ -140,33 +131,31 @@
             android:id="@+id/error_animation"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_300sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
 
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            android:layout_centerInParent="true"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/error2_animation"
             app:showWhenLoading="@{viewModel.uiState.error}" />
 
         <TextView
-            android:gravity="center"
             android:id="@+id/error_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:fontFamily="@font/tajawal_bold"
-            app:showWhenLoading = "@{viewModel.uiState.error}"
+            android:gravity="center"
             android:text="@{viewModel.uiState.errorMessage}"
             android:textColor="@color/design_default_color_error"
             android:textSize="@dimen/text_too_large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/error_animation">
+            app:layout_constraintTop_toBottomOf="@+id/error_animation"
+            app:showWhenLoading="@{viewModel.uiState.error}">
 
         </TextView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </layout>
 
     <!--<?xml version="1.0" encoding="utf-8"?>-->
@@ -181,7 +170,6 @@
     <!--            type="com.example.straterproject.ui.radio.RadioViewModel" />-->
 
 
-
     <!--            <variable-->
     <!--                name="playerViewModel"-->
     <!--                type="com.example.straterproject.ui.reciters.player.AudioItemPlayerViewModel" />-->
@@ -193,7 +181,6 @@
     <!--        android:id="@+id/tab"-->
     <!--        android:layout_width="match_parent"-->
     <!--        android:layout_height="match_parent">-->
-
 
 
     <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
@@ -280,10 +267,6 @@
     <!--            </TextView>-->
 
 
-
-
-
-
     <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <!--        <TextView-->
@@ -323,80 +306,80 @@
 
     <!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
 
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools">-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools">-->
 
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="viewModel"-->
-<!--            type="com.example.straterproject.ui.reciters.reciterInfo.RecitersViewModel" />-->
+    <!--    <data>-->
+    <!--        <variable-->
+    <!--            name="viewModel"-->
+    <!--            type="com.example.straterproject.ui.reciters.reciterInfo.RecitersViewModel" />-->
 
-<!--    </data>-->
+    <!--    </data>-->
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
-
-
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:id="@+id/constraintLayout2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize"-->
-<!--            android:background="@color/main_color"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent">-->
-
-<!--            <ImageView-->
-<!--                android:layout_width="@dimen/_24sdp"-->
-<!--                android:layout_height="@dimen/_24sdp"-->
-<!--                android:layout_marginHorizontal="@dimen/_10sdp"-->
-<!--                android:src="@drawable/back_ic"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:fontFamily="@font/tajawal_bold"-->
-<!--                android:text="القراء"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="@dimen/text_too_too_large"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent">-->
-
-<!--            </TextView>-->
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;            android:id="@+id/list_of_reciters"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:fontFamily="@font/tajawal_bold"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:text="قائمة القراء"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:textColor="@color/orange_text"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_margin="@dimen/_7sdp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:textSize="@dimen/text_too_too_large"&ndash;&gt;-->
-<!--&lt;!&ndash;            app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">&ndash;&gt;-->
-
-<!--&lt;!&ndash;        </TextView>&ndash;&gt;-->
-
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/reciters_rv"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />-->
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
 
 
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:id="@+id/constraintLayout2"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize"-->
+    <!--            android:background="@color/main_color"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent">-->
 
-<!--</layout>-->
+    <!--            <ImageView-->
+    <!--                android:layout_width="@dimen/_24sdp"-->
+    <!--                android:layout_height="@dimen/_24sdp"-->
+    <!--                android:layout_marginHorizontal="@dimen/_10sdp"-->
+    <!--                android:src="@drawable/back_ic"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:fontFamily="@font/tajawal_bold"-->
+    <!--                android:text="القراء"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="@dimen/text_too_too_large"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--            </TextView>-->
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:id="@+id/list_of_reciters"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:fontFamily="@font/tajawal_bold"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:text="قائمة القراء"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:textColor="@color/orange_text"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_margin="@dimen/_7sdp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:textSize="@dimen/text_too_too_large"&ndash;&gt;-->
+    <!--&lt;!&ndash;            app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;        </TextView>&ndash;&gt;-->
+
+    <!--        <androidx.recyclerview.widget.RecyclerView-->
+    <!--            android:id="@+id/reciters_rv"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="0.0"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />-->
+
+
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--</layout>-->
