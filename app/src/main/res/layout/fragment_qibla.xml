@@ -16,7 +16,7 @@
             android:backgroundTint="#EAEAEA"
             app:cardCornerRadius="@dimen/radius_large"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -57,7 +57,7 @@
             android:textColor="@color/dark_black"
             android:textSize="@dimen/text_too_large"
             app:layout_constraintEnd_toEndOf="@+id/hijri_date_text"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toStartOf="@+id/hijri_date_text"
             app:layout_constraintTop_toBottomOf="@+id/hijri_date_text"
             tools:text=" 4 اغسطس 2023" />
@@ -74,40 +74,40 @@
             app:layout_constraintTop_toBottomOf="@+id/miladi_date_text" />
 
         <ImageView
+            android:id="@+id/second_image"
             android:layout_width="37dp"
             android:layout_height="240dp"
-            android:id="@+id/second_image"
-            android:src="@drawable/qibla_arrow"
             android:scaleType="centerCrop"
+            android:src="@drawable/qibla_arrow"
             app:layout_constraintBottom_toBottomOf="@+id/first_image"
             app:layout_constraintEnd_toEndOf="@+id/first_image"
             app:layout_constraintStart_toStartOf="@+id/first_image"
             app:layout_constraintTop_toTopOf="@+id/first_image" />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/image_qibla"-->
-<!--            android:layout_width="37dp"-->
-<!--            android:layout_height="240dp"-->
-<!--            android:layout_centerInParent="true"-->
-<!--            android:scaleType="fitXY"-->
-<!--            android:src="@drawable/qibla_arrow"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/image_dial"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/image_dial"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/image_dial"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/image_dial" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/image_qibla"-->
+        <!--            android:layout_width="37dp"-->
+        <!--            android:layout_height="240dp"-->
+        <!--            android:layout_centerInParent="true"-->
+        <!--            android:scaleType="fitXY"-->
+        <!--            android:src="@drawable/qibla_arrow"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/image_dial"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/image_dial"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/image_dial"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/image_dial" />-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/image_dial"-->
-<!--            android:layout_width="320dp"-->
-<!--            android:layout_height="320dp"-->
-<!--            android:layout_centerInParent="true"-->
-<!--            android:src="@drawable/dial"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/miladi_date_text" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/image_dial"-->
+        <!--            android:layout_width="320dp"-->
+        <!--            android:layout_height="320dp"-->
+        <!--            android:layout_centerInParent="true"-->
+        <!--            android:src="@drawable/dial"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/miladi_date_text" />-->
 
-<!--      -->
+        <!--      -->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

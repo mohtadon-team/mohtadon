@@ -12,28 +12,29 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_medium"
         android:textColor="@color/orange"
-        android:textSize="@dimen/text_large"
+        android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="دعاء اليوم " />
 
 
-    <TextView
-        android:id="@+id/track_prayer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/spacing_medium"
-        android:text="المزيد"
-        android:textColor="@color/main_color"
-        android:textSize="@dimen/text_large"
-        app:drawableLeftCompat="@drawable/baseline_arrow_back_ios_24"
-        app:drawableTint="@color/main_color"
-        app:layout_constraintBottom_toBottomOf="@+id/item_thing_tv_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/item_thing_tv_title" />
+<!--    <TextView-->
+<!--        android:id="@+id/track_prayer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/spacing_medium"-->
+<!--        android:text="@string/more"-->
+<!--        android:textColor="@color/main_color"-->
+<!--        android:textSize="@dimen/text_large"-->
+<!--        app:drawableLeftCompat="@drawable/baseline_arrow_back_ios_24"-->
+<!--        app:drawableTint="@color/main_color"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/item_thing_tv_title"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/item_thing_tv_title" />-->
 
 
     <TextView
@@ -43,10 +44,9 @@
         android:layout_margin="@dimen/spacing_medium"
         android:background="@drawable/home_textview_today_thing_shape"
         android:gravity="start"
-        android:textSize="@dimen/text_medium"
         android:padding="@dimen/spacing_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_thing_tv_title"
-        tools:text="@tools:sample/lorem/random" />
+        tools:text="احمد سمير محمد الرفاعى " />
 </androidx.constraintlayout.widget.ConstraintLayout>

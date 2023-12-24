@@ -27,13 +27,12 @@ class HadithBookChaptersRvAdapter(
     }
 
     override fun onBindViewHolder(holder: HadithBookChaptersRvViewHolder, position: Int) {
-        val hadithNumber = position + 1
         holder.binding.apply {
-            "الحديث رقم $hadithNumber".also { hadithName.text = it }
+            hadithFieldText.text = hadithBookChaptersItems[position]
         }
 
         holder.binding.root.setOnClickListener {
-            listener.onItemclick(hadithBookChaptersItems.get(position))
+            listener.onItemclick(position + 1 )
         }
 
     }
@@ -41,5 +40,5 @@ class HadithBookChaptersRvAdapter(
 
 }
 interface OnHadithListRvListener {
-    fun onItemclick(hadithText: String)
+    fun onItemclick(chapterNumber: Int)
 }

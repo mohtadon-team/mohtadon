@@ -29,7 +29,7 @@
             android:textSize="@dimen/text_large"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="4 نوفمبر 2023" />
@@ -42,9 +42,9 @@
             android:scaleType="centerCrop"
             android:src="@drawable/calendar_1"
             app:layout_constraintBottom_toBottomOf="@+id/current_date"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/current_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toStartOf="@+id/current_date"
             app:layout_constraintTop_toTopOf="@+id/current_date"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -75,7 +75,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/current_month"
             tools:itemCount="7"
-            tools:listitem="@layout/weekly_calender_rv_item" />
+            tools:listitem="@layout/weekly_calender_rv_item"
+            app:reverseLayout="true"/>
 
 
         <ImageView
@@ -84,6 +85,8 @@
             android:layout_height="@dimen/_10sdp"
             android:layout_marginStart="@dimen/spacing_medium"
             android:src="@drawable/left_arrow"
+            android:rotation="180"
+
             app:layout_constraintBottom_toBottomOf="@+id/current_month"
             app:layout_constraintStart_toEndOf="@+id/current_month"
             app:layout_constraintTop_toTopOf="@+id/current_month"
@@ -94,7 +97,6 @@
             android:layout_width="@dimen/_10sdp"
             android:layout_height="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/spacing_medium"
-            android:rotation="180"
             android:src="@drawable/left_arrow"
             app:layout_constraintBottom_toBottomOf="@+id/current_month"
             app:layout_constraintEnd_toStartOf="@+id/current_month"
@@ -134,6 +136,7 @@
             android:paddingHorizontal="@dimen/spacing_small"
             android:paddingVertical="@dimen/spacing_extra_large"
             android:progress="3"
+            android:rotation="180"
             android:progressDrawable="@drawable/tracking_progress_bar_style"
             android:textAlignment="center"
             android:visibility="visible"
@@ -152,7 +155,7 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/daily_prayers_progress"
             app:layout_constraintEnd_toEndOf="@+id/daily_prayers_progress"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/daily_prayers_progress"
             app:layout_constraintTop_toTopOf="@+id/daily_prayers_progress"
             app:layout_constraintVertical_bias="1.0"

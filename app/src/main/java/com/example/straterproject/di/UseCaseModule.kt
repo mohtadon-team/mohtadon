@@ -13,6 +13,7 @@ import com.example.domain.usecases.GetAyaByIdUseCase
 import com.example.domain.usecases.GetSurahAyahsUseCase
 import com.example.domain.usecases.GetDayPrayerTimesUseCase
 import com.example.domain.usecases.GetMonthPrayerTimesUseCase
+import com.example.domain.usecases.GetSpecificBookChapterHadithUseCase
 import com.example.domain.usecases.GetSpecificHadithBookChaptersUseCase
 import dagger.Module
 import dagger.Provides
@@ -70,4 +71,10 @@ object UseCaseModule {
         return GetSpecificHadithBookChaptersUseCase(hadithRepository)
     }
 
+    @Provides
+    fun provideChapterHadithUseCase(
+        hadithRepository: HadithRepository
+    ): GetSpecificBookChapterHadithUseCase {
+        return GetSpecificBookChapterHadithUseCase(hadithRepository)
+    }
 }

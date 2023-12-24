@@ -33,4 +33,14 @@
     <string name="asr">العصر</string>
     <string name="maghrib">المغرب</string>
     <string name="isha">العشاء</string>
+
+    <string name="home_rv_item_text_1">المصحف</string>
+    <string name="home_rv_item_text_2">الأذكار</string>
+    <string name="home_rv_item_text_3">الأدعية</string>
+    <string name="home_rv_item_text_4">الأحاديث</string>
+    <string name="home_rv_item_text_5">التفسير</string>
+    <string name="home_rv_item_text_6">المزيد</string>
+    <string name="moshaf">المصحف</string>
+    <string name="search">بحث</string>
+    <string name="allah">الله</string>
 </resources>

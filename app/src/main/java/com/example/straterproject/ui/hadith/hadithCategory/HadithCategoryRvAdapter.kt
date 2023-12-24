@@ -28,7 +28,7 @@ class HadithCategoryRvAdapter(
 
     override fun onBindViewHolder(holder: HadithCategoryRvViewHolder, position: Int) {
         holder.binding.apply {
-            hadithName.text = hadithCategoryListItems.get(position)
+            hadithFieldText.text = hadithCategoryListItems.get(position)
         }
 
         holder.binding.root.setOnClickListener {

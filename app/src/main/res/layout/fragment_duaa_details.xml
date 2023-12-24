@@ -21,7 +21,7 @@
             android:paddingTop="@dimen/spacing_medium"
             android:paddingBottom="@dimen/spacing_large"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_too_large"
+            android:textSize="@dimen/text_large"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

@@ -1,5 +1,6 @@
 package com.example.domain.repo
 
+import com.example.domain.models.hadith.ChapterHadith
 import com.example.domain.models.hadith.HadithBookChapters
 
 //import com.example.data.dataSource.remote.response.hadith.books.HadithModel
@@ -8,6 +9,8 @@ import com.example.domain.models.hadith.HadithBookChapters
 interface HadithRepository {
 
 //    suspend fun getAllHadithBooksName(): com.example.data.dataSource.remote.response.hadith.books.HadithModel
-    suspend fun getSpecificHadithBookChapters(bookName:String):HadithBookChapters?
+    suspend fun getSpecificHadithBookChapters(bookName:String):HadithBookChapters
+    suspend fun getSpecificChapterHadith(bookName:String , chapterNumber:Int):ChapterHadith
+
 //    suspend fun getSpecifichadith(bookName:String,chapterNumber:Int , )
 }

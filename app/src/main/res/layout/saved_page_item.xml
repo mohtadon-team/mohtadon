@@ -19,7 +19,7 @@
             android:textSize="@dimen/text_large"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:textSize="@dimen/text_large"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/sura_tv"
-            app:layout_constraintStart_toEndOf="@+id/sura_tv"
+            app:layout_constraintEnd_toStartOf="@+id/sura_tv"
             app:layout_constraintTop_toTopOf="@+id/sura_tv"
             app:layout_constraintVertical_bias="0.5"
             tools:text=" الرعد" />
@@ -39,25 +39,25 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_small"
             android:text="|"
             android:textColor="@color/orange"
             android:textSize="@dimen/text_large"
             app:layout_constraintBottom_toBottomOf="@+id/sura_name"
-            app:layout_constraintStart_toEndOf="@+id/sura_name"
+            app:layout_constraintEnd_toStartOf="@+id/sura_name"
             app:layout_constraintTop_toTopOf="@+id/sura_name" />
 
         <TextView
             android:id="@+id/pagetv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_small"
             android:text="صفحة رقم "
             android:textColor="@color/orange"
             android:textSize="@dimen/text_large"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView5"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
             app:layout_constraintTop_toTopOf="@+id/textView5" />
 
         <TextView
@@ -68,7 +68,7 @@
             android:textSize="@dimen/text_large"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/pagetv"
-            app:layout_constraintStart_toEndOf="@+id/pagetv"
+            app:layout_constraintEnd_toStartOf="@+id/pagetv"
             app:layout_constraintTop_toTopOf="@+id/pagetv"
             tools:text="  10 " />
 
@@ -76,14 +76,14 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_2sdp"
             android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
             android:background="@color/background_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginHorizontal="@dimen/spacing_medium"
             app:layout_constraintTop_toBottomOf="@+id/sura_name"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginTop="@dimen/spacing_medium"/>
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

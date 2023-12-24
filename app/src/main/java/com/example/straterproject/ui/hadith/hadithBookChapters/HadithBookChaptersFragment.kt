@@ -14,7 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HadithBookChaptersFragment : BaseFragment<FragmentHadithBookChaptersBinding>(), OnHadithListRvListener {
+class HadithBookChaptersFragment : BaseFragment<FragmentHadithBookChaptersBinding>(),
+    OnHadithListRvListener {
     override val layoutFragmentId: Int = R.layout.fragment_hadith_book_chapters
     override val viewModel: HadithListViewModel by viewModels()
     private val args: HadithBookChaptersFragmentArgs by navArgs()
@@ -30,62 +31,52 @@ class HadithBookChaptersFragment : BaseFragment<FragmentHadithBookChaptersBindin
     }
 
     private fun setAdapter() {
-
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.hadithBookChaptersUiState.collect {
                 when (args.position) {
-                    0 -> {
+                    0 ->
                         initializeRv(0)
-                    }
 
-                    1 -> {
+
+                    1 ->
                         initializeRv(1)
 
-                    }
 
-                    2 -> {
+                    2 ->
                         initializeRv(2)
 
-                    }
 
-                    3 -> {
+                    3 ->
                         initializeRv(3)
 
-                    }
 
-                    4 -> {
+                    4 ->
                         initializeRv(4)
 
-                    }
 
-                    5 -> {
+                    5 ->
                         initializeRv(5)
 
-                    }
 
-                    6 -> {
+                    6 ->
                         initializeRv(6)
 
-                    }
 
-                    7 -> {
+                    7 ->
                         initializeRv(7)
 
-                    }
-
-                    8 -> {
+                    8 ->
                         initializeRv(8)
 
-                    }
                 }
             }
         }
     }
 
-    override fun onItemclick(hadithText: String) {
+    override fun onItemclick(chapterNumber: Int ) {
         findNavController().navigate(
             HadithBookChaptersFragmentDirections.actionHadithListFragmentToHadithDetailsFragment(
-                hadithText
+                chapterNumber, HadithBookNames[args.position]
             )
         )
     }
@@ -94,11 +85,10 @@ class HadithBookChaptersFragment : BaseFragment<FragmentHadithBookChaptersBindin
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.hadithBookChaptersUiState.collect {
                 viewModel.collectSpecificHadithBookChapters(HadithBookNames[position])
-//                hadithBookChaptersRvAdapter = HadithBookChaptersRvAdapter(
-//                    this@HadithBookChaptersFragment,
-////                    it.specificBookChaptersList
-//                )
-//                binding.hadithListRv.adapter = hadithBookChaptersRvAdapter
+                hadithBookChaptersRvAdapter = HadithBookChaptersRvAdapter(
+                    this@HadithBookChaptersFragment, it.specificBookChaptersList
+                )
+                binding.hadithListRv.adapter = hadithBookChaptersRvAdapter
             }
         }
     }
