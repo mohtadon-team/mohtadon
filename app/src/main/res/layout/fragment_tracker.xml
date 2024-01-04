@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.straterproject.ui.prayers_tracker.TrackerViewModel" />
+            type="com.example.mohtdon.ui.prayers_tracker.TrackerViewModel" />
 
     </data>
 

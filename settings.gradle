@@ -13,7 +13,7 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "strater project"
+rootProject.name = "mohtdon"
 include ':app'
 include ':data'
 include ':domain'

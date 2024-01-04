@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.straterproject.ui.home.HomeViewModel" />
+            type="com.example.mohtdon.ui.home.HomeViewModel" />
 
 
 

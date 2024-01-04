@@ -6,11 +6,11 @@
 
         <variable
             name="listener"
-            type="com.example.straterproject.ui.home.adapters.OnHomeRvItemListener" />
+            type="com.example.mohtdon.ui.home.adapters.OnHomeRvItemListener" />
 
         <variable
             name="item"
-            type="com.example.straterproject.ui.home.rvitems.HomeRvItem" />
+            type="com.example.mohtdon.ui.home.rvitems.HomeRvItem" />
 
 
     </data>

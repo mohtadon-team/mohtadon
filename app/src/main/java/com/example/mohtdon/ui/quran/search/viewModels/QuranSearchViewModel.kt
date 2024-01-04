@@ -1,0 +1,16 @@
+package com.example.mohtdon.ui.quran.search.viewModels
+
+import com.example.data.dataSource.local.QuranRepositoryImpl
+import com.example.domain.models.quran.Aya
+import com.example.mohtdon.ui.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+
+@HiltViewModel
+class QuranSearchViewModel @Inject constructor
+    (private  val repository: QuranRepositoryImpl): BaseViewModel() {
+     suspend fun getSearchResult(key: String): List<Aya> {
+        return repository.getAyaBySubText(key)
+    }
+
+}
