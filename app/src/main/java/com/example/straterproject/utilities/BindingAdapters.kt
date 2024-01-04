@@ -10,6 +10,8 @@ import androidx.databinding.BindingAdapter
 import coil.load
 import com.example.straterproject.R
 import com.example.straterproject.ui.UiState
+import com.google.android.material.progressindicator.CircularProgressIndicator
+import me.tankery.lib.circularseekbar.CircularSeekBar
 
 //@BindingAdapter("app:setItemList")
 //fun <T> setItemList(view: RecyclerView,  list :List<Music>?) {
@@ -26,11 +28,25 @@ fun <T> showVisibleWhenError(view: View, state: UiState<T>?) {
     view.isVisible = state is UiState.Error
 }
 
-@BindingAdapter("showVisibleWhenLoading")
-fun <T> showVisibleWhenLoading(view: View, state: UiState<T>?) {
-    view.isVisible = state is UiState.Loading
+
+
+@BindingAdapter("app:showWhenLoading")
+fun <T> showWhenLoading(view: View,isLoading :Boolean) {
+    if (isLoading){
+        view.visibility = View.VISIBLE
+    }else {
+        view.visibility = View.GONE
+    }
 }
 
+@BindingAdapter("app:hideWhenLoading")
+fun <T> hideWhenLoading(view: View,isLoading :Boolean) {
+    if (isLoading){
+        view.visibility = View.GONE
+    }else {
+        view.visibility = View.VISIBLE
+    }
+}
 @BindingAdapter("makeTextScrollable")
 fun makeTextScrollable(textView: TextView, scrollable: Boolean) {
     if (scrollable) {
@@ -51,9 +67,10 @@ fun setImageIsLoading(imageView: ImageView, isByffering: Boolean) {
 fun setImagePlayOrStop(imageView: ImageView, isPlay: Boolean) {
 
     if (isPlay) {
-        imageView.setImageResource(R.drawable.pause)
+        imageView.setImageResource(R.drawable.pause_ic)
+
     } else {
-        imageView.setImageResource(R.drawable.play)
+        imageView.setImageResource(R.drawable.play_ic)
     }
 }
 
@@ -88,7 +105,23 @@ fun setCurrentProgressForSeekBar(seekBar: SeekBar, progress: Long) {
     seekBar.progress = progress.toInt()
 }
 
+@BindingAdapter("setMaxProgressForCircularSeekBar")
+fun setMaxProgressForCircularSeekBar(seekBar: CircularSeekBar, maxProgress: Long) {
+    seekBar.max = maxProgress.toFloat()
+}
+
+@BindingAdapter("setCurrentProgressForCircularSeekBar")
+fun setCurrentProgressForCircularSeekBar(seekBar: CircularSeekBar, progress: Long) {
+    seekBar.progress = progress.toFloat()
+}
+
 @BindingAdapter("setTimeMinutes")
 fun setTimeMinutes(textView: TextView, progress: Long) {
     textView.text = convertLongDurationToTime(progress)
+}
+
+
+@BindingAdapter("app:isVisible")
+fun isVisible(view: View, isVisible :Boolean) {
+    view.isVisible = isVisible
 }
