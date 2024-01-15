@@ -35,13 +35,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        <!--<activity
             android:name=".ui.activities.HomeActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity> <!-- <provider -->
+        </activity>-->
+        <!-- <provider -->
         <!-- android:name="androidx.startup.InitializationProvider" -->
         <!-- android:authorities="${applicationId}.androidx-startup" -->
         <!-- tools:node="remove"> -->
@@ -58,7 +59,7 @@
         <!-- <action android:name="com.yourapp.ACTION_ALARM" /> -->
         <!-- </intent-filter> -->
         <!-- </receiver> -->
-        <activity
+<!--        <activity
             android:name=".ui.activities.SplashActivity"
             android:exported="true" >
             <intent-filter>
@@ -70,7 +71,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
+        </activity>-->
 
         <service
             android:name=".player.MediaService"

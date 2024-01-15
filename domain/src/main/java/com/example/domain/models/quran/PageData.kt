@@ -1,7 +1,13 @@
 package com.example.domain.models.quran
 
-    data class PageData(
-        val pageNumber: Int = 0,
-        val soraName: String = "",
-        val jozzaName: String = "",
-    )
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+
+@Entity
+data class PageData(
+    @PrimaryKey(autoGenerate = false)
+    var pageNumber: Int = 0,
+    var soraName: String = "",
+    var jozzaName: String = "",
+)
