@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.mohtdon">
+    package="com.example.mohtdon" >
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
-        android:name="com.example.mohtdon.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -23,35 +23,44 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.StraterProject"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name="com.example.mohtdon.ui.activities.HomeActivity"
-            android:exported="false">
+            android:name=".ui.compose.MainComposeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main_compose"
+            android:theme="@style/Theme.StraterProject" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.HomeActivity"
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-<!--        <provider-->
-<!--            android:name="androidx.startup.InitializationProvider"-->
-<!--            android:authorities="${applicationId}.androidx-startup"-->
-<!--            tools:node="remove">-->
-<!--        </provider>-->
-<!--        <receiver android:name=".ui.fragments.home.AlarmReceiver"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
-<!--            </intent-filter>-->
-<!--        </receiver>-->
-<!--        <receiver android:name=".ui.fragments.home.AlarmReceiver"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="com.yourapp.ACTION_ALARM" />-->
-<!--            </intent-filter>-->
-<!--        </receiver>-->
-
+        </activity> <!-- <provider -->
+        <!-- android:name="androidx.startup.InitializationProvider" -->
+        <!-- android:authorities="${applicationId}.androidx-startup" -->
+        <!-- tools:node="remove"> -->
+        <!-- </provider> -->
+        <!-- <receiver android:name=".ui.fragments.home.AlarmReceiver" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <!-- <receiver android:name=".ui.fragments.home.AlarmReceiver" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.yourapp.ACTION_ALARM" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
         <activity
-            android:name="com.example.mohtdon.ui.activities.SplashActivity"
-            android:exported="true">
+            android:name=".ui.activities.SplashActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,9 +73,9 @@
         </activity>
 
         <service
-            android:name="com.example.mohtdon.player.MediaService"
+            android:name=".player.MediaService"
             android:exported="true"
-            android:foregroundServiceType="mediaPlayback">
+            android:foregroundServiceType="mediaPlayback" >
             <intent-filter>
                 <action android:name="androidx.media3.session.MediaSessionService" />
             </intent-filter>
