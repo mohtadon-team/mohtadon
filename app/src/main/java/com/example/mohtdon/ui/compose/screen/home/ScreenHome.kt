@@ -1,13 +1,15 @@
 package com.example.mohtdon.ui.compose.screen.home
 
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -36,18 +38,15 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.mohtdon.R
 import com.example.mohtdon.navigation.NavigationHandler
+import com.example.mohtdon.ui.compose.composable.AddHeaderWithSeeMore
 import com.example.mohtdon.ui.compose.composable.MohtdonScaffold
 import com.example.mohtdon.ui.compose.theme.Tajawal
 import com.example.mohtdon.ui.compose.theme.color_GreenText
-import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor1
-import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor2
-import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor3
-import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor4
-import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor5
-import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor6
 import com.example.mohtdon.ui.compose.theme.color_MainColor
 import com.example.mohtdon.ui.compose.theme.color_OrangeText
+import com.example.mohtdon.ui.compose.theme.color_Sec_Blue
 import com.example.mohtdon.ui.compose.theme.color_White
+import com.example.mohtdon.ui.compose.theme.color_White_60
 
 
 @Composable
@@ -151,7 +150,7 @@ fun ScreenHomeContent(
             horizontalAlignment = Alignment.Start,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 72.dp, bottom = 64.dp),
+                .padding(top = 72.dp, bottom = 58.dp),
             contentPadding = PaddingValues(vertical = 16.dp)
         ) {
             item {
@@ -173,6 +172,85 @@ fun ScreenHomeContent(
                     color = color_GreenText,
                     modifier = Modifier.padding(start = 16.dp)
                 )
+            }
+            item {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(160.dp)
+                        .padding(horizontal = 16.dp),
+                    onClick = { interaction.onClickPrayerFollowing() },
+                    colors = CardDefaults.cardColors(
+                        containerColor = color_Sec_Blue,
+                    )
+                ) {
+                    Box(modifier = Modifier.fillMaxSize()){
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp)
+                        ) {
+                            Column {
+                                Text(
+                                    modifier = Modifier.padding(top = 16.dp),
+                                    text = stringResource(id = R.string.next_prayer),
+                                    fontFamily = Tajawal,
+                                    fontSize = 18.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    textAlign = TextAlign.Start,
+                                    color = color_White_60
+                                )
+                                Text(
+                                    text = state.nextPrayer,
+                                    fontFamily = Tajawal,
+                                    fontSize = 24.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    textAlign = TextAlign.Start,
+                                    color = color_White
+                                )
+                                Spacer(modifier = Modifier.weight(1f))
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                ) {
+                                    Text(
+                                        modifier = Modifier.padding(bottom = 16.dp),
+                                        text = stringResource(id = R.string.track_prayer),
+                                        fontFamily = Tajawal,
+                                        fontSize = 18.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        textAlign = TextAlign.Start,
+                                        color = color_White
+                                    )
+                                    Icon(
+                                        modifier = Modifier
+                                            .size(24.dp)
+                                            .padding(bottom = 8.dp),
+                                        painter = painterResource(id = R.drawable.left_arrow),
+                                        contentDescription = "",
+                                        tint = color_OrangeText
+                                    )
+                                }
+                            }
+                            Spacer(modifier = Modifier.weight(1f))
+                            Column(
+                                modifier = Modifier,
+                                horizontalAlignment = Alignment.End
+                            ) {
+                                Icon(
+                                    modifier = Modifier
+                                        .size(36.dp)
+                                        .padding(top = 16.dp)
+                                        .align(Alignment.End),
+                                    painter = painterResource(id = R.drawable.not_silent),
+                                    contentDescription = "",
+                                    tint = color_White
+                                )
+                                Spacer(modifier = Modifier.weight(1f))
+                                Image(painter = painterResource(id = R.drawable.nabawi_mosque), contentDescription = "")
+                            }
+                        }
+                    }
+                }
             }
             item {
                 LazyRow(
@@ -217,7 +295,66 @@ fun ScreenHomeContent(
                     }
                 }
             }
+            item {
+                AddHeaderWithSeeMore(label = R.string.today_label_duaa) {
+                    interaction.onClickMoreDuaa()
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.Transparent),
+                    border = BorderStroke(1.dp, color_OrangeText)
+                ) {
+                    Text(
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                        text = state.todayDuaa,
+                        fontFamily = Tajawal,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Normal,
+                        textAlign = TextAlign.Start,
+                        color = color_GreenText
+                    )
+                }
+            }
+            item {
+                AddHeaderWithSeeMore(label = R.string.today_label_aya) {
+                    interaction.onClickMoreDuaa()
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.Transparent),
+                    border = BorderStroke(1.dp, color_OrangeText)
+                ) {
+                    Text(
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                        text = state.todayAya,
+                        fontFamily = Tajawal,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Normal,
+                        textAlign = TextAlign.Start,
+                        color = color_GreenText
+                    )
+                }
+            }
+            item {
+                AddHeaderWithSeeMore(label = R.string.today_label_zekr) {
+                    interaction.onClickMoreDuaa()
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.Transparent),
+                    border = BorderStroke(1.dp, color_OrangeText)
+                ) {
+                    Text(
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                        text = state.todayAzkar,
+                        fontFamily = Tajawal,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Normal,
+                        textAlign = TextAlign.Start,
+                        color = color_GreenText
+                    )
+                }
+            }
         }
     }
 }
-

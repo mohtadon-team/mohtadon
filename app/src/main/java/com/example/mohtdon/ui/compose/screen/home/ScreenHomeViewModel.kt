@@ -51,6 +51,7 @@ class ScreenHomeViewModel @Inject constructor(
                     application.applicationContext,
                     R.string.today_azkar
                 ),
+                nextPrayer = "المغرب 6:54 م",
                 homeItems = listOf(
                     HomeRowItems(
                         1,

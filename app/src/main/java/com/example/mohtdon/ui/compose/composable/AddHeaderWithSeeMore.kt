@@ -14,7 +14,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.mohtdon.ui.compose.screen.home.AddSeeMore
 import com.example.mohtdon.ui.compose.theme.Tajawal
 import com.example.mohtdon.ui.compose.theme.color_OrangeText
 
