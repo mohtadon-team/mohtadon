@@ -43,4 +43,11 @@
     <string name="moshaf">المصحف</string>
     <string name="search">بحث</string>
     <string name="allah">الله</string>
+
+    <string name="title_activity_main_compose">الأكتيفيتي الرئيسية</string>
+    <string name="to_heaven_partners">رفقاء إلى الجنة</string>
+    <string name="start_now">ابدأ الآن</string>
+
+
+
 </resources>

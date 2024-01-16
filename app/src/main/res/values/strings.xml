@@ -43,5 +43,9 @@
     <string name="search">بحث</string>
     <string name="allah">الله</string>
     <string name="title_activity_main_compose">MainComposeActivity</string>
+    <string name="to_heaven_partners">Partners to the Heaven</string>
+    <string name="start_now">Start Now</string>
+
+
 
 </resources>
