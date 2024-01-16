@@ -41,6 +41,9 @@ val color_HomeRvItemColor6 = Color(0xFF148BA1)
 val color_Grad_yellow = Color(0xFFFDC30D)
 val color_Grad_Mid = Color(0xFFFE9C06)
 val color_SalahTrackerSalahPerformedColor = Color(0xFF1A433D)
+val color_icon_gray = Color(0x331E433D)
+val color_Sec_Blue = Color(0xFF148BA1)
+
 
 
 

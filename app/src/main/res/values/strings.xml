@@ -46,6 +46,12 @@
     <string name="to_heaven_partners">Partners to the Heaven</string>
     <string name="start_now">Start Now</string>
 
+    <string name="bottomnav_mushaf">Moshaf</string>
+    <string name="bottomnav_following">Following</string>
+    <string name="bottomnav_home">Home</string>
+    <string name="bottomnav_radio">Radio</string>
+    <string name="bottomnav_settings">Settings</string>
+
 
 
 </resources>
