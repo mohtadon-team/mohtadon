@@ -13,14 +13,11 @@ import androidx.navigation.compose.rememberNavController
 val LocalNavController =
     compositionLocalOf<NavHostController> { error("No NavController found!") }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MohtdonApp() {
     val navController = rememberNavController()
     CompositionLocalProvider(LocalNavController provides navController) {
-        Scaffold {
-            MohtdonNavGraph()
-        }
+        MohtdonNavGraph()
     }
 }
