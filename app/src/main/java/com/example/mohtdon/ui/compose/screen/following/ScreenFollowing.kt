@@ -6,6 +6,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.mohtdon.navigation.NavigationHandler
+import com.example.mohtdon.ui.compose.composable.MohtdonScaffold
 
 
 @Composable
@@ -29,7 +30,9 @@ fun ScreenFollowingContent(
     state: FollowingUiState,
     interaction: FollowingScreenInteraction
 ) {
+    MohtdonScaffold(isLoading = false, isError = false) {
 
+    }
 }
 
 

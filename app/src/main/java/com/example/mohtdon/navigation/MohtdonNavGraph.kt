@@ -18,9 +18,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun MohtdonNavGraph() {
-    val sys = rememberSystemUiController()
-    sys.setStatusBarColor(color_MainColor,darkIcons = false)
-    sys.setNavigationBarColor(color_BackgroundColor,darkIcons = true)
+
     NavHost(
         navController = LocalNavController.current,
         startDestination = NavigationDestination.ScreenSplash.route,

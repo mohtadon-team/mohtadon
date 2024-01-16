@@ -5,6 +5,9 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.BottomNavigation
@@ -64,7 +67,6 @@ fun MohtdonScaffold(
     onError: @Composable () -> Unit = { MohtdonError() },
     containerColor: Color = Color.White,
     topAppbar: @Composable () -> Unit = {},
-    bottomAppbar: @Composable () -> Unit = { BottomBarHandler() },
     floatingActionButton: @Composable () -> Unit = {},
     floatingActionButtonPosition: FabPosition = FabPosition.End,
     content: @Composable () -> Unit,
@@ -73,10 +75,10 @@ fun MohtdonScaffold(
         modifier = modifier,
         containerColor = containerColor,
         topBar = topAppbar,
-        bottomBar = bottomAppbar,
         floatingActionButton = floatingActionButton,
         floatingActionButtonPosition = floatingActionButtonPosition,
     ) { _ ->
+        LoadTopBottomColors()
         AnimatedVisibility(visible = isLoading) {
             onLoading()
         }
@@ -93,54 +95,63 @@ fun MohtdonScaffold(
 fun currentRoute(navController: NavHostController): String? =
     navController.currentBackStackEntryAsState().value?.destination?.route
 
-
 @Composable
 fun BottomBarHandler() {
     val controller = LocalNavController.current
     val currentScreen = currentRoute(navController = controller)
     if (bottomNavList.contains(currentScreen)) {
         BottomNavigation(
-            backgroundColor = color_CardBackground
+            backgroundColor = color_BackgroundColor
         ) {
             AddBottomItem(
-                icon = R.drawable.settings,
-                label = R.string.bottomnav_settings,
-                isCurrent = currentScreen == NavigationDestination.ScreenSettings.route
+                icon = R.drawable.quran_orangeicon,
+                label = R.string.bottomnav_mushaf,
+                isCurrent = currentScreen == NavigationDestination.ScreenMushaf.route
             ) {
-                controller.navigateToSettings()
-            }
-            AddBottomItem(
-                icon = R.drawable.radio,
-                label = R.string.bottomnav_radio,
-                isCurrent = currentScreen == NavigationDestination.ScreenRadio.route
-            ) {
-                controller.navigateToRadio()
-            }
-            AddBottomItem(
-                icon = R.drawable.home,
-                label = R.string.bottomnav_home,
-                isCurrent = currentScreen == NavigationDestination.ScreenHome.route
-            ) {
-                controller.navigateToHome()
+                if (currentScreen != NavigationDestination.ScreenMushaf.route) {
+                    controller.navigateToMoshaf()
+                }
             }
             AddBottomItem(
                 icon = R.drawable.check,
                 label = R.string.bottomnav_following,
                 isCurrent = currentScreen == NavigationDestination.ScreenFollowing.route
             ) {
-                controller.navigateToFollowing()
+                if (currentScreen != NavigationDestination.ScreenFollowing.route) {
+                    controller.navigateToFollowing()
+                }
+
             }
             AddBottomItem(
-                icon = R.drawable.quran_orangeicon,
-                label = R.string.bottomnav_mushaf,
-                isCurrent = currentScreen == NavigationDestination.ScreenMushaf.route
+                icon = R.drawable.home,
+                label = R.string.bottomnav_home,
+                isCurrent = currentScreen == NavigationDestination.ScreenHome.route
             ) {
-                controller.navigateToMoshaf()
+                if (currentScreen != NavigationDestination.ScreenHome.route) {
+                    controller.navigateToHome()
+                }
+            }
+            AddBottomItem(
+                icon = R.drawable.radio,
+                label = R.string.bottomnav_radio,
+                isCurrent = currentScreen == NavigationDestination.ScreenRadio.route
+            ) {
+                if (currentScreen != NavigationDestination.ScreenRadio.route) {
+                    controller.navigateToRadio()
+                }
+            }
+            AddBottomItem(
+                icon = R.drawable.settings,
+                label = R.string.bottomnav_settings,
+                isCurrent = currentScreen == NavigationDestination.ScreenSettings.route
+            ) {
+                if (currentScreen != NavigationDestination.ScreenSettings.route) {
+                    controller.navigateToSettings()
+                }
             }
         }
     }
 }
-
 
 @Composable
 fun RowScope.AddBottomItem(
@@ -149,10 +160,13 @@ fun RowScope.AddBottomItem(
     contentDesc: String = "",
     isCurrent: Boolean,
     onClick: () -> Unit
-){
+) {
     val currentColor by animateColorAsState(
         targetValue = if (isCurrent) color_Sec_Blue else color_icon_gray,
-        label = ""
+        label = "",
+        animationSpec = tween(
+            durationMillis = 300
+        )
     )
     BottomNavigationItem(
         icon = {
@@ -163,17 +177,16 @@ fun RowScope.AddBottomItem(
                 tint = currentColor
             )
         },
-        label = { Text(
-            stringResource(id = label),
-            color = currentColor,
-            fontSize = 12.sp,
-            fontWeight = FontWeight.Light,
-            fontFamily = Tajawal
-        ) },
+        label = {
+            Text(
+                stringResource(id = label),
+                color = currentColor,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Light,
+                fontFamily = Tajawal
+            )
+        },
         selected = isCurrent,
         onClick = { onClick() }
     )
 }
-
-
-
