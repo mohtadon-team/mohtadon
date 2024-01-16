@@ -51,6 +51,14 @@
     <string name="bottomnav_home">Home</string>
     <string name="bottomnav_radio">Radio</string>
     <string name="bottomnav_settings">Settings</string>
+    <string name="logo">Logo</string>
+    <string name="welcome">Welcome!</string>
+    <string name="hijry_date">5 Rabea\'a-Awl 1443 H</string>
+    <string name="today_duaa">اللهم أنت ربي لا إله إلا أنت خلقتني وأنا عبدك وأنا على عَهْدِكَ وَوَعْدِكَ ما اسْتَطَعْتُ أعوذ بك من شر ما صنعتُ أَبُوءُ لك بنعمتك عليَّ وأَبُوءُ لك بذنبي فَاغْفرْ لي فإنه لا يغفر الذنوب إلا أنت</string>
+    <string name="today_aya">الله لا إله إلا هو الحي القيوم لا تأخذه سنة ولا نوم له ما في السماوات وما في الأرض من ذا الذي يشفع عنده إلا بإذنه يعلم ما بين أيديهم وما خلفهم ولا يحيطون بشيء من علمه إلا بما شاء وسع كرسيه السماوات والأرض ولا يئوده حفظهما وهو العلي العظيم</string>
+    <string name="today_azkar">سبحان الله وبحمده عدد خلقه ورضا نفسه وزنة عرشه ومداد كلماته</string>
+
+
 
 
 
