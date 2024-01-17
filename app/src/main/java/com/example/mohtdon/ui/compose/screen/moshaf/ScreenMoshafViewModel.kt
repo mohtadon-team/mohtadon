@@ -11,8 +11,6 @@ class ScreenMoshafViewModel @Inject constructor(
     /*TODO Add you use cases*/
 ) : BaseViewModel<MoshafUiState, MoshafScreenUiEffect>(MoshafUiState()), MoshafScreenInteraction {
 
-    private val args: MoshafScreenArgs = MoshafScreenArgs(savedStateHandle = savedStateHandle)
-
     init {
         getData()
     }

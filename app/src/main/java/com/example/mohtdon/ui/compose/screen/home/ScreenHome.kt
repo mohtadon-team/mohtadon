@@ -2,7 +2,6 @@ package com.example.mohtdon.ui.compose.screen.home
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -39,10 +38,12 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.mohtdon.R
 import com.example.mohtdon.navigation.NavigationHandler
 import com.example.mohtdon.ui.compose.composable.AddHeaderWithSeeMore
+import com.example.mohtdon.ui.compose.composable.HomeItemCard
 import com.example.mohtdon.ui.compose.composable.MohtdonScaffold
+import com.example.mohtdon.ui.compose.composable.MohtdonTopAppBarWithOneAction
+import com.example.mohtdon.ui.compose.screen.more.navigateToMore
 import com.example.mohtdon.ui.compose.theme.Tajawal
 import com.example.mohtdon.ui.compose.theme.color_GreenText
-import com.example.mohtdon.ui.compose.theme.color_MainColor
 import com.example.mohtdon.ui.compose.theme.color_OrangeText
 import com.example.mohtdon.ui.compose.theme.color_Sec_Blue
 import com.example.mohtdon.ui.compose.theme.color_White
@@ -62,47 +63,47 @@ fun ScreenHome(
             }
 
             is HomeScreenUiEffect.NavigateToAzkar -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToDuaa -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToHadith -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToMenu -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToMore -> {
-
+                controller.navigateToMore()
             }
 
             is HomeScreenUiEffect.NavigateToMoreAya -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToMoreAzkar -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToMoreDuaa -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToMoshaf -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToPrayerFollowing -> {
-
+                //TODO
             }
 
             is HomeScreenUiEffect.NavigateToTafseer -> {
-
+                //TODO
             }
         }
     }
@@ -117,21 +118,7 @@ fun ScreenHomeContent(
     MohtdonScaffold(
         isLoading = false, isError = false,
         topAppbar = {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(color_MainColor)
-                    .height(72.dp)
-            ) {
-                Text(
-                    text = stringResource(id = R.string.logo),
-                    fontFamily = Tajawal,
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.align(Alignment.Center),
-                    color = color_White
-                )
+            MohtdonTopAppBarWithOneAction(stringResource(id = R.string.logo)){
                 Icon(
                     modifier = Modifier
                         .padding(end = 8.dp)
@@ -184,7 +171,7 @@ fun ScreenHomeContent(
                         containerColor = color_Sec_Blue,
                     )
                 ) {
-                    Box(modifier = Modifier.fillMaxSize()){
+                    Box(modifier = Modifier.fillMaxSize()) {
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -246,7 +233,10 @@ fun ScreenHomeContent(
                                     tint = color_White
                                 )
                                 Spacer(modifier = Modifier.weight(1f))
-                                Image(painter = painterResource(id = R.drawable.nabawi_mosque), contentDescription = "")
+                                Image(
+                                    painter = painterResource(id = R.drawable.nabawi_mosque),
+                                    contentDescription = ""
+                                )
                             }
                         }
                     }
@@ -258,39 +248,8 @@ fun ScreenHomeContent(
                     contentPadding = PaddingValues(horizontal = 16.dp)
                 ) {
                     items(state.homeItems) {
-                        Column(
-                            verticalArrangement = Arrangement.SpaceAround,
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Card(
-                                modifier = Modifier.size(75.dp),
-                                onClick = { interaction.onClickHomeRowItem(it.id) },
-                                colors = CardDefaults.cardColors(
-                                    containerColor = it.cardColor,
-                                    contentColor = color_White
-                                )
-                            ) {
-                                Box(
-                                    modifier = Modifier.fillMaxSize(),
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Icon(
-                                        modifier = Modifier.size(36.dp),
-                                        painter = painterResource(id = it.icon),
-                                        contentDescription = "",
-                                        tint = color_White
-                                    )
-                                }
-                            }
-                            Text(
-                                modifier = Modifier.padding(top = 8.dp),
-                                text = stringResource(id = it.label),
-                                fontFamily = Tajawal,
-                                fontSize = 18.sp,
-                                fontWeight = FontWeight.Normal,
-                                textAlign = TextAlign.Start,
-                                color = color_GreenText
-                            )
+                        HomeItemCard(it){id ->
+                            interaction.onClickHomeRowItem(id)
                         }
                     }
                 }

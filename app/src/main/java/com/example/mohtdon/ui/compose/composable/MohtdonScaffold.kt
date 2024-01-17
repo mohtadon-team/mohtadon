@@ -55,6 +55,7 @@ val bottomNavList = listOf(
     NavigationDestination.ScreenMushaf.route,
     NavigationDestination.ScreenRadio.route,
     NavigationDestination.ScreenSettings.route,
+    NavigationDestination.ScreenMore.route,
 )
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

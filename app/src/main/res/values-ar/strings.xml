@@ -63,6 +63,13 @@
     <string name="today_label_duaa">دعاء اليوم</string>
     <string name="today_label_aya">آية اليوم</string>
     <string name="today_label_zekr">ذكر اليوم</string>
+    <string name="more_qiblah">القبلة</string>
+    <string name="more_allah_names">أسماء الله الحسنى</string>
+    <string name="more_sebha">السبحة</string>
+    <string name="more_shahada">الشهادة</string>
+    <string name="more_makka">مكة لايف</string>
+    <string name="more_mosque">أقرب المساجد</string>
+    <string name="more_hijry">التقويم الهجرى</string>
 
 
 

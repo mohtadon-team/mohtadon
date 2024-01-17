@@ -9,6 +9,9 @@ sealed class NavigationDestination(val route: String) {
     data object ScreenRadio: NavigationDestination("ScreenRadio")
 
     data object ScreenSettings: NavigationDestination("ScreenSettings")
+    data object ScreenMore: NavigationDestination("ScreenMore")
+
+
 
 
 

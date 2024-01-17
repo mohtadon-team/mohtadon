@@ -61,6 +61,13 @@
     <string name="today_label_duaa">دعاء اليوم</string>
     <string name="today_label_aya">آية اليوم</string>
     <string name="today_label_zekr">ذكر اليوم</string>
+    <string name="more_qiblah">Qiblah</string>
+    <string name="more_allah_names">Allah Names</string>
+    <string name="more_sebha">Sebha</string>
+    <string name="more_shahada">Al-Shahada</string>
+    <string name="more_makka">Makka Live</string>
+    <string name="more_mosque">Closest Mosque</string>
+    <string name="more_hijry">Hijry Date</string>
 
 
 

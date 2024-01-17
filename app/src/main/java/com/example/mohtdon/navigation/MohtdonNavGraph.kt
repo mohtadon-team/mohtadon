@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import com.example.mohtdon.ui.compose.screen.following.addFollowingRoute
 import com.example.mohtdon.ui.compose.screen.home.addHomeRoute
+import com.example.mohtdon.ui.compose.screen.more.addMoreRoute
 import com.example.mohtdon.ui.compose.screen.moshaf.addMoshafRoute
 import com.example.mohtdon.ui.compose.screen.radio.addRadioRoute
 import com.example.mohtdon.ui.compose.screen.settings.addSettingsRoute
@@ -43,5 +44,6 @@ fun MohtdonNavGraph() {
         addMoshafRoute()
         addRadioRoute()
         addSettingsRoute()
+        addMoreRoute()
     }
 }
