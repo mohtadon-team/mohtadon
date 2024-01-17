@@ -94,11 +94,11 @@ fun ScreenMoreContent(
             MohtdonTopAppBarWithOneAction(stringResource(id = R.string.more)) {
                 Icon(
                     modifier = Modifier
-                        .padding(end = 8.dp)
-                        .rotate(90f)
+                        .padding(end = 16.dp,top = 8.dp)
+                        .rotate(180f)
                         .align(Alignment.CenterStart)
                         .clickable { interaction.onClickBack() },
-                    painter = painterResource(id = R.drawable.more),
+                    painter = painterResource(id = R.drawable.right_arrow),
                     contentDescription = "",
                     tint = color_White
                 )
@@ -110,20 +110,23 @@ fun ScreenMoreContent(
         FlowRow(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 80.dp, start = 16.dp, end = 16.dp),
+                .padding(top = 88.dp, start = 16.dp, end = 16.dp),
             maxItemsInEachRow = 4
         ) {
             for (i in state.moreItems) {
                 Column(
-                    modifier = Modifier.fillMaxWidth(0.25f).padding(bottom = 8.dp),
+                    modifier = Modifier
+                        .fillMaxWidth(0.25f)
+                        .padding(bottom = 8.dp),
                     verticalArrangement = Arrangement.SpaceAround,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Card(
                         modifier = Modifier.size(75.dp),
                         onClick = { interaction.onClickItem(i.id) },
+                        elevation = CardDefaults.cardElevation(defaultElevation = 12.dp),
                         colors = CardDefaults.cardColors(
-                            containerColor = i.cardColor,
+                            containerColor = color_White,
                         )
                     ) {
                         Box(

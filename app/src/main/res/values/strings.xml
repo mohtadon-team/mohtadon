@@ -68,7 +68,9 @@
     <string name="more_makka">Makka Live</string>
     <string name="more_mosque">Closest Mosque</string>
     <string name="more_hijry">Hijry Date</string>
-
+    <string name="moshaf_read">قراءة</string>
+    <string name="moshaf_listen">استماع</string>
+    <string name="moshaf_surah">فضائل السور</string>
 
 
 

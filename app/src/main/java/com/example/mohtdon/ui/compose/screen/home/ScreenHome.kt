@@ -42,6 +42,7 @@ import com.example.mohtdon.ui.compose.composable.HomeItemCard
 import com.example.mohtdon.ui.compose.composable.MohtdonScaffold
 import com.example.mohtdon.ui.compose.composable.MohtdonTopAppBarWithOneAction
 import com.example.mohtdon.ui.compose.screen.more.navigateToMore
+import com.example.mohtdon.ui.compose.screen.moshaf.navigateToMoshaf
 import com.example.mohtdon.ui.compose.theme.Tajawal
 import com.example.mohtdon.ui.compose.theme.color_GreenText
 import com.example.mohtdon.ui.compose.theme.color_OrangeText
@@ -95,7 +96,7 @@ fun ScreenHome(
             }
 
             is HomeScreenUiEffect.NavigateToMoshaf -> {
-                //TODO
+                controller.navigateToMoshaf()
             }
 
             is HomeScreenUiEffect.NavigateToPrayerFollowing -> {
