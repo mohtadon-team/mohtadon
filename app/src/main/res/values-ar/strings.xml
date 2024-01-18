@@ -74,6 +74,15 @@
     <string name="moshaf_listen">استماع</string>
     <string name="moshaf_surah">فضائل السور</string>
 
+    <string name="arabic">العربية</string>
+    <string name="english">الإنجليزية</string>
+
+    <string name="shahada_arabic">أشهد أن لا إله إلا الله وأشهد أن محمدا رسول الله</string>
+    <string name="shahada_english">I bear witness that there is no god but Allah. and I bear witness that Muhammad is the Messenger of Allah.</string>
+
+
+
+
 
 
 </resources>

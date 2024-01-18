@@ -35,6 +35,7 @@ import com.example.mohtdon.navigation.NavigationHandler
 import com.example.mohtdon.ui.compose.composable.HomeItemCard
 import com.example.mohtdon.ui.compose.composable.MohtdonScaffold
 import com.example.mohtdon.ui.compose.composable.MohtdonTopAppBarWithOneAction
+import com.example.mohtdon.ui.compose.screen.shahada.navigateToShahada
 import com.example.mohtdon.ui.compose.theme.Tajawal
 import com.example.mohtdon.ui.compose.theme.color_GreenText
 import com.example.mohtdon.ui.compose.theme.color_White
@@ -76,8 +77,8 @@ fun ScreenMore(
 
             }
 
-            is MoreScreenUiEffect.NavigateToShahada -> {//TODO
-
+            is MoreScreenUiEffect.NavigateToShahada -> {
+                controller.navigateToShahada()
             }
         }
     }

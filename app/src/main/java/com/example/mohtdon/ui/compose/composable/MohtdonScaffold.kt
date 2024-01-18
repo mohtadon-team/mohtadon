@@ -49,14 +49,7 @@ import com.example.mohtdon.ui.compose.theme.color_SearchTitle
 import com.example.mohtdon.ui.compose.theme.color_Sec_Blue
 import com.example.mohtdon.ui.compose.theme.color_icon_gray
 
-val bottomNavList = listOf(
-    NavigationDestination.ScreenHome.route,
-    NavigationDestination.ScreenFollowing.route,
-    NavigationDestination.ScreenMushaf.route,
-    NavigationDestination.ScreenRadio.route,
-    NavigationDestination.ScreenSettings.route,
-    NavigationDestination.ScreenMore.route,
-)
+
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -100,8 +93,9 @@ fun currentRoute(navController: NavHostController): String? =
 fun BottomBarHandler() {
     val controller = LocalNavController.current
     val currentScreen = currentRoute(navController = controller)
-    if (bottomNavList.contains(currentScreen)) {
+    if (currentScreen != NavigationDestination.ScreenSplash.route) {
         BottomNavigation(
+            elevation = 24.dp,
             backgroundColor = color_BackgroundColor
         ) {
             AddBottomItem(
