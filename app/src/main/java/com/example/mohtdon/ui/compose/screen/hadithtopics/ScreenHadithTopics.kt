@@ -50,6 +50,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.mohtdon.R
 import com.example.mohtdon.navigation.NavigationHandler
 import com.example.mohtdon.ui.compose.composable.MohtdonScaffold
+import com.example.mohtdon.ui.compose.composable.SearchNotVisible
+import com.example.mohtdon.ui.compose.composable.SearchVisible
 import com.example.mohtdon.ui.compose.theme.Tajawal
 import com.example.mohtdon.ui.compose.theme.color_MainColor
 import com.example.mohtdon.ui.compose.theme.color_OrangeText
@@ -89,109 +91,18 @@ fun ScreenHadithTopicsContent(
                 .height(80.dp)
                 .background(color_MainColor)
             ){
-                AnimatedVisibility(visible = !state.isSearchVisible,
-                    enter = fadeIn(
-                        animationSpec = tween(300)
-                    ),
-                    exit = fadeOut(
-                        animationSpec = tween(300)
-                    )
-                ) {
-                    Row(modifier = Modifier
-                        .fillMaxSize()
-                        .padding(horizontal = 16.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ){
-                        Image(
-                            modifier = Modifier
-                                .size(24.dp)
-                                .rotate(180f)
-                                .clickable { interaction.onClickBack() },
-                            painter = painterResource(id = R.drawable.right_arrow),
-                            contentDescription = ""
-                        )
-                        Text(
-                            text = stringResource(id = R.string.home_rv_item_text_4),
-                            fontFamily = Tajawal,
-                            fontSize = 24.sp,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.weight(1f),
-                            color = color_White
-                        )
-                        Image(
-                            modifier = Modifier
-                                .size(24.dp)
-                                .clickable { interaction.onToggleSearch() },
-                            painter = painterResource(id = R.drawable.search),
-                            contentDescription = ""
-                        )
-                    }
-                }
-                AnimatedVisibility(visible = state.isSearchVisible,
-                    enter = slideInHorizontally(
-                        animationSpec = tween(300)
-                    ),
-                    exit = slideOutHorizontally(
-                        animationSpec = tween(300)
-                    )
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(horizontal = 16.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-                        Image(
-                            modifier = Modifier
-                                .size(24.dp)
-                                .padding(end = 8.dp)
-                                .rotate(180f)
-                                .clickable { interaction.onToggleSearch() },
-                            painter = painterResource(id = R.drawable.close_ic),
-                            contentDescription = ""
-                        )
-                        val shape = RoundedCornerShape(CornerSize(16.dp))
-                        Row(
-                            modifier = Modifier
-                                .border(border = BorderStroke(1.dp,color = color_White_60),shape)
-                                .clip(shape)
-                                .fillMaxWidth()
-                                .weight(1f)
-                                .padding(end = 16.dp)
-                                ,
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.End,
-                        ) {
-                            TextField(
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .padding(horizontal = 8.dp),
-                                value = state.searchValue,
-                                onValueChange = interaction::onSearchValueChange,
-                                colors = TextFieldDefaults.colors(
-                                    focusedIndicatorColor = Color.Transparent,
-                                    unfocusedIndicatorColor = Color.Transparent,
-                                    focusedContainerColor = Color.Transparent,
-                                    unfocusedContainerColor = Color.Transparent,
-                                    focusedPlaceholderColor = color_White_60,
-                                    unfocusedPlaceholderColor = color_White_60,
-                                    focusedTextColor = color_White,
-                                    unfocusedTextColor = color_White
-                                )
-                            )
-                            Image(
-                                modifier = Modifier
-                                    .size(24.dp)
-                                    .clickable { interaction.onClickSearch(state.searchValue) },
-                                painter = painterResource(id = R.drawable.search),
-                                contentDescription = ""
-                            )
-                        }
-
-                    }
-                }
+                SearchNotVisible(
+                    visibility = !state.isSearchVisible,
+                    onClickBack = interaction::onClickBack,
+                    onToggleSearch = interaction::onToggleSearch
+                )
+                SearchVisible(
+                    visibility = state.isSearchVisible,
+                    value = state.searchValue,
+                    onToggleSearch = interaction::onToggleSearch,
+                    onSearchValueChange = interaction::onSearchValueChange,
+                    onClickSearch = interaction::onClickSearch
+                )
             }
 
         }) {

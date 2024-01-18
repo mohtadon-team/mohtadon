@@ -35,7 +35,7 @@ class ScreenHadithTopicsViewModel @Inject constructor(
     }
 
     override fun onClickBack() {
-
+        sendUiEffect(HadithTopicsScreenUiEffect.NavigateUp)
     }
 
     override fun onClickTopic(topicId: Int) {
