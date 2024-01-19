@@ -12,6 +12,9 @@ sealed class NavigationDestination(val route: String) {
     data object ScreenMore: NavigationDestination("ScreenMore")
     data object ScreenShahada: NavigationDestination("ScreenShahada")
     data object ScreenHadithTopics: NavigationDestination("ScreenHadithTopics")
+    data object ScreenAhadith: NavigationDestination("ScreenAhadith")
+
+
 
 
 

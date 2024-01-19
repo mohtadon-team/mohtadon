@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.mohtdon.ui.compose.screen.ahadith.addAhadithRoute
 import com.example.mohtdon.ui.compose.screen.following.addFollowingRoute
 import com.example.mohtdon.ui.compose.screen.hadithtopics.addHadithTopicsRoute
 import com.example.mohtdon.ui.compose.screen.home.addHomeRoute
@@ -49,5 +50,6 @@ fun MohtdonNavGraph() {
         addMoshafRoute()
         addShahadaRoute()
         addHadithTopicsRoute()
+        addAhadithRoute()
     }
 }

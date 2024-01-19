@@ -1,6 +1,7 @@
 package com.example.mohtdon.ui.compose.screen.hadithtopics
 
 import com.example.mohtdon.ui.compose.base.BaseViewModel
+import com.example.mohtdon.ui.compose.data.topicsList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
@@ -18,18 +19,7 @@ class ScreenHadithTopicsViewModel @Inject constructor(
     override fun getData() {
         iState.update {
             it.copy(
-                topics = listOf(
-                    HadithTopicItem(1, "الصلاة"),
-                    HadithTopicItem(2, "الصوم"),
-                    HadithTopicItem(3, "الزكاة"),
-                    HadithTopicItem(4, "الرزق"),
-                    HadithTopicItem(5, "الحزن"),
-                    HadithTopicItem(6, "معاملات المسلم"),
-                    HadithTopicItem(7, "الجهاد"),
-                    HadithTopicItem(8, "أذكار الآذان"),
-                    HadithTopicItem(9, "أذكار بعد الصلاة"),
-                    HadithTopicItem(10, "أذكار نزول المطر")
-                )
+                topics = topicsList
             )
         }
     }

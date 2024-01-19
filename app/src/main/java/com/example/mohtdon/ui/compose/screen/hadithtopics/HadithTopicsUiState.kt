@@ -2,6 +2,7 @@ package com.example.mohtdon.ui.compose.screen.hadithtopics
 
 import com.example.mohtdon.ui.compose.base.BaseUiState
 import com.example.mohtdon.ui.compose.base.ErrorUiState
+import com.example.mohtdon.ui.compose.data.HadithTopicItem
 
 
 data class HadithTopicsUiState(
@@ -13,6 +14,6 @@ data class HadithTopicsUiState(
     ) : BaseUiState
 
 
-data class HadithTopicItem(val id: Int, val name: String)
+
 
 

@@ -1,5 +1,6 @@
 package com.example.mohtdon.ui.compose.composable
 
+import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -40,7 +41,8 @@ import com.example.mohtdon.ui.compose.theme.color_White
 import com.example.mohtdon.ui.compose.theme.color_White_60
 
 @Composable
-fun BoxScope.SearchNotVisible(
+fun SearchNotVisible(
+    label: String,
     visibility: Boolean,
     onClickBack: () -> Unit,
     onToggleSearch: () -> Unit
@@ -67,7 +69,7 @@ fun BoxScope.SearchNotVisible(
                 contentDescription = ""
             )
             Text(
-                text = stringResource(id = R.string.home_rv_item_text_4),
+                text =  label,
                 fontFamily = Tajawal,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
@@ -87,7 +89,7 @@ fun BoxScope.SearchNotVisible(
 }
 
 @Composable
-fun BoxScope.SearchVisible(
+fun SearchVisible(
     visibility: Boolean,
     value: String,
     onToggleSearch: () -> Unit,
