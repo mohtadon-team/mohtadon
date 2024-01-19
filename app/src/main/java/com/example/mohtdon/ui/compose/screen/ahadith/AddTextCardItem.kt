@@ -20,9 +20,9 @@ import com.example.mohtdon.ui.compose.theme.color_AzkarCardColor
 import com.example.mohtdon.ui.compose.theme.color_GreenText
 
 @Composable
-fun AddTextCardItem(text: String) {
+fun AddTextCardItem(modifier: Modifier = Modifier,text: String) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth(),
         shape = RoundedCornerShape(CornerSize(18.dp)),
         border = BorderStroke(1.dp, color = color_AzkarCardColor),

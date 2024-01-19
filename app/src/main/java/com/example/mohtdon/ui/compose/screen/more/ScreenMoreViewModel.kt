@@ -2,7 +2,7 @@ package com.example.mohtdon.ui.compose.screen.more
 
 import com.example.mohtdon.R
 import com.example.mohtdon.ui.compose.base.BaseViewModel
-import com.example.mohtdon.ui.compose.screen.home.HomeRowItems
+import com.example.mohtdon.ui.compose.data.HomeRowItems
 import com.example.mohtdon.ui.compose.theme.color_CardBackground
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.update

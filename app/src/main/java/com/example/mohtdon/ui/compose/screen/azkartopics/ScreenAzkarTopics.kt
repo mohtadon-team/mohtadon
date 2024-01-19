@@ -22,6 +22,7 @@ import com.example.mohtdon.navigation.NavigationHandler
 import com.example.mohtdon.ui.compose.composable.AddItemTopic
 import com.example.mohtdon.ui.compose.composable.MohtdonScaffold
 import com.example.mohtdon.ui.compose.composable.SearchAppBar
+import com.example.mohtdon.ui.compose.screen.azkar.navigateToAzkar
 import com.example.mohtdon.ui.compose.theme.color_MainColor
 
 
@@ -38,7 +39,7 @@ fun ScreenAzkarTopics(
             }
 
             is AzkarTopicsScreenUiEffect.NavigateToTopic -> {
-                //TODO
+                controller.navigateToAzkar(effect.topicID)
             }
         }
     }
@@ -72,7 +73,7 @@ fun ScreenAzkarTopicsContent(
         LazyColumn(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 80.dp, start = 16.dp, end = 16.dp, bottom = 64.dp),
+                .padding(top = 80.dp, start = 16.dp, end = 16.dp, bottom = 56.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             contentPadding = PaddingValues(vertical = 16.dp)
         ) {

@@ -295,7 +295,7 @@ fun ScreenHomeContent(
             }
             item {
                 AddHeaderWithSeeMore(label = R.string.today_label_zekr) {
-                    interaction.onClickMoreDuaa()
+                    interaction.onClickMoreAzkar()
                 }
                 Card(
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),

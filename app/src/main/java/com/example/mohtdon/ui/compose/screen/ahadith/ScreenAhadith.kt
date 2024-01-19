@@ -83,7 +83,7 @@ fun ScreenAhadithContent(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ){
             items(state.ahadith){
-                AddTextCardItem(it.text)
+                AddTextCardItem(text = it.text)
             }
         }
     }
