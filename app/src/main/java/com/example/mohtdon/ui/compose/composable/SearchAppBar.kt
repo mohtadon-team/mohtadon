@@ -1,7 +1,5 @@
 package com.example.mohtdon.ui.compose.composable
 
-import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
 
 @Composable

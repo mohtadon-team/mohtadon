@@ -14,5 +14,4 @@ sealed class HomeScreenUiEffect() : BaseUiEffect {
     data object NavigateToMore : HomeScreenUiEffect()
     data object NavigateToMoreDuaa : HomeScreenUiEffect()
     data object NavigateToMoreAya : HomeScreenUiEffect()
-    data object NavigateToMoreAzkar : HomeScreenUiEffect()
 }

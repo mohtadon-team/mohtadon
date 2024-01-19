@@ -1,7 +1,7 @@
 package com.example.mohtdon.ui.compose.screen.hadithtopics
 
 import com.example.mohtdon.ui.compose.base.BaseViewModel
-import com.example.mohtdon.ui.compose.data.topicsList
+import com.example.mohtdon.ui.compose.data.hadithTopicsList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
@@ -19,7 +19,7 @@ class ScreenHadithTopicsViewModel @Inject constructor(
     override fun getData() {
         iState.update {
             it.copy(
-                topics = topicsList
+                topics = hadithTopicsList
             )
         }
     }

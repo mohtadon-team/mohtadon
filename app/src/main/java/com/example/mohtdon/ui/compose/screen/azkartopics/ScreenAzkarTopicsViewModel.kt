@@ -1,38 +1,34 @@
-package com.example.mohtdon.ui.compose.screen.ahadith
+package com.example.mohtdon.ui.compose.screen.azkartopics
 
-import android.util.Log
-import androidx.lifecycle.SavedStateHandle
 import com.example.mohtdon.ui.compose.base.BaseViewModel
-import com.example.mohtdon.ui.compose.data.hadithList
-import com.example.mohtdon.ui.compose.data.hadithTopicsList
+import com.example.mohtdon.ui.compose.data.azkarTopicsList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 @HiltViewModel
-class ScreenAhadithViewModel @Inject constructor(
-    private val savedStateHandle: SavedStateHandle,
-    ) : BaseViewModel<AhadithUiState, AhadithScreenUiEffect>(AhadithUiState()),
-    AhadithScreenInteraction {
+class ScreenAzkarTopicsViewModel @Inject constructor(
+) : BaseViewModel<AzkarTopicsUiState, AzkarTopicsScreenUiEffect>(AzkarTopicsUiState()),
+    AzkarTopicsScreenInteraction {
 
-        private val args:AhadithScreenArgs = AhadithScreenArgs(savedStateHandle)
     init {
         getData()
     }
 
     override fun getData() {
-        val label = hadithTopicsList[args.topicsId - 1]
-        Log.w("X212",label.toString())
         iState.update {
             it.copy(
-                screenLabel = label.name,
-                ahadith = hadithList
+                azkarTopics = azkarTopicsList
             )
         }
     }
 
     override fun onClickBack() {
-        sendUiEffect(AhadithScreenUiEffect.NavigateUp)
+        sendUiEffect(AzkarTopicsScreenUiEffect.NavigateUp)
+    }
+
+    override fun onAzkarTopicClick(topicId: Int) {
+        sendUiEffect(AzkarTopicsScreenUiEffect.NavigateToTopic(topicId))
     }
 
     override fun onClickSearch(value: String) {

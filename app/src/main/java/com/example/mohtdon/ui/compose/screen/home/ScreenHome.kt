@@ -41,6 +41,7 @@ import com.example.mohtdon.ui.compose.composable.AddHeaderWithSeeMore
 import com.example.mohtdon.ui.compose.composable.HomeItemCard
 import com.example.mohtdon.ui.compose.composable.MohtdonScaffold
 import com.example.mohtdon.ui.compose.composable.MohtdonTopAppBarWithOneAction
+import com.example.mohtdon.ui.compose.screen.azkartopics.navigateToAzkarTopics
 import com.example.mohtdon.ui.compose.screen.hadithtopics.navigateToHadithTopics
 import com.example.mohtdon.ui.compose.screen.more.navigateToMore
 import com.example.mohtdon.ui.compose.screen.moshaf.navigateToMoshaf
@@ -65,7 +66,7 @@ fun ScreenHome(
             }
 
             is HomeScreenUiEffect.NavigateToAzkar -> {
-                //TODO
+                controller.navigateToAzkarTopics()
             }
 
             is HomeScreenUiEffect.NavigateToDuaa -> {
@@ -85,10 +86,6 @@ fun ScreenHome(
             }
 
             is HomeScreenUiEffect.NavigateToMoreAya -> {
-                //TODO
-            }
-
-            is HomeScreenUiEffect.NavigateToMoreAzkar -> {
                 //TODO
             }
 

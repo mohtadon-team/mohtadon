@@ -12,6 +12,7 @@ import androidx.lifecycle.SavedStateHandle
 import com.example.mohtdon.MyApplication
 import com.example.mohtdon.R
 import com.example.mohtdon.ui.compose.base.BaseViewModel
+import com.example.mohtdon.ui.compose.data.homeRowItems
 import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor1
 import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor2
 import com.example.mohtdon.ui.compose.theme.color_HomeRvItemColor3
@@ -52,44 +53,7 @@ class ScreenHomeViewModel @Inject constructor(
                     R.string.today_azkar
                 ),
                 nextPrayer = "المغرب 6:54 م",
-                homeItems = listOf(
-                    HomeRowItems(
-                        1,
-                        R.drawable.quran_orangeicon,
-                        R.string.home_rv_item_text_1,
-                        color_HomeRvItemColor1
-                    ),
-                    HomeRowItems(
-                        2,
-                        R.drawable.lantern,
-                        R.string.home_rv_item_text_2,
-                        color_HomeRvItemColor2
-                    ),
-                    HomeRowItems(
-                        3,
-                        R.drawable.duaa,
-                        R.string.home_rv_item_text_3,
-                        color_HomeRvItemColor3
-                    ),
-                    HomeRowItems(
-                        4,
-                        R.drawable.islamic_decoration,
-                        R.string.home_rv_item_text_4,
-                        color_HomeRvItemColor4
-                    ),
-                    HomeRowItems(
-                        5,
-                        R.drawable.question_answer_1,
-                        R.string.home_rv_item_text_5,
-                        color_HomeRvItemColor5
-                    ),
-                    HomeRowItems(
-                        6,
-                        R.drawable.left_arrow,
-                        R.string.home_rv_item_text_6,
-                        color_HomeRvItemColor6
-                    ),
-                )
+                homeItems = homeRowItems
             )
         }
     }
@@ -150,10 +114,3 @@ class ScreenHomeViewModel @Inject constructor(
         sendUiEffect(HomeScreenUiEffect.NavigateToAzkar)
     }
 }
-
-data class HomeRowItems(
-    val id: Int,
-    @DrawableRes val icon: Int,
-    @StringRes val label: Int,
-    val cardColor: Color
-)
