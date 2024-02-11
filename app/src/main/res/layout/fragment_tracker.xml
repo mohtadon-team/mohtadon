@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.mohtdon.ui.prayers_tracker.TrackerViewModel" />
+            type="com.mohtdon.mohtdon.ui.prayers_tracker.TrackerViewModel" />
 
     </data>
 

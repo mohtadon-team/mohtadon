@@ -11,7 +11,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.mohtdon"
+        applicationId "com.mohtdon"
         minSdk 24
         targetSdk 33
         versionCode 1

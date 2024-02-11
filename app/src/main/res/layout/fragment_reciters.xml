@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.mohtdon.ui.reciters.reciterInfo.RecitersViewModel" />
+            type="com.mohtdon.mohtdon.ui.reciters.reciterInfo.RecitersViewModel" />
 
 
     </data>

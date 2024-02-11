@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.mohtdon">
+    package="com.mohtdon.mohtdon">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
-        android:name="com.example.mohtdon.MyApplication"
+        android:name="com.mohtdon.mohtdon.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -25,7 +25,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="com.example.mohtdon.ui.activities.HomeActivity"
+            android:name="com.mohtdon.mohtdon.ui.activities.HomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -50,7 +50,7 @@
 <!--        </receiver>-->
 
         <activity
-            android:name="com.example.mohtdon.ui.activities.SplashActivity"
+            android:name="com.mohtdon.mohtdon.ui.activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,7 +64,7 @@
         </activity>
 
         <service
-            android:name="com.example.mohtdon.player.MediaService"
+            android:name="com.mohtdon.mohtdon.player.MediaService"
             android:exported="true"
             android:foregroundServiceType="mediaPlayback">
             <intent-filter>

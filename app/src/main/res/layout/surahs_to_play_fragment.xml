@@ -7,10 +7,10 @@
     <data >
         <variable
             name="viewModel"
-            type="com.example.mohtdon.ui.reciters.surahs.SurahViewModel" />
+            type="com.mohtdon.mohtdon.ui.reciters.surahs.SurahViewModel" />
  <variable
      name="playerViewModel"
-     type="com.example.mohtdon.ui.reciters.player.AudioItemPlayerViewModel" />
+     type="com.mohtdon.mohtdon.ui.reciters.player.AudioItemPlayerViewModel" />
 
 
     </data>
