@@ -37,7 +37,7 @@
                 android:onClick="@{() -> viewModel.onCloseClick()}"
                 android:src="@drawable/close_ic"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></ImageButton>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/search_edit_txt"
@@ -65,9 +65,10 @@
                 android:layout_margin="@dimen/_10sdp"
                 android:backgroundTint="@android:color/transparent"
                 android:onClick="@{() -> viewModel.onSearchClick()}"
-                android:src="@drawable/baseline_search_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:src="@drawable/search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
 
             </ImageButton>
 
@@ -112,8 +113,8 @@
             android:id="@+id/rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-           android:layout_below="@id/headerLayout"
-            tools:listitem="@layout/reciter_item"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_below="@id/headerLayout"
+            tools:listitem="@layout/reciter_item" />
 
 
         <com.airbnb.lottie.LottieAnimationView

@@ -16,8 +16,7 @@
                 android:layout_height="@dimen/_35sdp"
                 android:src="@drawable/quran_orangeicon"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 <!--            <TextView-->
@@ -39,8 +38,9 @@
                 android:fontFamily="@font/tajawal_bold"
                 android:textColor="@color/green_text"
                 android:textSize="@dimen/text_large"
+                android:layout_marginStart="@dimen/_10sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                app:layout_constraintEnd_toStartOf="@id/play"
                 app:layout_constraintTop_toTopOf="parent"
                 app:makeTextScrollable="@{true}" />
 
@@ -62,7 +62,6 @@
                 android:background="#E1EDED"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/play">
 
             </View>

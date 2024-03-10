@@ -89,32 +89,25 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
     override fun onItemclick(position: Int) {
         when (position) {
             0 -> {
-
-            }
-
-            1 -> {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAzkarListFragment())
             }
 
-            2 -> {
+            1 -> {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDuaaListFragment())
             }
 
-            3 -> {
+            2 -> {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHadithCategoryFragment())
             }
 
-            4 -> {
+            3 -> {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAyatListFragment())
             }
 
-            5 -> {
+            4 -> {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMoreFragment())
             }
 
-            6 -> {
-
-            }
         }
     }
 

@@ -23,17 +23,42 @@
             android:backgroundTint="@color/card_background"
             app:cardCornerRadius="@dimen/_5sdp">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:src="@drawable/rounded_arrow" />
 
-                <androidx.cardview.widget.CardView
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/reading_card"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="قراءه"
+                    android:textColor="@color/green_text"
+                    android:textSize="@dimen/text_too_large"
+                    android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/reading_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_margin="@dimen/spacing_small"
                     app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardElevation="@dimen/_10sdp">
+                    app:cardElevation="@dimen/_10sdp"
+                    >
 
                     <ImageView
                         android:layout_width="@dimen/_40sdp"
@@ -41,24 +66,9 @@
                         android:padding="@dimen/spacing_too_small"
                         android:src="@drawable/quran_orangeicon" />
                 </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center_vertical"
-                    android:text="قراءه"
-                    android:textColor="@color/green_text"
-                    android:textSize="@dimen/text_too_large"
-                    android:textStyle="bold" />
 
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_gravity="end|center_vertical"
-                android:layout_margin="@dimen/spacing_small"
-                android:src="@drawable/rounded_arrow" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -70,14 +80,38 @@
             android:backgroundTint="@color/card_background"
             app:cardCornerRadius="@dimen/_5sdp">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <androidx.cardview.widget.CardView
+
+                <ImageView
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:src="@drawable/rounded_arrow" />
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="استماع"
+                    app:layout_constraintEnd_toStartOf="@id/listening_card"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textColor="@color/green_text"
+                    android:textSize="@dimen/text_too_large"
+                    android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/listening_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_margin="@dimen/spacing_small"
                     app:cardCornerRadius="@dimen/_10sdp"
                     app:cardElevation="@dimen/_10sdp">
@@ -88,24 +122,9 @@
                         android:padding="@dimen/spacing_too_small"
                         android:src="@drawable/headphone_orangeicon" />
                 </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center_vertical"
-                    android:text="استماع"
-                    android:textColor="@color/green_text"
-                    android:textSize="@dimen/text_too_large"
-                    android:textStyle="bold" />
 
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_gravity="end|center_vertical"
-                android:layout_margin="@dimen/spacing_small"
-                android:src="@drawable/rounded_arrow" />
         </androidx.cardview.widget.CardView>
 
 <!--      -->

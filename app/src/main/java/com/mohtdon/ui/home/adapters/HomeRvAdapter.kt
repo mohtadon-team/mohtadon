@@ -44,33 +44,33 @@ class HomeRvAdapter(
 
     private fun setHomeRvItems(): ArrayList<HomeRvItem> {
         val array = ArrayList<HomeRvItem>()
+//        array.add(
+//            HomeRvItem( 1 ,
+//                R.drawable.quran_icon, R.color.home_rv_item_color_1, R.string.home_rv_item_text_1
+//            )
+//        )
         array.add(
-            HomeRvItem( 1 ,
-                R.drawable.quran_icon, R.color.home_rv_item_color_1, R.string.home_rv_item_text_1
-            )
-        )
-        array.add(
-            HomeRvItem( 2 ,
+            HomeRvItem( 0 ,
                 R.drawable.lantern , R.color.home_rv_item_color_2, R.string.home_rv_item_text_2
             )
         )
         array.add(
-            HomeRvItem( 3 ,
+            HomeRvItem( 1 ,
                 R.drawable.duaa, R.color.home_rv_item_color_3, R.string.home_rv_item_text_3
             )
         )
         array.add(
-            HomeRvItem( 4 ,
+            HomeRvItem( 2 ,
                 R.drawable.islamic_decoration, R.color.home_rv_item_color_4, R.string.home_rv_item_text_4
             )
         )
         array.add(
-            HomeRvItem( 5 ,
+            HomeRvItem( 3 ,
                 R.drawable.question_answer_1, R.color.home_rv_item_color_5, R.string.home_rv_item_text_5
             )
         )
         array.add(
-            HomeRvItem( 6 ,
+            HomeRvItem( 4,
                 R.drawable.right_arrow, R.color.home_rv_item_color_6, R.string.home_rv_item_text_6
             )
         )

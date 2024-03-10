@@ -35,11 +35,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_15sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_13sdp"
                     android:fontFamily="@font/tajawal_bold"
                     android:textColor="@color/green_text"
                     android:textSize="@dimen/text_too_large"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                 </TextView>

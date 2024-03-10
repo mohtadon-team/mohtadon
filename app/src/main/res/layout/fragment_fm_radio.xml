@@ -34,7 +34,6 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
         app:layout_constraintTop_toTopOf="parent">
 
 
-
         <ImageButton
             android:id="@+id/close"
             android:layout_width="@dimen/_24sdp"
@@ -44,7 +43,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             android:onClick="@{() -> viewModel.onCloseClick()}"
             android:src="@drawable/close_ic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></ImageButton>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/search_edit_txt"
@@ -72,9 +71,10 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             android:layout_margin="@dimen/_10sdp"
             android:backgroundTint="@android:color/transparent"
             android:onClick="@{() -> viewModel.onSearchClick()}"
-            android:src="@drawable/baseline_search_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:src="@drawable/search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
         </ImageButton>
 
@@ -124,7 +124,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
         android:text="قائمة القنوات"
         android:textColor="@color/orange"
         android:textSize="@dimen/text_too_large"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
     </TextView>
@@ -156,7 +156,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+               >
             </include>
 
     <com.airbnb.lottie.LottieAnimationView

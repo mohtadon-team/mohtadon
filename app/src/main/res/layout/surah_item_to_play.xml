@@ -15,32 +15,31 @@
             android:layout_height="match_parent"
             android:background="@color/background_color">
 
-            <ImageButton
-                app:tint="@color/home_rv_item_color_6"
-                android:background="@android:color/transparent"
-                android:id="@+id/play"
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:src="@drawable/surahnum_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
-
-                android:background="@android:color/transparent"
+                app:tint="@color/home_rv_item_color_6"
+                android:background="@drawable/surahnum_icon"
                 android:id="@+id/surah_number_text"
-                android:layout_width="@dimen/_35sdp"
-                android:gravity="center"
-                android:layout_height="@dimen/_35sdp"
-
-                android:padding="@dimen/_8sdp"
+               android:gravity="center"
+                android:text="001"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
                 android:textColor="@color/orange_text"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+<!--            <TextView-->
+
+<!--                android:background="@android:color/transparent"-->
+<!--                android:id="@+id/surah_number_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/orange_text"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:text="001"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <TextView
                 android:id="@+id/surah_name"
@@ -49,8 +48,9 @@
                 android:fontFamily="@font/tajawal_bold"
                 android:textColor="@color/green_text"
                 android:textSize="@dimen/text_large"
+                android:layout_marginEnd="@dimen/spacing_small"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                app:layout_constraintEnd_toStartOf="@+id/surah_number_text"
                 app:layout_constraintTop_toTopOf="parent"
                 app:makeTextScrollable="@{true}" />
 

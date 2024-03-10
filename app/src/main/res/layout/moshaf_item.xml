@@ -21,16 +21,16 @@
             android:fontFamily="@font/tajawal_regular"
             android:textColor="@color/green_text"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="حفص عن عاصم - مرتل"></TextView>
+            tools:text="حفص عن عاصم - مرتل" />
 
         <ImageView
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_15sdp"
             android:src="@drawable/left_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:tint="@color/orange"
             app:layout_constraintTop_toTopOf="parent">
 
