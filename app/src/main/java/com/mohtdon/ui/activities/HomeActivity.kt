@@ -18,19 +18,19 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
- import com.mohtdon.mohtdon.databinding.ActivityHomeBinding
-import com.mohtdon.mohtdon.ui.base.BaseActivity
-import com.mohtdon.mohtdon.utilities.AzanPrayersUtil
-import com.mohtdon.mohtdon.utilities.LATITUDE
-import com.mohtdon.mohtdon.utilities.LONGITUDE
-import com.mohtdon.mohtdon.utilities.LastPlayedTrackPreference
-import com.mohtdon.mohtdon.utilities.REQUEST_PERMISSION_CODE
 import com.google.android.gms.location.Granularity
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
+import com.mohtdon.mohtdon.databinding.ActivityHomeBinding
+import com.mohtdon.mohtdon.ui.base.BaseActivity
+import com.mohtdon.mohtdon.utilities.AzanPrayersUtil
+import com.mohtdon.mohtdon.utilities.LATITUDE
+import com.mohtdon.mohtdon.utilities.LONGITUDE
+import com.mohtdon.mohtdon.utilities.LastPlayedTrackPreference
+import com.mohtdon.mohtdon.utilities.REQUEST_PERMISSION_CODE
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 import java.util.concurrent.TimeUnit
@@ -72,26 +72,32 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 com.mohtdon.mohtdon.R.id.homeFragment -> {
+                    navController.popBackStack(navController.graph.getStartDestination(), false)
                     navController.navigate(com.mohtdon.mohtdon.R.id.homeFragment)
                     true
                 }
 
                 com.mohtdon.mohtdon.R.id.trackerFragment -> {
+                    //navigate  to schedule
+                    navController.popBackStack(navController.graph.getStartDestination(), false)
                     navController.navigate(com.mohtdon.mohtdon.R.id.trackerFragment)
                     true
                 }
 
                 com.mohtdon.mohtdon.R.id.quranOptionsFragment -> {
+                    navController.popBackStack(navController.graph.getStartDestination(), false)
                     navController.navigate(com.mohtdon.mohtdon.R.id.quranOptionsFragment)
                     true
                 }
 
                 com.mohtdon.mohtdon.R.id.fmRadioFragment -> {
+                    navController.popBackStack(navController.graph.getStartDestination(), false)
                     navController.navigate(com.mohtdon.mohtdon.R.id.fmRadioFragment)
                     true
                 }
 
                 com.mohtdon.mohtdon.R.id.moreFragment -> {
+                    navController.popBackStack(navController.graph.getStartDestination(), false)
                     navController.navigate(com.mohtdon.mohtdon.R.id.moreFragment)
                     true
                 }

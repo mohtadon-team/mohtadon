@@ -28,8 +28,7 @@
             android:padding="@dimen/_10sdp"
             app:showWhenLoading="@{!viewModel.isPlayerBuffering()}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/guideline6"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.airbnb.lottie.LottieAnimationView
@@ -39,8 +38,7 @@
             android:padding="@dimen/_10sdp"
             app:showWhenLoading="@{viewModel.isPlayerBuffering()}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/guideline6"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
@@ -56,7 +54,7 @@
             android:layout_height="wrap_content"
             android:text="@{viewModel.currentSongFlow.reciterAndHisMoshaf}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@id/play_or_pause"
             app:layout_constraintTop_toTopOf="parent" />
 
 

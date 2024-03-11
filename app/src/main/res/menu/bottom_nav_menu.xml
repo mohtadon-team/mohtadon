@@ -19,7 +19,7 @@
         android:id="@+id/fmRadioFragment"
         android:icon="@drawable/radio"/>
     <item
-        android:title="@string/setting"
+        android:title="@string/more"
         android:id="@+id/moreFragment"
-        android:icon="@drawable/settings"/>
+        android:icon="@drawable/baseline_more"/>
 </menu>

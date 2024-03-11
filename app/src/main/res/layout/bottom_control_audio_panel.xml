@@ -28,8 +28,7 @@
             android:padding="@dimen/_10sdp"
             app:showWhenLoading="@{!viewModel.isPlayerBuffering()}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/guideline6"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -41,7 +40,7 @@
             android:src="@drawable/up_arrow"
 
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/orange" />
 
@@ -52,8 +51,7 @@
             android:padding="@dimen/_10sdp"
             app:showWhenLoading="@{viewModel.isPlayerBuffering()}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/guideline6"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
@@ -68,7 +66,7 @@
             android:text="@{viewModel.currentSongFlow.surah}"
             android:textColor="@color/green_text"
             android:textSize="@dimen/text_large"
-            app:layout_constraintStart_toEndOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@id/buffering_animation"
             app:layout_constraintTop_toTopOf="parent"
             app:makeTextScrollable="@{true}"
             tools:text="سورة البقرة" />
@@ -82,7 +80,7 @@
             android:textColor="@color/black_silver"
             android:textSize="@dimen/text_medium"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/buffering_animation"
             app:layout_constraintTop_toBottomOf="@+id/txt"
             app:makeTextScrollable="@{true}"
             tools:text="سعد الغامدى" />
