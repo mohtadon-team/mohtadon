@@ -44,10 +44,25 @@ class CalenderSalahRvAdapter(
             if (!salah.isItToday) {
                 salahChecked.visibility = View.GONE
                 salahName.visibility = View.VISIBLE
-                salahName.text = salah.name
+                when(salah.name){
+                    "fajr" -> salahName.text= "صلاه الفجر"
+                    "dhuhr" ->salahName.text= "صلاه الظهر"
+                    "asr" ->salahName.text="صلاه العصر"
+                    "maghrib"->salahName.text="صلاه المغرب"
+                    "isha" -> salahName.text="صلاه العشاء"
+                }
+//                salahName.text = salah.name
                 view.setBackgroundColor(Color.WHITE)
             } else {
                 salahChecked.text = salah.name
+                when(salah.name){
+                    "fajr" -> salahChecked.text= "صلاه الفجر"
+                    "dhuhr" -> salahChecked.text= "صلاه الظهر"
+                    "asr" ->salahChecked.text="صلاه العصر"
+                    "maghrib"->salahChecked.text="صلاه المغرب"
+                    "isha" -> salahChecked.text="صلاه العشاء"
+                }
+
                 if (salah.isPerformed) {
                     view.setBackgroundColor(
                         ContextCompat.getColor(

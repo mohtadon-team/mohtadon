@@ -17,7 +17,7 @@
 
     <CheckBox
         android:id="@+id/salah_checked"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_100sdp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_medium"
         android:buttonTint="@color/main_color"
@@ -27,10 +27,7 @@
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="صلاة الفجر" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/salah_name"
@@ -41,9 +38,7 @@
         android:textSize="@dimen/text_too_large"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/salah_checked"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="صلاة الفجر" />
 

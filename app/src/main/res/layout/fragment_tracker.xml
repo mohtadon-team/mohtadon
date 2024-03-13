@@ -180,7 +180,7 @@
         <CalendarView
             android:id="@+id/monthly_calendar_View"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_230sdp"
+            android:layout_height="@dimen/_245sdp"
             android:layout_marginTop="@dimen/spacing_medium"
             android:background="@drawable/tracker_month_calender_shape"
             android:dateTextAppearance="@style/CalenderViewDayCustomText"
