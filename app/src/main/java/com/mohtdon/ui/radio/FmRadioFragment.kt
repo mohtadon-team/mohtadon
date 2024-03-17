@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.radio
+package com.mohtdon.ui.radio
 
 
 import android.os.Bundle
@@ -8,18 +8,18 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentFmRadioBinding
-import com.mohtdon.mohtdon.ui.PlayerEvents
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.reciters.player.AudioItemPlayerViewModel
-import com.mohtdon.mohtdon.utilities.LastPlayedTrackPreference
-import com.mohtdon.mohtdon.utilities.collect
-import com.mohtdon.mohtdon.utilities.radioEntityToAudioItemList
+import com.mohtdon.ui.PlayerEvents
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.reciters.player.AudioItemPlayerViewModel
+import com.mohtdon.utilities.LastPlayedTrackPreference
+import com.mohtdon.utilities.collect
+import com.mohtdon.utilities.radioEntityToAudioItemList
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 
-class FmRadioFragment : BaseFragment<FragmentFmRadioBinding>() , OnRadioStationListener{
+class FmRadioFragment : BaseFragment<FragmentFmRadioBinding>() , OnRadioStationListener {
 
     @Inject
     lateinit var lastPlayedTrackPreference: LastPlayedTrackPreference
@@ -48,7 +48,9 @@ class FmRadioFragment : BaseFragment<FragmentFmRadioBinding>() , OnRadioStationL
 
         collect(viewModel.uiState){
             radioAdapter.radioStations = it.radioStations
-            audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(radioEntityToAudioItemList(it.radioStations)))
+            audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(
+                radioEntityToAudioItemList(it.radioStations)
+            ))
         }
 
 //        collectLast(viewModel.uiEffect){

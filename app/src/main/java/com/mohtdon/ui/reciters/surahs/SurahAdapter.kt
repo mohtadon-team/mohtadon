@@ -1,15 +1,15 @@
- package com.mohtdon.mohtdon.ui.reciters.surahs
+ package com.mohtdon.ui.reciters.surahs
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.mohtdon.domain.entity.reciters.SuraEntity
+import com.mohtdon.domain.models.reciters.SuraEntity
 import com.mohtdon.mohtdon.databinding.SurahItemToPlayBinding
 
 
-class SurahAdapter (
+ class SurahAdapter (
     private val listener: OnSurahListener
 ) : RecyclerView.Adapter<SurahAdapter.SurahViewHolder>() {
 

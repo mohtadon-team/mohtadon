@@ -1,4 +1,4 @@
-package com.mohtdon.domain.models.todayPrayerTimes
+package com.mohtdon.domain.models.prayerTimes
 
 import java.time.LocalTime
 

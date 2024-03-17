@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:padding="@dimen/spacing_small"
         android:background="@drawable/quran_page_border"
-        tools:context=".ui.quran.quranPage.QuranPageFragment">
+        tools:context="com.mohtdon.ui.quran.quranPage.QuranPageFragment">
 
 
         <ImageView

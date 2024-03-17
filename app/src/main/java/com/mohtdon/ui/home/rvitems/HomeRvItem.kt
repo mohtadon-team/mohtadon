@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.home.rvitems
+package com.mohtdon.ui.home.rvitems
 
 data class HomeRvItem(
     val id:Int ,

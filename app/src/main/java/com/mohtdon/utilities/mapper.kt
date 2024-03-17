@@ -1,8 +1,8 @@
-package com.mohtdon.mohtdon.utilities
+package com.mohtdon.utilities
 
-import com.mohtdon.domain.entity.radio.RadioEntity
-import com.mohtdon.domain.entity.reciters.MoshafEnitity
-import com.mohtdon.mohtdon.player.AudioItem
+import com.mohtdon.domain.models.radio.RadioEntity
+import com.mohtdon.domain.models.reciters.MoshafEnitity
+import com.mohtdon.player.AudioItem
 
 
 fun moshafEntityToAudioItemList(moshafEnitity: MoshafEnitity) :List<AudioItem> {

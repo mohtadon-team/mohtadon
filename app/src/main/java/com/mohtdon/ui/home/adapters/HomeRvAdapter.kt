@@ -1,11 +1,11 @@
-package com.mohtdon.mohtdon.ui.home.adapters
+package com.mohtdon.ui.home.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.HomeRvItemTemplateBinding
-import com.mohtdon.mohtdon.ui.home.rvitems.HomeRvItem
+import com.mohtdon.ui.home.rvitems.HomeRvItem
 
 class HomeRvAdapter(
     private val listener: OnHomeRvItemListener,

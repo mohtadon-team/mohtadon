@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.tafseer.surahList
+package com.mohtdon.ui.tafseer.surahList
 
 data class SurahModel(
     val surahId: Int,

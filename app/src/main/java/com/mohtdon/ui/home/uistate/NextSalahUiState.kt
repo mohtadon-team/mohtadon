@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.home.uistate
+package com.mohtdon.ui.home.uistate
 
 data class NextSalahUiState(
     var nextSalahName: String ,

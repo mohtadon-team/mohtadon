@@ -1,8 +1,8 @@
-package com.mohtdon.mohtdon.ui.namesOfAllah.viewModels
+package com.mohtdon.ui.namesOfAllah.viewModels
 
 import android.content.Context
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
-import com.mohtdon.mohtdon.ui.namesOfAllah.NamesListUiState
+import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.namesOfAllah.NamesListUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

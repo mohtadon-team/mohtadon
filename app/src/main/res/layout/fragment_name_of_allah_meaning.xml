@@ -9,7 +9,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.namesOfAllah.fragments.NameOfAllahMeaningFragment">
+        tools:context="com.mohtdon.ui.namesOfAllah.fragments.NameOfAllahMeaningFragment">
 
         <RelativeLayout
             android:layout_width="match_parent"

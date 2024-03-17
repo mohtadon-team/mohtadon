@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.di
+package com.mohtdon.di
 
 
 import com.mohtdon.data.dataSource.remote.service.HadithService
@@ -7,10 +7,10 @@ import com.mohtdon.data.dataSource.remote.service.PrayerTimesService
 import com.mohtdon.data.dataSource.remote.service.RadioService
 import com.mohtdon.data.dataSource.remote.service.RecitersService
 import com.mohtdon.mohtdon.BuildConfig.PRAYER_TIMES_BASE_URL
-import com.mohtdon.mohtdon.utilities.RADIO_BASE_URL
-import com.mohtdon.mohtdon.utilities.RECITERS_BASE_URL
-import com.mohtdon.mohtdon.utilities.PRAYERS_BASE_URL
-import com.mohtdon.mohtdon.utilities.hadithBaseUrl
+import com.mohtdon.utilities.RADIO_BASE_URL
+import com.mohtdon.utilities.RECITERS_BASE_URL
+import com.mohtdon.utilities.PRAYERS_BASE_URL
+import com.mohtdon.utilities.hadithBaseUrl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

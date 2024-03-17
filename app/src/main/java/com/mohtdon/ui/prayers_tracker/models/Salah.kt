@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.prayers_tracker.models
+package com.mohtdon.ui.prayers_tracker.models
 
 data class Salah(
     val name:String = "" ,

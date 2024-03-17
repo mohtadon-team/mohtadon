@@ -1,7 +1,7 @@
-package com.mohtdon.mohtdon.utilities
+package com.mohtdon.utilities
 
-import com.mohtdon.domain.entity.reciters.SuraEntity
-import com.mohtdon.mohtdon.player.AudioItem
+import com.mohtdon.domain.models.reciters.SuraEntity
+import com.mohtdon.player.AudioItem
 
 const val RECITERS_BASE_URL = "https://www.mp3quran.net/api/v3/"
 const val PRAYERS_BASE_URL="https://api.quran.com/api/v4/"

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.reciters.surahs
+package com.mohtdon.ui.reciters.surahs
 
 import android.os.Build
 import android.os.Bundle
@@ -9,19 +9,19 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.SurahsToPlayFragmentBinding
-import com.mohtdon.mohtdon.ui.PlayerEvents
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.reciters.player.AudioItemControllerFragment
-import com.mohtdon.mohtdon.ui.reciters.player.AudioItemPlayerViewModel
-import com.mohtdon.mohtdon.utilities.collect
-import com.mohtdon.mohtdon.utilities.moshafEntityToAudioItemList
+import com.mohtdon.ui.PlayerEvents
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.reciters.player.AudioItemControllerFragment
+import com.mohtdon.ui.reciters.player.AudioItemPlayerViewModel
+import com.mohtdon.utilities.collect
+import com.mohtdon.utilities.moshafEntityToAudioItemList
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListener {
 
     override val layoutFragmentId = R.layout.surahs_to_play_fragment
-    override val viewModel: SurahViewModel  by viewModels()
+    override val viewModel: SurahViewModel by viewModels()
     private val audioItemPlayerViewModel : AudioItemPlayerViewModel by activityViewModels()
     private lateinit var surahAdapter: SurahAdapter
 
@@ -43,7 +43,9 @@ class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListe
 
         collect(viewModel.uiState){
             surahAdapter.suras = it.surahList
-            audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(moshafEntityToAudioItemList(it.moshaf)))
+            audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(
+                moshafEntityToAudioItemList(it.moshaf)
+            ))
         }
 
         binding.include.openPlayerController.setOnClickListener {

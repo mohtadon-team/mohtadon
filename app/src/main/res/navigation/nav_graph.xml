@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/recitersFragment"
-        android:name="com.mohtdon.mohtdon.ui.reciters.reciterInfo.RecitersFragment"
+        android:name="com.mohtdon.ui.reciters.reciterInfo.RecitersFragment"
         android:label="fragment_reciters"
         tools:layout="@layout/fragment_reciters">
         <action
@@ -17,12 +17,12 @@
     </fragment>
     <fragment
         android:id="@+id/fmRadioFragment"
-        android:name="com.mohtdon.mohtdon.ui.radio.FmRadioFragment"
+        android:name="com.mohtdon.ui.radio.FmRadioFragment"
         android:label="fragment_fm_radio"
         tools:layout="@layout/fragment_fm_radio" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.mohtdon.mohtdon.ui.home.HomeFragment"
+        android:name="com.mohtdon.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
 
@@ -50,7 +50,7 @@
     </fragment>
     <fragment
         android:id="@+id/quranFragment"
-        android:name="com.mohtdon.mohtdon.ui.quran.quranList.QuranListFragment"
+        android:name="com.mohtdon.ui.quran.quranList.QuranListFragment"
         android:label="QuranFragment"
         tools:layout="@layout/fragment_quran_list">
         <action
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/moreFragment"
-        android:name="com.mohtdon.mohtdon.ui.more.fragments.MoreFragment"
+        android:name="com.mohtdon.ui.more.fragments.MoreFragment"
         android:label="MoreFragment"
         tools:layout="@layout/fragment_more">
         <action
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/quranViewPagerFragment"
-        android:name="com.mohtdon.mohtdon.ui.quran.quranViewPager.QuranViewPagerFragment"
+        android:name="com.mohtdon.ui.quran.quranViewPager.QuranViewPagerFragment"
         android:label="fragment_quran_view_pager"
         tools:layout="@layout/fragment_quran_view_pager">
         <argument
@@ -93,28 +93,28 @@
     </fragment>
     <fragment
         android:id="@+id/quranPageFragment"
-        android:name="com.mohtdon.mohtdon.ui.quran.quranPage.QuranPageFragment"
+        android:name="com.mohtdon.ui.quran.quranPage.QuranPageFragment"
         android:label="QuranPageFragment"
         tools:layout="@layout/fragment_quran_page" />
     <fragment
         android:id="@+id/surahsFragment"
-        android:name="com.mohtdon.mohtdon.ui.reciters.surahs.SurahsFragment"
+        android:name="com.mohtdon.ui.reciters.surahs.SurahsFragment"
         android:label="SurahsFragment">
 
         <argument
             android:name="moshaf"
-            app:argType="com.mohtdon.domain.entity.reciters.MoshafEnitity" />
+            app:argType="com.mohtdon.domain.models.reciters.MoshafEnitity" />
         <action
             android:id="@+id/action_surahsFragment_to_audioItemControllerFragment"
             app:destination="@id/audioItemControllerFragment" />
     </fragment>
     <fragment
         android:id="@+id/audioItemControllerFragment"
-        android:name="com.mohtdon.mohtdon.ui.reciters.player.AudioItemControllerFragment"
+        android:name="com.mohtdon.ui.reciters.player.AudioItemControllerFragment"
         android:label="AudioItemControllerFragment" />
     <fragment
         android:id="@+id/quranSearchFragment"
-        android:name="com.mohtdon.mohtdon.ui.quran.search.fragments.QuranSearchFragment"
+        android:name="com.mohtdon.ui.quran.search.fragments.QuranSearchFragment"
         android:label="QuranSearchFragment"
         tools:layout="@layout/fragment_quran_search">
         <action
@@ -124,7 +124,7 @@
     </fragment>
     <fragment
         android:id="@+id/quranTabsFragment"
-        android:name="com.mohtdon.mohtdon.ui.quran.quranTaps.QuranTabsFragment"
+        android:name="com.mohtdon.ui.quran.quranTaps.QuranTabsFragment"
         android:label="QuranTabsFragment"
         tools:layout="@layout/fragment_quran_tabs">
         <action
@@ -140,14 +140,14 @@
     </fragment>
     <fragment
         android:id="@+id/savedQuranPagesFragment"
-        android:name="com.mohtdon.mohtdon.ui.quran.savedQuranPages.SavedQuranPagesFragment"
+        android:name="com.mohtdon.ui.quran.savedQuranPages.SavedQuranPagesFragment"
         android:label="fragment_saved_quran_pages"
         tools:layout="@layout/fragment_saved_quran_pages">
 
     </fragment>
     <fragment
         android:id="@+id/quranOptionsFragment"
-        android:name="com.mohtdon.mohtdon.ui.quran.QuranOptionsFragment"
+        android:name="com.mohtdon.ui.quran.QuranOptionsFragment"
         android:label="QuranOptionsFragment"
         tools:layout="@layout/fragment_quran_options">
         <action
@@ -159,7 +159,7 @@
     </fragment>
     <fragment
         android:id="@+id/azkarListFragment"
-        android:name="com.mohtdon.mohtdon.ui.azkar.azkarList.AzkarListFragment"
+        android:name="com.mohtdon.ui.azkar.azkarList.AzkarListFragment"
         android:label="AzkarListFragment"
         tools:layout="@layout/fragment_azkar_list">
         <action
@@ -168,7 +168,7 @@
     </fragment>
     <fragment
         android:id="@+id/azkarDetailsFragment"
-        android:name="com.mohtdon.mohtdon.ui.azkar.azkarDetails.AzkarDetailsFragment"
+        android:name="com.mohtdon.ui.azkar.azkarDetails.AzkarDetailsFragment"
         android:label="AzkarDetailsFragment"
         tools:layout="@layout/fragment_azkar_details">
         <argument
@@ -177,7 +177,7 @@
     </fragment>
     <fragment
         android:id="@+id/duaaListFragment"
-        android:name="com.mohtdon.mohtdon.ui.duaa.duaaList.DuaaListFragment"
+        android:name="com.mohtdon.ui.duaa.duaaList.DuaaListFragment"
         android:label="DuaaListFragment"
         tools:layout="@layout/fragment_duaa_list">
         <action
@@ -186,7 +186,7 @@
     </fragment>
     <fragment
         android:id="@+id/duaaDetailsFragment"
-        android:name="com.mohtdon.mohtdon.ui.duaa.duaaDetails.DuaaDetailsFragment"
+        android:name="com.mohtdon.ui.duaa.duaaDetails.DuaaDetailsFragment"
         android:label="fragment_duaa_details"
         tools:layout="@layout/fragment_duaa_details">
         <argument
@@ -195,7 +195,7 @@
     </fragment>
     <fragment
         android:id="@+id/hadithBookChaptersFragment"
-        android:name="com.mohtdon.mohtdon.ui.hadith.hadithBookChapters.HadithBookChaptersFragment"
+        android:name="com.mohtdon.ui.hadith.hadithBookChapters.HadithBookChaptersFragment"
         android:label="HadithBookChapters"
         tools:layout="@layout/fragment_hadith_book_chapters">
         <action
@@ -207,7 +207,7 @@
     </fragment>
     <fragment
         android:id="@+id/hadithDetailsFragment"
-        android:name="com.mohtdon.mohtdon.ui.hadith.chapterHadithList.BookChapterHadithList"
+        android:name="com.mohtdon.ui.hadith.chapterHadithList.BookChapterHadithList"
         android:label="HadithDetailsFragment"
         tools:layout="@layout/item_hadith_details">
         <argument
@@ -219,7 +219,7 @@
     </fragment>
     <fragment
         android:id="@+id/ayatListFragment"
-        android:name="com.mohtdon.mohtdon.ui.tafseer.surahList.SurahListFragment"
+        android:name="com.mohtdon.ui.tafseer.surahList.SurahListFragment"
         android:label="AyatListFragment"
         tools:layout="@layout/fragment_ayat_list">
         <action
@@ -228,7 +228,7 @@
     </fragment>
     <fragment
         android:id="@+id/ayaTafseerFragment"
-        android:name="com.mohtdon.mohtdon.ui.tafseer.ayaTafseer.SurahTafseerFragment"
+        android:name="com.mohtdon.ui.tafseer.surahTafseer.SurahTafseerFragment"
         android:label="AyaTafseerFragment"
         tools:layout="@layout/fragment_aya_tafseer">
         <argument
@@ -237,12 +237,12 @@
     </fragment>
     <fragment
         android:id="@+id/qiblaFragment"
-        android:name="com.mohtdon.mohtdon.ui.qiblaFinder.QiblaFragment"
+        android:name="com.mohtdon.ui.qiblaFinder.QiblaFragment"
         android:label="QiblaFragment"
         tools:layout="@layout/fragment_qibla" />
     <fragment
         android:id="@+id/namesOfAllahFragment"
-        android:name="com.mohtdon.mohtdon.ui.namesOfAllah.fragments.NamesOfAllahFragment"
+        android:name="com.mohtdon.ui.namesOfAllah.fragments.NamesOfAllahFragment"
         android:label="NamesOfAllahFragment"
         tools:layout="@layout/fragment_names_of_allah">
         <action
@@ -251,7 +251,7 @@
     </fragment>
     <fragment
         android:id="@+id/nameOfAllahMeaningFragment"
-        android:name="com.mohtdon.mohtdon.ui.namesOfAllah.fragments.NameOfAllahMeaningFragment"
+        android:name="com.mohtdon.ui.namesOfAllah.fragments.NameOfAllahMeaningFragment"
         android:label="NameOfAllahMeaningFragment"
         tools:layout="@layout/fragment_name_of_allah_meaning">
         <argument
@@ -260,27 +260,27 @@
     </fragment>
     <fragment
         android:id="@+id/shehadaFragment"
-        android:name="com.mohtdon.mohtdon.ui.shehada.fragments.ShehadaFragment"
+        android:name="com.mohtdon.ui.shehada.fragments.ShehadaFragment"
         android:label="ShehadaFragment"
         tools:layout="@layout/fragment_shehada" />
     <fragment
         android:id="@+id/rosaryFragment"
-        android:name="com.mohtdon.mohtdon.ui.sebha.fragments.RosaryFragment"
+        android:name="com.mohtdon.ui.sebha.fragments.RosaryFragment"
         android:label="RosaryFragment"
         tools:layout="@layout/fragment_rosary" />
 
     <fragment
         android:id="@+id/trackerFragment"
-        android:name="com.mohtdon.mohtdon.ui.prayers_tracker.TrackerFragment"
+        android:name="com.mohtdon.ui.prayers_tracker.TrackerFragment"
         android:label="TrackerFragment" />
     <fragment
         android:id="@+id/hijriCalenderFragment"
-        android:name="com.mohtdon.mohtdon.ui.hijriCalender.HijriCalenderFragment"
+        android:name="com.mohtdon.ui.hijriCalender.HijriCalenderFragment"
         android:label="fragment_hijri_calender"
         tools:layout="@layout/fragment_hijri_calender" />
     <fragment
         android:id="@+id/hadithCategoryFragment"
-        android:name="com.mohtdon.mohtdon.ui.hadith.hadithCategory.HadithCategoryFragment"
+        android:name="com.mohtdon.ui.hadith.hadithCategory.HadithCategoryFragment"
         android:label="HadithCategoryFragment" >
         <action
             android:id="@+id/action_hadithCategoryFragment_to_hadithBookChaptersFragment"

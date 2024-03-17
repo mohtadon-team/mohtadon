@@ -1,11 +1,11 @@
-package com.mohtdon.mohtdon.ui
+package com.mohtdon.ui
 
-import com.mohtdon.mohtdon.player.AudioItem
+import com.mohtdon.player.AudioItem
 
 
 sealed class PlayerEvents {
     data class  AddPlaylist(val audios: List<AudioItem>): PlayerEvents()
-    data class  AddNewAudioItem(val audio:  AudioItem ): PlayerEvents()
+    data class  AddNewAudioItem(val audio: AudioItem): PlayerEvents()
     data class GoToSpecificItem(val index:Int): PlayerEvents()
     object  PausePlay: PlayerEvents()
     object  Previous : PlayerEvents()

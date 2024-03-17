@@ -1,6 +1,6 @@
 package com.mohtdon.domain.repo
 
-import com.mohtdon.domain.entity.reciters.ReciterEntity
+import com.mohtdon.domain.models.reciters.ReciterEntity
 
 interface RecitersRepository {
     suspend fun getAllReciters() : List<ReciterEntity>?

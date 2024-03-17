@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.home
+package com.mohtdon.ui.home
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -8,10 +8,10 @@ import androidx.lifecycle.viewModelScope
 import com.mohtdon.domain.usecases.GetAyaByIdUseCase
 import com.mohtdon.domain.usecases.GetDayPrayerTimesUseCase
 import com.mohtdon.mohtdon.R
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
-import com.mohtdon.mohtdon.ui.home.uistate.HomeUiState
-import com.mohtdon.mohtdon.utilities.LATITUDE
-import com.mohtdon.mohtdon.utilities.LONGITUDE
+import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.home.uistate.HomeUiState
+import com.mohtdon.utilities.LATITUDE
+import com.mohtdon.utilities.LONGITUDE
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

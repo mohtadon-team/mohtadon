@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.more.fragments
+package com.mohtdon.ui.more.fragments
 
 import android.content.Intent
 import android.net.Uri
@@ -10,11 +10,10 @@ import androidx.navigation.fragment.findNavController
 import com.mohtdon.mohtdon.BuildConfig
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentMoreBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.more.adapters.MoreListAdapter
-import com.mohtdon.mohtdon.ui.more.viewModels.MoreViewModel
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.more.adapters.MoreListAdapter
+import com.mohtdon.ui.more.viewModels.MoreViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 
 @AndroidEntryPoint
@@ -71,14 +70,9 @@ class MoreFragment : BaseFragment<FragmentMoreBinding>(), MoreListAdapter.OnName
                     shareIntent.type = "text/plain"
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, "مهتدون")
                     var shareMessage = "\nLet me recommend you this application\n\n"
-                    shareMessage =
-                        """
-                        ${
-                            shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID
-                        }
-                        
-                        
-                        """.trimIndent()
+                    shareMessage = "     ${
+                        shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID
+                    }\n".trimIndent()
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
                     startActivity(Intent.createChooser(shareIntent, "choose one"))
                 } catch (e: Exception) {

@@ -1,16 +1,16 @@
-package com.mohtdon.mohtdon.ui.sebha.fragments
+package com.mohtdon.ui.sebha.fragments
 
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentRosaryBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.base.BaseFragment
 
 
 class RosaryFragment : BaseFragment<FragmentRosaryBinding>() {
     private var counter = 0
-    override val layoutFragmentId: Int=R.layout.fragment_rosary
+    override val layoutFragmentId: Int= R.layout.fragment_rosary
     override val viewModel: ViewModel
         get() = TODO("Not yet implemented")
 

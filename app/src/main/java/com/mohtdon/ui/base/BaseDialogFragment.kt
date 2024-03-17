@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.base
+package com.mohtdon.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

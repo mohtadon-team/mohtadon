@@ -1,7 +1,7 @@
 package com.mohtdon.domain.repo
 
 import com.mohtdon.domain.models.prayerTimes.MonthPrayerTimes
-import com.mohtdon.domain.models.todayPrayerTimes.DayPrayerTimes
+import com.mohtdon.domain.models.prayerTimes.DayPrayerTimes
 
 interface PrayerTimesRepository {
    suspend fun getDayPrayerTimes(

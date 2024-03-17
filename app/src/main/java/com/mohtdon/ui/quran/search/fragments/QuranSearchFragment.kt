@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.quran.search.fragments
+package com.mohtdon.ui.quran.search.fragments
 
 import android.os.Bundle
 import android.text.Editable
@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mohtdon.domain.models.quran.Aya
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentQuranSearchBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.quran.search.adapter.IoClickSearchItem
-import com.mohtdon.mohtdon.ui.quran.search.adapter.QuranSearchAdapter
-import com.mohtdon.mohtdon.ui.quran.search.viewModels.QuranSearchViewModel
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.quran.search.adapter.IoClickSearchItem
+import com.mohtdon.ui.quran.search.adapter.QuranSearchAdapter
+import com.mohtdon.ui.quran.search.viewModels.QuranSearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

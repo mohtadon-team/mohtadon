@@ -1,8 +1,8 @@
-package com.mohtdon.mohtdon.ui.duaa.duaaList
+package com.mohtdon.ui.duaa.duaaList
 
 import android.content.Context
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
-import com.mohtdon.mohtdon.utilities.getInputStreambuffer
+import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.utilities.getInputStreambuffer
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

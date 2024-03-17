@@ -1,10 +1,10 @@
-package com.mohtdon.mohtdon.ui.more.viewModels
+package com.mohtdon.ui.more.viewModels
 
 import android.content.Context
 import com.mohtdon.mohtdon.R
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
-import com.mohtdon.mohtdon.ui.more.MoreItemModel
-import com.mohtdon.mohtdon.ui.more.MoreListUiState
+import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.more.MoreItemModel
+import com.mohtdon.ui.more.MoreListUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.activities
+package com.mohtdon.ui.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent

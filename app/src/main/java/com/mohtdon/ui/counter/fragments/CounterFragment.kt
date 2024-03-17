@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.counter.fragments
+package com.mohtdon.ui.counter.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

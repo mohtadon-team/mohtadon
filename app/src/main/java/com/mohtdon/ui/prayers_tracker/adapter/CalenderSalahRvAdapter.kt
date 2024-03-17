@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.prayers_tracker.adapter
+package com.mohtdon.ui.prayers_tracker.adapter
 
 import android.graphics.Color
 import android.os.Build
@@ -10,7 +10,12 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.TrackerPrayersRvItemBinding
-import com.mohtdon.mohtdon.ui.prayers_tracker.models.Salah
+import com.mohtdon.ui.prayers_tracker.models.Salah
+import com.mohtdon.utilities.ASR
+import com.mohtdon.utilities.DHUHR
+import com.mohtdon.utilities.FAJR
+import com.mohtdon.utilities.ISHA
+import com.mohtdon.utilities.MAGHRIB
 
 
 class CalenderSalahRvAdapter(
@@ -82,21 +87,21 @@ class CalenderSalahRvAdapter(
 
             if (salah.isItToday) {
                 when (salah.name) {
-                    com.mohtdon.mohtdon.utilities.FAJR -> listener.onItemClick(com.mohtdon.mohtdon.utilities.FAJR, b)
-                    com.mohtdon.mohtdon.utilities.DHUHR -> listener.onItemClick(com.mohtdon.mohtdon.utilities.DHUHR, b)
-                    com.mohtdon.mohtdon.utilities.ASR -> listener.onItemClick(com.mohtdon.mohtdon.utilities.ASR, b)
-                    com.mohtdon.mohtdon.utilities.MAGHRIB -> listener.onItemClick(com.mohtdon.mohtdon.utilities.MAGHRIB, b)
-                    com.mohtdon.mohtdon.utilities.ISHA -> listener.onItemClick(com.mohtdon.mohtdon.utilities.ISHA, b)
+                    FAJR -> listener.onItemClick(FAJR, b)
+                    DHUHR -> listener.onItemClick(DHUHR, b)
+                    ASR -> listener.onItemClick(ASR, b)
+                    MAGHRIB -> listener.onItemClick(MAGHRIB, b)
+                    ISHA -> listener.onItemClick(ISHA, b)
                 }
 
                 if (b) {
                     holder.binding.view.setBackgroundColor(
-                        androidx.core.content.ContextCompat.getColor(
-                            holder.itemView.context, com.mohtdon.mohtdon.R.color.salah_tracker_salah_performed_color
+                        ContextCompat.getColor(
+                            holder.itemView.context, R.color.salah_tracker_salah_performed_color
                         )
                     )
                 } else {
-                    holder.binding.view.setBackgroundColor(android.graphics.Color.WHITE)
+                    holder.binding.view.setBackgroundColor(Color.WHITE)
                 }
             }
 

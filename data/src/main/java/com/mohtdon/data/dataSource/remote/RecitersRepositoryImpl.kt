@@ -4,7 +4,7 @@ package com.mohtdon.data.dataSource.remote
 import com.mohtdon.data.dataSource.remote.mapper.reciters.ReciterMapper
 import com.mohtdon.data.dataSource.remote.service.RecitersService
 import com.mohtdon.data.utils.wrapApiResponse
-import com.mohtdon.domain.entity.reciters.ReciterEntity
+import com.mohtdon.domain.models.reciters.ReciterEntity
 import com.mohtdon.domain.repo.RecitersRepository
 import javax.inject.Inject
 

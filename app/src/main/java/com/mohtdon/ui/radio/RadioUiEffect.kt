@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.radio
+package com.mohtdon.ui.radio
 
 sealed interface RadioUiEffect {
     object Back : RadioUiEffect

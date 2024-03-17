@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.quran.savedQuranPages
+package com.mohtdon.ui.quran.savedQuranPages
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

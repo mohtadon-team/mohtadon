@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.namesOfAllah.adapters
+package com.mohtdon.ui.namesOfAllah.adapters
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.tafseer.ayaTafseer
+package com.mohtdon.ui.tafseer.surahTafseer
 
 import android.os.Bundle
 import android.util.Log
@@ -8,9 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentSurahTafseerBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.tafseer.surahTafseer.SurahTafseerRvAdapter
-import com.mohtdon.mohtdon.ui.tafseer.surahTafseer.SurahTafseerRvModel
+import com.mohtdon.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

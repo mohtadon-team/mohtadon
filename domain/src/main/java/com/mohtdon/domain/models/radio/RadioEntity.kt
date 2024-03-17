@@ -1,4 +1,4 @@
-package com.mohtdon.domain.entity.radio
+package com.mohtdon.domain.models.radio
 
 data class RadioEntity (
     val name : String = "",

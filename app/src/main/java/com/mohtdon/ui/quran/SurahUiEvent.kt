@@ -1,6 +1,6 @@
-package com.mohtdon.mohtdon.ui.quran
+package com.mohtdon.ui.quran
 
 sealed interface SurahUiEvent {
-    object getAllSurah:SurahUiEvent
-    object clickSurah:SurahUiEvent
+    object getAllSurah: SurahUiEvent
+    object clickSurah: SurahUiEvent
 }

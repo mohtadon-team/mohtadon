@@ -1,6 +1,6 @@
 package com.mohtdon.domain.usecases
 
-import com.mohtdon.domain.models.todayPrayerTimes.DayPrayerTimes
+import com.mohtdon.domain.models.prayerTimes.DayPrayerTimes
 import com.mohtdon.domain.repo.PrayerTimesRepository
 import javax.inject.Inject
 
@@ -9,6 +9,6 @@ class GetDayPrayerTimesUseCase @Inject constructor(
 ) {
     suspend operator fun invoke(
         date: String, latitude: Double, longitude: Double
-    ): DayPrayerTimes  = prayerTimesRepository.getDayPrayerTimes(date, latitude, longitude)
+    ): DayPrayerTimes = prayerTimesRepository.getDayPrayerTimes(date, latitude, longitude)
 
 }

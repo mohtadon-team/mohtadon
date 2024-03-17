@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.more
+package com.mohtdon.ui.more
 
  data class MoreItemModel (
      val name:String,

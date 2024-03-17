@@ -1,10 +1,10 @@
-package com.mohtdon.mohtdon.ui.home.adapters
+package com.mohtdon.ui.home.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mohtdon.mohtdon.databinding.ItemTodayThingBinding
-import com.mohtdon.mohtdon.ui.home.rvitems.HomeTodayThingsRvItem
+import com.mohtdon.ui.home.rvitems.HomeTodayThingsRvItem
 
 class HomeTodayThingsRvAdapter(
 ) : RecyclerView.Adapter<HomeTodayThingsRvAdapter.HomeTodayThingsRvViewHolder>() {

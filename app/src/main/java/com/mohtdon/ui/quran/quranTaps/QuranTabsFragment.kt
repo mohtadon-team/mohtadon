@@ -1,15 +1,15 @@
-package com.mohtdon.mohtdon.ui.quran.quranTaps
+package com.mohtdon.ui.quran.quranTaps
 
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
-import com.mohtdon.mohtdon.R
-import com.mohtdon.mohtdon.databinding.FragmentQuranTabsBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.base.BaseFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.mohtdon.mohtdon.R
+import com.mohtdon.mohtdon.databinding.FragmentQuranTabsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

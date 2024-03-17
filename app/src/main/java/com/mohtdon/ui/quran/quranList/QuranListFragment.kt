@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.quran.quranList
+package com.mohtdon.ui.quran.quranList
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohtdon.domain.models.quran.Surah
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentQuranListBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.quran.interfaces.IonSurahClick
-import com.mohtdon.mohtdon.ui.quran.quranTaps.QuranTabsFragmentDirections
-import com.mohtdon.mohtdon.ui.viewModels.SurahViewModel
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.quran.interfaces.IonSurahClick
+import com.mohtdon.ui.quran.quranTaps.QuranTabsFragmentDirections
+import com.mohtdon.ui.viewModels.SurahViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject

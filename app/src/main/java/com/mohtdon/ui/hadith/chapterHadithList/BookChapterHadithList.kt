@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.hadith.chapterHadithList
+package com.mohtdon.ui.hadith.chapterHadithList
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentBookChapterHadithListBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

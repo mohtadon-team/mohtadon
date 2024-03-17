@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.nearbestMosques
+package com.mohtdon.ui.nearbestMosques
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

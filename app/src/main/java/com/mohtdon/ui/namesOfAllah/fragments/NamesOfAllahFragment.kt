@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.namesOfAllah.fragments
+package com.mohtdon.ui.namesOfAllah.fragments
 
 
 import android.os.Bundle
@@ -8,9 +8,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentNamesOfAllahBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.namesOfAllah.adapters.NamesGridViewAdapter
-import com.mohtdon.mohtdon.ui.namesOfAllah.viewModels.NamesOfAllahViewModel
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.namesOfAllah.adapters.NamesGridViewAdapter
+import com.mohtdon.ui.namesOfAllah.viewModels.NamesOfAllahViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -2,8 +2,8 @@ package com.mohtdon.data.dataSource.remote.mapper.reciters
 
 import com.mohtdon.data.dataSource.remote.mapper.Mapper
 import com.mohtdon.data.dataSource.remote.response.reciters.Reciter
-import com.mohtdon.domain.entity.reciters.MoshafEnitity
-import com.mohtdon.domain.entity.reciters.ReciterEntity
+import com.mohtdon.domain.models.reciters.MoshafEnitity
+import com.mohtdon.domain.models.reciters.ReciterEntity
 
 
 object ReciterMapper : Mapper<Reciter, ReciterEntity> {

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.utilities
+package com.mohtdon.utilities
 
 import java.util.concurrent.TimeUnit
 

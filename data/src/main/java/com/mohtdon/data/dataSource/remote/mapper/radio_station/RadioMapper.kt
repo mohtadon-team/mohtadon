@@ -2,7 +2,7 @@ package com.mohtdon.data.dataSource.remote.mapper.radio_station
 
 import com.mohtdon.data.dataSource.remote.mapper.Mapper
 import com.mohtdon.data.dataSource.remote.response.radoi.Radio
-import com.mohtdon.domain.entity.radio.RadioEntity
+import com.mohtdon.domain.models.radio.RadioEntity
 
 object RadioMapper :Mapper<Radio , RadioEntity> {
 

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.tafseer.surahTafseer
+package com.mohtdon.ui.tafseer.surahTafseer
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

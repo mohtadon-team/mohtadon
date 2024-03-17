@@ -3,7 +3,7 @@ package com.mohtdon.data.dataSource.remote.mapper
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.mohtdon.data.dataSource.remote.response.DayPrayerTimes.DayPrayerTimesDto
-import com.mohtdon.domain.models.todayPrayerTimes.DayPrayerTimes
+import com.mohtdon.domain.models.prayerTimes.DayPrayerTimes
 import java.time.LocalTime
 import javax.inject.Inject
 

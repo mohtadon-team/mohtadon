@@ -1,8 +1,8 @@
-package com.mohtdon.mohtdon.ui.hadith.chapterHadithList
+package com.mohtdon.ui.hadith.chapterHadithList
 
 import androidx.lifecycle.viewModelScope
 import com.mohtdon.domain.usecases.GetSpecificBookChapterHadithUseCase
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,12 +1,12 @@
-package com.mohtdon.mohtdon.ui.reciters.player
+package com.mohtdon.ui.reciters.player
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.exoplayer.ExoPlayer
-import com.mohtdon.mohtdon.player.PlayerController
-import com.mohtdon.mohtdon.ui.PlayerEvents
-import com.mohtdon.mohtdon.utilities.AudioItemWithInitialValue
+import com.mohtdon.player.PlayerController
+import com.mohtdon.ui.PlayerEvents
+import com.mohtdon.utilities.AudioItemWithInitialValue
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

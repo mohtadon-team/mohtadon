@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.qiblaFinder.QiblaFragment">
+        tools:context="com.mohtdon.ui.qiblaFinder.QiblaFragment">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView3"

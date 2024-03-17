@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.shehada.fragments.ShehadaFragment">
+        tools:context="com.mohtdon.ui.shehada.fragments.ShehadaFragment">
 
         <include layout="@layout/common_header"
             android:id="@+id/page_header"/>

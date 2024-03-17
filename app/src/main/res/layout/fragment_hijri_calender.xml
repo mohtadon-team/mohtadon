@@ -9,7 +9,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.hijriCalender.HijriCalenderFragment">
+        tools:context="com.mohtdon.ui.hijriCalender.HijriCalenderFragment">
 
 <!--        <com.github.eltohamy.materialhijricalendarview.MaterialHijriCalendarView android:id="@+id/calendarView"-->
 <!--            android:layout_width="match_parent"-->

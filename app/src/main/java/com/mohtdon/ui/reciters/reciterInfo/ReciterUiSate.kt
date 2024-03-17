@@ -1,7 +1,7 @@
-package com.mohtdon.mohtdon.ui.reciters.reciterInfo
+package com.mohtdon.ui.reciters.reciterInfo
 
 
-import com.mohtdon.domain.entity.reciters.ReciterEntity
+import com.mohtdon.domain.models.reciters.ReciterEntity
 
 data class ReciterUiSate(
     var isTabTitleVisible :Boolean = true,

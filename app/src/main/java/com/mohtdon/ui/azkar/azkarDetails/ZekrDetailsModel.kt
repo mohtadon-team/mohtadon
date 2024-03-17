@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.azkar.azkarDetails
+package com.mohtdon.ui.azkar.azkarDetails
 
 data class ZekrDetailsModel(
     val zekrText: String, val zekrNumberOfRepeation: Int

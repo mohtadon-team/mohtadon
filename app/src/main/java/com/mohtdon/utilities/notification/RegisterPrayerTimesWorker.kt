@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.utilities.notification
+package com.mohtdon.utilities.notification
 
 import android.content.Context
 import android.util.Log
@@ -13,10 +13,10 @@ import com.mohtdon.data.dataSource.repository.PrayerTimes.PrayerTimesRepositoryI
 import com.mohtdon.data.utils.Constant.Companion.NOTIFICATION_CONTENT_KEY
 import com.mohtdon.data.utils.Constant.Companion.NOTIFICATION_TITLE_KEY
 import com.mohtdon.domain.models.prayerTimes.PrayersTiming
-import com.mohtdon.domain.models.todayPrayerTimes.DayPrayerTimes
+import com.mohtdon.domain.models.prayerTimes.DayPrayerTimes
 import com.mohtdon.domain.usecases.GetMonthPrayerTimesUseCase
 import com.mohtdon.mohtdon.BuildConfig
-import com.mohtdon.mohtdon.utilities.SHARED_PREFERENCES_NAME
+import com.mohtdon.utilities.SHARED_PREFERENCES_NAME
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

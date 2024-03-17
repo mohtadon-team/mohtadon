@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui
+package com.mohtdon.ui
 
 
 sealed class UiState<out T> {

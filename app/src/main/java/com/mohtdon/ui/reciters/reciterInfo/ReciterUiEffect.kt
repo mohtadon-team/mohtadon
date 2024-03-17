@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.reciters.reciterInfo
+package com.mohtdon.ui.reciters.reciterInfo
 
 sealed interface ReciterUiEffect {
     object Back : ReciterUiEffect

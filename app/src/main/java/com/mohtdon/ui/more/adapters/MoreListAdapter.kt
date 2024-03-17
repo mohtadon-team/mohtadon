@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.more.adapters
+package com.mohtdon.ui.more.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.mohtdon.mohtdon.R
-import com.mohtdon.mohtdon.ui.more.MoreItemModel
+import com.mohtdon.ui.more.MoreItemModel
 
 class MoreListAdapter(
     private val listener: OnNameGridViewListener,

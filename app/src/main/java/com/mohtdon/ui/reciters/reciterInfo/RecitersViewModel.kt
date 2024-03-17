@@ -1,10 +1,10 @@
-package com.mohtdon.mohtdon.ui.reciters.reciterInfo
+package com.mohtdon.ui.reciters.reciterInfo
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.mohtdon.domain.models.AppException
 import com.mohtdon.domain.usecases.GetAllReciterUseCase
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -19,7 +19,7 @@ import javax.inject.Inject
 class RecitersViewModel @Inject constructor(
     private val getAllReciterUseCase: GetAllReciterUseCase,
     private val savedStateHandle: SavedStateHandle
-):BaseViewModel() {
+): BaseViewModel() {
 
     private var _uiState = MutableStateFlow(ReciterUiSate())
     val uiState = _uiState.asStateFlow()

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.utilities.notification
+package com.mohtdon.utilities.notification
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -14,7 +14,7 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.mohtdon.data.utils.Constant.Companion.NOTIFICATION_CONTENT_KEY
 import com.mohtdon.data.utils.Constant.Companion.NOTIFICATION_TITLE_KEY
-import com.mohtdon.mohtdon.ui.home.HomeFragment
+import com.mohtdon.ui.home.HomeFragment
 
 class AzanNotificationWorker(context: Context, workerParams: WorkerParameters) :
     Worker(context, workerParams) {

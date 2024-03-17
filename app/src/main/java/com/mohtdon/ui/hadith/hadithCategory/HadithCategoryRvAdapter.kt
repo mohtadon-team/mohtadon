@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.hadith.hadithCategory
+package com.mohtdon.ui.hadith.hadithCategory
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

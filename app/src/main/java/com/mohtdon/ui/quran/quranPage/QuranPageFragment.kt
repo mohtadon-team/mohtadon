@@ -1,12 +1,13 @@
-package com.mohtdon.mohtdon.ui.quran.quranPage
+package com.mohtdon.ui.quran.quranPage
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentQuranPageBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.viewModels.QuranViewModel
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.viewModels.QuranViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.IOException
 import java.io.InputStream
@@ -14,7 +15,7 @@ import java.io.InputStream
 
 @AndroidEntryPoint
 class QuranPageFragment constructor() : BaseFragment<FragmentQuranPageBinding>() {
-    override val layoutFragmentId: Int = com.mohtdon.mohtdon.R.layout.fragment_quran_page
+    override val layoutFragmentId: Int = R.layout.fragment_quran_page
     override val viewModel: QuranViewModel by viewModels()
 
     private var pageNumber: Int? = 0

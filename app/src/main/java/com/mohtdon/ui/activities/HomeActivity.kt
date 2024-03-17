@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.activities
+package com.mohtdon.ui.activities
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -24,13 +24,14 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
+import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.ActivityHomeBinding
-import com.mohtdon.mohtdon.ui.base.BaseActivity
-import com.mohtdon.mohtdon.utilities.AzanPrayersUtil
-import com.mohtdon.mohtdon.utilities.LATITUDE
-import com.mohtdon.mohtdon.utilities.LONGITUDE
-import com.mohtdon.mohtdon.utilities.LastPlayedTrackPreference
-import com.mohtdon.mohtdon.utilities.REQUEST_PERMISSION_CODE
+import com.mohtdon.ui.base.BaseActivity
+import com.mohtdon.utilities.AzanPrayersUtil
+import com.mohtdon.utilities.LATITUDE
+import com.mohtdon.utilities.LONGITUDE
+import com.mohtdon.utilities.LastPlayedTrackPreference
+import com.mohtdon.utilities.REQUEST_PERMISSION_CODE
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 import java.util.concurrent.TimeUnit
@@ -39,7 +40,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
-    override val layoutActivityId: Int = com.mohtdon.mohtdon.R.layout.activity_home
+    override val layoutActivityId: Int = R.layout.activity_home
     lateinit var navController: NavController
 
     @Inject
@@ -53,7 +54,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val navHostFragment = supportFragmentManager.findFragmentById(com.mohtdon.mohtdon.R.id.nav_host_fragment) as NavHostFragment?
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
 
         lastPlayedTrackPreference.lastPlayedTrackId = -1
@@ -71,34 +72,34 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
-                com.mohtdon.mohtdon.R.id.homeFragment -> {
+                R.id.homeFragment -> {
                     navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(com.mohtdon.mohtdon.R.id.homeFragment)
+                    navController.navigate(R.id.homeFragment)
                     true
                 }
 
-                com.mohtdon.mohtdon.R.id.trackerFragment -> {
+                R.id.trackerFragment -> {
                     //navigate  to schedule
                     navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(com.mohtdon.mohtdon.R.id.trackerFragment)
+                    navController.navigate(R.id.trackerFragment)
                     true
                 }
 
-                com.mohtdon.mohtdon.R.id.quranOptionsFragment -> {
+                R.id.quranOptionsFragment -> {
                     navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(com.mohtdon.mohtdon.R.id.quranOptionsFragment)
+                    navController.navigate(R.id.quranOptionsFragment)
                     true
                 }
 
-                com.mohtdon.mohtdon.R.id.fmRadioFragment -> {
+                R.id.fmRadioFragment -> {
                     navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(com.mohtdon.mohtdon.R.id.fmRadioFragment)
+                    navController.navigate(R.id.fmRadioFragment)
                     true
                 }
 
-                com.mohtdon.mohtdon.R.id.moreFragment -> {
+                R.id.moreFragment -> {
                     navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(com.mohtdon.mohtdon.R.id.moreFragment)
+                    navController.navigate(R.id.moreFragment)
                     true
                 }
 
@@ -106,7 +107,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             }
         }
         // set default selection to homeFragment
-        binding.bottomNav.selectedItemId = com.mohtdon.mohtdon.R.id.homeFragment
+        binding.bottomNav.selectedItemId = R.id.homeFragment
         getCurrentLocation()
 
         AzanPrayersUtil().registerPrayers(this)

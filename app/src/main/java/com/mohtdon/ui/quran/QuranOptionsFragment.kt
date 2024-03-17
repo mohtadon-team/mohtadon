@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.quran
+package com.mohtdon.ui.quran
 
 import android.os.Bundle
 import android.view.View
@@ -6,12 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentQuranOptionsBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class QuranOptionsFragment : BaseFragment<com.mohtdon.mohtdon.databinding.FragmentQuranOptionsBinding>() {
-    override val layoutFragmentId: Int=R.layout.fragment_quran_options
+class QuranOptionsFragment : BaseFragment<FragmentQuranOptionsBinding>() {
+    override val layoutFragmentId: Int= R.layout.fragment_quran_options
     override val viewModel: ViewModel
         get() = TODO("Not yet implemented")
 

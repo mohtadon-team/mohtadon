@@ -1,11 +1,11 @@
-package com.mohtdon.mohtdon.ui.hijriCalender
+package com.mohtdon.ui.hijriCalender
 
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentHijriCalenderBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.base.BaseFragment
 //import com.github.eltohamy.materialhijricalendarview.CalendarDay
 
 

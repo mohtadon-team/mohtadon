@@ -1,16 +1,16 @@
-package com.mohtdon.mohtdon.ui.radio
+package com.mohtdon.ui.radio
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.mohtdon.domain.entity.radio.RadioEntity
+import com.mohtdon.domain.models.radio.RadioEntity
 import com.mohtdon.mohtdon.databinding.RadioItemBinding
-import com.mohtdon.mohtdon.utilities.LastPlayedTrackPreference
+import com.mohtdon.utilities.LastPlayedTrackPreference
 
 class RadioAdapter (
-    private val listener: OnRadioStationListener ,
+    private val listener: OnRadioStationListener,
     private val lastPlayedTrackPreference: LastPlayedTrackPreference
 ) : RecyclerView.Adapter<RadioAdapter.RadioStationViewHolder>() {
 

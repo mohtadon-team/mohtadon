@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.duaa.duaaList
+package com.mohtdon.ui.duaa.duaaList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

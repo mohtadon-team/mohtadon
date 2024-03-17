@@ -1,11 +1,11 @@
-package com.mohtdon.mohtdon.ui.quran.quranList
+package com.mohtdon.ui.quran.quranList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mohtdon.domain.models.quran.Surah
 import com.mohtdon.mohtdon.databinding.SurahItemBinding
-import com.mohtdon.mohtdon.ui.quran.interfaces.IonSurahClick
+import com.mohtdon.ui.quran.interfaces.IonSurahClick
 
 class QuranListAdapter(private val listener: IonSurahClick) :
     RecyclerView.Adapter<QuranListAdapter.QuranHolder>() {

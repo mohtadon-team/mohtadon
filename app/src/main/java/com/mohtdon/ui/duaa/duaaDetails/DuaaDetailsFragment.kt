@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.duaa.duaaDetails
+package com.mohtdon.ui.duaa.duaaDetails
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentDuaaDetailsBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

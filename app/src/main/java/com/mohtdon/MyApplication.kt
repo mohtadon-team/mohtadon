@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon
+package com.mohtdon
 
 import android.app.Application
 //import com.jakewharton.threetenabp.AndroidThreeTen

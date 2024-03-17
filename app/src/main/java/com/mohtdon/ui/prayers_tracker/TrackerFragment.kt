@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.prayers_tracker
+package com.mohtdon.ui.prayers_tracker
 
 import android.os.Build
 import android.os.Bundle
@@ -10,10 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentTrackerBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.prayers_tracker.adapter.CalenderSalahRvAdapter
-import com.mohtdon.mohtdon.ui.prayers_tracker.adapter.OnWeeklyCalenderListener
-import com.mohtdon.mohtdon.ui.prayers_tracker.adapter.WeekCalenderRvAdapter
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.prayers_tracker.adapter.CalenderSalahRvAdapter
+import com.mohtdon.ui.prayers_tracker.adapter.OnWeeklyCalenderListener
+import com.mohtdon.ui.prayers_tracker.adapter.WeekCalenderRvAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.time.LocalDate

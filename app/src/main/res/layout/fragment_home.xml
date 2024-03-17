@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.mohtdon.mohtdon.ui.home.HomeViewModel" />
+            type="com.mohtdon.ui.home.HomeViewModel" />
 
 
 

@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.tafseer.ayaTafseer.SurahTafseerFragment">
+        tools:context="com.mohtdon.ui.tafseer.surahTafseer.SurahTafseerFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/surah_tafseer_rv"

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.utilities
+package com.mohtdon.utilities
 
 class Event<out T>(private val content: T) {
 

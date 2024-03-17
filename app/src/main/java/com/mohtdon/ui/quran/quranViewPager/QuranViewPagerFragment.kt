@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.quran.quranViewPager
+package com.mohtdon.ui.quran.quranViewPager
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -9,14 +9,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.mohtdon.data.dataSource.remote.response.quran.models.SavedPageModel
-import com.mohtdon.mohtdon.R
-import com.mohtdon.mohtdon.databinding.FragmentQuranViewPagerBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.quran.quranPage.QuranPagerAdapter
-import com.mohtdon.mohtdon.ui.viewModels.QuranViewModel
-import com.mohtdon.mohtdon.utilities.TOTAL_QURAN_PAGES_NUMBER
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.quran.quranPage.QuranPagerAdapter
+import com.mohtdon.ui.viewModels.QuranViewModel
+import com.mohtdon.utilities.TOTAL_QURAN_PAGES_NUMBER
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
+import com.mohtdon.mohtdon.R
+import com.mohtdon.mohtdon.databinding.FragmentQuranViewPagerBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject

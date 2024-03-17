@@ -1,10 +1,10 @@
-package com.mohtdon.mohtdon.utilities
+package com.mohtdon.utilities
 
 import android.content.Context
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkManager
-import com.mohtdon.mohtdon.utilities.notification.RegisterPrayerTimesWorker
+import com.mohtdon.utilities.notification.RegisterPrayerTimesWorker
 import java.util.concurrent.TimeUnit
 
 class AzanPrayersUtil {

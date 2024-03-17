@@ -1,8 +1,8 @@
-package com.mohtdon.mohtdon.ui.viewModels
+package com.mohtdon.ui.viewModels
 
 import com.mohtdon.data.dataSource.local.QuranRepositoryImpl
 import com.mohtdon.domain.models.quran.PageData
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

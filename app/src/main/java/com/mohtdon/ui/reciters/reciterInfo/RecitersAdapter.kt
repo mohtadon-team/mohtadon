@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.reciters.reciterInfo
+package com.mohtdon.ui.reciters.reciterInfo
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,10 +8,9 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mohtdon.domain.entity.reciters.MoshafEnitity
-import com.mohtdon.domain.entity.reciters.ReciterEntity
+import com.mohtdon.domain.models.reciters.MoshafEnitity
+import com.mohtdon.domain.models.reciters.ReciterEntity
 import com.mohtdon.mohtdon.databinding.MoshafItemBinding
-
 import com.mohtdon.mohtdon.databinding.ReciterItemBinding
 
 

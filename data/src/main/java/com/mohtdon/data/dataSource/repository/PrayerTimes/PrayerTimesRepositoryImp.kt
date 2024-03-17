@@ -6,7 +6,7 @@ import com.mohtdon.data.dataSource.remote.mapper.DayPrayerTimesMapper
 import com.mohtdon.data.dataSource.remote.mapper.MonthPrayerTimesMapper
 import com.mohtdon.data.dataSource.remote.service.PrayerTimesService
 import com.mohtdon.domain.models.prayerTimes.MonthPrayerTimes
-import com.mohtdon.domain.models.todayPrayerTimes.DayPrayerTimes
+import com.mohtdon.domain.models.prayerTimes.DayPrayerTimes
 import com.mohtdon.domain.repo.PrayerTimesRepository
 import javax.inject.Inject
 

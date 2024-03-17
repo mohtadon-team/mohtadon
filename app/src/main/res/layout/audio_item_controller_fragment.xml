@@ -6,7 +6,7 @@
     <data >
         <variable
             name="viewModel"
-            type="com.mohtdon.mohtdon.ui.reciters.player.AudioItemPlayerViewModel" />
+            type="com.mohtdon.ui.reciters.player.AudioItemPlayerViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

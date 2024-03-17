@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.qiblaFinder
+package com.mohtdon.ui.qiblaFinder
 
 import android.content.Context
 import android.hardware.Sensor

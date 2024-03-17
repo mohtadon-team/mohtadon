@@ -7,12 +7,12 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
 <data >
     <variable
         name="viewModel"
-        type="com.mohtdon.mohtdon.ui.radio.RadioViewModel" />
+        type="com.mohtdon.ui.radio.RadioViewModel" />
 
 
                 <variable
                     name="playerViewModel"
-                    type="com.mohtdon.mohtdon.ui.reciters.player.AudioItemPlayerViewModel" />
+                    type="com.mohtdon.ui.reciters.player.AudioItemPlayerViewModel" />
 
 
 </data>

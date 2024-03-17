@@ -4,7 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import com.mohtdon.data.dataSource.remote.response.monthPrayerTimes.MonthPrayerTimesDto
 import com.mohtdon.domain.models.prayerTimes.MonthPrayerTimes
-import com.mohtdon.domain.models.todayPrayerTimes.DayPrayerTimes
+import com.mohtdon.domain.models.prayerTimes.DayPrayerTimes
 import java.time.LocalTime
 import javax.inject.Inject
 

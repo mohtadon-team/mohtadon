@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.azkar.azkarDetails
+package com.mohtdon.ui.azkar.azkarDetails
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

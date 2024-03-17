@@ -6,11 +6,11 @@
 
         <variable
             name="listener"
-            type="com.mohtdon.mohtdon.ui.home.adapters.OnHomeRvItemListener" />
+            type="com.mohtdon.ui.home.adapters.OnHomeRvItemListener" />
 
         <variable
             name="item"
-            type="com.mohtdon.mohtdon.ui.home.rvitems.HomeRvItem" />
+            type="com.mohtdon.ui.home.rvitems.HomeRvItem" />
 
 
     </data>

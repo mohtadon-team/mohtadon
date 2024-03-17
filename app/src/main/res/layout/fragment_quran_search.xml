@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.quran.search.fragments.QuranSearchFragment">
+        tools:context="com.mohtdon.ui.quran.search.fragments.QuranSearchFragment">
 
         <include
             layout="@layout/common_header"

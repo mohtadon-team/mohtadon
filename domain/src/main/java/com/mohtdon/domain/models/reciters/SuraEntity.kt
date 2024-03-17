@@ -1,4 +1,4 @@
-package com.mohtdon.domain.entity.reciters
+package com.mohtdon.domain.models.reciters
 
 import android.os.Parcel
 import android.os.Parcelable

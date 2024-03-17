@@ -1,7 +1,8 @@
-package com.mohtdon.mohtdon.ui.hadith.hadithCategory
+package com.mohtdon.ui.hadith.hadithCategory
 
 import android.content.Context
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.hadith.hadithCategory.HadithCategoryUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

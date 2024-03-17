@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.quran.search.adapter
+package com.mohtdon.ui.quran.search.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

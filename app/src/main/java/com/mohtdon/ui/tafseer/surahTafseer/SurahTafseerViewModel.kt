@@ -1,10 +1,8 @@
-package com.mohtdon.mohtdon.ui.tafseer.ayaTafseer
+package com.mohtdon.ui.tafseer.surahTafseer
 
 import android.content.Context
 import android.util.Log
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
-import com.mohtdon.mohtdon.ui.tafseer.surahTafseer.SurahTafseerModel
-import com.mohtdon.mohtdon.ui.tafseer.surahTafseer.SurahTafseerUiState
+import com.mohtdon.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

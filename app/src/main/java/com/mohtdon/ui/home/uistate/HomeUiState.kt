@@ -1,7 +1,7 @@
-package com.mohtdon.mohtdon.ui.home.uistate
+package com.mohtdon.ui.home.uistate
 
-import com.mohtdon.domain.models.todayPrayerTimes.DayPrayerTimes
-import com.mohtdon.mohtdon.ui.home.rvitems.HomeItem
+import com.mohtdon.domain.models.prayerTimes.DayPrayerTimes
+import com.mohtdon.ui.home.rvitems.HomeItem
 
 data class HomeUiState(
     val dayPrayerTimes: DayPrayerTimes? = null,

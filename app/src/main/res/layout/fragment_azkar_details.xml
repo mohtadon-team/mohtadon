@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.azkar.azkarDetails.AzkarDetailsFragment">
+        tools:context="com.mohtdon.ui.azkar.azkarDetails.AzkarDetailsFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/azkar_details_rv"

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.di
+package com.mohtdon.di
 
 import com.mohtdon.domain.repo.HadithRepository
 import com.mohtdon.domain.repo.RadioRepository

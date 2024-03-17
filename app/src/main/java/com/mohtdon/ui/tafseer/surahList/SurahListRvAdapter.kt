@@ -1,10 +1,10 @@
-package com.mohtdon.mohtdon.ui.tafseer.surahList
+package com.mohtdon.ui.tafseer.surahList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-
 import com.mohtdon.mohtdon.databinding.SurahListRvItemBinding
+
 
 class SurahListRvAdapter(
     private val listener: OnAyaListRvListener, surahItems: List<SurahModel>

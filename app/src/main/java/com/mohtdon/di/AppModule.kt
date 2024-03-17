@@ -1,8 +1,8 @@
-package com.mohtdon.mohtdon.di
+package com.mohtdon.di
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.mohtdon.mohtdon.utilities.SHARED_PREFERENCES_NAME
+import com.mohtdon.utilities.SHARED_PREFERENCES_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.sebha.fragments.RosaryFragment">
+        tools:context="com.mohtdon.ui.sebha.fragments.RosaryFragment">
 <include
     layout="@layout/common_header"
     android:id="@+id/page_header"/>

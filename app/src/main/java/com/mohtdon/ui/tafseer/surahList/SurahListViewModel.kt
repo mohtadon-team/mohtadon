@@ -1,7 +1,7 @@
-package com.mohtdon.mohtdon.ui.tafseer.surahList
+package com.mohtdon.ui.tafseer.surahList
 
 import android.content.Context
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

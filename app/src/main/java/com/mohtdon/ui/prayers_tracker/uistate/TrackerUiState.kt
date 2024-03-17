@@ -1,6 +1,6 @@
-package com.mohtdon.mohtdon.ui.prayers_tracker.uistate
+package com.mohtdon.ui.prayers_tracker.uistate
 
-import com.mohtdon.mohtdon.ui.prayers_tracker.models.Salah
+import com.mohtdon.ui.prayers_tracker.models.Salah
 
 data class TrackerUiState(
     val currentDate:String = "",

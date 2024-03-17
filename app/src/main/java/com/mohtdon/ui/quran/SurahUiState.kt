@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.quran
+package com.mohtdon.ui.quran
 
 import com.mohtdon.domain.models.quran.Surah
 

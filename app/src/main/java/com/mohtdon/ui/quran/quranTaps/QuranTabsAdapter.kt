@@ -1,9 +1,9 @@
-package com.mohtdon.mohtdon.ui.quran.quranTaps
+package com.mohtdon.ui.quran.quranTaps
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.mohtdon.mohtdon.ui.quran.quranList.QuranListFragment
-import com.mohtdon.mohtdon.ui.quran.savedQuranPages.SavedQuranPagesFragment
+import com.mohtdon.ui.quran.quranList.QuranListFragment
+import com.mohtdon.ui.quran.savedQuranPages.SavedQuranPagesFragment
 
 class QuranTabsAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 2

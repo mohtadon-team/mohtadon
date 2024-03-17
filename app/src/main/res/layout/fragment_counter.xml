@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.counter.fragments.CounterFragment">
+        tools:context="com.mohtdon.ui.counter.fragments.CounterFragment">
 
 
     </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.di
+package com.mohtdon.di
 
 import android.content.Context
 

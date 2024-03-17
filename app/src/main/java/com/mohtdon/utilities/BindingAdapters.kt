@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.utilities
+package com.mohtdon.utilities
 
 import android.text.TextUtils
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import coil.load
 import com.mohtdon.mohtdon.R
-import com.mohtdon.mohtdon.ui.UiState
+import com.mohtdon.ui.UiState
 import me.tankery.lib.circularseekbar.CircularSeekBar
 
 //@BindingAdapter("app:setItemList")

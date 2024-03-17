@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.player
+package com.mohtdon.player
 
 
 import android.content.Intent

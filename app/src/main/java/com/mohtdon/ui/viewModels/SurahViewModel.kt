@@ -1,10 +1,10 @@
-package com.mohtdon.mohtdon.ui.viewModels
+package com.mohtdon.ui.viewModels
 
 import android.content.Context
 import android.util.Log
 import com.mohtdon.domain.models.quran.Surah
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
-import com.mohtdon.mohtdon.utilities.getInputStreambuffer
+import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.utilities.getInputStreambuffer
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

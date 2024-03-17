@@ -1,7 +1,7 @@
-package com.mohtdon.mohtdon.ui.namesOfAllah.viewModels
+package com.mohtdon.ui.namesOfAllah.viewModels
 
 import android.content.Context
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import org.json.JSONArray

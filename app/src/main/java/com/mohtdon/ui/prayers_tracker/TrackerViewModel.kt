@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.prayers_tracker
+package com.mohtdon.ui.prayers_tracker
 
 import android.content.SharedPreferences
 import android.os.Build
@@ -6,10 +6,22 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.viewModelScope
 import com.mohtdon.domain.usecases.GetDayPrayerTimesUseCase
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
-import com.mohtdon.mohtdon.ui.prayers_tracker.models.Salah
-import com.mohtdon.mohtdon.ui.prayers_tracker.uistate.TrackerUiState
-import com.mohtdon.mohtdon.utilities.*
+import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.prayers_tracker.models.Salah
+import com.mohtdon.ui.prayers_tracker.uistate.TrackerUiState
+import com.mohtdon.utilities.*
+import com.mohtdon.utilities.ASR
+import com.mohtdon.utilities.DHUHR
+import com.mohtdon.utilities.FAJR
+import com.mohtdon.utilities.ISHA
+import com.mohtdon.utilities.IS_ASR_PERFORMED
+import com.mohtdon.utilities.IS_DHUHR_PERFORMED
+import com.mohtdon.utilities.IS_FAJR_PERFORMED
+import com.mohtdon.utilities.IS_ISHA_PERFORMED
+import com.mohtdon.utilities.IS_MAGHRIB_PERFORMED
+import com.mohtdon.utilities.LATITUDE
+import com.mohtdon.utilities.LONGITUDE
+import com.mohtdon.utilities.MAGHRIB
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

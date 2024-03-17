@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.prayers_tracker.adapter
+package com.mohtdon.ui.prayers_tracker.adapter
 
 import android.graphics.Color
 import android.os.Build
@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.WeeklyCalenderRvItemBinding
-import com.mohtdon.mohtdon.ui.prayers_tracker.TrackerViewModel
+import com.mohtdon.ui.prayers_tracker.TrackerViewModel
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle

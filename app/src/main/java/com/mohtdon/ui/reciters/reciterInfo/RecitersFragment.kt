@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.reciters.reciterInfo
+package com.mohtdon.ui.reciters.reciterInfo
 
 
 import android.os.Build
@@ -9,14 +9,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mohtdon.domain.entity.reciters.MoshafEnitity
+import com.mohtdon.domain.models.reciters.MoshafEnitity
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentRecitersBinding
-
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.reciters.player.AudioItemPlayerViewModel
-import com.mohtdon.mohtdon.utilities.collect
-import com.mohtdon.mohtdon.utilities.collectLast
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.reciters.player.AudioItemPlayerViewModel
+import com.mohtdon.utilities.collect
+import com.mohtdon.utilities.collectLast
 import dagger.hilt.android.AndroidEntryPoint
 
 

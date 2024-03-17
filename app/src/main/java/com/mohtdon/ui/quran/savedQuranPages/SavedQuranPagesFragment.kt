@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.quran.savedQuranPages
+package com.mohtdon.ui.quran.savedQuranPages
 
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
@@ -7,12 +7,14 @@ import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import com.mohtdon.data.dataSource.remote.response.quran.models.SavedPageModel
-import com.mohtdon.mohtdon.R
-import com.mohtdon.mohtdon.databinding.FragmentSavedQuranPagesBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.quran.quranTaps.QuranTabsFragmentDirections
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.quran.quranTaps.QuranTabsFragmentDirections
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
+import com.mohtdon.mohtdon.R
+import com.mohtdon.mohtdon.databinding.FragmentSavedQuranPagesBinding
+import com.mohtdon.ui.quran.savedQuranPages.SavedPagesAdapter
+import com.mohtdon.ui.quran.savedQuranPages.onSaveItemClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

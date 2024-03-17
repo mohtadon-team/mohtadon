@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.qiblaFinder
+package com.mohtdon.ui.qiblaFinder
 
 import android.content.SharedPreferences
 import android.os.Build
@@ -11,9 +11,9 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentQiblaBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.utilities.LATITUDE
-import com.mohtdon.mohtdon.utilities.LONGITUDE
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.utilities.LATITUDE
+import com.mohtdon.utilities.LONGITUDE
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.Math.atan2
 import java.lang.Math.cos

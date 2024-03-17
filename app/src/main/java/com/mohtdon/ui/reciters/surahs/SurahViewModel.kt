@@ -1,9 +1,9 @@
-package com.mohtdon.mohtdon.ui.reciters.surahs
+package com.mohtdon.ui.reciters.surahs
 
 import androidx.lifecycle.SavedStateHandle
-import com.mohtdon.domain.entity.reciters.MoshafEnitity
-import com.mohtdon.mohtdon.ui.base.BaseViewModel
-import com.mohtdon.mohtdon.utilities.suraMap
+import com.mohtdon.domain.models.reciters.MoshafEnitity
+import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.utilities.suraMap
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class SurahViewModel  @Inject constructor(
    private val savedStateHandle: SavedStateHandle
-):BaseViewModel(){
+): BaseViewModel(){
 
     private var _uiState = MutableStateFlow(SurahUiState())
     val uiState = _uiState.asStateFlow()

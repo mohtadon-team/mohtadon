@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.utilities
+package com.mohtdon.utilities
 
 import android.content.SharedPreferences
 import javax.inject.Inject

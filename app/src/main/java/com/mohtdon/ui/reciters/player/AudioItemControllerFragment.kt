@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.reciters.player
+package com.mohtdon.ui.reciters.player
 
 import android.app.Dialog
 import android.content.res.Resources
@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.viewModels
-import com.mohtdon.mohtdon.R
-import com.mohtdon.mohtdon.databinding.AudioItemControllerFragmentBinding
-import com.mohtdon.mohtdon.ui.PlayerEvents
-import com.mohtdon.mohtdon.ui.base.BaseDialogFragment
+import com.mohtdon.ui.PlayerEvents
+import com.mohtdon.ui.base.BaseDialogFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.mohtdon.mohtdon.R
+import com.mohtdon.mohtdon.databinding.AudioItemControllerFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

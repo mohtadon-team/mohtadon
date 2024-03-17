@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.hadith.hadithCategory
+package com.mohtdon.ui.hadith.hadithCategory
 
 import android.os.Bundle
 import android.view.View
@@ -6,11 +6,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentHadithCategoryBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HadithCategoryFragment : BaseFragment<FragmentHadithCategoryBinding>() , OnHadithCategoryListener {
+class HadithCategoryFragment : BaseFragment<FragmentHadithCategoryBinding>() ,
+    OnHadithCategoryListener {
     override val layoutFragmentId: Int = R.layout.fragment_hadith_category
     override val viewModel: HadithCategoryViewModel by viewModels()
 

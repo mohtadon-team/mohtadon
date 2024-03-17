@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.hadith.hadithBookChapters
+package com.mohtdon.ui.hadith.hadithBookChapters
 
 import android.os.Bundle
 import android.view.View
@@ -8,8 +8,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentHadithBookChaptersBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.utilities.HadithBookNames
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.utilities.HadithBookNames
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

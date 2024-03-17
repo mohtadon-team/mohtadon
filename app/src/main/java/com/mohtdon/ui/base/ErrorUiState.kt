@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.base
+package com.mohtdon.ui.base
 
 open class ErrorUiState(val message: String = "Error occurred!")
 

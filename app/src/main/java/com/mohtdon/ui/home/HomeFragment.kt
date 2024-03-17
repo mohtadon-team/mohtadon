@@ -1,4 +1,4 @@
-package com.mohtdon.mohtdon.ui.home
+package com.mohtdon.ui.home
 
 import android.content.SharedPreferences
 import android.os.Build
@@ -12,11 +12,11 @@ import com.mohtdon.domain.usecases.GetAyaByIdUseCase
 import com.mohtdon.domain.usecases.GetMonthPrayerTimesUseCase
 import com.mohtdon.mohtdon.R
 import com.mohtdon.mohtdon.databinding.FragmentHomeBinding
-import com.mohtdon.mohtdon.ui.base.BaseFragment
-import com.mohtdon.mohtdon.ui.home.adapters.HomeRvAdapter
-import com.mohtdon.mohtdon.ui.home.adapters.HomeTodayThingsRvAdapter
-import com.mohtdon.mohtdon.ui.home.adapters.OnHomeRvItemListener
-import com.mohtdon.mohtdon.ui.home.rvitems.HomeTodayThingsRvItem
+import com.mohtdon.ui.base.BaseFragment
+import com.mohtdon.ui.home.adapters.HomeRvAdapter
+import com.mohtdon.ui.home.adapters.HomeTodayThingsRvAdapter
+import com.mohtdon.ui.home.adapters.OnHomeRvItemListener
+import com.mohtdon.ui.home.rvitems.HomeTodayThingsRvItem
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
