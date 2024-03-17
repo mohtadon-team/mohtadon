@@ -26,14 +26,14 @@ class MoreViewModel @Inject constructor(
 
         val moreListItems = ArrayList<MoreItemModel>()
 
-        moreListItems.add(MoreItemModel("القبله", R.drawable.qibla))
+        moreListItems.add(MoreItemModel("القبله", R.drawable.qibla_blue_icon))
         moreListItems.add(MoreItemModel("اسماء الله الحسني",R.drawable.names_of_allah))
         moreListItems.add(MoreItemModel("السبحه",R.drawable.sebha_icon))
         moreListItems.add(MoreItemModel("الشهاده",R.drawable.shehada_icon))
         moreListItems.add(MoreItemModel("مشاركه بالاجر",R.drawable.qibla_blue_icon))
         moreListItems.add(MoreItemModel("مكه لايف",R.drawable.qibla_blue_icon))
         moreListItems.add(MoreItemModel("المدينه لايف",R.drawable.qibla_blue_icon))
-        moreListItems.add(MoreItemModel("التقويم الهجري",R.drawable.qibla_blue_icon))
+//        moreListItems.add(MoreItemModel("التقويم الهجري",R.drawable.qibla_blue_icon))
 
 
 
