@@ -27,11 +27,11 @@
     <string name="home_welcome_text">welcome</string>
     <string name="track_prayer">prayer tracker</string>
 
-    <string name="fajr">Fajr</string>
-    <string name="dhuhr">Dhuhr</string>
-    <string name="asr">Asr</string>
-    <string name="maghrib">Maghrib</string>
-    <string name="isha">Isha</string>
+    <string name="fajr"> صلاة الفجر</string>
+    <string name="dhuhr"> صلاةالضهر</string>
+    <string name="asr"> صلاة العصر</string>
+    <string name="maghrib"> صلاة المغرب</string>
+    <string name="isha"> صلاة العشاء</string>
 
     <string name="home_rv_item_text_1">المصحف</string>
     <string name="home_rv_item_text_2">الأذكار</string>
