@@ -49,9 +49,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
 
         binding.viewModel  = viewModel
 
-
+        clickTrackerText()
         setAdapter()
         setTodayThingsData()
+    }
+
+    private fun clickTrackerText() {
+        binding.trackPrayer.setOnClickListener {
+            findNavController().navigate(R.id.trackerFragment)
+        }
     }
 
 

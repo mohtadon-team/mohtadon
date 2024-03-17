@@ -21,5 +21,5 @@
     <item
         android:title="@string/more"
         android:id="@+id/moreFragment"
-        android:icon="@drawable/baseline_more"/>
+        android:icon="@drawable/more_icon"/>
 </menu>
