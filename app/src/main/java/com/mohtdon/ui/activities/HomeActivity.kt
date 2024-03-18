@@ -210,5 +210,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+    }
 
 }
