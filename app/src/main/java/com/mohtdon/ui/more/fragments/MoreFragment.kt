@@ -69,7 +69,7 @@ class MoreFragment : BaseFragment<FragmentMoreBinding>(), MoreListAdapter.OnName
                     val shareIntent = Intent(Intent.ACTION_SEND)
                     shareIntent.type = "text/plain"
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, "مهتدون")
-                    var shareMessage = "\nLet me recommend you this application\n\n"
+                    var shareMessage = "\nLet me recommend you mohtdon application\n\n"
                     shareMessage = "     ${
                         shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID
                     }\n".trimIndent()
