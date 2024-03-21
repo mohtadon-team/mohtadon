@@ -17,7 +17,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.location.Granularity
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -39,7 +41,9 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class HomeActivity : BaseActivity<ActivityHomeBinding>() {
+class HomeActivity : BaseActivity<ActivityHomeBinding>()
+    // ,   NavController.OnDestinationChangedListener
+{
     override val layoutActivityId: Int = R.layout.activity_home
     lateinit var navController: NavController
 
@@ -54,8 +58,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
         val navController = navHostFragment!!.navController
+
+
 
         lastPlayedTrackPreference.lastPlayedTrackId = -1
         lastPlayedTrackPreference.beforelastPlayedTrackId = -1
@@ -70,42 +78,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
 
-        binding.bottomNav.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.homeFragment -> {
-                    navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(R.id.homeFragment)
-                    true
-                }
+        setupNavigation()
 
-                R.id.trackerFragment -> {
-                    //navigate  to schedule
-                    navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(R.id.trackerFragment)
-                    true
-                }
-
-                R.id.quranOptionsFragment -> {
-                    navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(R.id.quranOptionsFragment)
-                    true
-                }
-
-                R.id.fmRadioFragment -> {
-                    navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(R.id.fmRadioFragment)
-                    true
-                }
-
-                R.id.moreFragment -> {
-                    navController.popBackStack(navController.graph.getStartDestination(), false)
-                    navController.navigate(R.id.moreFragment)
-                    true
-                }
-
-                else -> false
-            }
-        }
         // set default selection to homeFragment
         binding.bottomNav.selectedItemId = R.id.homeFragment
         getCurrentLocation()
@@ -210,9 +184,15 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
 
+    private fun setupNavigation() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+
+        val navController = navHostFragment.navController
+        binding.bottomNav.setupWithNavController(navController)
     }
+
+
 
 }
