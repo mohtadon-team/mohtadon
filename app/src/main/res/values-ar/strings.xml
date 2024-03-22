@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name="app_name">mohtdon</string>
+    <string name="app_name">مهتدون</string>
     <string name="surah_name">اسم السوره</string>
     <string name="ayat_num">عدد الايات :</string>
     <string name="arabic_language">اللغه العربيه</string>
