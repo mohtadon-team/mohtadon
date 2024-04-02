@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "822785570561",
+    "project_id": "mohtdon-439c9",
+    "storage_bucket": "mohtdon-439c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822785570561:android:8920602f78cafc65da8d00",
+        "android_client_info": {
+          "package_name": "com.mohtdon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4G6C51wBf4nyxdsrYnzoFI-Km1jiXEb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
