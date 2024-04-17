@@ -43,4 +43,6 @@
     <string name="moshaf">المصحف</string>
     <string name="search">بحث</string>
     <string name="allah">الله</string>
+    <string name="location_permission">قد لا تعمل بعض خدمات التطبيق بشكل جيد في حاله عدم تفعيل خدمات الموقع</string>
+    <string name="location_is_required">يجب تفعيل خدمات الموقع</string>
 </resources>

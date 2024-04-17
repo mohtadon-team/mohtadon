@@ -82,28 +82,28 @@ class TrackerViewModel @Inject constructor(
                         Salah(
                             FAJR,
                             getTodayPerformSalah(FAJR),
-                            dayPrayerTimes.fajr.toString(),
+                            dayPrayerTimes?.fajr.toString(),
                             isItToday
                         ),
                         Salah(
                             DHUHR,
                             getTodayPerformSalah(DHUHR),
-                            dayPrayerTimes.dhuhr.toString(),
+                            dayPrayerTimes?.dhuhr.toString(),
                             isItToday
                         ),
                         Salah(
-                            ASR, getTodayPerformSalah(ASR), dayPrayerTimes.asr.toString(), isItToday
+                            ASR, getTodayPerformSalah(ASR), dayPrayerTimes?.asr.toString(), isItToday
                         ),
                         Salah(
                             MAGHRIB,
                             getTodayPerformSalah(MAGHRIB),
-                            dayPrayerTimes.maghrib.toString(),
+                            dayPrayerTimes?.maghrib.toString(),
                             isItToday
                         ),
                         Salah(
                             ISHA,
                             getTodayPerformSalah(ISHA),
-                            dayPrayerTimes.isha.toString(),
+                            dayPrayerTimes?.isha.toString(),
                             isItToday
                         ),
                     )

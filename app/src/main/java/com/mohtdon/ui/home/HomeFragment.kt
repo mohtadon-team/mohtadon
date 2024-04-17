@@ -1,10 +1,8 @@
 package com.mohtdon.ui.home
 
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -41,7 +39,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
     lateinit var getMonthPrayerTimesUseCase: GetMonthPrayerTimesUseCase
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -61,24 +58,25 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     private fun setTodayThingsData() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.homeUiState.collect {
-                homeTodayThingsRvAdapter.setItems(
-                    mutableListOf(
-                        HomeTodayThingsRvItem(
-                            "دعاء اليوم", it.randomDuaa
-                        ),
+                viewModel.homeUiState.collect {
+                    homeTodayThingsRvAdapter.setItems(
+                        mutableListOf(
+                            HomeTodayThingsRvItem(
+                                "دعاء اليوم", it.randomDuaa
+                            ),
 
-                        HomeTodayThingsRvItem(
-                            "ايه اليوم", it.randomAya
+                            HomeTodayThingsRvItem(
+                                "ايه اليوم", it.randomAya
 
+                            )
                         )
-                    )
 
-                )
-            }
+                    )
+                }
+
         }
         homeTodayThingsRvAdapter.notifyDataSetChanged()
 
@@ -91,7 +89,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnHomeRvItemListener {
         binding.homeRvTodayTings.adapter = homeTodayThingsRvAdapter
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onItemclick(position: Int) {
         when (position) {
             0 -> {

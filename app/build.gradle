@@ -14,12 +14,12 @@ android {
         applicationId "com.mohtdon"
         minSdk 24
         targetSdk 33
-        versionCode 3
-        versionName "1.2"
+        versionCode 5
+        versionName "1.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "PRAYER_TIMES_BASE_URL", "\"http://api.aladhan.com\""
+        buildConfigField "String", "PRAYER_TIMES_BASE_URL", '"http://api.aladhan.com"'
 
     }
 
@@ -62,7 +62,7 @@ dependencies {
     implementation project(path: ':data')
     implementation 'com.google.android.gms:play-services-location:21.0.1'
 
-
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.4.6'
     // circule seekbar
     implementation 'me.tankery.lib:circularSeekBar:1.4.2'
 

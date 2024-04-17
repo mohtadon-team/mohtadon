@@ -3,6 +3,7 @@ package com.mohtdon.ui.home
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.viewModelScope
 import com.mohtdon.domain.usecases.GetAyaByIdUseCase
@@ -92,7 +93,6 @@ class HomeViewModel @Inject constructor(
 
         val todayPrayerTimes = _homeUiState.value.dayPrayerTimes
         val currentTime = getCurrentTime()
-
         if (currentTime.isBefore(todayPrayerTimes?.fajr)) {
             _homeUiState.update {
                 it.copy(
@@ -183,7 +183,7 @@ class HomeViewModel @Inject constructor(
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     private fun getCurrentDate(): LocalDate {
         return LocalDate.now()
     }
@@ -192,28 +192,20 @@ class HomeViewModel @Inject constructor(
         return LocalTime.now()
     }
 
-    private fun getPrayerTimes(
-        date: String
-    ) {
-
+    private fun getPrayerTimes(date: String) {
         val latitude = sharedPreferences.getString(LATITUDE, "0.0")?.toDouble()
         val longitude = sharedPreferences.getString(LONGITUDE, "0.0")?.toDouble()
-
 
         viewModelScope.launch {
             try {
                 val result = getDayPrayerTimesUseCase(date, latitude!!, longitude!!)
                 _homeUiState.update {
-                    it.copy(
-                        dayPrayerTimes = result
-                    )
+                    it.copy(dayPrayerTimes = result)
                 }
                 getTheNextSalahNameAndTime()
             } catch (e: Exception) {
                 _homeUiState.update {
-                    it.copy(
-                        error = true
-                    )
+                    it.copy(error = true)
                 }
             }
         }

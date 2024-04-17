@@ -9,11 +9,16 @@ import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.location.Location
 import android.location.LocationManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
@@ -42,7 +47,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding>()
-    // ,   NavController.OnDestinationChangedListener
+
 {
     override val layoutActivityId: Int = R.layout.activity_home
     lateinit var navController: NavController
@@ -73,14 +78,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>()
         val config = Configuration()
         config.setLocale(locale)
         baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
-
-        // light mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-
         setupNavigation()
-
-        // set default selection to homeFragment
         binding.bottomNav.selectedItemId = R.id.homeFragment
         getCurrentLocation()
 
@@ -171,19 +170,44 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>()
     }
 
 
-    override fun onRequestPermissionsResult(
-      requestCode: Int, permissions: Array<out String>, grantResults: IntArray
-    ){
-          super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_PERMISSION_CODE && permissions.isNotEmpty() &&
-            grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] ==
-            PackageManager.PERMISSION_GRANTED) {
-            getCurrentLocation()
-        } else {
-            requestLocationPermission()
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (requestCode == REQUEST_PERMISSION_CODE && grantResults.isNotEmpty()) {
+            if (grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
+                //  permissions granted proceed with the location
+                getCurrentLocation()
+            } else {
+                //alert dialog to notify user that should enable location permission to make app functionality works correctly
+                showLocationPermissionDialog()
+            }
         }
     }
 
+    private fun showLocationPermissionDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.custom_dialog_layout, null)
+        val dialogTitle = dialogView.findViewById<TextView>(R.id.dialog_title)
+        val dialogMessage = dialogView.findViewById<TextView>(R.id.dialog_message)
+        val dialogButton = dialogView.findViewById<Button>(R.id.dialog_button)
+
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(false)
+            .create()
+
+        dialogTitle.text = getString(R.string.location_is_required)
+        dialogMessage.text = getString(R.string.location_permission)
+
+        dialogButton.setOnClickListener {
+            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+            val uri = Uri.fromParts("package", packageName, null)
+            intent.data = uri
+            startActivity(intent)
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
 
     private fun setupNavigation() {
         val navHostFragment =

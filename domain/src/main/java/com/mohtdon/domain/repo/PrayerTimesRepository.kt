@@ -6,7 +6,7 @@ import com.mohtdon.domain.models.prayerTimes.DayPrayerTimes
 interface PrayerTimesRepository {
    suspend fun getDayPrayerTimes(
         date: String, latitude: Double, longitude: Double
-    ): DayPrayerTimes
+    ): DayPrayerTimes?
 
 
    suspend fun getMonthPrayerTimes(

@@ -8,7 +8,14 @@ class GetDayPrayerTimesUseCase @Inject constructor(
     private val prayerTimesRepository: PrayerTimesRepository
 ) {
     suspend operator fun invoke(
-        date: String, latitude: Double, longitude: Double
-    ): DayPrayerTimes = prayerTimesRepository.getDayPrayerTimes(date, latitude, longitude)
+        date: String?, latitude: Double?, longitude: Double?
+    ): DayPrayerTimes? {
+        // Check if any of the required parameters are null
+        if (date == null || latitude == null || longitude == null) {
+            return null
+        }
+        // Invoke the repository method only if all parameters are non-null
+        return prayerTimesRepository.getDayPrayerTimes(date, latitude, longitude)
+    }
 
 }

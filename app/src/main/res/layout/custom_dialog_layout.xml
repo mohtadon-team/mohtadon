@@ -1,0 +1,30 @@
+<!-- dialog_location_permission.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="يجب تفعيل خدمات الموقع"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="قد لا تعمل بعض خدمات التطبيق بشكل جيد في حاله عدم تفعيل خدمات الموقع"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="تفعيل الموقع"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
