@@ -29,7 +29,14 @@ class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListe
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Receive arguments
+        val args = SurahsFragmentArgs.fromBundle(requireArguments())
+        val reciterName = args.moshaf.reciterName
+        val moshafType = args.moshaf.moshafName
+        binding.moshafType.text=moshafType
 
+        // Set reciter name to TextView
+        binding.textView4.text = reciterName
        binding.viewModel = viewModel
          binding.playerViewModel = audioItemPlayerViewModel
         surahAdapter = SurahAdapter(this)

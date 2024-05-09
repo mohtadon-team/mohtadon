@@ -3,6 +3,7 @@ package com.mohtdon.ui.reciters.reciterInfo
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.mohtdon.domain.models.AppException
+import com.mohtdon.domain.models.reciters.ReciterEntity
 import com.mohtdon.domain.usecases.GetAllReciterUseCase
 import com.mohtdon.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -34,18 +35,18 @@ class RecitersViewModel @Inject constructor(
                 _uiState.update { it.copy(isLoading = true) }
                 val result = getAllReciterUseCase.invoke()
                 _uiState.update { it.copy(reciters = result ?: emptyList() , isLoading = false , isDataExist = true) }
-
+                savedStateHandle["getAllReciter"] = result ?: emptyList()
             }catch (e: AppException){
                 _uiState.update { it.copy(isError = true , errorMessage = e.message.toString() , isLoading = false) }
             }
     }
 
      fun searchInReciterList(query :CharSequence) {
-//         val x =  savedStateHandle.get<List<ReciterEntity>>("getAllReciter")
-//         val filteredList = x?.filter { it.name.contains(query) } ?: emptyList()
-//         _uiState.update {
-//             it.copy(reciters = filteredList  )
-//         }
+         val x =  savedStateHandle.get<List<ReciterEntity>>("getAllReciter")
+         val filteredList = x?.filter { it.name.contains(query) } ?: emptyList()
+         _uiState.update {
+             it.copy(reciters = filteredList  )
+         }
     }
 
     fun onSearchTextChange(text : CharSequence) {

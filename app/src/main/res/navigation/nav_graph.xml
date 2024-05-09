@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_reciters">
         <action
             android:id="@+id/action_recitersFragment_to_surahsFragment"
-            app:destination="@id/surahsFragment" />
-
+            app:destination="@id/surahsFragment" >
+        </action>
     </fragment>
     <fragment
         android:id="@+id/fmRadioFragment"
