@@ -22,23 +22,26 @@ class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListe
 
     override val layoutFragmentId = R.layout.surahs_to_play_fragment
     override val viewModel: SurahViewModel by viewModels()
-    private val audioItemPlayerViewModel : AudioItemPlayerViewModel by activityViewModels()
+    private val audioItemPlayerViewModel: AudioItemPlayerViewModel by activityViewModels()
     private lateinit var surahAdapter: SurahAdapter
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Receive arguments
+
         val args = SurahsFragmentArgs.fromBundle(requireArguments())
         val reciterName = args.moshaf.reciterName
         val moshafType = args.moshaf.moshafName
-        binding.moshafType.text=moshafType
-
-        // Set reciter name to TextView
+        binding.moshafType.text = moshafType
         binding.textView4.text = reciterName
-       binding.viewModel = viewModel
-         binding.playerViewModel = audioItemPlayerViewModel
+
+
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
+
+        binding.playerViewModel = audioItemPlayerViewModel
         surahAdapter = SurahAdapter(this)
 
 
@@ -48,11 +51,13 @@ class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListe
             setHasFixedSize(true)
         }
 
-        collect(viewModel.uiState){
+        collect(viewModel.uiState) {
             surahAdapter.suras = it.surahList
-            audioItemPlayerViewModel.onPlayerEvents(PlayerEvents.AddPlaylist(
-                moshafEntityToAudioItemList(it.moshaf)
-            ))
+            audioItemPlayerViewModel.onPlayerEvents(
+                PlayerEvents.AddPlaylist(
+                    moshafEntityToAudioItemList(it.moshaf)
+                )
+            )
         }
 
         binding.include.openPlayerController.setOnClickListener {
@@ -70,9 +75,9 @@ class SurahsFragment : BaseFragment<SurahsToPlayFragmentBinding>(), OnSurahListe
 
     }
 
-    private fun openPlayerController(){
+    private fun openPlayerController() {
         val audioItemControllerFragment = AudioItemControllerFragment()
-        audioItemControllerFragment.show(childFragmentManager,audioItemControllerFragment.tag)
+        audioItemControllerFragment.show(childFragmentManager, audioItemControllerFragment.tag)
     }
 }
 

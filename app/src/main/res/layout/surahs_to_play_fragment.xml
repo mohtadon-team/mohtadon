@@ -33,19 +33,6 @@
 
 
             <ImageButton
-                android:id="@+id/back"
-                android:layout_width="@dimen/_24sdp"
-                android:layout_height="@dimen/_24sdp"
-                android:layout_margin="@dimen/_10sdp"
-                android:backgroundTint="@android:color/transparent"
-                android:onClick="@{() -> viewModel.onBackClick()}"
-                android:src="@drawable/back_ic"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </ImageButton>
-
-            <ImageButton
                 android:id="@+id/close"
                 android:layout_width="@dimen/_24sdp"
                 android:layout_height="@dimen/_24sdp"
@@ -69,6 +56,7 @@
                 android:fontFamily="@font/tajawal_regular"
                 android:hint="ابحث عن السورة"
                 android:paddingHorizontal="@dimen/_10sdp"
+                android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintBottom_toBottomOf="@+id/close"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -98,10 +86,9 @@
                 android:text="السور"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_17sdp"
-                app:layout_constraintBottom_toBottomOf="@+id/back"
-                app:layout_constraintEnd_toStartOf="@+id/search"
-                app:layout_constraintStart_toEndOf="@+id/back"
-                app:layout_constraintTop_toTopOf="@+id/back">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/close"
+                app:layout_constraintTop_toTopOf="@+id/search">
 
             </TextView>
 
@@ -110,7 +97,7 @@
                 android:id="@+id/tab_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="title,search,back"
+                app:constraint_referenced_ids="title,search"
                 app:isVisible="@{viewModel.uiState.tabTitleVisible}">
 
             </androidx.constraintlayout.widget.Group>

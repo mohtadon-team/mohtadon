@@ -2,10 +2,16 @@ package com.mohtdon.ui.reciters.surahs
 
 import androidx.lifecycle.SavedStateHandle
 import com.mohtdon.domain.models.reciters.MoshafEnitity
+import com.mohtdon.domain.models.reciters.ReciterEntity
 import com.mohtdon.ui.base.BaseViewModel
+import com.mohtdon.ui.quran.SurahUiEvent
+import com.mohtdon.ui.reciters.reciterInfo.ReciterUiEffect
+import com.mohtdon.ui.reciters.reciterInfo.ReciterUiSate
 import com.mohtdon.utilities.suraMap
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
@@ -20,21 +26,47 @@ class SurahViewModel  @Inject constructor(
     val uiState = _uiState.asStateFlow()
 
     init {
-        val moshaf =  savedStateHandle.get<MoshafEnitity>("moshaf")
+        getAllSurahNames()
+    }
+
+    private fun getAllSurahNames() {
+        val moshaf = savedStateHandle.get<MoshafEnitity>("moshaf")
         val surahList = moshaf?.surah_list?.split(',')?.map { suraMap[it] } ?: emptyList()
         _uiState.update {
             it.copy(
-                surahList = surahList , reciterInfo = moshaf?.reciterName ?: "" , moshaf = moshaf!!
+                surahList = surahList,
+                reciterInfo = moshaf?.reciterName ?: "",
+                moshaf = moshaf!!
             )
         }
     }
-    fun onSearchTextChange(text : CharSequence) {
-//        _uiState.update { it.copy(searchText = text.toString()) }
-//        searchInRadio(text)
+
+    fun onSearchTextChange(text: CharSequence) {
+        _uiState.update {
+            it.copy(searchText = text.toString())
+        }
+        searchInSurahList(_uiState.value.searchText)
     }
 
+    fun searchInSurahList(query: CharSequence) {
+        val moshaf = savedStateHandle.get<MoshafEnitity>("moshaf")
+        val filteredList = moshaf?.surah_list?.split(',')?.map { suraMap[it] }
+            ?.filter { it?.name?.contains(query, ignoreCase = true) == true } ?: emptyList()
+        _uiState.update {
+            it.copy(surahList = filteredList)
+        }
+    }
     fun onCloseClick() {
-       // _uiState.update { it.copy(isTabSearchVisible = false , isTabTitleVisible = true ,searchText= "") }
+        val moshaf = savedStateHandle.get<MoshafEnitity>("moshaf")
+        val originalSurahList = moshaf?.surah_list?.split(',')?.map { suraMap[it] } ?: emptyList()
+        _uiState.update {
+            it.copy(
+                surahList = originalSurahList,
+                isTabSearchVisible = false,
+                isTabTitleVisible = true,
+                searchText = ""
+            )
+        }
     }
 
     fun onBackClick() {
@@ -42,15 +74,10 @@ class SurahViewModel  @Inject constructor(
     }
 
     fun onSearchClick()  {
-//        _uiState.update {
-//            it.copy(isTabSearchVisible = true , isTabTitleVisible = false)
-//        }
+        _uiState.update {
+            it.copy(isTabSearchVisible = true , isTabTitleVisible = false)
+        }
     }
 
-//    private fun sendUiEffect(uiEffect: RadioUiEffect) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            _uiEffect.emit(uiEffect)
-//        }
-//    }
 
 }
